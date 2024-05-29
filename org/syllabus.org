@@ -1,0 +1,179 @@
+#+title: Data visualization in R (and Python)
+#+author: Marcus Birkenkrahe
+#+startup: overview hideblocks indent
+#+options: toc:1 num:1 ^:nil
+#+subtitle: DSC302 - Data Visualization - Syllabus Fall 2024
+* General Course Information
+#+attr_html: :width 400px:
+[[../img/poster.png]]
+
+- Course title: Data visualization
+- Course number and section: DSC 302.01
+- Meeting Times: Mon-Wed-Fri from 15:00-15:50 am
+- Meeting place: Derby Science Center Computer Lab room 209
+- Professor: Marcus Birkenkrahe
+- Professor's Office: Derby Science Center 210
+- Phone: (870) 307-7254 (office) / (501) 422-4725 (private)
+- Office hours: [[https://calendar.app.google/yjr7tB7foMYowRJm7][by appointment]] MWF 4pm, Tue 3pm, Thu 11 am & 3 pm
+- Textbooks (not mandatory): For R, Exploratory Data Analysis Using R
+  by Ronald K. Pearson, chapters 1-4 (pp. 1-180) ([[https://www.routledge.com/Exploratory-Data-Analysis-Using-R/Pearson/p/book/9780367571566?utm_source=cjaffiliates&utm_medium=affiliates&cjevent=9173c8f311ad11ed81e9022e0a82b838][CRC Press, 2018]]),
+  and for Python, 
+
+* Objectives
+
+Data science is concerned with getting data to work for us, to give us
+its (presumed) hidden treasures. Data science has been called "the
+sexiest job of the 21st century". Even if you don't want to become a
+professonial data scientist, it's helpful to master the basic concepts
+if you want to succeed in today's data-driven business.
+
+This course focuses on visualizing data. There are many tools and
+platforms out there to visualize patterns found in data and tell
+engaging, convincing stories. As a data scientist, you have to know
+what's out there, understand the principles of good visual
+presentation, and be able to customize plots quickly.
+
+In this course, we look at popular platforms like Tableau and R Shiny,
+and at different packages within R.
+
+* Target audience
+
+The course is for anyone who is interested in becoming more data
+literate in their own field of interest - be it languages, theatre,
+biology, psychology or exercise science - and growing their personal
+skill stack.
+
+Visualization of data-driven insights and improved productivity when
+working with data and media is a concern for any professional.
+
+In this course, we use R (and some Python), which is easier to learn
+for students outside of computer science.
+
+* Student Learning Outcomes
+
+Students who complete "Data visualization" (DSC 302) will be
+able to:
+
+- Learn about, and use popular data science visualization platforms
+- Understand how to visualiye exploratory data analysis results
+- Apply literate programming principles to their work with Org-mode
+- Use infrastructure including command line, Emacs, and GitHub
+- Develop their critical thinking skills
+- Know how to effectively present assignment and project results
+
+This introduction to Exploratory Data Analysis prepares course
+participants for taking DSC 305, "Machine learning".
+
+* Course requirements
+
+Introduction to programming (CSC 100 or CSC 115). Some knowledge of,
+and experience with programming and using the R language is useful but
+not critical. Curiosity is essential. You will gain data literacy
+skills by taking this course. The course will prepare you for further
+studies in computer and data science, or in other disciplines that use
+modern computing, i.e. every discipline, from accounting to zoology).
+
+* Grading system
+
+| WHEN    | DESCRIPTION             | IMPACT |
+|---------+-------------------------+--------|
+| Weekly  | Programming assignments |    25% |
+| Monthly | Sprint reviews          |    25% |
+| Weekly  | Tests                   |    25% |
+| TBD     | Final exam (optional)   |    25% |
+
+- Sprint reviews are monthly project progress reports
+- Tests are open-book multiple choice exams for home
+- The final exam is optional if you want to improve your grade
+
+* Dates and class schedule
+
+- Important extra-curricular dates:
+  #+name: tab:extra
+  | WHEN | WHAT |
+  |------+------|
+  |      |      |
+  
+- Class session schedule:
+  #+name: tab:schedule
+  | WK | NO | TESTS      | ASSIGNMENT[fn:1]                   | TEXTBOOK           |
+  |----+----+------------+------------------------------------+--------------------|
+  |  1 |  1 | Entry Test | 1. Visualizing distributions [DC]  |                    |
+  |    |  2 |            | 2. Emacs tutorial                  |                    |
+  |----+----+------------+------------------------------------+--------------------|
+  |  2 |  3 | Test 1     | 3. Visualizing two variables [DC]  | 1. Data, EDA, R    |
+  |    |  4 |            |                                    |                    |
+  |    |  5 |            |                                    |                    |
+  |----+----+------------+------------------------------------+--------------------|
+  |  3 |  6 | Test 2     | 4. The color and the shape [DC]    | 2. Graphics in R   |
+  |    |  7 |            |                                    |                    |
+  |    |  8 |            | 1st Sprint review                  |                    |
+  |----+----+------------+------------------------------------+--------------------|
+  |  4 |  9 | Test 3     | 5. 99 problems... [DC]             | 2.3 plot()         |
+  |    | 10 |            |                                    |                    |
+  |----+----+------------+------------------------------------+--------------------|
+  |  5 | 11 | Test 4     | 6. Intro to base R graphics        | 2.4 Adding details |
+  |    | 12 |            |                                    |                    |
+  |    | 13 |            |                                    |                    |
+  |----+----+------------+------------------------------------+--------------------|
+  |  6 | 14 | Test 5     | 7. Different plot types            | 2.5 Plot types     |
+  |    | 15 |            |                                    |                    |
+  |    | 16 |            |                                    |                    |
+  |----+----+------------+------------------------------------+--------------------|
+  |  7 | 17 | Test 6     | 8. Adding details to plots         | 2.6 Plot arrays    |
+  |    | 18 |            |                                    |                    |
+  |    | 19 |            | 2nd Sprint Review                  |                    |
+  |----+----+------------+------------------------------------+--------------------|
+  |  8 | 20 | Test 7     | 9. How much is too much?           | 2.7 Color graphics |
+  |    | 21 |            |                                    |                    |
+  |----+----+------------+------------------------------------+--------------------|
+  |  9 | 22 | Test 8     | 10. Adv plot customization         | 3.1 Exploring data |
+  |    | 23 |            |                                    |                    |
+  |    | 24 |            |                                    |                    |
+  |----+----+------------+------------------------------------+--------------------|
+  | 10 | 25 |            | 11. Intro to ggplot [DC]           | 3.2 Numerical data |
+  |    | 26 |            |                                    |                    |
+  |    | 27 |            |                                    |                    |
+  |----+----+------------+------------------------------------+--------------------|
+  | 10 | 28 | Test 9     | 12. Building web apps w/shiny [DC] | 3.3 Anomalies      |
+  |    | 29 |            |                                    |                    |
+  |    | 30 |            |                                    |                    |
+  |----+----+------------+------------------------------------+--------------------|
+  | 11 | 28 | Test 10    | 3rd Sprint Review                  | 3.4 Relationships  |
+  |    | 29 |            | 13. Introduction to Tableau [DC]   |                    |
+  |    | 30 |            |                                    |                    |
+  |----+----+------------+------------------------------------+--------------------|
+  | 12 | 31 | Test 11    | 14. External data                  | 4 External data    |
+  |    | 32 |            |                                    |                    |
+  |    | 33 |            |                                    |                    |
+  |----+----+------------+------------------------------------+--------------------|
+  | 13 | 34 | Test 12    | 15. RSQLite                        | 4.74. RSQLite      |
+  |    | 35 |            |                                    |                    |
+  |    | 36 |            |                                    |                    |
+  |----+----+------------+------------------------------------+--------------------|
+  | 14 | 37 | Test 13    |                                    |                    |
+  |----+----+------------+------------------------------------+--------------------|
+  | 15 | 38 | Test 14    | Final Sprint review                |                    |
+  |    | 39 |            | Final Sprint review                |                    |
+  |    | 40 |            | Final Sprint review                |                    |
+  |----+----+------------+------------------------------------+--------------------|
+
+* Learning management system
+
+- We use Lyon's Canvas installation for this course.
+- The home page contains: assignments, grades, pages, people,
+  syllabus, quizzes, Google Drive, Course evaluation and Zoom.
+- The Zoom page includes cloud recordings of all past sessions.
+- Recorded sessions will be deleted after the last class.
+
+* GitHub
+
+All course materials are available in a public GitHub repository
+([[https://github.com/birkenkrahe/dviz24][github.com/birkenkrahe/dviz24]]). Registration for students includes a
+free subscription to GitHub codespaces with the AI coding assistant
+Copilot. GitHub is the worldwide largest online platform for software
+development.
+
+* [[https://docs.google.com/document/d/1ZaoAIX7rdBOsRntBxPk7TK77Vld9NXECVLvT9_Jovwc/edit?usp=sharing][Lyon College Standard Policies (Fall 2023)]]
+
+Online: https://tinyurl.com/LyonPolicyF23, see also [[https://catalog.lyon.edu/class-attendance][Class Attendance]]
