@@ -15,9 +15,13 @@
 - Professor's Office: Derby Science Center 210
 - Phone: (870) 307-7254 (office) / (501) 422-4725 (private)
 - Office hours: [[https://calendar.app.google/yjr7tB7foMYowRJm7][by appointment]] MWF 4pm, Tue 3pm, Thu 11 am & 3 pm
-- Textbooks (not mandatory): For R, Exploratory Data Analysis Using R
-  by Ronald K. Pearson, chapters 1-4 (pp. 1-180) ([[https://www.routledge.com/Exploratory-Data-Analysis-Using-R/Pearson/p/book/9780367571566?utm_source=cjaffiliates&utm_medium=affiliates&cjevent=9173c8f311ad11ed81e9022e0a82b838][CRC Press, 2018]]),
-  and for Python, 
+- Textbooks (not mandatory):
+  1) For R, Exploratory Data Analysis Using R by Ronald K. Pearson,
+     chapters 1-4 (pp. 1-180) ([[https://www.routledge.com/Exploratory-Data-Analysis-Using-R/Pearson/p/book/9780367571566?utm_source=cjaffiliates&utm_medium=affiliates&cjevent=9173c8f311ad11ed81e9022e0a82b838][CRC Press, 2018]]);
+  2) for Python, Interactive Data Visualization with Python 2nd ed by
+     Belorkar et al. ([[https://www.packtpub.com/product/interactive-data-visualization-with-python-second-edition/9781800200944?_gl=1*1x8088b*_gcl_au*ODk3MzA0NjUyLjE3MTU3MDc1Njk.*_ga*OTYwOTY4NzIuMTcxNTcwNzU2OQ..*_ga_Q4R8G7SJDK*MTcxNjk0NDE2My43LjEuMTcxNjk1MjM5Ni40MC4wLjA.][Packt, 2020]]);
+  3) language-agnostic: Fundamentals of Data Visualization by Claus
+     O. Wilke ([[https://clauswilke.com/dataviz/][O'Reilly, 2019]]).
 
 * Objectives
 
@@ -88,76 +92,43 @@ modern computing, i.e. every discipline, from accounting to zoology).
 
 * Dates and class schedule
 
-- Important extra-curricular dates:
-  #+name: tab:extra
-  | WHEN | WHAT |
-  |------+------|
-  |      |      |
-  
-- Class session schedule:
-  #+name: tab:schedule
-  | WK | NO | TESTS      | ASSIGNMENT[fn:1]                   | TEXTBOOK           |
-  |----+----+------------+------------------------------------+--------------------|
-  |  1 |  1 | Entry Test | 1. Visualizing distributions [DC]  |                    |
-  |    |  2 |            | 2. Emacs tutorial                  |                    |
-  |----+----+------------+------------------------------------+--------------------|
-  |  2 |  3 | Test 1     | 3. Visualizing two variables [DC]  | 1. Data, EDA, R    |
-  |    |  4 |            |                                    |                    |
-  |    |  5 |            |                                    |                    |
-  |----+----+------------+------------------------------------+--------------------|
-  |  3 |  6 | Test 2     | 4. The color and the shape [DC]    | 2. Graphics in R   |
-  |    |  7 |            |                                    |                    |
-  |    |  8 |            | 1st Sprint review                  |                    |
-  |----+----+------------+------------------------------------+--------------------|
-  |  4 |  9 | Test 3     | 5. 99 problems... [DC]             | 2.3 plot()         |
-  |    | 10 |            |                                    |                    |
-  |----+----+------------+------------------------------------+--------------------|
-  |  5 | 11 | Test 4     | 6. Intro to base R graphics        | 2.4 Adding details |
-  |    | 12 |            |                                    |                    |
-  |    | 13 |            |                                    |                    |
-  |----+----+------------+------------------------------------+--------------------|
-  |  6 | 14 | Test 5     | 7. Different plot types            | 2.5 Plot types     |
-  |    | 15 |            |                                    |                    |
-  |    | 16 |            |                                    |                    |
-  |----+----+------------+------------------------------------+--------------------|
-  |  7 | 17 | Test 6     | 8. Adding details to plots         | 2.6 Plot arrays    |
-  |    | 18 |            |                                    |                    |
-  |    | 19 |            | 2nd Sprint Review                  |                    |
-  |----+----+------------+------------------------------------+--------------------|
-  |  8 | 20 | Test 7     | 9. How much is too much?           | 2.7 Color graphics |
-  |    | 21 |            |                                    |                    |
-  |----+----+------------+------------------------------------+--------------------|
-  |  9 | 22 | Test 8     | 10. Adv plot customization         | 3.1 Exploring data |
-  |    | 23 |            |                                    |                    |
-  |    | 24 |            |                                    |                    |
-  |----+----+------------+------------------------------------+--------------------|
-  | 10 | 25 |            | 11. Intro to ggplot [DC]           | 3.2 Numerical data |
-  |    | 26 |            |                                    |                    |
-  |    | 27 |            |                                    |                    |
-  |----+----+------------+------------------------------------+--------------------|
-  | 10 | 28 | Test 9     | 12. Building web apps w/shiny [DC] | 3.3 Anomalies      |
-  |    | 29 |            |                                    |                    |
-  |    | 30 |            |                                    |                    |
-  |----+----+------------+------------------------------------+--------------------|
-  | 11 | 28 | Test 10    | 3rd Sprint Review                  | 3.4 Relationships  |
-  |    | 29 |            | 13. Introduction to Tableau [DC]   |                    |
-  |    | 30 |            |                                    |                    |
-  |----+----+------------+------------------------------------+--------------------|
-  | 12 | 31 | Test 11    | 14. External data                  | 4 External data    |
-  |    | 32 |            |                                    |                    |
-  |    | 33 |            |                                    |                    |
-  |----+----+------------+------------------------------------+--------------------|
-  | 13 | 34 | Test 12    | 15. RSQLite                        | 4.74. RSQLite      |
-  |    | 35 |            |                                    |                    |
-  |    | 36 |            |                                    |                    |
-  |----+----+------------+------------------------------------+--------------------|
-  | 14 | 37 | Test 13    |                                    |                    |
-  |----+----+------------+------------------------------------+--------------------|
-  | 15 | 38 | Test 14    | Final Sprint review                |                    |
-  |    | 39 |            | Final Sprint review                |                    |
-  |    | 40 |            | Final Sprint review                |                    |
-  |----+----+------------+------------------------------------+--------------------|
+** Assignment and project schedule:
 
+  | Week | DATACAMP ASSIGNMENT                                 | PROJECT    |
+  |------+-----------------------------------------------------+------------|
+  |    1 | Visualizing distributions                           |            |
+  |------+-----------------------------------------------------+------------|
+  |    2 | Visualizing two variables                           |            |
+  |------+-----------------------------------------------------+------------|
+  |    3 | The color and the shape                             |            |
+  |------+-----------------------------------------------------+------------|
+  |    4 | 99 problems but a plot ain't one                    |            |
+  |------+-----------------------------------------------------+------------|
+  |    5 |                                                     | 1st review |
+  |------+-----------------------------------------------------+------------|
+  |    6 | Introduction to Seaborn                             |            |
+  |------+-----------------------------------------------------+------------|
+  |    7 | Visualizing Two Quantitative Variables              |            |
+  |------+-----------------------------------------------------+------------|
+  |    8 | Visualizing a Categorical & a Quantitative Variable |            |
+  |------+-----------------------------------------------------+------------|
+  |    9 | Customizing Seaborn Plots                           |            |
+  |------+-----------------------------------------------------+------------|
+  |   10 |                                                     | 2nd review |
+  |------+-----------------------------------------------------+------------|
+  |   11 | EDA in Python: Getting to Know a Dataset            |            |
+  |------+-----------------------------------------------------+------------|
+  |   12 | EDA in Python: Data Cleaning and Imputation         |            |
+  |------+-----------------------------------------------------+------------|
+  |   13 | EDA in Python: Relationships in Data                |            |
+  |------+-----------------------------------------------------+------------|
+  |   14 | EDA in Python: Turning EDA into Action              |            |
+  |------+-----------------------------------------------------+------------|
+  |   15 |                                                     | 3rd review |
+  |------+-----------------------------------------------------+------------|
+  |   16 | Final presentations                                 |            |
+  |------+-----------------------------------------------------+------------|
+  
 * Learning management system
 
 - We use Lyon's Canvas installation for this course.
