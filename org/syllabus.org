@@ -90,6 +90,25 @@ modern computing, i.e. every discipline, from accounting to zoology).
 - Tests are open-book multiple choice exams for home
 - The final exam is optional if you want to improve your grade
 
+* Learning management system
+
+- We use Lyon's Canvas installation for this course.
+- The home page contains: assignments, grades, pages, people,
+  syllabus, quizzes, Google Drive, Course evaluation and Zoom.
+- The Zoom page includes cloud recordings of all past sessions.
+- Recorded sessions will be deleted after the last class.
+
+* GitHub
+
+All course materials are available in a public GitHub repository
+([[https://github.com/birkenkrahe/dviz24][github.com/birkenkrahe/dviz24]]). Registration for students includes a
+free subscription to GitHub codespaces with the AI coding assistant
+Copilot. GitHub is the worldwide largest online platform for software
+development.
+
+* [[https://docs.google.com/document/d/1ZaoAIX7rdBOsRntBxPk7TK77Vld9NXECVLvT9_Jovwc/edit?usp=sharing][Lyon College Standard Policies (Fall 2023)]]
+
+Online: https://tinyurl.com/LyonPolicyF23, see also [[https://catalog.lyon.edu/class-attendance][Class Attendance]]
 * Dates and class schedule
 
 - Summer study/preparation: [[https://app.datacamp.com/learn/courses/understanding-data-visualization][Understanding data visualization]] (2 hours)
@@ -130,22 +149,3 @@ modern computing, i.e. every discipline, from accounting to zoology).
 |   16 | Final presentations                                     |            |
 |------+---------------------------------------------------------+------------|
 
-* Learning management system
-
-- We use Lyon's Canvas installation for this course.
-- The home page contains: assignments, grades, pages, people,
-  syllabus, quizzes, Google Drive, Course evaluation and Zoom.
-- The Zoom page includes cloud recordings of all past sessions.
-- Recorded sessions will be deleted after the last class.
-
-* GitHub
-
-All course materials are available in a public GitHub repository
-([[https://github.com/birkenkrahe/dviz24][github.com/birkenkrahe/dviz24]]). Registration for students includes a
-free subscription to GitHub codespaces with the AI coding assistant
-Copilot. GitHub is the worldwide largest online platform for software
-development.
-
-* [[https://docs.google.com/document/d/1ZaoAIX7rdBOsRntBxPk7TK77Vld9NXECVLvT9_Jovwc/edit?usp=sharing][Lyon College Standard Policies (Fall 2023)]]
-
-Online: https://tinyurl.com/LyonPolicyF23, see also [[https://catalog.lyon.edu/class-attendance][Class Attendance]]
