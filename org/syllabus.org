@@ -91,43 +91,45 @@ modern computing, i.e. every discipline, from accounting to zoology).
 - The final exam is optional if you want to improve your grade
 
 * Dates and class schedule
-** Assignment and project schedule:
 
-  | Week | DATACAMP ASSIGNMENT                                 | PROJECT    |
-  |------+-----------------------------------------------------+------------|
-  |    1 | Visualizing distributions                           |            |
-  |------+-----------------------------------------------------+------------|
-  |    2 | Visualizing two variables                           |            |
-  |------+-----------------------------------------------------+------------|
-  |    3 | The color and the shape                             |            |
-  |------+-----------------------------------------------------+------------|
-  |    4 | 99 problems but a plot ain't one                    |            |
-  |------+-----------------------------------------------------+------------|
-  |    5 |                                                     | 1st review |
-  |------+-----------------------------------------------------+------------|
-  |    6 | Introduction to Seaborn                             |            |
-  |------+-----------------------------------------------------+------------|
-  |    7 | Visualizing Two Quantitative Variables              |            |
-  |------+-----------------------------------------------------+------------|
-  |    8 | Visualizing a Categorical & a Quantitative Variable |            |
-  |------+-----------------------------------------------------+------------|
-  |    9 | Customizing Seaborn Plots                           |            |
-  |------+-----------------------------------------------------+------------|
-  |   10 |                                                     | 2nd review |
-  |------+-----------------------------------------------------+------------|
-  |   11 | EDA in Python: Getting to Know a Dataset            |            |
-  |------+-----------------------------------------------------+------------|
-  |   12 | EDA in Python: Data Cleaning and Imputation         |            |
-  |------+-----------------------------------------------------+------------|
-  |   13 | EDA in Python: Relationships in Data                |            |
-  |------+-----------------------------------------------------+------------|
-  |   14 | EDA in Python: Turning EDA into Action              |            |
-  |------+-----------------------------------------------------+------------|
-  |   15 |                                                     | 3rd review |
-  |------+-----------------------------------------------------+------------|
-  |   16 | Final presentations                                 |            |
-  |------+-----------------------------------------------------+------------|
-  
+- Summer study/preparation: [[https://app.datacamp.com/learn/courses/understanding-data-visualization][Understanding data visualization]] (2 hours)
+- Bonus: [[https://app.datacamp.com/learn/courses/visualizing-geospatial-data-in-python][Visualizing Geospatial data]] (4 hours)  
+
+| Week | DATACAMP ASSIGNMENT                                     | PROJECT    |
+|------+---------------------------------------------------------+------------|
+|    1 | [[https://app.datacamp.com/learn/courses/introduction-to-data-visualization-with-matplotlib][Introduction to Matplotlib]]                              |            |
+|------+---------------------------------------------------------+------------|
+|    2 | Plotting time-series                                    |            |
+|------+---------------------------------------------------------+------------|
+|    3 | Quantitative comparisons and statistical visualizations |            |
+|------+---------------------------------------------------------+------------|
+|    4 | Sharing visualizations with others                      |            |
+|------+---------------------------------------------------------+------------|
+|    5 |                                                         | 1st review |
+|------+---------------------------------------------------------+------------|
+|    6 | [[https://www.datacamp.com/courses/introduction-to-data-visualization-with-seaborn][Introduction to Seaborn]]                                 |            |
+|------+---------------------------------------------------------+------------|
+|    7 | Visualizing Two Quantitative Variables                  |            |
+|------+---------------------------------------------------------+------------|
+|    8 | Visualizing a Categorical & a Quantitative Variable     |            |
+|------+---------------------------------------------------------+------------|
+|    9 | Customizing Seaborn Plots                               |            |
+|------+---------------------------------------------------------+------------|
+|   10 |                                                         | 2nd review |
+|------+---------------------------------------------------------+------------|
+|   11 | [[https://www.datacamp.com/courses/improving-your-data-visualizations-in-python][Improving your Data Visualizations in Python]]            |            |
+|------+---------------------------------------------------------+------------|
+|   12 | Using color in your visualizations                      |            |
+|------+---------------------------------------------------------+------------|
+|   13 | Showing uncertainty                                     |            |
+|------+---------------------------------------------------------+------------|
+|   14 | Visualization in the data science workflow              |            |
+|------+---------------------------------------------------------+------------|
+|   15 |                                                         | 3rd review |
+|------+---------------------------------------------------------+------------|
+|   16 | Final presentations                                     |            |
+|------+---------------------------------------------------------+------------|
+
 * Learning management system
 
 - We use Lyon's Canvas installation for this course.
