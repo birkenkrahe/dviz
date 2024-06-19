@@ -108,7 +108,8 @@ development.
 
 * [[https://docs.google.com/document/d/1ZaoAIX7rdBOsRntBxPk7TK77Vld9NXECVLvT9_Jovwc/edit?usp=sharing][Lyon College Standard Policies (Fall 2023)]]
 
-Online: https://tinyurl.com/LyonPolicyF23, see also [[https://catalog.lyon.edu/class-attendance][Class Attendance]]
+Online: [[https://tinyurl.com/LyonPolicyOnline]], see also [[https://catalog.lyon.edu/class-attendance][Class Attendance]]
+
 * Dates and class schedule
 
 - Summer study/preparation: [[https://app.datacamp.com/learn/courses/understanding-data-visualization][Understanding data visualization]] (2 hours)
@@ -116,33 +117,33 @@ Online: https://tinyurl.com/LyonPolicyF23, see also [[https://catalog.lyon.edu/c
 
 | Week | DATACAMP ASSIGNMENT                                     | PROJECT    |
 |------+---------------------------------------------------------+------------|
-|    1 | [[https://app.datacamp.com/learn/courses/introduction-to-data-visualization-with-matplotlib][Introduction to Matplotlib]]                              |            |
+|    1 | [[https://app.datacamp.com/learn/courses/introduction-to-data-science-in-python][Introduction to data science with Python]]                |            |
 |------+---------------------------------------------------------+------------|
-|    2 | Plotting time-series                                    |            |
+|    2 | Loading data in pandas                                  |            |
 |------+---------------------------------------------------------+------------|
-|    3 | Quantitative comparisons and statistical visualizations |            |
+|    3 | Plotting data with matplotlib                           |            |
 |------+---------------------------------------------------------+------------|
-|    4 | Sharing visualizations with others                      |            |
+|    4 | Different types of plots                                |            |
 |------+---------------------------------------------------------+------------|
 |    5 |                                                         | 1st review |
 |------+---------------------------------------------------------+------------|
-|    6 | [[https://www.datacamp.com/courses/introduction-to-data-visualization-with-seaborn][Introduction to Seaborn]]                                 |            |
+|    6 | [[https://app.datacamp.com/learn/courses/introduction-to-data-visualization-with-matplotlib][Introduction to Matplotlib]]                              |            |
 |------+---------------------------------------------------------+------------|
-|    7 | Visualizing Two Quantitative Variables                  |            |
+|    7 | Plotting time-series                                    |            |
 |------+---------------------------------------------------------+------------|
-|    8 | Visualizing a Categorical & a Quantitative Variable     |            |
+|    8 | Quantitative comparisons and statistical visualizations |            |
 |------+---------------------------------------------------------+------------|
-|    9 | Customizing Seaborn Plots                               |            |
+|    9 | Sharing visualizations with others                      |            |
 |------+---------------------------------------------------------+------------|
 |   10 |                                                         | 2nd review |
 |------+---------------------------------------------------------+------------|
-|   11 | [[https://www.datacamp.com/courses/improving-your-data-visualizations-in-python][Improving your Data Visualizations in Python]]            |            |
+|   11 | [[https://www.datacamp.com/courses/introduction-to-data-visualization-with-seaborn][Introduction to Seaborn]]                                 |            |
 |------+---------------------------------------------------------+------------|
-|   12 | Using color in your visualizations                      |            |
+|   12 | Visualizing Two Quantitative Variables                  |            |
 |------+---------------------------------------------------------+------------|
-|   13 | Showing uncertainty                                     |            |
+|   13 | Visualizing a Categorical & a Quantitative Variable     |            |
 |------+---------------------------------------------------------+------------|
-|   14 | Visualization in the data science workflow              |            |
+|   14 | Customizing Seaborn Plots                               |            |
 |------+---------------------------------------------------------+------------|
 |   15 |                                                         | 3rd review |
 |------+---------------------------------------------------------+------------|
