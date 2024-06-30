@@ -90,6 +90,16 @@ modern computing, i.e. every discipline, from accounting to zoology).
 - Tests are open-book multiple choice exams for home
 - The final exam is optional if you want to improve your grade
 
+* Rubric
+
+| Component                    | Weight | Excellent                                                                                            | Good                                                                     | Satisfactory                                                         | Needs Improvement                                                             | Unsatisfactory                                                              |
+|------------------------------+--------+------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+----------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------------------------------------------------------------------------|
+| Participation and Attendance |     0% | Consistently attends and actively participates in all classes.                                       | Attends most classes and participates in discussions.                    | Attends classes but participation is minimal.                        | Frequently absent and rarely participates.                                    | Rarely attends classes and does not participate.                            |
+| DataCamp assignments         |    25% | Completes all assignments on time with high accuracy (90-100%).                                      | Completes most assignments on time with good accuracy (80-89%).          | Completes assignments but with some inaccuracies or delays (70-79%). | Frequently late or incomplete assignments with several inaccuracies (60-69%). | Rarely completes assignments and shows minimal understanding (0-59%).       |
+| Project Sprint Reviews       |    25% | Consistently demonstrates significant progress, excellent teamwork, and high-quality work (90-100%). | Shows good progress, effective teamwork, and good-quality work (80-89%). | Adequate progress, teamwork, and satisfactory work quality (70-79%). | Minimal progress, poor teamwork, and below-average work quality (60-69%).     | Little to no progress, ineffective teamwork, and poor-quality work (0-59%). |
+| Tests                        |    25% | Demonstrates thorough understanding and application of concepts (90-100%).                           | Shows good understanding with minor errors (80-89%).                     | Displays basic understanding with some errors (70-79%).              | Limited understanding with several errors (60-69%).                           | Minimal understanding and many errors (0-59%).                              |
+| Final Exam (Optional)        |    25% | Demonstrates comprehensive understanding and application of course concepts (90-100%).               | Shows strong understanding with minor errors (80-89%).                   | Displays adequate understanding with some errors (70-79%).           | Limited understanding with several errors (60-69%).                           | Minimal understanding and many errors (0-59%).                              |
+  
 * Learning management system
 
 - We use Lyon's Canvas installation for this course.
@@ -106,7 +116,7 @@ free subscription to GitHub codespaces with the AI coding assistant
 Copilot. GitHub is the worldwide largest online platform for software
 development.
 
-* [[https://docs.google.com/document/d/1ZaoAIX7rdBOsRntBxPk7TK77Vld9NXECVLvT9_Jovwc/edit?usp=sharing][Lyon College Standard Policies (Fall 2023)]]
+* Lyon College Standard Policies
 
 Online: [[https://tinyurl.com/LyonPolicyOnline]], see also [[https://catalog.lyon.edu/class-attendance][Class Attendance]]
 
