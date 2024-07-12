@@ -19,7 +19,8 @@
   1) For R, Exploratory Data Analysis Using R by Ronald K. Pearson,
      chapters 1-4 (pp. 1-180) ([[https://www.routledge.com/Exploratory-Data-Analysis-Using-R/Pearson/p/book/9780367571566?utm_source=cjaffiliates&utm_medium=affiliates&cjevent=9173c8f311ad11ed81e9022e0a82b838][CRC Press, 2018]]);
   2) for Python, Interactive Data Visualization with Python 2nd ed by
-     Belorkar et al. ([[https://www.packtpub.com/product/interactive-data-visualization-with-python-second-edition/9781800200944?_gl=1*1x8088b*_gcl_au*ODk3MzA0NjUyLjE3MTU3MDc1Njk.*_ga*OTYwOTY4NzIuMTcxNTcwNzU2OQ..*_ga_Q4R8G7SJDK*MTcxNjk0NDE2My43LjEuMTcxNjk1MjM5Ni40MC4wLjA.][Packt, 2020]]);
+     Belorkar et al. ([[https://www.packtpub.com/product/interactive-data-visualization-with-python-second-edition/9781800200944?_gl=1*1x8088b*_gcl_au*ODk3MzA0NjUyLjE3MTU3MDc1Njk.*_ga*OTYwOTY4NzIuMTcxNTcwNzU2OQ..*_ga_Q4R8G7SJDK*MTcxNjk0NDE2My43LjEuMTcxNjk1MjM5Ni40MC4wLjA.][Packt, 2020]]); The Data Visualization Workshop by
+     Döbler/Großmann ([[https://www.packtpub.com/en-us/product/the-data-visualization-workshop-9781800568846][Packt, 2020]]).
   3) language-agnostic: Fundamentals of Data Visualization by Claus
      O. Wilke ([[https://clauswilke.com/dataviz/][O'Reilly, 2019]]).
 
@@ -160,3 +161,40 @@ Online: [[https://tinyurl.com/LyonPolicyOnline]], see also [[https://catalog.lyo
 |   16 | Final presentations                                     |            |
 |------+---------------------------------------------------------+------------|
 
+** Textbook example and topic schedule
+
+- We will cover up to 5 chapters of this advanced introductory text.
+- We emphasize general plots, Matplotlib and Seaborn (see DataCamp).
+- We will try to cover more applications like geodata & animation.
+
+|----+--------------+---------------------------------------------+---------+-------|
+| Ch | Topic        | Textbook "The Data Visualization Workshop"  |    Page |  Week |
+|----+--------------+---------------------------------------------+---------+-------|
+|  1 | Introduction | Introduction and setup                      |    1-22 |   1-4 |
+|    | Setup        | Data wrangling, tools and libraries         |   23-27 |       |
+|    | Statistics   | Measures of centrality and dispersion       |   28-34 |       |
+|    | NumPy        | Python library for numerical computing      |   25-66 |       |
+|    | Pandas       | Python library for data analysis            |   67-86 |       |
+|    |              | Advanced pandas operations                  |  87-100 |       |
+|----+--------------+---------------------------------------------+---------+-------|
+|  2 | Plots        | Comparison plots: Line, bar, radar          | 102-115 |   5-8 |
+|    |              | Relation plots: Scatter, bubble, heatmap    | 116-125 |       |
+|    |              | Composition plots: Pie, stacked, Venn       | 126-137 |       |
+|    |              | Distribution plots: Histogram, density, box | 138-145 |       |
+|    |              | Geoplots: Dot, chloropleth, connection map  | 146-150 |       |
+|----+--------------+---------------------------------------------+---------+-------|
+|  3 | Matplotlib   | Pyplot basics                               | 164-174 |  9-10 |
+|    |              | Basic customization: text and legends       | 175-179 |       |
+|    |              | Basic plots                                 | 180-202 |       |
+|    |              | Layouts, images, mathematical expressions   | 203-225 |       |
+|----+--------------+---------------------------------------------+---------+-------|
+|  3 | Seaborn      | Simplifying visualizations using Seaborn    | 226-250 | 11-12 |
+|    |              | Advanced plots                              | 251-277 |       |
+|----+--------------+---------------------------------------------+---------+-------|
+|  4 | Geospatial   | Plotting geospatial data                    | 278-327 | 13-14 |
+|----+--------------+---------------------------------------------+---------+-------|
+|  5 | Bokeh        | Making things interactive with Bokeh        | 328-389 | 15-16 |
+|----+--------------+---------------------------------------------+---------+-------|
+
+Page numbers follow the textbook "The Data Visualization Workshop" by
+Döbler and Großmann (Packt, 2020). 
