@@ -191,3 +191,38 @@ Online: [[https://tinyurl.com/LyonPolicyOnline]], see also [[https://catalog.lyo
 
 Page numbers follow the textbook "The Data Visualization Workshop" by
 Döbler and Großmann (Packt, 2020). 
+
+* A note on using AI to write code for you or debug your code
+
+*Short summary:* For students, using AI is a waste of time at best, and
+a crime against your ability to learn at worst. Learning never comes
+without pain and (temporary) desperation. AI is like a pill but one
+that only works some of the time, and you'll never know when. Instead:
+join Lyon's Programming Student Club and experience the pain of not
+knowing first hand every week!
+
+*Will you be punished for using AI in my class?* Not directly because
+nobody can tell if you used AI or not but indirectly by turning in
+suboptimal results, by learning less, and by having less time for
+other, more productive activities.
+
+*Are there any data on this?* Not much on coding as such but a recent
+(15 July), substantive, long (59 p) paper titled "Generative AI Can
+Harm Learning"), based on a very carefully conducted field experiment
+with a large (1000) sample of high school students concluded: "Our
+results suggest that students attempt to use [AI] as a "crutch" during
+practice problem sessions, and when successful, perform worse on their
+own. Thus, to maintain long-term productivity, we must be cautious
+when deploying generative AI to ensure humans continue to learn
+critical skills."  ([[https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4895486&s=03][Bastani et al, 2024]]).
+
+** *References*
+
+Bastani, Hamsa and Bastani, Osbert and Sungu, Alp and Ge, Haosen and
+Kabakcı, Özge and Mariman, Rei, Generative AI Can Harm Learning
+(July 15, 2024). [[https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4895486&s=03#][Available at ssrn.com]].
+
+
+
+
+
