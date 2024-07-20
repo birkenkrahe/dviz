@@ -14,7 +14,7 @@
 - Professor: Marcus Birkenkrahe
 - Professor's Office: Derby Science Center 210
 - Phone: (870) 307-7254 (office) / (501) 422-4725 (private)
-- Office hours: [[https://calendar.app.google/yjr7tB7foMYowRJm7][by appointment]] MWF 4pm, Tue 3pm, Thu 11 am & 3 pm
+- Office hours: [[https://calendar.app.google/yjr7tB7foMYowRJm7][by appointment]] MWF 4pm, Tue/Thu 3pm, Fri 4 pm
 - Textbooks (not mandatory):
   1) For R, Exploratory Data Analysis Using R by Ronald K. Pearson,
      chapters 1-4 (pp. 1-180) ([[https://www.routledge.com/Exploratory-Data-Analysis-Using-R/Pearson/p/book/9780367571566?utm_source=cjaffiliates&utm_medium=affiliates&cjevent=9173c8f311ad11ed81e9022e0a82b838][CRC Press, 2018]]);
@@ -39,7 +39,7 @@ what's out there, understand the principles of good visual
 presentation, and be able to customize plots quickly.
 
 In this course, we look at popular platforms like Tableau and R Shiny,
-and at different packages within R.
+at different packages within R, and at data visualization with Python.
 
 * Target audience
 
@@ -51,8 +51,8 @@ skill stack.
 Visualization of data-driven insights and improved productivity when
 working with data and media is a concern for any professional.
 
-In this course, we use R (and some Python), which is easier to learn
-for students outside of computer science.
+In this course, we use R (and some Python), which is especially easy
+for students who are not computer scientists.
 
 * Student Learning Outcomes
 
@@ -67,25 +67,26 @@ able to:
 - Know how to effectively present assignment and project results
 
 This introduction to Exploratory Data Analysis prepares course
-participants for taking DSC 305, "Machine learning".
+participants for taking DSC 305, "Machine learning" (with R).
 
 * Course requirements
 
-Introduction to programming (CSC 100 or CSC 115). Some knowledge of,
-and experience with programming and using the R language is useful but
-not critical. Curiosity is essential. You will gain data literacy
-skills by taking this course. The course will prepare you for further
-studies in computer and data science, or in other disciplines that use
-modern computing, i.e. every discipline, from accounting to zoology).
+Introduction to programming (CSC 100 or CSC 115 or CSC 109). Some
+knowledge of, and experience with programming and using the R language
+is useful but not critical. Curiosity is essential. You will gain data
+literacy skills by taking this course. The course will prepare you for
+further studies in computer and data science, or in other disciplines
+that use modern computing, i.e. every discipline, from accounting to
+zoology).
 
 * Grading system
 
-| WHEN    | DESCRIPTION             | IMPACT |
-|---------+-------------------------+--------|
-| Weekly  | Programming assignments |    25% |
-| Monthly | Sprint reviews          |    25% |
-| Weekly  | Tests                   |    25% |
-| TBD     | Final exam (optional)   |    25% |
+| WHEN    | DESCRIPTION           | IMPACT |
+|---------+-----------------------+--------|
+| Weekly  | DataCamp assignments  |    25% |
+| Monthly | Sprint reviews        |    25% |
+| Weekly  | Tests                 |    25% |
+| TBD     | Final exam (optional) |    25% |
 
 - Sprint reviews are monthly project progress reports
 - Tests are open-book multiple choice exams for home
@@ -116,83 +117,44 @@ Online: [[https://tinyurl.com/LyonPolicyOnline]], see also [[https://catalog.lyo
 
 * Dates and class schedule
 
-- Summer study/preparation: [[https://app.datacamp.com/learn/courses/understanding-data-visualization][Understanding data visualization]] (2 hours)
-- Bonus: [[https://app.datacamp.com/learn/courses/visualizing-geospatial-data-in-python][Visualizing Geospatial data]] (4 hours)  
-
-| Week | DATACAMP ASSIGNMENT                                     | PROJECT    |
-|------+---------------------------------------------------------+------------|
-|    1 | [[https://app.datacamp.com/learn/courses/introduction-to-data-science-in-python][Introduction to data science with Python]]                |            |
-|------+---------------------------------------------------------+------------|
-|    2 | Loading data in pandas                                  |            |
-|------+---------------------------------------------------------+------------|
-|    3 | Plotting data with matplotlib                           |            |
-|------+---------------------------------------------------------+------------|
-|    4 | Different types of plots                                |            |
-|------+---------------------------------------------------------+------------|
-|    5 |                                                         | 1st review |
-|------+---------------------------------------------------------+------------|
-|    6 | [[https://app.datacamp.com/learn/courses/introduction-to-data-visualization-with-matplotlib][Introduction to Matplotlib]]                              |            |
-|------+---------------------------------------------------------+------------|
-|    7 | Plotting time-series                                    |            |
-|------+---------------------------------------------------------+------------|
-|    8 | Quantitative comparisons and statistical visualizations |            |
-|------+---------------------------------------------------------+------------|
-|    9 | Sharing visualizations with others                      |            |
-|------+---------------------------------------------------------+------------|
-|   10 |                                                         | 2nd review |
-|------+---------------------------------------------------------+------------|
-|   11 | [[https://www.datacamp.com/courses/introduction-to-data-visualization-with-seaborn][Introduction to Seaborn]]                                 |            |
-|------+---------------------------------------------------------+------------|
-|   12 | Visualizing Two Quantitative Variables                  |            |
-|------+---------------------------------------------------------+------------|
-|   13 | Visualizing a Categorical & a Quantitative Variable     |            |
-|------+---------------------------------------------------------+------------|
-|   14 | Customizing Seaborn Plots                               |            |
-|------+---------------------------------------------------------+------------|
-|   15 |                                                         | 3rd review |
-|------+---------------------------------------------------------+------------|
-|   16 | Final presentations                                     |            |
-|------+---------------------------------------------------------+------------|
-
-** Textbook example and topic schedule
-
-- We will cover up to 5 chapters of this advanced introductory text.
-- We emphasize general plots, Matplotlib and Seaborn (see DataCamp).
-- We will try to cover more applications like geodata & animation.
-
-|----+--------------+---------------------------------------------+---------+-------|
-| Ch | Topic        | Textbook "The Data Visualization Workshop"  |    Page |  Week |
-|----+--------------+---------------------------------------------+---------+-------|
-|  1 | Introduction | Introduction and setup                      |    1-22 |   1-4 |
-|    | Setup        | Data wrangling, tools and libraries         |   23-27 |       |
-|    | Statistics   | Measures of centrality and dispersion       |   28-34 |       |
-|    | NumPy        | Python library for numerical computing      |   25-66 |       |
-|    | Pandas       | Python library for data analysis            |   67-86 |       |
-|    |              | Advanced pandas operations                  |  87-100 |       |
-|----+--------------+---------------------------------------------+---------+-------|
-|  2 | Plots        | Comparison plots: Line, bar, radar          | 102-115 |   5-8 |
-|    |              | Relation plots: Scatter, bubble, heatmap    | 116-125 |       |
-|    |              | Composition plots: Pie, stacked, Venn       | 126-137 |       |
-|    |              | Distribution plots: Histogram, density, box | 138-145 |       |
-|    |              | Geoplots: Dot, chloropleth, connection map  | 146-150 |       |
-|----+--------------+---------------------------------------------+---------+-------|
-|  3 | Matplotlib   | Pyplot basics                               | 164-174 |  9-10 |
-|    |              | Basic customization: text and legends       | 175-179 |       |
-|    |              | Basic plots                                 | 180-202 |       |
-|    |              | Layouts, images, mathematical expressions   | 203-225 |       |
-|----+--------------+---------------------------------------------+---------+-------|
-|  3 | Seaborn      | Simplifying visualizations using Seaborn    | 226-250 | 11-12 |
-|    |              | Advanced plots                              | 251-277 |       |
-|----+--------------+---------------------------------------------+---------+-------|
-|  4 | Geospatial   | Plotting geospatial data                    | 278-327 | 13-14 |
-|----+--------------+---------------------------------------------+---------+-------|
-|  5 | Bokeh        | Making things interactive with Bokeh        | 328-389 | 15-16 |
-|----+--------------+---------------------------------------------+---------+-------|
-
-Page numbers follow the textbook "The Data Visualization Workshop" by
-Döbler and Großmann (Packt, 2020). 
+| Week | DataCamp Assignments                              | PROJECT    |
+|------+---------------------------------------------------+------------|
+|    1 | [[https://app.datacamp.com/learn/courses/understanding-data-visualization][Understanding Data Visualization:]] Distributions   |            |
+|------+---------------------------------------------------+------------|
+|    2 | Understanding Data Visualization: Two variables   |            |
+|------+---------------------------------------------------+------------|
+|    3 | Understanding Data Visualization: Color and shape |            |
+|------+---------------------------------------------------+------------|
+|    4 | Understanding Data Visualization: 99 problems ... | 1st review |
+|------+---------------------------------------------------+------------|
+|    5 | [[https://app.datacamp.com/learn/courses/introduction-to-data-visualization-with-ggplot2][Introduction to Data Visualization with ggplot2]]   |            |
+|------+---------------------------------------------------+------------|
+|    6 | Data Visualization with ggplot2: Aesthetics       |            |
+|------+---------------------------------------------------+------------|
+|    7 | Data Visualization with ggplot2: Geometries       |            |
+|------+---------------------------------------------------+------------|
+|    8 | [[https://app.datacamp.com/learn/courses/introduction-to-data-visualization-with-matplotlib][Introduction to Matplotlib]]                        | 2nd review |
+|------+---------------------------------------------------+------------|
+|    9 | Introduction to Matplotlib: Plotting time-series  |            |
+|------+---------------------------------------------------+------------|
+|   10 | Introduction to Matplotlib: Quantitative & stats  |            |
+|------+---------------------------------------------------+------------|
+|   11 | [[https://app.datacamp.com/learn/courses/dashboard-design-concepts][Introduction to dashboards]]                        |            |
+|------+---------------------------------------------------+------------|
+|   12 | [[https://app.datacamp.com/learn/courses/introduction-to-power-bi][Introduction to Power BI: Getting started]]         | 3rd review |
+|------+---------------------------------------------------+------------|
+|   13 | Introduction to Power BI: Transforming data       |            |
+|------+---------------------------------------------------+------------|
+|   14 | Introduction to Power BI: Visualizing data        |            |
+|------+---------------------------------------------------+------------|
+|   15 | Introduction to Power BI: Filtering               |            |
+|------+---------------------------------------------------+------------|
+|   16 |                                                   | 4th review |
+|------+---------------------------------------------------+------------|
 
 * A note on using AI to write code for you or debug your code
+
+[[https://github.com/birkenkrahe/org/blob/master/fall24/UsingAItoCode.pdf][See full PDF on GitHub.]]
 
 *Short summary:* For students, using AI is a waste of time at best, and
 a crime against your ability to learn at worst. Learning never comes
@@ -201,28 +163,29 @@ that only works some of the time, and you'll never know when. Instead:
 join Lyon's Programming Student Club and experience the pain of not
 knowing first hand every week!
 
-*Will you be punished for using AI in my class?* Not directly because
-nobody can tell if you used AI or not but indirectly by turning in
-suboptimal results, by learning less, and by having less time for
-other, more productive activities.
+Will you be punished for using AI in my class?*
 
-*Are there any data on this?* Not much on coding as such but a recent
-(15 July), substantive, long (59 p) paper titled "Generative AI Can
-Harm Learning"), based on a very carefully conducted field experiment
-with a large (1000) sample of high school students concluded: "Our
-results suggest that students attempt to use [AI] as a "crutch" during
-practice problem sessions, and when successful, perform worse on their
-own. Thus, to maintain long-term productivity, we must be cautious
-when deploying generative AI to ensure humans continue to learn
-critical skills."  ([[https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4895486&s=03][Bastani et al, 2024]]).
+Not directly because nobody can tell if you used AI or not but
+indirectly by turning in suboptimal results, by learning less, and
+by having less time for other, more productive activities.
 
-** *References*
+
+*Are there any data on this?*
+
+Not much on coding as such but a recent (15 July), substantive, long
+(59 p) paper titled "Generative AI Can Harm Learning"), based on a
+very carefully conducted field experiment with a large (1000) sample
+of high school students concluded: "Our results suggest that students
+attempt to use [AI] as a "crutch" during practice problem sessions,
+and when successful, perform worse on their own. Thus, to maintain
+long-term productivity, we must be cautious when deploying generative
+AI to ensure humans continue to learn critical skills."  ([[https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4895486&s=03][Bastani et
+al, 2024]]).
+
+*References*
 
 Bastani, Hamsa and Bastani, Osbert and Sungu, Alp and Ge, Haosen and
 Kabakcı, Özge and Mariman, Rei, Generative AI Can Harm Learning
 (July 15, 2024). [[https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4895486&s=03#][Available at ssrn.com]].
-
-
-
 
 
