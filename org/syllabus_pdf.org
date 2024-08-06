@@ -10,7 +10,7 @@
 - Course title: Data visualization
 - Course number and section: DSC 302.01
 - Meeting Times: Mon-Wed-Fri from 15:00-15:50 am
-- Meeting place: Derby Science Center Computer Lab room 209
+- Meeting place: Lyon Building Computer Lab room 104
 - Professor: Marcus Birkenkrahe
 - Professor's Office: Derby Science Center 210
 - Phone: (870) 307-7254 (office) / (501) 422-4725 (private)
