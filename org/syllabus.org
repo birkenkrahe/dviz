@@ -120,8 +120,9 @@ development.
 
 * Lyon College Standard Policies
 
-Online: [[https://tinyurl.com/LyonPolicyOnline]], see also [[https://catalog.lyon.edu/class-attendance][Class Attendance]]
-
+Standard Lyon College Policies are incorporated into this syllabus and
+can be found at the following link:
+http://www.lyon.edu/standard-course-policies.
 * Dates and class schedule
 
 | Week | DataCamp Assignments                              | PROJECT    |
