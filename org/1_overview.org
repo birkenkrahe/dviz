@@ -59,7 +59,7 @@ was "not a great visualization"? Do you see anything wrong with it?
 - Control your own notifications
 - Course [[https://lyon.instructure.com/courses/571/wiki][links]] on a (wiki) page
 - New CMS for me & for Lyon: bear with us[fn:1]
-- Lecture /notes/ (from Emacs Org-mode) will not show in GitHub
+
 * Course topics (illustrated)
 #+attr_html: :width 550px
 #+caption: xkcd 2048: curve-fitting methods and the messages they send
@@ -81,7 +81,7 @@ them fits well enough to compellingly represent the data." Source:
 #+caption: Lyonel Feininger, Sailing Boats (1929)
 [[../img/1_topics.png]]
 
-1) Exploratory Data Analysis (EDA) using R
+1) Exploratory Data Analysis (EDA) using R (Python)
 2) Graphics in base R with applications
 3) Working with external data (critically)
 
@@ -144,7 +144,7 @@ See the [[https://github.com/birkenkrahe/org/blob/master/FAQ.org][GitHub FAQ]] f
 
 #+attr_html: :width 500px
 #+caption: Visualize 3D/4D medical imaging data in the browser
-[[../img/1_shiny.png]]
+n[[../img/1_shiny.png]]
 
 - Create an interesting data visualization ([[https://r-graph-gallery.com/][examples]])
 - Explore a graphics or animation package ([[https://gganimate.com/][like here]])
