@@ -6,10 +6,9 @@
 #+caption: The Red Tower/La tour rouge (Giorgio de Chirico, 1913) Source: Guggenheim
 [[../img/1_tower.jpg]]
 * Pre-test
-
 I posted this infographic in the [[https://chat.google.com/room/AAAA9Fjdv8Q/zzm53xrpugo/zzm53xrpugo?cls=10][Google Chat Space]] claiming that is
 was "not a great visualization"? Do you see anything wrong with it?
-#+attr_html: :width 600px:
+#+attr_html: :width 450px:
 #+caption: Source Splashsys.com
 [[../img/Ways-to-Search-Google.jpg]]
 
@@ -21,7 +20,11 @@ was "not a great visualization"? Do you see anything wrong with it?
 - *Understanding:* The information can better be presented as a table so
   that descriptions that belong together (operator | example |
   explanation) can more easily be compared (and be remembered).
-- *
+- *Ordering*: There is no ordering principle, and no attempt to order
+  them.
+- *Extension:* There is no reference or information on how to find out
+  more even though it seems unlikely (but we're not told) that these
+  are the only search tricks available ([[https://kinsta.com/blog/google-search-operators/][I found at least 40]]).
 #+end_quote
 
 * Mutual introductions
@@ -33,6 +36,7 @@ was "not a great visualization"? Do you see anything wrong with it?
 2. What would delight you? /(In this course)/
 3. What would disappoint you? /(In this course)/
 4. Where are you headed? /(In life)/
+
 * Course syllabus (on GitHub and on Canvas)
 #+attr_html: :width 500px
 #+caption: DSC 302 Syllabus on GitHub
@@ -40,9 +44,10 @@ was "not a great visualization"? Do you see anything wrong with it?
 
 - General information & standard policies
 - Course information (grading, attendance)
-- [[https://github.com/birkenkrahe/ds1/blob/piHome/org/syllabus.org#classroom-sessions-schedule][Schedule]] with dates of tests and assignments
-- The [[https://github.com/birkenkrahe/dviz][GitHub repo]] contains course material
-- *To see the notes, open the Emacs Org-mode file*
+- Schedule with dates of tests and assignments
+- The [[https://github.com/birkenkrahe/dviz][GitHub repo]] contains course material:
+  [[https://github.com/birkenkrahe/dviz][github.com/birkenkrahe/dviz]]
+- Notes from each session.
 
 * Course "learning" platform: Canvas
 
@@ -50,8 +55,8 @@ was "not a great visualization"? Do you see anything wrong with it?
 #+caption: Course topics
 [[../img/1_canvas.png]]
 
-- All [[https://lyon.instructure.com/courses/571/grades][grades]] should be visible at all times
-- Control your own [[https://lyon.instructure.com/courses/571?view=notifications][notifications]]
+- All grades should be visible at all times
+- Control your own notifications
 - Course [[https://lyon.instructure.com/courses/571/wiki][links]] on a (wiki) page
 - New CMS for me & for Lyon: bear with us[fn:1]
 - Lecture /notes/ (from Emacs Org-mode) will not show in GitHub
@@ -79,6 +84,7 @@ them fits well enough to compellingly represent the data." Source:
 1) Exploratory Data Analysis (EDA) using R
 2) Graphics in base R with applications
 3) Working with external data (critically)
+
 * Why "data visualization"?
 
 #+attr_html: :width 700px
@@ -224,24 +230,19 @@ Source: "[[https://docs.google.com/presentation/d/1wA7sb41EjV6GP3oBEFsOiYnoe29WI
 - Useful when learning any programming language
 * Home assignments
 
-- There are 15 programming assignments altogether = 10 points each, or
-  30% of your final grade.
-
 - Register with DataCamp and complete the DataCamp chapter
   "[[https://app.datacamp.com/learn/courses/data-visualization-for-everyone][Visualizing distributions]]" from the course "Data visualization for
-  everyone" by Monday, 22 August at 3 pm (ca. 20 min).
+  everyone".
 
   + Motivating visualization of data
   + Continous vs. categorical variables
   + Plot types: histograms and box plots
 
-- [[https://lyon.instructure.com/courses/568/assignments/1436][Complete the Emacs on-board tutorial]] and upload an edited copy to
-  Canvas by Friday, 26 August at 3 pm (ca. 60 min).
-
+- If you don't know Emacs, [[https://lyon.instructure.com/courses/568/assignments/1436][complete the Emacs on-board tutorial]]!
   + Get comfortable with Emacs keyboard bindings
   + Learn how to create, view, edit, save files
   + Learn how to insert a time stamp automatically
-* Tests (not graded)
+* Tests
 #+attr_html: :width 500px
 #+caption: Start page of the entry quiz on Canvas
 [[../img/1_entry_quiz.png]]
@@ -250,14 +251,14 @@ Source: "[[https://docs.google.com/presentation/d/1wA7sb41EjV6GP3oBEFsOiYnoe29WI
   after the deadline, you can play them an unlimited number of times
 - There will be a revision quiz on Canvas every week, consisting of
   5-10 multiple choice, matching and true/false questions.
-- A subset of the test questions will form the final exam (20% of your
-  final grade) - we will practice in the last week before the exam.
+- A subset of the test questions will form the final exam, which is
+  optional (you don't have to do it if you're happy with your grade).
 
-* Practice - course infrastructure
+* Practice: Course infrastructure
 
-This is the same exercise you may already have completed in another
-course. In this one we'll focus a little more on making visualizations
-using R and Python.
+- GitHub
+- Linux
+- Emacs
 
 * Glossary
 
