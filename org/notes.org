@@ -1,0 +1,15 @@
+#+TITLE: NOTEBOOK - DATA VISUALIZATION
+#+AUTHOR: Marcus Birkenkrahe
+#+SUBTITLE: DSC 302 Lyon College Fall 2024
+#+STARTUP: overview hideblocks indent entitiespretty:
+#+PROPERTY: header-args:R :session *R* :results output :exports both
+* Week 1 - Orientation
+** Review questions:
+
+1. ...
+   #+begin_quote
+
+   #+end_quote
+
+* Week 2 - 
+
