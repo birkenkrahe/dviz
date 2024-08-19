@@ -12,9 +12,13 @@ What we achieved in our first session: Course orientation, and
 critical discussion of a few visualization examples.
 
 * Week 2 - What is Data Visualization & =mtcars= Demo
+#+attr_html: :width 600px:
+#+caption: Napoleon's Retreat from Moscow - Adolph Northen (1851)
+[[../img/napoleon.jpg]]
+
+This file, =notes.org= ([[https://github.com/birkenkrahe/dviz/blob/main/org/notes.org][GitHub]]) contains a log of class activities.
 
 ** Project: published [[https://lyon.instructure.com/courses/2629/assignments/32827][1st sprint review instructions]] - get cracking!
-
 ** Review questions:
 
 1. What is data science mainly concerned with?
@@ -27,18 +31,29 @@ critical discussion of a few visualization examples.
    #+attr_html: :width 700px: 
    [[../img/1_minard.png]] 
    #+begin_quote
-   The chart ("tableau graphique") is a kind of "Sankey diagram" used
-   even today to visualize flow, the change of a quantity over time -
-   in this case the dwindling size of Napoleon's army during the
-   1812-1813 Russia campaign that ended with his occupation of a
-   (burning) Moscow. Other data shown: geography (location and
-   distance), temperature changes along the way, time (during the
-   campaign). Fun fact: These diagrams are named after the British
+   The chart ("tableau graphique") is a kind of (1) "Sankey diagram"
+   used even today to (2) visualize flow, the change of a quantity
+   over time - in this case the dwindling size of Napoleon's army
+   during the 1812-1813 Russia campaign that ended with his occupation
+   of a (burning) Moscow. Other data shown: (3) geography (location
+   and distance), (4) temperature changes along the way, time (during
+   the campaign). Fun fact: These diagrams are named after the British
    engineer, who used it in 1898 to represent energy efficiency of a
    steam engine to illustrate how energy was conserved or lost during
    operation ([[https://en.wikipedia.org/wiki/Sankey_diagram#/media/File:JIE_Sankey_V5_Fig1.png][see here]]). It's used by Google (see: [[https://developers.google.com/chart/interactive/docs/gallery/sankey][Google Charts]]).
    #+end_quote
-3. What are the stages of the "data pipeline"?
+3. (*Discuss with your neighbor:*) How would you rate the quality of
+   Minard's chart as a data visualiation - what's good and what's
+   perhaps not so good about it?
+   #+begin_quote
+   | PROS                                         | CONS                                   |
+   |----------------------------------------------+----------------------------------------|
+   | Brings many different kinds of data together | We're not told where the data are from |
+   | Color is used sparingly, focus is on flow    | The chart is in French only            |
+   | You can grasp the story with one glance      | Temperature is given in Reaumur        |
+   | The chart looks aesthetically pleasing       | The artistic quality is distracting    |
+   #+end_quote
+4. What are the stages of the "data pipeline"?
    #+begin_quote
    1. Data storage and transformation
    2. Data modeling
@@ -46,18 +61,23 @@ critical discussion of a few visualization examples.
    4. Data visualization
    5. Data storytelling (insights)
    #+end_quote
-4. Which popular commercial data visualization tools do you know?
+5. Which popular commercial data visualization tools do you know?
    #+begin_quote
-   Tableau (by Salesforce) and Power BI (by Microsoft) are the two
+   *Tableau* (by Salesforce) and *Power BI* (by Microsoft) are the two
    most popular (in business) data visualization tools. They are
    essentially dashboards with integrated data analysis tools. In this
    course, you will get an introduction to Power BI. Another
-   super-useful skill is CAD/CAM (Computer-Aided Design /
+   super-useful skill is *CAD/CAM* (Computer-Aided Design /
    Computer-Aided Manufacturing). Some of our graduates learnt it in
    high school (!) and used it to enter successful careers. Perhaps we
    can get them to come back and do a workshop for us - any interest?
    #+end_quote
-5. What is the main purpose of computing trendlines?
+   #+attr_html: :width 600px:
+   [[../img/powerbi.png]]
+
+   #+attr_html: :width 600px:
+   [[../img/tableau1.png]]
+6. What is the main purpose of computing trendlines?
    #+begin_quote
    The main purpose of computing trendlines is to draw statistical
    conclusions from sample data. Here, "statistical" means both using
@@ -66,9 +86,8 @@ critical discussion of a few visualization examples.
    sample data, especially in its features and records.
    #+end_quote
 
-
 ** Codealong: A simple trendline example using =mtcars= data
 
-See =2_trendline.org=
+See =2_trendline.org= ([[https://github.com/birkenkrahe/dviz/blob/main/org/2_trendline.org][GitHub]])
 
-** 
+** Exploratory Data Analysis (EDA) with R
