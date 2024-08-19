@@ -70,3 +70,5 @@ critical discussion of a few visualization examples.
 ** Codealong: A simple trendline example using =mtcars= data
 
 See =2_trendline.org=
+
+** 

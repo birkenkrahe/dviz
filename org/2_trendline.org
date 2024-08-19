@@ -127,6 +127,7 @@
     abline(trend)  # plot linear model
   #+end_example
 
+
 * Further reading
 
 The =mtcars= package is used [[https://cran.r-project.org/web//packages//explore/vignettes/explore-mtcars.html][in this vignette]] (= essay-like package
