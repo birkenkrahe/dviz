@@ -18,8 +18,9 @@ critical discussion of a few visualization examples.
 
 This file, =notes.org= ([[https://github.com/birkenkrahe/dviz/blob/main/org/notes.org][GitHub]]) contains a log of class activities.
 
-** Project: published [[https://lyon.instructure.com/courses/2629/assignments/32827][1st sprint review instructions]] - get cracking!
-** Review questions:
+* Project: published [[https://lyon.instructure.com/courses/2629/assignments/32827][1st sprint review instructions]] - get cracking!
+
+* Review questions:
 
 1. What is data science mainly concerned with?
    #+begin_quote
@@ -86,8 +87,8 @@ This file, =notes.org= ([[https://github.com/birkenkrahe/dviz/blob/main/org/note
    sample data, especially in its features and records.
    #+end_quote
 
-** Codealong: A simple trendline example using =mtcars= data
+* Codealong: A simple trendline example using =mtcars= data
 
 See =2_trendline.org= ([[https://github.com/birkenkrahe/dviz/blob/main/org/2_trendline.org][GitHub]])
 
-** Exploratory Data Analysis (EDA) with R
+* Exploratory Data Analysis (EDA) with R
