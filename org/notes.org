@@ -3,13 +3,70 @@
 #+SUBTITLE: DSC 302 Lyon College Fall 2024
 #+STARTUP: overview hideblocks indent entitiespretty:
 #+PROPERTY: header-args:R :session *R* :results output :exports both
-* Week 1 - Orientation
+* Week 1 - Orientation & Examples
+
+#+attr_html: :width 200px:
+[[../img/Ways-to-Search-Google.jpg]]
+
+What we achieved in our first session: Course orientation, and
+critical discussion of a few visualization examples.
+
+* Week 2 - What is Data Visualization & =mtcars= Demo
+
+** Project: published [[https://lyon.instructure.com/courses/2629/assignments/32827][1st sprint review instructions]] - get cracking!
+
 ** Review questions:
 
-1. ...
+1. What is data science mainly concerned with?
    #+begin_quote
-
+   Data science is mainly concerned with identifying patterns in data
+   and interpreting or predicting them. 
+   #+end_quote
+2. Characterize Minard's 1869 chart - how would you describe it in
+   your own words?
+   #+attr_html: :width 700px: 
+   [[../img/1_minard.png]] 
+   #+begin_quote
+   The chart ("tableau graphique") is a kind of "Sankey diagram" used
+   even today to visualize flow, the change of a quantity over time -
+   in this case the dwindling size of Napoleon's army during the
+   1812-1813 Russia campaign that ended with his occupation of a
+   (burning) Moscow. Other data shown: geography (location and
+   distance), temperature changes along the way, time (during the
+   campaign). Fun fact: These diagrams are named after the British
+   engineer, who used it in 1898 to represent energy efficiency of a
+   steam engine to illustrate how energy was conserved or lost during
+   operation ([[https://en.wikipedia.org/wiki/Sankey_diagram#/media/File:JIE_Sankey_V5_Fig1.png][see here]]). It's used by Google (see: [[https://developers.google.com/chart/interactive/docs/gallery/sankey][Google Charts]]).
+   #+end_quote
+3. What are the stages of the "data pipeline"?
+   #+begin_quote
+   1. Data storage and transformation
+   2. Data modeling
+   3. Data analysis (EDA)
+   4. Data visualization
+   5. Data storytelling (insights)
+   #+end_quote
+4. Which popular commercial data visualization tools do you know?
+   #+begin_quote
+   Tableau (by Salesforce) and Power BI (by Microsoft) are the two
+   most popular (in business) data visualization tools. They are
+   essentially dashboards with integrated data analysis tools. In this
+   course, you will get an introduction to Power BI. Another
+   super-useful skill is CAD/CAM (Computer-Aided Design /
+   Computer-Aided Manufacturing). Some of our graduates learnt it in
+   high school (!) and used it to enter successful careers. Perhaps we
+   can get them to come back and do a workshop for us - any interest?
+   #+end_quote
+5. What is the main purpose of computing trendlines?
+   #+begin_quote
+   The main purpose of computing trendlines is to draw statistical
+   conclusions from sample data. Here, "statistical" means both using
+   mathematical methods in statistics, and "based on probability
+   theory" and certain assumptions, which are encapsulated in the
+   sample data, especially in its features and records.
    #+end_quote
 
-* Week 2 - 
 
+** Codealong: A simple trendline example using =mtcars= data
+
+See =2_trendline.org=

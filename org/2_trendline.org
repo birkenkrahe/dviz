@@ -1,0 +1,139 @@
+#+TITLE: Practice - Trendline with =Nile= data
+#+AUTHOR: Marcus Birkenkrahe
+#+startup: overview hideblocks indent entitiespretty:
+#+options: toc:nil num:nil title:nil subtitle:nil
+* Codealong: A trendline example using =mtcars= data
+
+** Plan
+
+- We're going to use Emacs in Google Cloud Shell to create a linear
+  regression model for the =mtcars= data frame, in order to draw a
+  trendline through the data and gain some insight about the
+  correlation of two features.
+
+- This will show you how simple it is to do fairly ambitious things in
+  R - we can do it in four lines of code. Unlike in Python, no
+  packages have to be loaded.
+
+- To do this, we need:
+  1) A dataset (=mtcars=)
+  2) A plotting function (=plot=)
+  3) A linear regression model function (=lm=)
+  4) A way to draw the trendline (=abline=)
+
+- R is not installed in Google Cloud Shell, so we need to do that -
+  fortunately, it is very fast. Unfortunately, we'll have to keep
+  doing it[fn:1]. 
+
+** Loading the dataset with =data=
+
+- The =mtcars= dataset is built into "base R" which comes from CRAN at
+  =cran.r-project.org=, the Comprehensive R Archive Network. To load it
+  you can use the =data= function:
+  #+begin_src R :session *R* :results none
+    data(mtcars)
+  #+end_src
+
+- Can you explain the code block header arguments?
+  #+begin_quote
+  1. =:session *R*= means that the code will be executed in an R console
+     buffer named =*R*=. If it does not exist, it will be created.
+  2. =:results none= means that no results will be printed to =stdout= (in
+     this case: the screen) because =data= does not generate output.
+  #+end_quote
+
+- =data= produces no output but it loads =Nile= into R's current
+  environment - how can we check what's in the environment?
+  #+begin_src R :session *R* :results output :exports both
+    ls() # Output: "Nile"
+  #+end_src
+
+  #+RESULTS:
+  : [1] "mtcars" "Nile"   "trend"
+
+** Plotting =mtcars= data
+
+- We already plotted =mtcars= miles-per-gallon against weight:
+  #+begin_src R :file mtcars.png :results file graphics output :exports both :session *R*
+    plot(mtcars$mpg ~ mtcars$wt)
+  #+end_src
+
+  #+RESULTS:
+  [[file:mtcars.png]]
+
+- You can open the link with =C-c C-o= in a separate buffer, or in this
+  file with =<F6>=.
+
+- Notice the added header arguments:
+  #+begin_quote
+  1. =:file mtcars.png= to save graphical output to a PNG file.
+  2. =:results file graphics output= to print to file and to =stdout=.
+  #+end_quote
+
+** Computing a trendline with =lm=
+
+- How are the two variables correlated and what does that mean?
+  #+begin_quote
+  Miles-per-gallon and car weight are negatively correlated, which
+  means that they decrease together.
+  #+end_quote
+
+- A trendline is a linear function: how is it computed?
+  #+begin_quote
+  The slope and intercept of the trendline are computed by fitting a
+  line to the points of the plot. "Fitting" means minimizing a measure
+  of distance between the line and
+  #+end_quote
+
+- In R, the =lm= ("linear model") function from the =stats= package will
+  perform the fit - it needs two vectors of equal length, or (x,y)
+  pairs:
+  #+begin_src R :session *R* :results output :exports both
+    trend = lm(mtcars$mpg ~ mtcars$wt)
+    trend
+  #+end_src
+
+  #+RESULTS:
+  :
+  : Call:
+  : lm(formula = mtcars$mpg ~ mtcars$wt)
+  :
+  : Coefficients:
+  : (Intercept)    mtcars$wt
+  :      37.285       -5.344
+
+** Plotting a trendline with =abline=
+
+- To plot the trendline, we draw the linear graph in the former
+  scatterplot using =abline= ("line with a and slope b") from the
+  =graphics= package.
+
+- For the code block, we need the graphics header arguments again. In
+  R, a graphical =plot= object cannot be stored:
+  #+begin_src R :file mtcars_lm.png :session *R* :results file graphics output :exports both
+    plot(mtcars$mpg ~ mtcars$wt)
+    abline(trend)
+  #+end_src
+
+  #+RESULTS:
+  [[file:mtcars_lm.png]]
+
+- As promised, we achieved the desired result in four lines of code
+  (though because =mtcars= is built-in, we only needed three lines):
+  #+begin_example R
+    data(mtcars) # load dataset
+    plot(mtcars$mpg ~ mtcars$wt) # plot data
+    trend = lm(mtcars$mpg ~ mtcars$wt) # compute linear model
+    abline(trend)  # plot linear model
+  #+end_example
+
+* Further reading
+
+The =mtcars= package is used [[https://cran.r-project.org/web//packages//explore/vignettes/explore-mtcars.html][in this vignette]] (= essay-like package
+documentation) of the =explore= package, showing many nice
+visualizations in the "Tidyverse" style of R rather than base R)
+
+* Footnotes
+
+[fn:1]There is a way to install R locally but it's more complicated
+than =sudo apt install r-base=. We'll do this only if we have to.
