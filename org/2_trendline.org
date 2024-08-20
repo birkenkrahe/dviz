@@ -3,7 +3,6 @@
 #+startup: overview hideblocks indent entitiespretty:
 #+options: toc:nil num:nil title:nil subtitle:nil
 * Codealong: A trendline example using =mtcars= data
-
 ** Plan
 
 - We're going to use Emacs in Google Cloud Shell to create a linear
@@ -126,7 +125,6 @@
     trend = lm(mtcars$mpg ~ mtcars$wt) # compute linear model
     abline(trend)  # plot linear model
   #+end_example
-
 
 * Further reading
 
