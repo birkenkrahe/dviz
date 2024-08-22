@@ -18,19 +18,19 @@ critical discussion of a few visualization examples.
 
 This file, =notes.org= ([[https://github.com/birkenkrahe/dviz/blob/main/org/notes.org][GitHub]]) contains a log of class activities.
 
-* Project: published [[https://lyon.instructure.com/courses/2629/assignments/32827][1st sprint review instructions]] - get cracking!
+* DONE Project: published [[https://lyon.instructure.com/courses/2629/assignments/32827][1st sprint review instructions]] - get cracking!
 
-* Review questions:
+* DONE Review questions:
 
 1. What is data science mainly concerned with?
    #+begin_quote
    Data science is mainly concerned with identifying patterns in data
-   and interpreting or predicting them. 
+   and interpreting or predicting them.
    #+end_quote
 2. Characterize Minard's 1869 chart - how would you describe it in
    your own words?
-   #+attr_html: :width 700px: 
-   [[../img/1_minard.png]] 
+   #+attr_html: :width 700px:
+   [[../img/1_minard.png]]
    #+begin_quote
    The chart ("tableau graphique") is a kind of (1) "Sankey diagram"
    used even today to (2) visualize flow, the change of a quantity
@@ -87,8 +87,75 @@ This file, =notes.org= ([[https://github.com/birkenkrahe/dviz/blob/main/org/note
    sample data, especially in its features and records.
    #+end_quote
 
-* Codealong: A simple trendline example using =mtcars= data
+* IN PROGRESS Codealong: A simple trendline example using =mtcars= data
 
 See =2_trendline.org= ([[https://github.com/birkenkrahe/dviz/blob/main/org/2_trendline.org][GitHub]])
 
-* Exploratory Data Analysis (EDA) with R
+** Review questions
+1. Login Google Cloud Shell
+   #+begin_quote
+   URL: =shell.cloud.google.com= or =cloud.google.com/shell=
+   #+end_quote
+2. Plot directly from the R console
+   #+begin_quote
+   > png("random.png")    # prepare graphics file (don't create it)
+   > plot(rnorm(1000))    # plot 1000 random points to file
+   > dev.off()            # close graphics device
+   #+end_quote
+3. What does the GitHub Hello World Project consist of?
+   #+begin_quote
+   1. Create a =public= repo[sitory] =hello-world= with a =README= file, a
+      =.gitignore= template, and a copyright =LICENSE= file.
+   2. Create a new branch called =readme-edits= besides the =main= branch.
+   3. Make a change to =README.md= in the =readme-edits= branch.
+   4. =Commit= the change (the branches have now diverged).
+   5. The =main= branch now has a =pull= request for the changes made.
+   6. After checking out the changes, the branches are =merged=.
+
+   Demo: remote updating with =git= on the command-line.
+   #+end_quote
+4. How can you check in Linux if R is available?
+   #+begin_src bash :results output :exports both
+     which R      # location of the program
+     R --version  # version of the installed program
+     R --vanilla  # start R without an environment (for demo only)
+   #+end_src
+5. How can you get R?
+   #+begin_quote
+   On the command-line, run =sudo apt install r-base -y=
+   #+end_quote
+6. What is =ess=?
+   #+begin_quote
+   "Emacs Speaks Statistics" (see [[https://ess.r-project.org][ess.r-project.org]]) is an Emacs
+   package that connects Emacs and R so that R can be run inside Emacs
+   (also works for other statistical analysis programs).
+   #+end_quote
+7. How can you get =ess=?
+   #+begin_quote
+   - Run =M-x list-packages= inside Emacs
+   - Find (=C-s=) the =ess= package
+   - Mark for install with =i=
+   - Run install with =x=
+   #+end_quote
+8. What is R's workspace?
+   #+begin_quote
+   The workspace is where all user-defined variables or functions are
+   stored to be loaded when R is started next. You can opt to not save
+   the workspace when you leave the R console with =q()=.
+   #+end_quote
+9. How does an R source code block in Org-mode look like?
+   #+begin_example Org
+     #+begin_src R :session *R* :results output
+       ## code
+     #+end_src
+   #+end_example
+10. What is needed to compute & plot a trendline model on a dataset?
+    #+begin_quote
+    Four R functions:
+    1) A dataset (=data=)
+    2) A plotting function (=plot=)
+    3) A linear regression model function (=lm=)
+    4) A way to draw the trendline (=abline=)
+    #+end_quote
+
+* NEXT Exploratory Data Analysis (EDA) with R
