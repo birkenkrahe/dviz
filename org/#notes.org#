@@ -144,7 +144,7 @@ See =2_trendline.org= ([[https://github.com/birkenkrahe/dviz/blob/main/org/2_tre
    The workspace is where all user-defined variables or functions are
    stored to be loaded when R is started next. You can opt to not save
    the workspace when you leave the R console with =q()=.
-   #+end_quote
+nnnnn   #+end_quote
 9. How does an R source code block in Org-mode look like?
    #+begin_example Org
      #+begin_src R :session *R* :results output
