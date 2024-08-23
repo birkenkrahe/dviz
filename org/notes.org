@@ -91,7 +91,7 @@ This file, =notes.org= ([[https://github.com/birkenkrahe/dviz/blob/main/org/note
 
 See =2_trendline.org= ([[https://github.com/birkenkrahe/dviz/blob/main/org/2_trendline.org][GitHub]])
 
-** Review questions
+* NEXT Review questions
 1. Login Google Cloud Shell
    #+begin_quote
    URL: =shell.cloud.google.com= or =cloud.google.com/shell=
@@ -158,12 +158,9 @@ See =2_trendline.org= ([[https://github.com/birkenkrahe/dviz/blob/main/org/2_tre
     4) A way to draw the trendline (=abline=)
     #+end_quote
 
+* TODO Finish the "trendline" coding example in Google Cloud Shell
 
-
-
-** Finish the "trendline" coding example in Google Cloud Shell
-
-* Review: DataCamp's "Visualizing distributions"
+* TODO Review: DataCamp's "Visualizing distributions"
 
 *Note:* For the test, you need to know all the concepts mentioned in the
 DataCamp lesson, not only the ones that we're reviewing here.
@@ -241,4 +238,4 @@ DataCamp lesson, not only the ones that we're reviewing here.
    #+RESULTS:
    [[file:tg.png]]
 
-* NEXT Exploratory Data Analysis (EDA) with R (Lecture & practice)
+* TODO Exploratory Data Analysis (EDA) with R (Lecture & practice)
