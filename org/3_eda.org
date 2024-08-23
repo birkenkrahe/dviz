@@ -56,6 +56,20 @@
   + manufacturing data from a production line
   + application information from a hiring process
 
+#+begin_notes
+Each of these terms emphasizes different objects and favors different
+visualization tools:
+- *Entities* are stored & queried as SQL tables in relational database
+  systems (and the corresponding algebras)
+- *Events* drive processes, and event logs visualize processes and make
+  them accessible to analysis (and can be visualized as graphs).
+- *Processes* are event-driven structures that enable automation.
+
+All of these can be visualized as Petri nets - directed, bipartite
+graphs that constitute discrete dynamical systems. The two parts are
+places and transitions. Realtime visualization with [[https://youtu.be/KvDKgzkCPHI?si=nqJnv15Ybez4vMtY][process mining]].
+#+end_notes    
+
 * DATA - PRACTICE
 
 - Data structures = rectangular array of observed values
@@ -100,6 +114,11 @@
     - *Completeness* - origin
     - *Consistency* - logic, values, (time) dependency
     - *Accuracy* - origin and validity
+
+    With the rising importance of LLMs meta-data become even more
+    important because they provide context, improve user interaction
+    (cp. ChatGPT memory of you), allow for model updates, and bias
+    mitigation.
     #+end_notes
 
     

@@ -163,4 +163,82 @@ See =2_trendline.org= ([[https://github.com/birkenkrahe/dviz/blob/main/org/2_tre
 
 ** Finish the "trendline" coding example in Google Cloud Shell
 
+* Review: DataCamp's "Visualizing distributions"
+
+*Note:* For the test, you need to know all the concepts mentioned in the
+DataCamp lesson, not only the ones that we're reviewing here.
+
+/Fire up your Emacs Org-mode file testR.org to code along./
+
+1. What is a "data distribution"?
+   #+begin_quote
+   A data distribution is a collection of data points (literally
+   points, e.g. (x,y) in the plane) exhibiting a pattern in terms of
+   - Centrality (indicating where the data are centered)
+   - Spread (degree of distance from the center)
+   - Shape (or Gestalt - symmetry)
+   - Outliers (points not part of the "central" pattern)
+   - Underlying probabilistic distribution (e.g. Gaussian distribution)
+   #+end_quote
+2. How can you gain insights into data distributions?
+   #+begin_quote
+   - By calculating summary statistics (mean, median, standard deviation)
+   - By running models (linear and logistic regression)
+   - By drawing plots (e.g. scatterplots, histograms, barplots)
+   #+end_quote
+3. What is the "Datasaurus Dozen"?
+   #+begin_quote
+   The "Datasaurus Dozen" is a dataset created to illustrate the
+   importance of visualizing data before analyzing it. The data have
+   almost identical summary statistics but totally different visual
+   patterns. The data are the bigger version of the "Anscombe
+   quartet".
+   #+end_quote
+   
+   #+begin_src R :session *R* :results output :exports both
+     data(anscombe)
+     summary(anscombe)
+   #+end_src
+4. What's the difference between continuous and categorical
+   variables - can you give examples for each?
+   #+begin_quote
+   - Continous variables are usually numeric from the (mathematical )
+     set of real numbers $\mathbb{R}$. Example: temperature, height.
+   - Categorical variables are from a finite, discrete subset that can
+     be mapped onto the set of whole numbers $\mathbb{Z}$ (though the
+     mapping is more meaningful for ordered sets). Example: countries.
+   - In R, categorical variables are represented as =factor= vectors.
+   #+end_quote
+
+5. When should you use a histogram and what are you looking for?
+   #+begin_quote
+   You use histograms to visualize frequencies (counts) of a single,
+   continuous variable. Example: water flow through the river =Nile=.
+
+   You're looking for the shape of the frequency distribution.
+   #+end_quote
+
+   #+begin_src R :file nile.png :session *R* :results file graphics output :exports both
+     hist(Nile)
+   #+end_src
+
+6. When should you use a boxplot?
+   #+begin_quote
+   You use a boxplot to visualize the distribution of a continuous
+   variable split by a categorical variable.
+
+   You use boxplots e.g. to compare the distributions of the
+   continuous variable for each category. Example: =ToothGrowth= length
+   of Guinea Pigs by vitamin C source =supp=.
+   #+end_quote
+
+   #+begin_src R :file tg.png :session *R* :results file graphics output :exports both
+     data(ToothGrowth)
+     tg <- ToothGrowth
+     boxplot(tg$len ~ tg$supp)
+   #+end_src
+
+   #+RESULTS:
+   [[file:tg.png]]
+
 * NEXT Exploratory Data Analysis (EDA) with R (Lecture & practice)
