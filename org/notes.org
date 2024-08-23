@@ -158,4 +158,9 @@ See =2_trendline.org= ([[https://github.com/birkenkrahe/dviz/blob/main/org/2_tre
     4) A way to draw the trendline (=abline=)
     #+end_quote
 
-* NEXT Exploratory Data Analysis (EDA) with R
+
+
+
+** Finish the "trendline" coding example in Google Cloud Shell
+
+* NEXT Exploratory Data Analysis (EDA) with R (Lecture & practice)
