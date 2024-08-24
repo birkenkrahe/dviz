@@ -1,4 +1,4 @@
-#+TITLE: Practice - Trendline with =Nile= data
+#+TITLE: Practice
 #+AUTHOR: Marcus Birkenkrahe
 #+startup: overview hideblocks indent entitiespretty:
 #+options: toc:nil num:nil title:nil subtitle:nil

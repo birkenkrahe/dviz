@@ -18,9 +18,9 @@ critical discussion of a few visualization examples.
 
 This file, =notes.org= ([[https://github.com/birkenkrahe/dviz/blob/main/org/notes.org][GitHub]]) contains a log of class activities.
 
-* DONE Project: published [[https://lyon.instructure.com/courses/2629/assignments/32827][1st sprint review instructions]] - get cracking!
+** Project: published [[https://lyon.instructure.com/courses/2629/assignments/32827][1st sprint review instructions]] - get cracking!
 
-* DONE Review questions:
+** Review questions:
 
 1. What is data science mainly concerned with?
    #+begin_quote
@@ -87,11 +87,11 @@ This file, =notes.org= ([[https://github.com/birkenkrahe/dviz/blob/main/org/note
    sample data, especially in its features and records.
    #+end_quote
 
-* IN PROGRESS Codealong: A simple trendline example using =mtcars= data
+** Codealong: A simple trendline example using =mtcars= data
 
 See =2_trendline.org= ([[https://github.com/birkenkrahe/dviz/blob/main/org/2_trendline.org][GitHub]])
 
-* NEXT Review questions
+** Review questions - Shell
 
 1. Login Google Cloud Shell
    #+begin_quote
@@ -160,7 +160,9 @@ See =2_trendline.org= ([[https://github.com/birkenkrahe/dviz/blob/main/org/2_tre
     4) A way to draw the trendline (=abline=)
     #+end_quote
 
-* TODO Finish the "trendline" coding example in Google Cloud Shell
+* Week 3
+#+attr_html: :width 400px:
+[[../img/mtcars_lm.png]]
 
 * TODO Review: DataCamp's "Visualizing distributions"
 
