@@ -243,3 +243,5 @@ DataCamp lesson, not only the ones that we're reviewing here.
    [[file:tg.png]]
 
 * TODO Exploratory Data Analysis (EDA) with R (Lecture & practice)
+#+attr_html: :width 250px:
+[[../img/1_textbook.jpg]]

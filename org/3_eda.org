@@ -311,14 +311,15 @@ perceived, and experience with other data analyses." (Diaconis, 1985)
 * PRACTICE: RAW VS. TRANSFORMED GRAPH DATA
 
 - The following two sets of plots are constructed from the ~brain~
-  element of the ~mammals~ dataset from the ~MASS~ package that lists body
-  and brain weights for 62 different animals.
+  element of the ~mammals~ dataset from the =MASS= package ([[https://cran.r-project.org/package=MASS][doc]]) that
+  lists body and brain weights for 62 different animals. The =qqplot=
+  function is part of the =EnvStats= package ([[https://www.rdocumentation.org/packages/EnvStats/versions/2.3.1/topics/qqPlot][doc]]).
 
 - *What do you think which graphs are more meaningful and why?*
 
   #+begin_src R :file ../img/2_brain.png :exports both :session *R* :results output graphics file
     library(MASS)
-    library(car)
+    library(EnvStats)
     par(mfrow=c(2,2))
     truehist(mammals$brain)
     truehist(log(mammals$brain))
@@ -408,7 +409,7 @@ of > 800k downloads (Source: CRAN, 2021).
   Windows, when you're asked, do not compile from source):
   #+begin_example R
   install.packages("MASS")
-  install.packages("car")
+  install.packages("car", dependencies=TRUE)
   #+end_example
 
 - Loading = load package (functions + datasets) into current R
