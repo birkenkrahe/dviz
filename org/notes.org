@@ -164,12 +164,18 @@ See =2_trendline.org= ([[https://github.com/birkenkrahe/dviz/blob/main/org/2_tre
 #+attr_html: :width 400px:
 [[../img/mtcars_lm.png]]
 
+- [ ] Review: First DataCamp lesson
+- [ ] Google Colab coding platform
+- [ ] Catching up (or moving fasteR) on R
+- [ ] Exploratory Data Analysis with R
+
 * TODO Review: DataCamp's "Visualizing distributions"
 
 *Note:* For the test, you need to know all the concepts mentioned in the
 DataCamp lesson, not only the ones that we're reviewing here.
 
-/Fire up your Emacs Org-mode file testR.org to code along./
+/Fire up your Emacs Org-mode file testR.org to code along./ For a
+different experience, use Google Colab at [[https://colab.research.google.com/][colab.research.google.com]].
 
 1. What is a "data distribution"?
    #+begin_quote
@@ -242,6 +248,27 @@ DataCamp lesson, not only the ones that we're reviewing here.
    #+RESULTS:
    [[file:tg.png]]
 
-* TODO Exploratory Data Analysis (EDA) with R (Lecture & practice)
+* NEXT Exploratory Data Analysis (EDA) with R (Lecture & practice)
 #+attr_html: :width 250px:
 [[../img/1_textbook.jpg]]
+
+- What if you don't know any R at all?
+  #+begin_quote
+  I will introduce the necessary commands to you. Vectors and data
+  frames are the only data structures that you need, and loops are not
+  needed because *vectorization* and the =apply= functions are available.
+  #+end_quote
+
+- What if I feel I need more R
+  #+begin_quote
+  Complete the DataCamp course "Introduction to R" in 2-4 hours on
+  your own. If you're in DSC 105, you need to complete this anyway.
+  #+end_quote
+
+- What if I don't like DataCamp or I want to move faster?
+  #+begin_quote
+  Fork & work through Norm Matloff's "fasteR" tutorial on GitHub at
+  [[https://github.com/matloff/fasteR][github.com/matloff/fasteR]]. It's the best resource for non-comp-sci
+  people available. Matloff is a statistician + computer scientist + R
+  champion. His book "The Art of R Programming" is a jewel, too.
+  #+end_quote  

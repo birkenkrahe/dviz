@@ -4,8 +4,11 @@
 #+STARTUP: hideblocks overview indent inlineimages
 #+PROPERTY: header-args:R :session *R* ;results output :exports both
 #+ATTR_HTML: :width 600px
-[[../img/2_analysis.svg]]
+#+CAPTION: Impression, soleil levant (sunrise) by Claude Monet (1872)
+[[../img/monet.jpg]]
+
 * README
+
 - Why do we analyze data?
 - Data as a concept and as a practice
 - The importance of metadata
@@ -15,6 +18,7 @@
 - Why R?
 - R package management
 - Download R practice file
+
 * Why do we analyze data?
 #+ATTR_HTML: :width 300px
 #+caption: Caspar David Friedrich, Wanderer above a sea of fog (1818)
@@ -70,7 +74,7 @@ graphs that constitute discrete dynamical systems. The two parts are
 places and transitions. Realtime visualization with [[https://youtu.be/KvDKgzkCPHI?si=nqJnv15Ybez4vMtY][process mining]].
 #+end_notes    
 
-* DATA - PRACTICE
+* Data - practice
 
 - Data structures = rectangular array of observed values
 - Rows = observation of entity, event, or process
@@ -96,7 +100,21 @@ places and transitions. Realtime visualization with [[https://youtu.be/KvDKgzkCP
 - Meta data supplement data frame content
 #+end_notes
 
-* META DATA
+- Which other data structures can you name?
+  #+begin_quote
+  - *Arrays*
+  - *Vectors*
+  - *Matrices*
+  - *Lists*
+  - *Factor vectors*
+  - *Graphs*
+  - Classes
+  - Queues
+  - Heaps
+  - Stacks
+  #+end_quote
+
+* Meta data
 
 #+attr_html: :width 300px
 #+caption: Greek goddess of peace and spring "Eirene"
@@ -121,7 +139,7 @@ places and transitions. Realtime visualization with [[https://youtu.be/KvDKgzkCP
     mitigation.
     #+end_notes
 
-    
+    Value of meta data:
     #+begin_quote
     "As potentially valuable as metadata is, we cannot afford to accept it
     uncritically: we should always cross-check the metadata with the
@@ -130,7 +148,7 @@ places and transitions. Realtime visualization with [[https://youtu.be/KvDKgzkCP
     available." (Pearson, 2018)
     #+end_quote
 
-* PRACTICE: META OR NOT META?
+* Practice: meta or not meta?
 
 #+attr_html: :width 600px
 #+caption: datascience.codata.org/articles/10.5334/dsj-2022-010/
@@ -279,7 +297,6 @@ perceived, and experience with other data analyses." (Diaconis, 1985)
     fv <- factor(c("male","female"))
     fv
   #+end_src
-
   #+RESULTS: level
   : [1] male   female
   : Levels: female male
@@ -297,13 +314,13 @@ perceived, and experience with other data analyses." (Diaconis, 1985)
 
 * SOME ISSUES WITH GRAPHS
 
-- Humans are better at seeing patterns in graphs than numbers[fn:3]
+- Humans are better at seeing patterns in graphs than numbers[fn:2]
   #+attr_html: :width 500px
   #+caption: Anscombe dataset
   [[../img/2_anscombe.png]]
 
   - Use different graphs to explore and to explain - data mining is
-    /exploratory/, data story telling is /explanatory/[fn:2]
+    /exploratory/, data story telling is /explanatory/[fn:3]
 
   - Usefulness of a graph depends on *how data* are displayed, and
     strongly on *which data* are chosen to be displayed
@@ -521,14 +538,6 @@ MacOS because Unix does not know file type extensions.
 
 * Footnotes
 
-[fn:4]Though they can also be enablers of education: e.g. Linux and
-the command line shell as a data science tool, and online REPL
-installations (usually Docker containers) as training grounds.
-
-[fn:3]The plots show /Anscombe's quartet/ - four scatterplots which
-despite having different numerical values all have identical mean,
-variance, and standard correlation (Source: revolutionanalytics.com).
-
 [fn:1]Text data can be normalized (reduced - e.g. parsed into words,
 eliminating common words like "and", "of" and punctuation marks), and
 converted to numbers. The numbers are analyzed mathematically, and the
@@ -536,7 +545,15 @@ result is transformed back to allow interpretation of the original
 text data. This technique leads to impressive NLP feats (so-called
 [[https://en.wikipedia.org/wiki/Transformer_(machine_learning_model)][transformer ML models]] based on massive mined data sets, like [[https://openai.com/api/][GPT-3]].)
 
-[fn:2]This difference goes deeper than data science: explanatory
+[fn:2]The plots show /Anscombe's quartet/ - four scatterplots which
+despite having different numerical values all have identical mean,
+variance, and standard correlation (Source: revolutionanalytics.com).
+
+[fn:3]This difference goes deeper than data science: explanatory
 research is usually confirmatory (of some theory), while exploratory
 research is used to construct, or build, theory. Personal note: All of
 my own research has been exploratory.
+
+[fn:4]Though they can also be enablers of education: e.g. Linux and
+the command line shell as a data science tool, and online REPL
+installations (usually Docker containers) as training grounds.
