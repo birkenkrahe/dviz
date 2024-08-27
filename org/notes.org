@@ -169,7 +169,7 @@ See =2_trendline.org= ([[https://github.com/birkenkrahe/dviz/blob/main/org/2_tre
 - [ ] Catching up (or moving fasteR) on R
 - [ ] Exploratory Data Analysis with R
 
-* TODO Review: DataCamp's "Visualizing distributions"
+* DONE Review: DataCamp's "Visualizing distributions"
 
 *Note:* For the test, you need to know all the concepts mentioned in the
 DataCamp lesson, not only the ones that we're reviewing here.
@@ -248,6 +248,23 @@ different experience, use Google Colab at [[https://colab.research.google.com/][
    #+RESULTS:
    [[file:tg.png]]
    
+
+* TODO Linux server has arrived
+
+- You should have received your VM server address and password
+
+- Start "Remote Desktop Protocol" on your (Windows) PC
+
+- Enter the server name (e.g. =cslinux01.lyon.edu=) => =Connect=
+
+- Login the =Xorg= session with username = email, and password
+
+- Do not shut down or log out of the VM but only close the window
+
+
+
+
+
 * NEXT Exploratory Data Analysis (EDA) with R (Lecture & practice)
 #+attr_html: :width 250px:
 [[../img/1_textbook.jpg]]
