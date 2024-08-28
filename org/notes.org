@@ -248,8 +248,7 @@ different experience, use Google Colab at [[https://colab.research.google.com/][
    #+RESULTS:
    [[file:tg.png]]
    
-
-* TODO Linux server has arrived
+* IN PROGRESS Linux server has arrived
 
 - You should have received your VM server address and password
 
@@ -257,13 +256,24 @@ different experience, use Google Colab at [[https://colab.research.google.com/][
 
 - Enter the server name (e.g. =cslinux01.lyon.edu=) => =Connect=
 
-- Login the =Xorg= session with username = email, and password
+- Login the =Xorg= session with username = =firstname.lastname= and pw
 
 - Do not shut down or log out of the VM but only close the window
 
+- Download config file with =wget -O .emacs https://tinyurl.com/lyon-emacs=
 
+- Start Emacs and install ESS package with =list-packages= followed by =i=
+  and =x= with the cursor on the line of the =ess= package
 
-
+- To test, create a sample R file =testR.org= with a code block (create
+  with =<s <TAB>=) and run it (with =C-c C-c=):
+  #+begin_example
+  #+property: header-args:R :session *R* :results output
+  * Sample file
+    #+begin_src R
+      str(mtcars)
+    #+end_src
+  #+end_example
 
 * NEXT Exploratory Data Analysis (EDA) with R (Lecture & practice)
 #+attr_html: :width 250px:
