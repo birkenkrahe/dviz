@@ -1,0 +1,6 @@
+#+property: header-args:R :session *R* :results output
+#+startup: overview hideblocks indent
+
+* The =mtcars= dataset
+
+
