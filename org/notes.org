@@ -312,6 +312,7 @@ different experience, use Google Colab at [[https://colab.research.google.com/][
    #+begin_src R :file ../img/scatter.png :session *R* :results file graphics output :exports both
      plot(x=mtcars$wt,
           y=mtcars$mpg,
+          type="p",
           pch=16)
    #+end_src
 
@@ -328,11 +329,12 @@ different experience, use Google Colab at [[https://colab.research.google.com/][
    #+begin_src R :file ../img/scatter2.png :session *R* :results file graphics output :exports both
      ## Assuming you have your data in two vectors: 'area' and 'price'
      ## Example data
-     foo <- c(846, 2930, 1037, 576, 5600, 1571, 1913, 20000, 30000)
+     area <- c(846, 2930, 1037, 576, 5600, 1571, 1913, 20000, 30000)
      price <- c(0.3250, 2.1950, 0.5740, 0.5990, 3.9500, 0.2999, 0.6950, 50, 100)
 
      ## 1 x 2 plot pane to scale
      par(mfrow=c(1,2),pty="s")
+
      ## Create scatter plot from the data
      plot(area, price,
           xlab="Area (ft²)",
@@ -356,7 +358,7 @@ different experience, use Google Colab at [[https://colab.research.google.com/][
    A measure of correlation of two vectors of same length x, y is how
    well you can draw a straight line through the points (x,y). High
    correlation means that the values of x and y rise and fall
-   together.
+   together linearly.
    #+end_quote
 
 4. What does a good linear fit through a logarithmic plot mean for the
@@ -430,6 +432,7 @@ different experience, use Google Colab at [[https://colab.research.google.com/][
    Code examples:
    #+begin_src R :file ../img/len.png :session *R* :results file graphics output :exports both
      ## bar plot of the tooth lengths over all observations
+     tg <- ToothGrowth
      barplot(height = tg$len, # better: with `sort`
              xlab = "Guinea pigs", # categorical (independent) variable
              ylab = "Length", # numeric (dependent) variable
@@ -441,7 +444,7 @@ different experience, use Google Colab at [[https://colab.research.google.com/][
 
    #+begin_src R :file ../img/supp.png :session *R* :results file graphics output :exports both
      ## bar plot of the number of observations in each supply type dataset
-     supp <- table(ToothGrowth$supp)
+     supp <- table(tg$supp)
      barplot(height = supp)
    #+end_src
 
