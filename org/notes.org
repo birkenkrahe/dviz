@@ -301,7 +301,7 @@ different experience, use Google Colab at [[https://colab.research.google.com/][
   #+end_quote
 
 
-* Review questions "Visualizing two variables"
+* Review questions "Visualizing two variables" (DataCamp)
 
 1. What is a scatter plot?
    #+begin_quote
@@ -357,7 +357,7 @@ different experience, use Google Colab at [[https://colab.research.google.com/][
    well you can draw a straight line through the points (x,y). High
    correlation means that the values of x and y rise and fall
    together.
-   #+end_quote   
+   #+end_quote
 
 4. What does a good linear fit through a logarithmic plot mean for the
    distribution in practice?
@@ -372,30 +372,146 @@ different experience, use Google Colab at [[https://colab.research.google.com/][
    - You want to know how their values relate to each other
    - You know that consecutive observations are connected
 
-   An example would be any plot of observations over time (also called
-   a 'time series'). Line plots can be overlayed easily.
-   #+end_quote   
+   An example would be plot of connected observations over time (also
+   called a 'time series'). Line plots can be overlayed easily.
+   #+end_quote
    Example:
    #+begin_src R :file ../img/ts.png :session *R* :results file graphics output :exports both
      plot(Nile)
      par(new=TRUE)
      plot(Nile+100, # shift points up
           col="red",
-          axes=FALSE,  # don't print axes 
+          axes=FALSE,  # don't print axes
           ylab="")  # don't print labels
    #+end_src
 
    #+RESULTS:
    [[file:../img/ts.png]]
 
-6. Which examples should you pick when educating people about data
-   science? Should the data be (easily) validatable or not? Examples?
+6. What's the relationship between time as the independent variable
+   and a line plot as a suitable visualization?
    #+begin_quote
-   - Examples for contested data: growth of COVID-19 cases world-wide,
-     wealth of nations, gun murder data, data about abortions.
-   - Example for uncontested data: growth of world population, change
-     in baby names, water flow through the Nile, number of births or
-     deaths.
+   - Time on the x-axis (measurements over time) does not always mean
+     line-plot, and you don't need time on the x-axis for meaningful
+     line plots.
+
+   - In terms of logic, this means that time on the x-axis is neither
+     a sufficient nor a necessary criterion for a line plot:
+     1) Measurements over time do not lend themselves to line plots if
+        the observations are not conceptually connected over
+        time. Example: critics scores as a function of songs published
+        over time (just a bunch of dots).
+     2) A line plot over time may not yield the best insights if
+        another variable contains the story. Example: number of
+        offenders in different age groups over time.
    #+end_quote
-   
-   
+
+7. What's your view on using COVID-19 data in this introductory
+   lesson? Pros and Cons?
+   #+begin_quote
+   - Pro: highly relevant to today's population, and much discussed
+     (though perhaps not so much now). Lots of data to be found.
+   - Con: Years after the epidemic, some of the data are highly
+     contested and it may be difficult to ascertain their validity.
+   #+end_quote
+
+8. When should you use a barplot, and what's an example?
+   #+begin_quote
+   Bar plots are used when you want counts or percentages of a
+   categorical variable. They look similar to histograms, which
+   represent counts or frequencies over a continuous numeric variable.
+
+   Example: The =ToothGrowth= dataset has a numeric variable, =len= (tooth
+   length), and a categorical variable, =supp= (Vitamin C supply type),
+   and we can ask (1) how are the lengths distributed across the
+   observations (each being a different guinea pig), and (2) how many
+   observations (guinea pigs) were given each supply?
+   #+end_quote
+   Code examples:
+   #+begin_src R :file ../img/len.png :session *R* :results file graphics output :exports both
+     ## bar plot of the tooth lengths over all observations
+     barplot(height = tg$len, # better: with `sort`
+             xlab = "Guinea pigs", # categorical (independent) variable
+             ylab = "Length", # numeric (dependent) variable
+             main = "Tooth lengths in ToothGrowth")
+   #+end_src
+
+   #+RESULTS:
+   [[file:../img/len.png]]
+
+   #+begin_src R :file ../img/supp.png :session *R* :results file graphics output :exports both
+     ## bar plot of the number of observations in each supply type dataset
+     supp <- table(ToothGrowth$supp)
+     barplot(height = supp)
+   #+end_src
+
+   #+RESULTS:
+   [[file:../img/supp.png]]
+
+   More interesting:
+   #+begin_src R :file ../img/supp2.png :session *R* :results file graphics output :exports both
+                                             # More interesting: how many observations in each group had length > 15 mm?
+     supp15 <- table(tg$supp[tg$len>15])
+     barplot(height = supp15,
+             xlab = "Supply type", # categorical (independent) variable
+             ylab = "Number of guinea pigs", # numeric (dependent) variable
+             main = "Guinea pigs in ToothGrowth with tooth length > 15 mm")
+   #+end_src
+
+   #+RESULTS:
+   [[file:../img/supp2.png]]
+
+   The same information is, in this simple case much more easily
+   obtained with a =table=:
+   #+begin_src R :session *R* :results output :exports both
+     supp # equal number of guinea pigs in each supply group
+     supp15  # different number of guinea pigs in a subset of len > 15 mm
+   #+end_src
+
+   #+RESULTS:
+   :
+   : OJ VC
+   : 30 30
+   :
+   : OJ VC
+   : 23 18
+
+9. What are the two versions of bar plots?
+   #+begin_quote
+   1. Stacked or on top of one another (to show percentages)
+   2. Dodged or side-by-side (to show relative heights)
+   #+end_quote
+
+10. What is the difference in purpose between box plots and bar plots?
+    #+begin_quote
+    - Box plots answer questions about spread of a distribution. In
+      the example: the spread of age across different royal British
+      houses, or the spread of tooth lengths across different supply
+      levels.
+    - Bar plots answer questions about a single (numeric) metric
+      relative to zero (the height). In the example: number of rules
+      from different royal British houses. Could pick other (numeric)
+      features, e.g. mean age at the start of rule in the example.
+    #+end_quote
+    #+attr_html: :width 600px:
+    [[../img/boxbar1.png]]
+
+    #+attr_html: :width 600px:
+    [[../img/boxbar.png]]
+
+11. How do dot plots relate to bar plots?
+    #+begin_quote
+    - You can plot multiple metrics with them
+    - You can use a logarithmic scale with them
+    #+end_quote
+
+    #+begin_src R :file ../img/lendot.png :session *R* :results file graphics output :exports both
+      ## bar plot of the tooth lengths over all observations
+      dotchart(x = sort(tg$len), # better: with `sort`
+              xlab = "Guinea pigs", # categorical (independent) variable
+              ylab = "Length", # numeric (dependent) variable
+              main = "Tooth lengths in ToothGrowth")
+    #+end_src
+
+    #+RESULTS:
+    [[file:../img/lendot.png]]

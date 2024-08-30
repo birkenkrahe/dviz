@@ -253,7 +253,7 @@ Check out structure of Pima datasets:
     mean(c(1,2,3,NA),na.rm=TRUE)
   #+end_src
 
-* PROBLEM: VARIABLE DEFINITIONS
+* Problem: variable definitions
 
 - How many planets are there orbiting the sun?
 
@@ -274,8 +274,7 @@ Check out structure of Pima datasets:
     the cause of death? When do two patients have the same disease?
   #+end_notes
 
-* EXPLORATORY DATA ANALYSIS (EDA)
-
+* Exploratory data analysis (eda)
 #+attr_html: :width 500px
 [[../img/2_pattern.png]]
 
@@ -301,9 +300,8 @@ perceived, and experience with other data analyses." (Diaconis, 1985)
   : [1] male   female
   : Levels: female male
 
-* TYPES OF CATEGORICAL VARIABLES
-#+caption: AI-generated outline for research topic (Source: OpenAI)
-#+attr_html: :width 500px
+* Types of categorical variables
+#+attr_html: :width 600px
 [[../img/2_openai.png]]
 
 - Few levels (e.g. "Firm", "Party", "City")
