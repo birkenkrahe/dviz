@@ -201,7 +201,7 @@ different experience, use Google Colab at [[https://colab.research.google.com/][
    patterns. The data are the bigger version of the "Anscombe
    quartet".
    #+end_quote
-   
+
    #+begin_src R :session *R* :results output :exports both
      data(anscombe)
      summary(anscombe)
@@ -247,8 +247,8 @@ different experience, use Google Colab at [[https://colab.research.google.com/][
 
    #+RESULTS:
    [[file:tg.png]]
-   
-* IN PROGRESS Linux server has arrived
+
+* DONE Linux server has arrived
 
 - You should have received your VM server address and password
 
@@ -275,7 +275,7 @@ different experience, use Google Colab at [[https://colab.research.google.com/][
     #+end_src
   #+end_example
 
-* NEXT Exploratory Data Analysis (EDA) with R (Lecture & practice)
+* IN PROGRESS Exploratory Data Analysis (EDA) with R (Lecture & practice)
 #+attr_html: :width 250px:
 [[../img/1_textbook.jpg]]
 
@@ -298,4 +298,104 @@ different experience, use Google Colab at [[https://colab.research.google.com/][
   [[https://github.com/matloff/fasteR][github.com/matloff/fasteR]]. It's the best resource for non-comp-sci
   people available. Matloff is a statistician + computer scientist + R
   champion. His book "The Art of R Programming" is a jewel, too.
-  #+end_quote  
+  #+end_quote
+
+
+* Review questions "Visualizing two variables"
+
+1. What is a scatter plot?
+   #+begin_quote
+   A plot of two continuous variables whose relationship we wish to
+   know.
+   #+end_quote
+   Example:
+   #+begin_src R :file ../img/scatter.png :session *R* :results file graphics output :exports both
+     plot(x=mtcars$wt,
+          y=mtcars$mpg,
+          pch=16)
+   #+end_src
+
+   #+RESULTS:
+   [[file:../img/scatter.png]]
+
+2. The points in a scatter plot are all bunched up in one corner. What
+   could you do about that?
+   #+begin_quote
+   You could transform one, or both axes with some function that
+   stretches the scale - e.g. a logarithm or a square function.
+   #+end_quote
+   Example:
+   #+begin_src R :file ../img/scatter2.png :session *R* :results file graphics output :exports both
+     ## Assuming you have your data in two vectors: 'area' and 'price'
+     ## Example data
+     foo <- c(846, 2930, 1037, 576, 5600, 1571, 1913, 20000, 30000)
+     price <- c(0.3250, 2.1950, 0.5740, 0.5990, 3.9500, 0.2999, 0.6950, 50, 100)
+
+     ## 1 x 2 plot pane to scale
+     par(mfrow=c(1,2),pty="s")
+     ## Create scatter plot from the data
+     plot(area, price,
+          xlab="Area (ft²)",
+          ylab="Price (in millions USD)",
+          main="Scatter Plot")
+     grid()
+     ## Create the scatter plot with log-transformed axes
+     plot(log10(area), log10(price),
+          xlab="Log Area (ft²)",
+          ylab="Log Price (in millions USD)",
+          main="Log-Transformed",
+          pch=19)
+     grid()
+   #+end_src
+
+   #+RESULTS:
+   [[file:../img/scatter2.png]]
+
+3. What's a measure of "correlation", and what does it mean?
+   #+begin_quote
+   A measure of correlation of two vectors of same length x, y is how
+   well you can draw a straight line through the points (x,y). High
+   correlation means that the values of x and y rise and fall
+   together.
+   #+end_quote   
+
+4. What does a good linear fit through a logarithmic plot mean for the
+   distribution in practice?
+   #+begin_quote
+   A good linear fit in a logarithmic (or semi-logarithmic) plot means
+   that the points are exponentially correlated.
+   #+end_quote
+
+5. When should you use a line plot? What's an example?
+   #+begin_quote
+   - You have two continous variables
+   - You want to know how their values relate to each other
+   - You know that consecutive observations are connected
+
+   An example would be any plot of observations over time (also called
+   a 'time series'). Line plots can be overlayed easily.
+   #+end_quote   
+   Example:
+   #+begin_src R :file ../img/ts.png :session *R* :results file graphics output :exports both
+     plot(Nile)
+     par(new=TRUE)
+     plot(Nile+100, # shift points up
+          col="red",
+          axes=FALSE,  # don't print axes 
+          ylab="")  # don't print labels
+   #+end_src
+
+   #+RESULTS:
+   [[file:../img/ts.png]]
+
+6. Which examples should you pick when educating people about data
+   science? Should the data be (easily) validatable or not? Examples?
+   #+begin_quote
+   - Examples for contested data: growth of COVID-19 cases world-wide,
+     wealth of nations, gun murder data, data about abortions.
+   - Example for uncontested data: growth of world population, change
+     in baby names, water flow through the Nile, number of births or
+     deaths.
+   #+end_quote
+   
+   
