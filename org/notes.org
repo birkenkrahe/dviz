@@ -531,5 +531,72 @@ different experience, use Google Colab at [[https://colab.research.google.com/][
   #+end_quote
 
 * Week 4 - Exploratory Data Analysis
+#+attr_html: :width 600px:
+[[../img/jules_verne.jpg]]
+
+/Image: Les illustrations de Jules Verne - Voyages Extraordinaires./
+
+** Emacs - Add automatic code block headers (a CSC 302 bonus)
+ 
+- In Emacs, you can look up variables with =C-h v= - for example =C-h v
+  org-babel-C-compiler= (its value is gcc)
+
+- Look up the variable =org-structure-template-alist=. In the buffer
+  that opens, move the cursor to =customize= and click the link,
+
+- In the next buffer, you see how =<s= works (for a =src= code block), and
+  also =<e= (for an =example= block).
+
+- Move to the end of the page (=M->=) then click on =INS=, and then enter:
+  #+begin_example
+  Key: r
+  Template: src R :session *R* :results output :exports both
+  #+end_example
+  This will give you =<r=, which will expand to an R code block.
+
+- Enter another shorthand for graphics:
+  #+begin_example
+  Key: rg
+  Template: src R :file plot.png :results file graphics output :session *R* :exports both
+  #+end_example
+  This gives you a code block for graphics output - =plot.png= is the
+  name of your plot image file (you can change it when you code).
+
+- In the same way you could add a short code for the =#+PROPERTY:= line
+  if you wanted to.
+
+- Before leaving this buffer, go back up (=M-<=) and click on =Apply and
+  Save= - this will add the customization to your =.emacs= configuration
+  file.
+
+- The other useful shorthand is the =#+startup= meta data at the top of
+  each file. This is run by another variable, =org-tempo-keywords-alist=.
+
+- Open it's menu with =C-h v org-tempo-keywords-alist=.
+
+- Again, find and click on =customize=.
+
+- In the customization buffer, Go to the end of the list and insert with =INS=:
+  #+begin_example
+  Key: S
+  Keyword: STARTUP: overview hideblocks indent
+  #+end_example
+
+- At the top, click on =Apply and Save= to fix the setting.
+
+- These settings should be active right away but they will certainly
+  be active when you open Emacs next.
 
 ** Exploratory Data Analysis (EDA) with R (Lecture & practice)
+
+- *Practice:* meta data
+- Missing values (=NA=)
+- Categorical variables and =factor= vectors
+- *Practice:* Plotting the Anscombe Quartet
+- Raw vs. transformed data
+- Math revision: logarithm and power laws
+- The case for R
+- Installing and loading R packages
+- *Practice:* Using Rterm and Rgui
+- Questions to ask from data
+- *Practice:* A representative R session
