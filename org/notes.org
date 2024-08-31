@@ -355,25 +355,6 @@ different experience, use Google Colab at [[https://colab.research.google.com/][
    called a 'time series'). Line plots can be overlayed easily.
    #+end_quote
    Example:
-   #+begin_src R :file ts2.png :session *R* :results file graphics output :exports both
-     ## First plot
-     plot(Nile, ylim=range(Nile, Nile+100), ylab="Flow", main="Overlayed Plot of Nile Data")
-
-     ## Overlay a new plot on top of the existing one
-     par(new=TRUE)
-
-     ## Second plot (on top of the first plot)
-     plot(Nile+100,
-          col="red",
-          axes=FALSE,  ## don't print axes
-          xlab="",
-          ylab="",
-          ylim=range(Nile, Nile+100))  ## Ensure the y-limits match the first plot
-   #+end_src
-
-   #+RESULTS:
-   [[file:ts2.png]]
-
    #+begin_src R :file ts3.png :session *R* :results file graphics output :exports both
      ## First plot
      plot(Nile,ylab="Flow", main="Overlayed Plot of Nile Data")
