@@ -275,33 +275,7 @@ different experience, use Google Colab at [[https://colab.research.google.com/][
     #+end_src
   #+end_example
 
-* IN PROGRESS Exploratory Data Analysis (EDA) with R (Lecture & practice)
-#+attr_html: :width 250px:
-[[../img/1_textbook.jpg]]
-
-- What if you don't know any R at all?
-  #+begin_quote
-  I will introduce the necessary commands to you. Vectors and data
-  frames are the only data structures that you need, and loops are not
-  needed because *vectorization* and the =apply= functions are available.
-  #+end_quote
-
-- What if I feel I need more R
-  #+begin_quote
-  Complete the DataCamp course "Introduction to R" in 2-4 hours on
-  your own. If you're in DSC 105, you need to complete this anyway.
-  #+end_quote
-
-- What if I don't like DataCamp or I want to move faster?
-  #+begin_quote
-  Fork & work through Norm Matloff's "fasteR" tutorial on GitHub at
-  [[https://github.com/matloff/fasteR][github.com/matloff/fasteR]]. It's the best resource for non-comp-sci
-  people available. Matloff is a statistician + computer scientist + R
-  champion. His book "The Art of R Programming" is a jewel, too.
-  #+end_quote
-
-
-* Review questions "Visualizing two variables" (DataCamp)
+* IN PROGRESS Review questions "Visualizing two variables" (DataCamp)
 
 1. What is a scatter plot?
    #+begin_quote
@@ -329,23 +303,26 @@ different experience, use Google Colab at [[https://colab.research.google.com/][
    #+begin_src R :file ../img/scatter2.png :session *R* :results file graphics output :exports both
      ## Assuming you have your data in two vectors: 'area' and 'price'
      ## Example data
-     area <- c(846, 2930, 1037, 576, 5600, 1571, 1913, 20000, 30000)
-     price <- c(0.3250, 2.1950, 0.5740, 0.5990, 3.9500, 0.2999, 0.6950, 50, 100)
+     area <- c(500, 1000, 2000, 2500, 3600, 4000, 4500, 5000, 30000, 50000)
+     price <- c(1, 2, 3, 4, 5, 6, 7, 8, 9, 100)
 
      ## 1 x 2 plot pane to scale
-     par(mfrow=c(1,2),pty="s")
+     par(mfrow=c(1,2),pty="s") 
 
      ## Create scatter plot from the data
      plot(area, price,
           xlab="Area (ft²)",
           ylab="Price (in millions USD)",
-          main="Scatter Plot")
+          main="Scatter Plot",
+          xlim=range(area), ylim=range(price))
      grid()
+
      ## Create the scatter plot with log-transformed axes
      plot(log10(area), log10(price),
           xlab="Log Area (ft²)",
           ylab="Log Price (in millions USD)",
           main="Log-Transformed",
+          xlim=log10(range(area)), ylim=log10(range(price)),
           pch=19)
      grid()
    #+end_src
@@ -378,17 +355,44 @@ different experience, use Google Colab at [[https://colab.research.google.com/][
    called a 'time series'). Line plots can be overlayed easily.
    #+end_quote
    Example:
-   #+begin_src R :file ../img/ts.png :session *R* :results file graphics output :exports both
-     plot(Nile)
+   #+begin_src R :file ts2.png :session *R* :results file graphics output :exports both
+     ## First plot
+     plot(Nile, ylim=range(Nile, Nile+100), ylab="Flow", main="Overlayed Plot of Nile Data")
+
+     ## Overlay a new plot on top of the existing one
      par(new=TRUE)
-     plot(Nile+100, # shift points up
+
+     ## Second plot (on top of the first plot)
+     plot(Nile+100,
           col="red",
-          axes=FALSE,  # don't print axes
-          ylab="")  # don't print labels
+          axes=FALSE,  ## don't print axes
+          xlab="",
+          ylab="",
+          ylim=range(Nile, Nile+100))  ## Ensure the y-limits match the first plot
    #+end_src
 
    #+RESULTS:
-   [[file:../img/ts.png]]
+   [[file:ts2.png]]
+
+   #+begin_src R :file ts3.png :session *R* :results file graphics output :exports both
+     ## First plot
+     plot(Nile,ylab="Flow", main="Overlayed Plot of Nile Data")
+
+     ## Overlay a new plot on top of the existing one
+     par(new=TRUE)
+
+     ## Second plot (on top of the first plot)
+     plot(Nile+100,
+          col="red",
+          axes=FALSE,  ## don't print axes
+          xlab="",
+          ylab="",
+          ylim=range(Nile, Nile+100))  ## Ensure the y-limits match the first plot
+   #+end_src
+
+   #+RESULTS:
+   [[file:ts3.png]]
+
 
 6. What's the relationship between time as the independent variable
    and a line plot as a suitable visualization?
@@ -511,10 +515,35 @@ different experience, use Google Colab at [[https://colab.research.google.com/][
     #+begin_src R :file ../img/lendot.png :session *R* :results file graphics output :exports both
       ## bar plot of the tooth lengths over all observations
       dotchart(x = sort(tg$len), # better: with `sort`
-              xlab = "Guinea pigs", # categorical (independent) variable
-              ylab = "Length", # numeric (dependent) variable
-              main = "Tooth lengths in ToothGrowth")
+               xlab = "Guinea pigs", # categorical (independent) variable
+               ylab = "Length", # numeric (dependent) variable
+               main = "Tooth lengths in ToothGrowth")
     #+end_src
 
     #+RESULTS:
     [[file:../img/lendot.png]]
+
+* IN PROGRESS Exploratory Data Analysis (EDA) with R (Lecture & practice)
+#+attr_html: :width 250px:
+[[../img/1_textbook.jpg]]
+
+- What if you don't know any R at all?
+  #+begin_quote
+  I will introduce the necessary commands to you. Vectors and data
+  frames are the only data structures that you need, and loops are not
+  needed because *vectorization* and the =apply= functions are available.
+  #+end_quote
+
+- What if I feel I need more R
+  #+begin_quote
+  Complete the DataCamp course "Introduction to R" in 2-4 hours on
+  your own. If you're in DSC 105, you need to complete this anyway.
+  #+end_quote
+
+- What if I don't like DataCamp or I want to move faster?
+  #+begin_quote
+  Fork & work through Norm Matloff's "fasteR" tutorial on GitHub at
+  [[https://github.com/matloff/fasteR][github.com/matloff/fasteR]]. It's the best resource for non-comp-sci
+  people available. Matloff is a statistician + computer scientist + R
+  champion. His book "The Art of R Programming" is a jewel, too.
+  #+end_quote
