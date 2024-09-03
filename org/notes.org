@@ -530,6 +530,7 @@ different experience, use Google Colab at [[https://colab.research.google.com/][
   champion. His book "The Art of R Programming" is a jewel, too.
   #+end_quote
 
+
 * Week 4 - Exploratory Data Analysis
 #+attr_html: :width 600px:
 [[../img/jules_verne.jpg]]
