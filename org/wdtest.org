@@ -1,0 +1,27 @@
+#+begin_src R :file tooth.png :session *R* :results file graphics output :exports both
+    tg <- ToothGrowth
+    dotchart(x=sort(tg$len),
+             xlab="Guinea pigs",
+             ylab="Tooth length [mm]",
+             main="Tooth lengths in ToothGrowth")
+  #+end_src
+
+#+RESULTS:
+[[file:tooth.png]]
+
+#+begin_src R :session *R* :results output :exports both
+  getwd() # this is where R is
+  system("echo $PWD")
+#+end_src
+
+#+RESULTS:
+: [1] "/home/aletheia"
+: /home/aletheia
+
+#+begin_src R :session *R* :results output :exports both
+  setwd("org")
+  getwd()
+#+end_src
+
+#+RESULTS:
+: [1] "/home/aletheia/org"

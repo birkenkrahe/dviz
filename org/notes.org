@@ -3,7 +3,7 @@
 #+SUBTITLE: DSC 302 Lyon College Fall 2024
 #+STARTUP: overview hideblocks indent entitiespretty:
 #+PROPERTY: header-args:R :session *R* :results output :exports both
-* Week 1 - Orientation & Examples
+* Week 0 - Orientation & Examples
 
 #+attr_html: :width 200px:
 [[../img/Ways-to-Search-Google.jpg]]
@@ -11,7 +11,7 @@
 What we achieved in our first session: Course orientation, and
 critical discussion of a few visualization examples.
 
-* Week 2 - What is Data Visualization & =mtcars= Demo
+* Week 1 - What is Data Visualization & =mtcars= Demo
 #+attr_html: :width 600px:
 #+caption: Napoleon's Retreat from Moscow - Adolph Northen (1851)
 [[../img/napoleon.jpg]]
@@ -160,7 +160,7 @@ See =2_trendline.org= ([[https://github.com/birkenkrahe/dviz/blob/main/org/2_tre
     4) A way to draw the trendline (=abline=)
     #+end_quote
 
-* Week 3 - Linux Party & Introduction to Visualization
+* Week 2 - Linux Party & Introduction to Visualization
 #+attr_html: :width 400px:
 [[../img/mtcars_lm.png]]
 
@@ -169,7 +169,7 @@ See =2_trendline.org= ([[https://github.com/birkenkrahe/dviz/blob/main/org/2_tre
 - [X] Catching up (or moving fasteR) on R
 - [ ] Exploratory Data Analysis with R
 - [X] Review: Second DataCamp lesson
-  
+
 ** Review: DataCamp's "Visualizing distributions"
 
 *Note:* For the test, you need to know all the concepts mentioned in the
@@ -308,7 +308,7 @@ different experience, use Google Colab at [[https://colab.research.google.com/][
      price <- c(1, 2, 3, 4, 5, 6, 7, 8, 9, 100)
 
      ## 1 x 2 plot pane to scale
-     par(mfrow=c(1,2),pty="s") 
+     par(mfrow=c(1,2),pty="s")
 
      ## Create scatter plot from the data
      plot(area, price,
@@ -495,6 +495,7 @@ different experience, use Google Colab at [[https://colab.research.google.com/][
     #+end_quote
 
     #+begin_src R :file ../img/lendot.png :session *R* :results file graphics output :exports both
+      tg <- ToothGrowth
       ## bar plot of the tooth lengths over all observations
       dotchart(x = sort(tg$len), # better: with `sort`
                xlab = "Guinea pigs", # categorical (independent) variable
@@ -530,12 +531,14 @@ different experience, use Google Colab at [[https://colab.research.google.com/][
   champion. His book "The Art of R Programming" is a jewel, too.
   #+end_quote
 
-* Week 4 - Exploratory Data Analysis
+
+* Week 3 - Exploratory Data Analysis
 #+attr_html: :width 600px:
 [[../img/jules_verne.jpg]]
 
 /Image: Les illustrations de Jules Verne - Voyages Extraordinaires./
 
+- [ ] Finish the 'dot plot' example from the DataCamp review
 - [ ] Quiz 2 is live - complete it by Friday September 6, 11:59 PM
 - [ ] Enter project team & idea in Canvas ([[https://lyon.instructure.com/courses/2629/pages][wiki]]) by Friday 11 AM
 - [ ] Continue lecture + codealong (EDA)
@@ -551,56 +554,171 @@ If you're intrigued and have a lot of time on your hands: [[https://arxiv.org/ab
 review of everything we don't know about Dark Matter (06/2024) by
 Cirelli, Strumia and Zupan (arxiv.org preprint - 515 pages).
 
+
 ** Emacs - Add automatic code block headers (a CSC 302 bonus)
- 
-- In Emacs, you can look up variables with =C-h v= - for example =C-h v
-  org-babel-C-compiler= (its value is gcc)
 
-- Look up the variable =org-structure-template-alist=. In the buffer
-  that opens, move the cursor to =customize= and click the link,
+1. In Emacs, you can look up variables with =C-h v= - for example =C-h v
+   org-babel-C-compiler= (its value is gcc)
 
-- In the next buffer, you see how =<s= works (for a =src= code block), and
-  also =<e= (for an =example= block).
+2. Look up the variable =org-structure-template-alist=. In the buffer
+   that opens, move the cursor to =customize= and click the link,
 
-- Move to the end of the page (=M->=) then click on =INS=, and then enter:
-  #+begin_example
-  Key: r
-  Template: src R :session *R* :results output :exports both
-  #+end_example
-  This will give you =<r=, which will expand to an R code block.
+3. In the next buffer, you see how =<s= works (for a =src= code block), and
+   also =<e= (for an =example= block).
 
-- Enter another shorthand for graphics:
-  #+begin_example
-  Key: rg
-  Template: src R :file plot.png :results file graphics output :session *R* :exports both
-  #+end_example
-  This gives you a code block for graphics output - =plot.png= is the
-  name of your plot image file (you can change it when you code).
+4. Move to the end of the page (=M->=) then click on =INS=, and then enter:
+   #+begin_example
+   Key: r
+   Template: src R :session *R* :results output :exports both
+   #+end_example
+   This will give you =<r=, which will expand to an R code block.
 
-- In the same way you could add a short code for the =#+PROPERTY:= line
-  if you wanted to.
+5. Enter another shorthand for graphics:
+   #+begin_example
+   Key: rg
+   Template: src R :file plot.png :results file graphics output :session *R* :exports both
+   #+end_example
+   This gives you a code block for graphics output - =plot.png= is the
+   name of your plot image file (you can change it when you code).
 
-- Before leaving this buffer, go back up (=M-<=) and click on =Apply and
-  Save= - this will add the customization to your =.emacs= configuration
-  file.
+6. In the same way you could add a short code for the =#+PROPERTY:= line
+   if you wanted to.
 
-- The other useful shorthand is the =#+startup= meta data at the top of
-  each file. This is run by another variable, =org-tempo-keywords-alist=.
+7. Before leaving this buffer, go back up (=M-<=) and click on =Apply and
+   Save= - this will add the customization to your =.emacs= configuration
+   file.
 
-- Open it's menu with =C-h v org-tempo-keywords-alist=.
+8. The other useful shorthand is the =#+startup= meta data at the top of
+   each file. This is run by another variable, =org-tempo-keywords-alist=.
 
-- Again, find and click on =customize=.
+9. Open it's menu with =C-h v org-tempo-keywords-alist=.
 
-- In the customization buffer, Go to the end of the list and insert with =INS=:
-  #+begin_example
-  Key: S
-  Keyword: STARTUP: overview hideblocks indent
-  #+end_example
+10. Again, find and click on =customize=.
 
-- At the top, click on =Apply and Save= to fix the setting.
+11. In the customization buffer, Go to the end of the list and insert with =INS=:
+    #+begin_example
+    Key: S
+    Keyword: STARTUP: overview hideblocks indent
+    #+end_example
 
-- These settings should be active right away but they will certainly
-  be active when you open Emacs next.
+12. At the top, click on =Apply and Save= to fix the setting.
+
+13. These settings should be active right away but they will certainly
+    be active when you open Emacs next.
+
+
+** Test block header and learn more about the shells
+
+Test the new setup in a =.org= file with a graphics command:
+
+1. Enter =<rg <TAB>=
+
+2. In the code block, add =Nile.png= after the =:file= header argument
+
+3. Add and run the code =hist(Nile)=
+
+4. You should get the following result: code block with =#+RESULTS=
+   block and link to the graphics file that you can open with =<F6>=
+   or in another buffer with =C-c C-o=:
+
+   #+begin_src R :file Nile.png :session *R* :results file graphics output :exports both
+     hist(Nile)
+   #+end_src
+
+   #+RESULTS:
+   [[file:Nile.png]]
+
+5. If you don't see a file then your Org-mode buffer and the =*R*=
+   session console are not in sync, and you need to change working
+   directory to where you're putting the file: in the case of =:file
+   Nile.png= you're putting it into =pwd= or =$PWD= (present working
+   directory). To check the directory of your file:
+   #+begin_src bash :results output :exports both
+     pwd
+   #+end_src
+
+   #+RESULTS:
+   : /home/aletheia/GitHub/dviz/org
+
+6. Open the =*R*= buffer, check its =$PWD= with one of these R commands:
+   #+begin_src R :session *R* :results output :exports both
+     getwd()
+     system("echo $PWD")
+   #+end_src
+
+   #+RESULTS:
+   : [1] "/home/aletheia/GitHub/admin/RoamNotes"
+   : /home/aletheia/GitHub/admin/RoamNotes
+
+7. To change the R console's =$PWD=, use =setwd= and pass the directory
+   you want to point at as a string with the (relative) =PATH=
+   argument (as long as the location exists):
+   #+begin_src R :session *R* :results output :exports both
+     getwd()  # where you were
+     setwd("../../dviz/org")  # relative path to where the Org-mode file is
+     getwd()  # check where you are
+   #+end_src
+
+   #+RESULTS:
+   : [1] "/home/aletheia/GitHub/admin/RoamNotes"
+   : [1] "/home/aletheia/GitHub/dviz/org"
+
+8. The absolute path would work, too (as long as it
+   exists). Relocating to where you already are does nothing.
+   #+begin_src R :session *R* :results output :exports both
+     setwd("/home/aletheia/GitHub/dviz/org")  # relative path to where the Org-mode file is
+     system("pwd")
+   #+end_src
+
+   #+RESULTS:
+   : /home/aletheia/GitHub/dviz/org
+
+9. Exercise!
+
+   - Close your R console.
+
+   - Go to your home directory (=C-x d ~/=)
+
+   - Make a new directory in the =Dired= buffer with =+ org=
+
+   - Find the directory and go into it
+
+   - In =~/org=, create a file =test.org=
+
+   - In =test.org=, open a graphic R code block
+
+   - Set the file header argument so that you get a PNG file
+
+   - Create a sorted dot plot of the length of the guinea pig teeth
+     from the =ToothGrowth= dataset:
+     #+begin_example R
+     dotchart(sort(ToothGrowth$len))
+     #+end_example
+
+   - When asked for the "R starting project directory", modify the
+     offered address and change it from =~/org= to =~/=
+
+   - Open the file with =<F6>=. You shouldn't see anything
+
+   - Split the screen and open the R console in one, and the file
+     =test.org= in the other buffer
+
+   - You should see that =*R*= is set to your =$HOME=.
+
+   - Create another (non-graphic) R code block (keep =*R*= open)
+
+   - In the other code block check where you are - both with an R
+     function, and with a =system= command
+
+   - You know that your test file is in =~/org=. Now set the working
+     directory to that directory using a /relative path/, and check the
+     new location.
+
+   - Re-run the graphics command from earlier and open the PNG file
+     with =<F6>=.
+
+   - Make sure that you understand everything we're doing here!
+
 
 ** Exploratory Data Analysis (EDA) with R (Lecture & practice)
 
@@ -615,3 +733,7 @@ Cirelli, Strumia and Zupan (arxiv.org preprint - 515 pages).
 - [ ] *Practice:* Using Rterm and Rgui
 - [ ] Questions to ask from data
 - [ ] *Practice:* A representative R session
+
+* Week 4
+
+- [ ] Use =ToothGrowth=: color the dot plot by =supp= values

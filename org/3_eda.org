@@ -114,7 +114,7 @@ places and transitions. Realtime visualization with [[https://youtu.be/KvDKgzkCP
   - Stacks
   #+end_quote
 
-* Meta data
+* NEXT Meta data
 
 #+attr_html: :width 300px
 #+caption: Greek goddess of peace and spring "Eirene"
@@ -361,7 +361,7 @@ perceived, and experience with other data analyses." (Diaconis, 1985)
   #+RESULTS:
   [[file:../img/anscombe.png]]
 
-* NEXT PRACTICE: RAW VS. TRANSFORMED GRAPH DATA
+* TODO PRACTICE: RAW VS. TRANSFORMED GRAPH DATA
 
 - The following two sets of plots are constructed from the ~brain~
   element of the ~mammals~ dataset from the =MASS= package ([[https://cran.r-project.org/package=MASS][doc]]) that
