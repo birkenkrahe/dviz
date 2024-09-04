@@ -557,6 +557,8 @@ Cirelli, Strumia and Zupan (arxiv.org preprint - 515 pages).
 
 ** Emacs - Add automatic code block headers (a CSC 302 bonus)
 
+Open Zoom + a GUI Emacs (not =emacs -nw=)
+
 1. In Emacs, you can look up variables with =C-h v= - for example =C-h v
    org-babel-C-compiler= (its value is gcc)
 
