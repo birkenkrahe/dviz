@@ -536,6 +536,11 @@ different experience, use Google Colab at [[https://colab.research.google.com/][
 
 /Image: Les illustrations de Jules Verne - Voyages Extraordinaires./
 
+- [ ] Quiz 2 is live - complete it by Friday September 6, 11:59 PM
+- [ ] Enter project team & idea in Canvas ([[https://lyon.instructure.com/courses/2629/pages][wiki]]) by Friday 11 AM
+- [ ] Continue lecture + codealong (EDA)
+
+
 ** Emacs - Add automatic code block headers (a CSC 302 bonus)
  
 - In Emacs, you can look up variables with =C-h v= - for example =C-h v
