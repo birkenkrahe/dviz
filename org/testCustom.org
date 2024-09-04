@@ -1,0 +1,7 @@
+#+begin_src R :file Nile.png :session *R* :results output graphics file :exports both :noweb yes
+  hist(Nile)
+#+end_src
+
+#+RESULTS:
+[[file:Nile.png]]
+

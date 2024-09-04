@@ -531,7 +531,6 @@ different experience, use Google Colab at [[https://colab.research.google.com/][
   champion. His book "The Art of R Programming" is a jewel, too.
   #+end_quote
 
-
 * Week 3 - Exploratory Data Analysis
 #+attr_html: :width 600px:
 [[../img/jules_verne.jpg]]
@@ -539,11 +538,11 @@ different experience, use Google Colab at [[https://colab.research.google.com/][
 /Image: Les illustrations de Jules Verne - Voyages Extraordinaires./
 
 - [ ] Finish the 'dot plot' example from the DataCamp review
-- [ ] Quiz 2 is live - complete it by Friday September 6, 11:59 PM
-- [ ] Enter project team & idea in Canvas ([[https://lyon.instructure.com/courses/2629/pages][wiki]]) by Friday 11 AM
+- [X] Quiz 2 is live - complete it by Friday September 6, 11:59 PM
+- [X] Enter project team & idea in Canvas ([[https://lyon.instructure.com/courses/2629/pages][wiki]]) by Friday 11 AM
 - [ ] Continue lecture + codealong (EDA)
 
-** Warm-up: The Dark Matter Mystery
+** DONE Warm-up: The Dark Matter Mystery
 
 What's wrong with this from a data visualization point of view?
 
@@ -607,7 +606,6 @@ Open Zoom + a GUI Emacs (not =emacs -nw=)
 
 13. These settings should be active right away but they will certainly
     be active when you open Emacs next.
-
 
 ** Test block header and learn more about the shells
 
