@@ -540,6 +540,16 @@ different experience, use Google Colab at [[https://colab.research.google.com/][
 - [ ] Enter project team & idea in Canvas ([[https://lyon.instructure.com/courses/2629/pages][wiki]]) by Friday 11 AM
 - [ ] Continue lecture + codealong (EDA)
 
+** Warm-up: The Dark Matter Mystery
+
+What's wrong with this from a data visualization point of view?
+
+#+attr_html: :width 500px:
+[[../img/darkmatter.png]]
+
+If you're intrigued and have a lot of time on your hands: [[https://arxiv.org/abs/2406.01705][Here]] is a
+review of everything we don't know about Dark Matter (06/2024) by
+Cirelli, Strumia and Zupan (arxiv.org preprint - 515 pages).
 
 ** Emacs - Add automatic code block headers (a CSC 302 bonus)
  
