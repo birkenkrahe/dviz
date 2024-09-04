@@ -717,8 +717,8 @@ Test the new setup in a =.org= file with a graphics command:
    - Re-run the graphics command from earlier and open the PNG file
      with =<F6>=.
 
-   - Make sure that you understand everything we're doing here!
-
+   - Make sure that you understand everything we're doing here! Create
+     your own examples!
 
 ** Exploratory Data Analysis (EDA) with R (Lecture & practice)
 
@@ -733,6 +733,7 @@ Test the new setup in a =.org= file with a graphics command:
 - [ ] *Practice:* Using Rterm and Rgui
 - [ ] Questions to ask from data
 - [ ] *Practice:* A representative R session
+
 
 * Week 4
 
