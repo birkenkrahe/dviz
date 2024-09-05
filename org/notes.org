@@ -532,14 +532,15 @@ different experience, use Google Colab at [[https://colab.research.google.com/][
   #+end_quote
 
 * Week 3 - Exploratory Data Analysis
-#+attr_html: :width 600px:
-[[../img/jules_verne.jpg]]
+#+attr_html: :width 400px:
+[[../img/R_Emacs_Linux.png]]
 
-/Image: Les illustrations de Jules Verne - Voyages Extraordinaires./
+/Image: You need to master language, OS, and IDE./
 
-- [ ] Finish the 'dot plot' example from the DataCamp review
 - [X] Quiz 2 is live - complete it by Friday September 6, 11:59 PM
 - [X] Enter project team & idea in Canvas ([[https://lyon.instructure.com/courses/2629/pages][wiki]]) by Friday 11 AM
+- [ ] Emacs: add automatic code block header
+- [ ] Practice: finish the 'dot plot' example from the DataCamp review
 - [ ] Continue lecture + codealong (EDA)
 
 ** DONE Warm-up: The Dark Matter Mystery
@@ -554,7 +555,7 @@ review of everything we don't know about Dark Matter (06/2024) by
 Cirelli, Strumia and Zupan (arxiv.org preprint - 515 pages).
 
 
-** Emacs - Add automatic code block headers (a CSC 302 bonus)
+** DONE Emacs - Add automatic code block headers (a CSC 302 bonus)
 
 Open Zoom + a GUI Emacs (not =emacs -nw=)
 
@@ -607,7 +608,8 @@ Open Zoom + a GUI Emacs (not =emacs -nw=)
 13. These settings should be active right away but they will certainly
     be active when you open Emacs next.
 
-** Test block header and learn more about the shells
+
+** NEXT Test block header and learn more about the shells
 
 Test the new setup in a =.org= file with a graphics command:
 
@@ -720,7 +722,14 @@ Test the new setup in a =.org= file with a graphics command:
    - Make sure that you understand everything we're doing here! Create
      your own examples!
 
+
+** Review: DataCamp lesson "The Color and the Shape"
+
 ** Exploratory Data Analysis (EDA) with R (Lecture & practice)
+#+attr_html: :width 600px:
+[[../img/jules_verne.jpg]]
+
+/Image: Les illustrations de Jules Verne - Voyages Extraordinaires./
 
 - [ ] *Practice:* meta data
 - [ ] Missing values (=NA=)
@@ -733,7 +742,6 @@ Test the new setup in a =.org= file with a graphics command:
 - [ ] *Practice:* Using Rterm and Rgui
 - [ ] Questions to ask from data
 - [ ] *Practice:* A representative R session
-
 
 * Week 4
 
