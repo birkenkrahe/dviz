@@ -539,9 +539,9 @@ different experience, use Google Colab at [[https://colab.research.google.com/][
 
 - [X] Quiz 2 is live - complete it by Friday September 6, 11:59 PM
 - [X] Enter project team & idea in Canvas ([[https://lyon.instructure.com/courses/2629/pages][wiki]]) by Friday 11 AM
-- [ ] Emacs: add automatic code block header
-- [ ] Practice: finish the 'dot plot' example from the DataCamp review
-- [ ] Continue lecture + codealong (EDA)
+- [X] Emacs: add automatic code block header
+- [X] Practice: finish the 'dot plot' example from the DataCamp review
+- [ ] Review DataCamp lesson "The Color and the Shape"
 
 ** DONE Warm-up: The Dark Matter Mystery
 
@@ -613,133 +613,118 @@ Open Zoom + a GUI Emacs (not =emacs -nw=)
 
 Test the new setup in a =.org= file with a graphics command:
 
-1. Enter =<rg <TAB>=
+   1. Enter =<rg <TAB>=
 
-2. In the code block, add =Nile.png= after the =:file= header argument
+   2. In the code block, add =Nile.png= after the =:file= header argument
 
-3. Add and run the code =hist(Nile)=
+   3. Add and run the code =hist(Nile)=
 
-4. You should get the following result: code block with =#+RESULTS=
-   block and link to the graphics file that you can open with =<F6>=
-   or in another buffer with =C-c C-o=:
+   4. You should get the following result: code block with =#+RESULTS=
+      block and link to the graphics file that you can open with =<F6>=
+      or in another buffer with =C-c C-o=:
 
-   #+begin_src R :file Nile.png :session *R* :results file graphics output :exports both
-     hist(Nile)
-   #+end_src
+      #+begin_src R :file Nile.png :session *R* :results file graphics output :exports both
+        hist(Nile)
+      #+end_src
 
-   #+RESULTS:
-   [[file:Nile.png]]
+      #+RESULTS:
+      [[file:Nile.png]]
 
-5. If you don't see a file then your Org-mode buffer and the =*R*=
-   session console are not in sync, and you need to change working
-   directory to where you're putting the file: in the case of =:file
-   Nile.png= you're putting it into =pwd= or =$PWD= (present working
-   directory). To check the directory of your file:
-   #+begin_src bash :results output :exports both
-     pwd
-   #+end_src
+   5. If you don't see a file then your Org-mode buffer and the =*R*=
+      session console are not in sync, and you need to change working
+      directory to where you're putting the file: in the case of =:file
+      Nile.png= you're putting it into =pwd= or =$PWD= (present working
+      directory). To check the directory of your file:
+      #+begin_src bash :results output :exports both
+        pwd
+      #+end_src
 
-   #+RESULTS:
-   : /home/aletheia/GitHub/dviz/org
+      #+RESULTS:
+      : /home/marcus/GitHub/dviz/org
 
-6. Open the =*R*= buffer, check its =$PWD= with one of these R commands:
-   #+begin_src R :session *R* :results output :exports both
-     getwd()
-     system("echo $PWD")
-   #+end_src
+   6. Open the =*R*= buffer, check its =$PWD= with one of these R commands:
+      #+begin_src R :session *R* :results output :exports both
+        getwd()
+        system("echo $PWD")
+      #+end_src
 
-   #+RESULTS:
-   : [1] "/home/aletheia/GitHub/admin/RoamNotes"
-   : /home/aletheia/GitHub/admin/RoamNotes
+      #+RESULTS:
+      : [1] "/home/aletheia/GitHub/admin/RoamNotes"
+      : /home/aletheia/GitHub/admin/RoamNotes
 
-7. To change the R console's =$PWD=, use =setwd= and pass the directory
-   you want to point at as a string with the (relative) =PATH=
-   argument (as long as the location exists):
-   #+begin_src R :session *R* :results output :exports both
-     getwd()  # where you were
-     setwd("../../dviz/org")  # relative path to where the Org-mode file is
-     getwd()  # check where you are
-   #+end_src
+   7. To change the R console's =$PWD=, use =setwd= and pass the directory
+      you want to point at as a string with the (relative) =PATH=
+      argument (as long as the location exists):
+      #+begin_src R :session *R* :results output :exports both
+        getwd()  # where you were
+        setwd("../../dviz/org")  # relative path to where the Org-mode file is
+        getwd()  # check where you are
+      #+end_src
 
-   #+RESULTS:
-   : [1] "/home/aletheia/GitHub/admin/RoamNotes"
-   : [1] "/home/aletheia/GitHub/dviz/org"
+      #+RESULTS:
+      : [1] "/home/aletheia/GitHub/admin/RoamNotes"
+      : [1] "/home/aletheia/GitHub/dviz/org"
 
-8. The absolute path would work, too (as long as it
-   exists). Relocating to where you already are does nothing.
-   #+begin_src R :session *R* :results output :exports both
-     setwd("/home/aletheia/GitHub/dviz/org")  # relative path to where the Org-mode file is
-     system("pwd")
-   #+end_src
+   8. The absolute path would work, too (as long as it
+      exists). Relocating to where you already are does nothing.
+      #+begin_src R :session *R* :results output :exports both
+        setwd("/home/aletheia/GitHub/dviz/org")  # relative path to where the Org-mode file is
+        system("pwd")
+      #+end_src
 
-   #+RESULTS:
-   : /home/aletheia/GitHub/dviz/org
+      #+RESULTS:
+      : /home/aletheia/GitHub/dviz/org
 
 
-** TODO Chart and Shell Exercise
+** DONE Chart and Shell Exercise
 
-- Close your R console.
+1. Close your R console. (=C-x k=)
 
-- Go to your home directory (=C-x d ~/=)
+2. Go to your home directory (=C-x d ~/=)
 
-- Make a new directory in the =Dired= buffer with =+ org=
+3. Make a new directory in the =Dired= buffer with =+ org=
 
-- Find the directory and go into it
+4. Find the directory and go into it
 
-- In =~/org=, create a file =test.org=
+5. In =~/org=, create a file =test.org=
 
-- In =test.org=, open a graphic R code block
+6. In =test.org=, open a graphic R code block
 
-- Set the file header argument so that you get a PNG file
+7. Set the file header argument so that you get a PNG file
 
-- Create a sorted dot plot of the length of the guinea pig teeth
-  from the =ToothGrowth= dataset:
-  #+begin_example R
-  dotchart(sort(ToothGrowth$len))
-  #+end_example
+8. Create a sorted dot plot of the length of the guinea pig teeth
+   from the =ToothGrowth= dataset:
+   #+begin_example R
+     dotchart(sort(ToothGrowth$len))
+   #+end_example
 
-- When asked for the "R starting project directory", modify the
-  offered address and change it from =~/org= to =~/=
+9. When asked for the "R starting project directory", modify the
+   offered address and change it from =~/org= to =~/=
 
-- Open the file with =<F6>=. You shouldn't see anything
+10. Open the file with =<F6>=. You shouldn't see anything
 
-- Split the screen and open the R console in one, and the file
-  =test.org= in the other buffer
+11. Split the screen and open the R console in one, and the file
+    =test.org= in the other buffer
 
-- You should see that =*R*= is set to your =$HOME=.
+12. You should see that =*R*= is set to your =$HOME=.
 
-- Create another (non-graphic) R code block (keep =*R*= open)
+13. Create another (non-graphic) R code block (keep =*R*= open)
 
-- In the other code block check where you are - both with an R
-  function, and with a =system= command
+14. In the other code block check where you are - both with an R
+    function, and with a =system= command
 
-- You know that your test file is in =~/org=. Now set the working
-  directory to that directory using a /relative path/, and check the
-  new location.
+15. You know that your test file is in =~/org=. Now set the working
+    directory to that directory using a /relative path/, and check the
+    new location.
 
-- Re-run the graphics command from earlier and open the PNG file
-  with =<F6>=.
+16. Re-run the graphics command from earlier and open the PNG file
+    with =<F6>=.
 
-- Make sure that you understand everything we're doing here! Create
-  your own examples!
+17. Make sure that you understand everything we're doing here! Create
+    your own examples!
 
 
 ** TODO Review: DataCamp lesson "The Color and the Shape"
-
-*** What does this plot (from the DataCamp lesson) suggest? How would you critique it?
-#+attr_html: :width 400px:
-[[../img/color2.png]]
-
-#+begin_quote
-"The longer someone goes to school in a wealthy country, the longer
-he'll live." = Life expectancy, wealth index, schooling length are
-positively correlated.
-
-- We don't know what "schooling" means
-- We don't know the definition or distribution of GNI or life
-  expectancy
-- We don't know how or when these data were collected.
-#+end_quote
 
 *** What's the problem with 3D scatter plots?
 #+begin_quote
@@ -750,12 +735,10 @@ perception.
 
 Code example:
 #+begin_src R :file 3d_scatterplot.png :session *R* :results file graphics output :exports both
-  install.packages("scatterplot3d")
   library(scatterplot3d)
+
   scatterplot3d(mtcars$wt, mtcars$mpg, mtcars$hp,
-                color = as.numeric(mtcars$cyl),
-                pch = 19,
-                xlab = "Weight", ylab = "MPG", zlab = "Horsepower")
+                color = as.numeric(mtcars$cyl))
 #+end_src
 
 #+RESULTS:
@@ -863,6 +846,21 @@ Code example:
 
 #+RESULTS:
 [[file:lineType.png]]
+
+*** What does this plot (from the DataCamp lesson) suggest? How would you critique it?
+#+attr_html: :width 400px:
+[[../img/color2.png]]
+
+#+begin_quote
+"The longer someone goes to school in a wealthy country, the longer
+he'll live." = Life expectancy, wealth index, schooling length are
+positively correlated.
+
+- We don't know what "schooling" means
+- We don't know the definition or distribution of GNI or life
+  expectancy
+- We don't know how or when these data were collected.
+#+end_quote
 
 
 * Week 4 - Exploratory Data Analysis (EDA)
