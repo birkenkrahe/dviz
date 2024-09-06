@@ -531,7 +531,7 @@ different experience, use Google Colab at [[https://colab.research.google.com/][
   champion. His book "The Art of R Programming" is a jewel, too.
   #+end_quote
 
-* Week 3 - Exploratory Data Analysis
+* Week 3 - Emacs + R + Linux
 #+attr_html: :width 400px:
 [[../img/R_Emacs_Linux.png]]
 
@@ -675,57 +675,199 @@ Test the new setup in a =.org= file with a graphics command:
    #+RESULTS:
    : /home/aletheia/GitHub/dviz/org
 
-9. Exercise!
 
-   - Close your R console.
+** TODO Chart and Shell Exercise
 
-   - Go to your home directory (=C-x d ~/=)
+- Close your R console.
 
-   - Make a new directory in the =Dired= buffer with =+ org=
+- Go to your home directory (=C-x d ~/=)
 
-   - Find the directory and go into it
+- Make a new directory in the =Dired= buffer with =+ org=
 
-   - In =~/org=, create a file =test.org=
+- Find the directory and go into it
 
-   - In =test.org=, open a graphic R code block
+- In =~/org=, create a file =test.org=
 
-   - Set the file header argument so that you get a PNG file
+- In =test.org=, open a graphic R code block
 
-   - Create a sorted dot plot of the length of the guinea pig teeth
-     from the =ToothGrowth= dataset:
-     #+begin_example R
-     dotchart(sort(ToothGrowth$len))
-     #+end_example
+- Set the file header argument so that you get a PNG file
 
-   - When asked for the "R starting project directory", modify the
-     offered address and change it from =~/org= to =~/=
+- Create a sorted dot plot of the length of the guinea pig teeth
+  from the =ToothGrowth= dataset:
+  #+begin_example R
+  dotchart(sort(ToothGrowth$len))
+  #+end_example
 
-   - Open the file with =<F6>=. You shouldn't see anything
+- When asked for the "R starting project directory", modify the
+  offered address and change it from =~/org= to =~/=
 
-   - Split the screen and open the R console in one, and the file
-     =test.org= in the other buffer
+- Open the file with =<F6>=. You shouldn't see anything
 
-   - You should see that =*R*= is set to your =$HOME=.
+- Split the screen and open the R console in one, and the file
+  =test.org= in the other buffer
 
-   - Create another (non-graphic) R code block (keep =*R*= open)
+- You should see that =*R*= is set to your =$HOME=.
 
-   - In the other code block check where you are - both with an R
-     function, and with a =system= command
+- Create another (non-graphic) R code block (keep =*R*= open)
 
-   - You know that your test file is in =~/org=. Now set the working
-     directory to that directory using a /relative path/, and check the
-     new location.
+- In the other code block check where you are - both with an R
+  function, and with a =system= command
 
-   - Re-run the graphics command from earlier and open the PNG file
-     with =<F6>=.
+- You know that your test file is in =~/org=. Now set the working
+  directory to that directory using a /relative path/, and check the
+  new location.
 
-   - Make sure that you understand everything we're doing here! Create
-     your own examples!
+- Re-run the graphics command from earlier and open the PNG file
+  with =<F6>=.
+
+- Make sure that you understand everything we're doing here! Create
+  your own examples!
 
 
-** Review: DataCamp lesson "The Color and the Shape"
+** TODO Review: DataCamp lesson "The Color and the Shape"
 
-** Exploratory Data Analysis (EDA) with R (Lecture & practice)
+*** What does this plot (from the DataCamp lesson) suggest? How would you critique it?
+#+attr_html: :width 400px:
+[[../img/color2.png]]
+
+#+begin_quote
+"The longer someone goes to school in a wealthy country, the longer
+he'll live." = Life expectancy, wealth index, schooling length are
+positively correlated.
+
+- We don't know what "schooling" means
+- We don't know the definition or distribution of GNI or life
+  expectancy
+- We don't know how or when these data were collected.
+#+end_quote
+
+*** What's the problem with 3D scatter plots?
+#+begin_quote
+A three-dimensional object on a two-dimensional screen is hard to
+interpret because you lose the sense of perspective or depth
+perception.
+#+end_quote
+
+Code example:
+#+begin_src R :file 3d_scatterplot.png :session *R* :results file graphics output :exports both
+  install.packages("scatterplot3d")
+  library(scatterplot3d)
+  scatterplot3d(mtcars$wt, mtcars$mpg, mtcars$hp,
+                color = as.numeric(mtcars$cyl),
+                pch = 19,
+                xlab = "Weight", ylab = "MPG", zlab = "Horsepower")
+#+end_src
+
+#+RESULTS:
+[[file:3d_scatterplot.png]]
+
+*** What are visual dimensions for scatter plots besides spatial dimensions?
+#+begin_quote
+- Color
+- Size
+- Transparency
+- Shape
+#+end_quote
+*** Code examples
+**** Color
+#+begin_src R :file colorPlot.png :session *R* :results file graphics output :exports both
+  plot(mtcars$wt, mtcars$mpg,
+       col = as.factor(mtcars$cyl),
+       xlab = "Weight [tons]", ylab = "Miles-per-gallon")
+#+end_src
+
+#+RESULTS:
+[[file:colorPlot.png]]
+
+**** Size
+#+begin_src R :file sizePlot.png :session *R* :results file graphics output :exports both
+  point_sizes <- mtcars$cyl / max(mtcars$cyl) * 3
+
+  plot(mtcars$wt, mtcars$mpg,
+       cex = point_sizes,
+       xlab = "Weight", ylab = "MPG")
+#+end_src
+
+#+RESULTS:
+[[file:sizePlot.png]]
+
+**** Transparency
+#+begin_src R :file transPlot.png :session *R* :results file graphics output :exports both
+  transparency <- mtcars$cyl / max(mtcars$cyl)
+
+  plot(mtcars$wt, mtcars$mpg,
+       col = rgb(1, 0, 0, alpha = transparency),
+       pch = 19, cex=2,
+       xlab = "Weight", ylab = "MPG")
+#+end_src
+
+#+RESULTS:
+[[file:transPlot.png]]
+
+**** Shape
+#+begin_src R :file shapePlot.png :session *R* :results file graphics output :exports both
+  shapes <- as.numeric(as.factor(mtcars$cyl))
+
+  ## Create scatter plot with shapes based on mtcars$cyl
+  plot(mtcars$wt, mtcars$mpg,
+       pch = shapes,  ## Adjust shape based on cylinder count
+       cex = 2,
+       col = "blue",  ## Fixed color
+       xlab = "Weight", ylab = "MPG")
+#+end_src
+
+#+RESULTS:
+[[file:shapePlot.png]]
+
+*** What are visual dimensions for line plots?
+#+begin_quote
+- Color
+- Thickness
+- Transparency
+- Line type (solid, dashes, dots)
+#+end_quote
+*** Code examples
+**** Color
+#+begin_src R :file lineColor.png :session *R* :results file graphics output :exports both
+  plot(Nile,
+       col="red")
+#+end_src
+
+#+RESULTS:
+[[file:lineColor.png]]
+
+**** Thickness
+#+begin_src R :file lineThick.png :session *R* :results file graphics output :exports both
+  plot(Nile,
+       lwd=3)
+#+end_src
+
+#+RESULTS:
+[[file:lineThick.png]]
+
+**** Transparency
+#+begin_src R :file lineTrans.png :session *R* :results file graphics output :exports both
+  plot(Nile,
+       lwd=3,
+       col = rgb(1, 0, 0, alpha=0.2))
+#+end_src
+
+#+RESULTS:
+[[file:lineTrans.png]]
+
+**** Line type
+#+begin_src R :file lineType.png :session *R* :results file graphics output :exports both
+  plot(Nile,
+       lty=2)
+#+end_src
+
+#+RESULTS:
+[[file:lineType.png]]
+
+
+* Week 4 - Exploratory Data Analysis (EDA)
+
+** TODO Exploratory Data Analysis (EDA) with R (Lecture & practice)
 #+attr_html: :width 600px:
 [[../img/jules_verne.jpg]]
 
@@ -742,7 +884,3 @@ Test the new setup in a =.org= file with a graphics command:
 - [ ] *Practice:* Using Rterm and Rgui
 - [ ] Questions to ask from data
 - [ ] *Practice:* A representative R session
-
-* Week 4
-
-- [ ] Use =ToothGrowth=: color the dot plot by =supp= values
