@@ -543,7 +543,7 @@ different experience, use Google Colab at [[https://colab.research.google.com/][
 - [X] Practice: finish the 'dot plot' example from the DataCamp review
 - [ ] Review DataCamp lesson "The Color and the Shape"
 
-** DONE Warm-up: The Dark Matter Mystery
+** Warm-up: The Dark Matter Mystery
 
 What's wrong with this from a data visualization point of view?
 
@@ -555,7 +555,7 @@ review of everything we don't know about Dark Matter (06/2024) by
 Cirelli, Strumia and Zupan (arxiv.org preprint - 515 pages).
 
 
-** DONE Emacs - Add automatic code block headers (a CSC 302 bonus)
+** Emacs - Add automatic code block headers (a CSC 302 bonus)
 
 Open Zoom + a GUI Emacs (not =emacs -nw=)
 
@@ -609,7 +609,7 @@ Open Zoom + a GUI Emacs (not =emacs -nw=)
     be active when you open Emacs next.
 
 
-** NEXT Test block header and learn more about the shells
+** Test block header and learn more about the shells
 
 Test the new setup in a =.org= file with a graphics command:
 
@@ -676,7 +676,7 @@ Test the new setup in a =.org= file with a graphics command:
       : /home/aletheia/GitHub/dviz/org
 
 
-** DONE Chart and Shell Exercise
+** Chart and Shell Exercise
 
 1. Close your R console. (=C-x k=)
 
@@ -724,7 +724,7 @@ Test the new setup in a =.org= file with a graphics command:
     your own examples!
 
 
-** TODO Review: DataCamp lesson "The Color and the Shape"
+** IN PROGRESS Review: DataCamp lesson "The Color and the Shape"
 
 *** What's the problem with 3D scatter plots?
 #+begin_quote
@@ -864,6 +864,47 @@ positively correlated.
 
 
 * Week 4 - Exploratory Data Analysis (EDA)
+#+attr_html: :width 600px: 
+[[../img/Christ-Rescuing-Peter-from-Drowning-1370_.jpg]]
+
+- [ ] Review package installation (~scatterplot3d~)
+- [ ] Finish review DataCamp lesson "The Color and the Shape" (plots!)
+- [ ] Get on with EDA!
+  
+** TODO Review: package installation
+#+attr_html: :width 400px:
+[[../img/R_Emacs_Linux2.png]]
+
+I thought it might be worth sketching the process of R package
+installation again that we went through at the end of the last
+session:
+
+1) To install a package, use the R command =install.packages= - this
+   means that the command is executed either in an R code block, or on
+   the R console (which runs behind the code block).
+
+2) Since you were trying to install the package ~scatterplot3d~ without
+   sysadmin (root) privileges, the Operating System (OS) refused to
+   let you install it together with all the other R files - on my
+   Linux system that is ~/usr/lib/R~.
+
+3) The =install.packages= command in the code block was stalled because
+   the system needed a response from you: a yes/no if you're OK to
+   store the package files locally in your =$HOME= directory (in ~~/R~).
+
+4) To have this dialog with the OS, you had to open a regular R
+   console. This is where we installed the package.
+
+5) Every time the R program starts a console, it loads its
+   environment, including freshly installed packages. Every shell
+   works like that: If you change an environment setting (like the
+   =$PATH= to a file), you need to restart the shell.
+
+6) Hence, we had to restart the R console that sits behind the
+   Org-mode test file. Now the package =scatterplot3d= could be found
+   and loaded into the session with =library(scatterplot3d)= so that the
+   functions in the package were available to produce the plot!
+
 
 ** TODO Exploratory Data Analysis (EDA) with R (Lecture & practice)
 #+attr_html: :width 600px:
