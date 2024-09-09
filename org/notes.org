@@ -531,7 +531,7 @@ different experience, use Google Colab at [[https://colab.research.google.com/][
   champion. His book "The Art of R Programming" is a jewel, too.
   #+end_quote
 
-* IN PROGRESS Week 3 - Emacs + R + Linux
+* TODO Week 3 - Emacs + R + Linux
 #+attr_html: :width 400px:
 [[../img/R_Emacs_Linux.png]]
 
@@ -755,10 +755,14 @@ Code example:
 #+end_quote
 *** Code examples
 **** Color
+
+Create graphics code block with =<rg TAB= then enter code and run with
+C-c C-c:
+
 #+begin_src R :file colorPlot.png :session *R* :results file graphics output :exports both
-  plot(mtcars$wt, mtcars$mpg,
-       col = as.factor(mtcars$cyl), 
-       xlab = "Weight [tons]", ylab = "Miles-per-gallon")
+  plot(x=mtcars$wt,
+       y=mtcars$mpg,
+       col = as.factor(mtcars$cyl)) # encode cyl category as color
 #+end_src
 
 #+RESULTS:
@@ -769,8 +773,7 @@ Code example:
   point_sizes <- mtcars$cyl / max(mtcars$cyl) * 3
 
   plot(mtcars$wt, mtcars$mpg,
-       cex = point_sizes,
-       xlab = "Weight", ylab = "MPG")
+       cex = point_sizes)
 #+end_src
 
 #+RESULTS:
@@ -781,28 +784,26 @@ Code example:
   transparency <- mtcars$cyl / max(mtcars$cyl)
 
   plot(mtcars$wt, mtcars$mpg,
-       col = rgb(1, 0, 0, alpha = transparency),
-       pch = 19, cex=2,
-       xlab = "Weight", ylab = "MPG")
+       col = rgb(1, 0, 0, alpha = transparency), # sets transparency
+       pch = 19, # point character
+       cex=2) # extension of the point
 #+end_src
 
 #+RESULTS:
 [[file:transPlot.png]]
 
 **** Shape
-#+begin_src R :file shapePlot.png :session *R* :results file graphics output :exports both
-  shapes <- as.numeric(as.factor(mtcars$cyl))
-
+#+begin_src R :file shapePlot2.png :session *R* :results file graphics output :exports both
   ## Create scatter plot with shapes based on mtcars$cyl
   plot(mtcars$wt, mtcars$mpg,
-       pch = shapes,  ## Adjust shape based on cylinder count
+       pch = mtcars$cyl*2,  ## Adjust shape based on cylinder count
        cex = 2,
-       col = "blue",  ## Fixed color
-       xlab = "Weight", ylab = "MPG")
+       col = "blue")  ## Fixed color
 #+end_src
 
 #+RESULTS:
-[[file:shapePlot.png]]
+[[file:shapePlot2.png]]
+
 
 *** What are visual dimensions for line plots?
 #+begin_quote
@@ -877,18 +878,28 @@ an audience (the more so if the audience is likely to care about it):
 [[../img/Christ-Rescuing-Peter-from-Drowning-1370_.jpg]]
 
 Housekeeping:
-- [ ] New quiz coming at you later today
-- [ ] New DataCamp lessons live: Data visualization with ~ggplot2~
-- [ ] Will (probably) change syllabus and continue with ~plotly~
-- [ ] A couple of you did not meet the DataCamp deadline: watch it!
-- [ ] If you submit late or if I made a grading mistake: let me know!
-- [ ] *Several of you missed a project deadline (Canvas list)*
+- [X] New quiz coming at you later today
+- [X] New DataCamp lessons live: Data visualization with ~ggplot2~
+- [X] Will (probably) change syllabus and continue with ~plotly~
+- [X] A couple of you did not meet the DataCamp deadline: watch it!
+- [X] If you submit late or if I made a grading mistake: let me know!
+- [X] *Several of you missed a project deadline (Canvas list)*
 
 Content:
 - [ ] Review package installation (~scatterplot3d~)
 - [ ] Finish review DataCamp lesson "The Color and the Shape" (plots!)
 - [ ] Continue "Exploratory Data Analysis" lecture (with practice)
-  
+- [ ] Review: debugging R graphics
+
+* Review: Debugging R graphics in Emacs Org-mode
+
+- You have an error in your code block header (all data after the
+  error are ignored)
+- Your graphics file name does not end in .png (not recognized as
+  graphics)
+- Your R session looks at the wrong directory (not where your .org
+  file is - check with =getwd()= where you are and change with =setwd=)
+
 * TODO Review: package installation
 #+attr_html: :width 400px:
 [[../img/R_Emacs_Linux2.png]]
@@ -922,7 +933,6 @@ session:
    Org-mode test file. Now the package =scatterplot3d= could be found
    and loaded into the session with =library(scatterplot3d)= so that the
    functions in the package were available to produce the plot!
-
 
 * TODO Exploratory Data Analysis (EDA) with R (Lecture & practice)
 #+attr_html: :width 600px:
