@@ -169,7 +169,32 @@ the screenshot of an online journal article.
    [[../img/2_meta_solution.png]]
 #+end_notes
 
+* Installing older versions of packages
+
+We'll cover this also in the DSC 105 course (again).
+
+For example for the =MASS= package: check your R =version= and then pick
+an earlier package version using the [[https://cran.r-project.org/src/contrib/Archive/MASS/][CRAN archive]].
+
+For example, if you have R version 4.0.4 (2021-02-15), then version
+7.3.54 from 2021-05-03 is a safe bet:
+#+begin_example R
+  install.packages("remotes")
+  require(remotes)
+  install_version("MASS", version="7.3.54")
+  library(MASS)
+  search()  # MASS appears in environment list
+#+end_example
+
+To list functions in a package, use =lsf.str= for lots of detail, or =ls=
+for an overview:
+#+begin_example
+  lsf.str("package:MASS")
+  ls("package:MASS")  
+#+end_example
+
 * Problem: missing values
+
 #+attr_html: :width 500px
 #+caption: Pima Indians data sets in the MASS package
 [[../img/2_pima.png]]

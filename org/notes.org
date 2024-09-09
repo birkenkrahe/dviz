@@ -531,7 +531,7 @@ different experience, use Google Colab at [[https://colab.research.google.com/][
   champion. His book "The Art of R Programming" is a jewel, too.
   #+end_quote
 
-* Week 3 - Emacs + R + Linux
+* IN PROGRESS Week 3 - Emacs + R + Linux
 #+attr_html: :width 400px:
 [[../img/R_Emacs_Linux.png]]
 
@@ -726,6 +726,8 @@ Test the new setup in a =.org= file with a graphics command:
 
 ** IN PROGRESS Review: DataCamp lesson "The Color and the Shape"
 
+/Emacs tip: to move up / down through a list, use =C-c C-p= / =C-c C-n=./
+
 *** What's the problem with 3D scatter plots?
 #+begin_quote
 A three-dimensional object on a two-dimensional screen is hard to
@@ -755,7 +757,7 @@ Code example:
 **** Color
 #+begin_src R :file colorPlot.png :session *R* :results file graphics output :exports both
   plot(mtcars$wt, mtcars$mpg,
-       col = as.factor(mtcars$cyl),
+       col = as.factor(mtcars$cyl), 
        xlab = "Weight [tons]", ylab = "Miles-per-gallon")
 #+end_src
 
@@ -852,26 +854,42 @@ Code example:
 [[../img/color2.png]]
 
 #+begin_quote
-"The longer someone goes to school in a wealthy country, the longer
-he'll live." = Life expectancy, wealth index, schooling length are
+"The longer someone goes to school in a wealthy country, the longer he
+will live." = Life expectancy, wealth index, schooling length are all
 positively correlated.
 
-- We don't know what "schooling" means
+However:
+- We don't know what "schooling" means.
 - We don't know the definition or distribution of GNI or life
-  expectancy
+  expectancy.
 - We don't know how or when these data were collected.
+
+It is always potentially misleading and dangerous to throw visuals at
+an audience (the more so if the audience is likely to care about it):
+- Now people want to go to school longer (should they?)
+- They want to get wealthier (should they?)
+- They want to live in wealthier countries (should they?)
 #+end_quote
 
 
-* Week 4 - Exploratory Data Analysis (EDA)
+* NEXT Week 4 - Exploratory Data Analysis (EDA)
 #+attr_html: :width 600px: 
 [[../img/Christ-Rescuing-Peter-from-Drowning-1370_.jpg]]
 
+Housekeeping:
+- [ ] New quiz coming at you later today
+- [ ] New DataCamp lessons live: Data visualization with ~ggplot2~
+- [ ] Will (probably) change syllabus and continue with ~plotly~
+- [ ] A couple of you did not meet the DataCamp deadline: watch it!
+- [ ] If you submit late or if I made a grading mistake: let me know!
+- [ ] *Several of you missed a project deadline (Canvas list)*
+
+Content:
 - [ ] Review package installation (~scatterplot3d~)
 - [ ] Finish review DataCamp lesson "The Color and the Shape" (plots!)
-- [ ] Get on with EDA!
+- [ ] Continue "Exploratory Data Analysis" lecture (with practice)
   
-** TODO Review: package installation
+* TODO Review: package installation
 #+attr_html: :width 400px:
 [[../img/R_Emacs_Linux2.png]]
 
@@ -906,7 +924,7 @@ session:
    functions in the package were available to produce the plot!
 
 
-** TODO Exploratory Data Analysis (EDA) with R (Lecture & practice)
+* TODO Exploratory Data Analysis (EDA) with R (Lecture & practice)
 #+attr_html: :width 600px:
 [[../img/jules_verne.jpg]]
 
