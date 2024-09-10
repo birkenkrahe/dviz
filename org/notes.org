@@ -531,7 +531,7 @@ different experience, use Google Colab at [[https://colab.research.google.com/][
   champion. His book "The Art of R Programming" is a jewel, too.
   #+end_quote
 
-* TODO Week 3 - Emacs + R + Linux
+* Week 3 - Emacs + R + Linux
 #+attr_html: :width 400px:
 [[../img/R_Emacs_Linux.png]]
 
@@ -770,10 +770,10 @@ C-c C-c:
 
 **** Size
 #+begin_src R :file sizePlot.png :session *R* :results file graphics output :exports both
-  point_sizes <- mtcars$cyl / max(mtcars$cyl) * 3
-
+  point_size = mtcars$cyl / max(mtcars$cyl) * 3
+  
   plot(mtcars$wt, mtcars$mpg,
-       cex = point_sizes)
+       cex = point_size)
 #+end_src
 
 #+RESULTS:
@@ -781,12 +781,12 @@ C-c C-c:
 
 **** Transparency
 #+begin_src R :file transPlot.png :session *R* :results file graphics output :exports both
-  transparency <- mtcars$cyl / max(mtcars$cyl)
+  transparency <- mtcars$cyl / max(mtcars$cyl) 
 
   plot(mtcars$wt, mtcars$mpg,
-       col = rgb(1, 0, 0, alpha = transparency), # sets transparency
-       pch = 19, # point character
-       cex=2) # extension of the point
+       col = rgb(1, 0, 0, alpha = transparency),# sets transparency in [0,1]
+       pch=19, # solid points
+       cex=2) # double size
 #+end_src
 
 #+RESULTS:
@@ -796,14 +796,11 @@ C-c C-c:
 #+begin_src R :file shapePlot2.png :session *R* :results file graphics output :exports both
   ## Create scatter plot with shapes based on mtcars$cyl
   plot(mtcars$wt, mtcars$mpg,
-       pch = mtcars$cyl*2,  ## Adjust shape based on cylinder count
-       cex = 2,
-       col = "blue")  ## Fixed color
+       pch = mtcars$cyl)  ## Adjust shape based on cylinder count
 #+end_src
 
 #+RESULTS:
 [[file:shapePlot2.png]]
-
 
 *** What are visual dimensions for line plots?
 #+begin_quote
