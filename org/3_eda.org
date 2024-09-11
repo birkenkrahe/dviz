@@ -148,7 +148,8 @@ places and transitions. Realtime visualization with [[https://youtu.be/KvDKgzkCP
   (cp. ChatGPT memory of you), allow for model updates, and bias
   mitigation.
   #+end_notes
-  #+begin_quote
+
+    #+begin_quote
   "As potentially valuable as metadata is, we cannot afford to
   accept it uncritically: we should always cross-check the metadata
   with the actual data values, with our intuition and prior
