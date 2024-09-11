@@ -813,14 +813,20 @@ C-c C-c:
 **** Color
 #+begin_src R :file lineColor.png :session *R* :results file graphics output :exports both
   plot(Nile,
-       col="red")
+       col="blue")
 #+end_src
+
+#+RESULTS:
+[[file:lineColor.png]]
 
 **** Thickness
 #+begin_src R :file lineThick.png :session *R* :results file graphics output :exports both
   plot(Nile,
-       lwd=3)
+       lwd=10)
 #+end_src
+
+#+RESULTS:
+[[file:lineThick.png]]
 
 **** Transparency
 #+begin_src R :file lineTrans.png :session *R* :results file graphics output :exports both
@@ -829,11 +835,17 @@ C-c C-c:
        col = rgb(1, 0, 0, alpha=0.2))
 #+end_src
 
+#+RESULTS:
+[[file:lineTrans.png]]
+
 **** Line type
 #+begin_src R :file lineType.png :session *R* :results file graphics output :exports both
   plot(Nile,
-       lty=2)
+       lty=3)
 #+end_src
+
+#+RESULTS:
+[[file:lineType.png]]
 
 
 *** What does this plot (from the DataCamp lesson) suggest? How would you critique it?
@@ -873,7 +885,7 @@ Housekeeping:
 
 Content:
 - [X] Review package installation (~scatterplot3d~)
-- [ ] Finish review DataCamp lesson "The Color and the Shape" (plots!)
+- [X] Finish review DataCamp lesson "The Color and the Shape" (plots!)
 - [ ] Continue "Exploratory Data Analysis" lecture (with practice)
 - [ ] Review: debugging R graphics
 
