@@ -816,17 +816,11 @@ C-c C-c:
        col="red")
 #+end_src
 
-#+RESULTS:
-[[file:lineColor.png]]
-
 **** Thickness
 #+begin_src R :file lineThick.png :session *R* :results file graphics output :exports both
   plot(Nile,
        lwd=3)
 #+end_src
-
-#+RESULTS:
-[[file:lineThick.png]]
 
 **** Transparency
 #+begin_src R :file lineTrans.png :session *R* :results file graphics output :exports both
@@ -835,17 +829,12 @@ C-c C-c:
        col = rgb(1, 0, 0, alpha=0.2))
 #+end_src
 
-#+RESULTS:
-[[file:lineTrans.png]]
-
 **** Line type
 #+begin_src R :file lineType.png :session *R* :results file graphics output :exports both
   plot(Nile,
        lty=2)
 #+end_src
 
-#+RESULTS:
-[[file:lineType.png]]
 
 *** What does this plot (from the DataCamp lesson) suggest? How would you critique it?
 #+attr_html: :width 400px:
@@ -870,7 +859,7 @@ an audience (the more so if the audience is likely to care about it):
 #+end_quote
 
 
-* NEXT Week 4 - Exploratory Data Analysis (EDA)
+* Week 4 - Exploratory Data Analysis (EDA)
 #+attr_html: :width 600px: 
 [[../img/Christ-Rescuing-Peter-from-Drowning-1370_.jpg]]
 
@@ -883,21 +872,23 @@ Housekeeping:
 - [X] *Several of you missed a project deadline (Canvas list)*
 
 Content:
-- [ ] Review package installation (~scatterplot3d~)
+- [X] Review package installation (~scatterplot3d~)
 - [ ] Finish review DataCamp lesson "The Color and the Shape" (plots!)
 - [ ] Continue "Exploratory Data Analysis" lecture (with practice)
 - [ ] Review: debugging R graphics
 
-* Review: Debugging R graphics in Emacs Org-mode
+* DONE Review: Debugging R graphics in Emacs Org-mode
 
 - You have an error in your code block header (all data after the
   error are ignored)
+
 - Your graphics file name does not end in .png (not recognized as
   graphics)
+
 - Your R session looks at the wrong directory (not where your .org
   file is - check with =getwd()= where you are and change with =setwd=)
 
-* TODO Review: package installation
+* DONE Review: package installation
 #+attr_html: :width 400px:
 [[../img/R_Emacs_Linux2.png]]
 

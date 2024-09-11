@@ -72,7 +72,7 @@ visualization tools:
 All of these can be visualized as Petri nets - directed, bipartite
 graphs that constitute discrete dynamical systems. The two parts are
 places and transitions. Realtime visualization with [[https://youtu.be/KvDKgzkCPHI?si=nqJnv15Ybez4vMtY][process mining]].
-#+end_notes    
+#+end_notes
 
 * Data - practice
 
@@ -115,38 +115,63 @@ places and transitions. Realtime visualization with [[https://youtu.be/KvDKgzkCP
   #+end_quote
 
 * NEXT Meta data
-
 #+attr_html: :width 300px
 #+caption: Greek goddess of peace and spring "Eirene"
 [[../img/2_eirene.png]]
 
-  - "Data about data" (Greek 'meta'= 'after', 'beyond')
-  - Meta data for ~mtcars~:
-    + Original source of the data
-    + Scientific paper analyzing the data
-    + Description of the variables (columns)
+- "Data about data" (Greek 'meta'= 'after', 'beyond')
 
-    *What could be issues with metadata?*
-    #+begin_notes
-    Same as with data except often less reliable because has to be maintained:
-    - *Completeness* - origin
-    - *Consistency* - logic, values, (time) dependency
-    - *Accuracy* - origin and validity
+- *What are the meta data for the ~mtcars~ dataset?*
+  #+begin_notes
+  1. Data types of each column - ~sapply(mtcars,class)~
+  2. Summary structure of the data - ~str(mtcars)~
+  3. Summary statistics of the data - ~summary(mtcars)~
+  4. Dimension of the data frame - ~dim(mtcars)~
+  5. Row names - ~rownames(mtcars)~
+  6. Column names - ~colnames(mtcars)~
+  7. Byte size of the data - ~object.size(mtcars)~
+  8. Original source of the data - ~help(mtcars)~
+  9. Scientific paper analyzing the data ~?mtcars~
+  10. Which package the data belong to (if any) - ~find("mtcars")~
+  11. Help files for data - ~??mtcars~
+  #+end_notes
 
-    With the rising importance of LLMs meta-data become even more
-    important because they provide context, improve user interaction
-    (cp. ChatGPT memory of you), allow for model updates, and bias
-    mitigation.
-    #+end_notes
+- *What could be issues with metadata?*
+  #+begin_notes
+  Same as with data except often less reliable because has to be maintained:
+  - *Completeness* - origin
+  - *Consistency* - logic, values, (time) dependency
+  - *Accuracy* - origin and validity
 
-    Value of meta data:
-    #+begin_quote
-    "As potentially valuable as metadata is, we cannot afford to accept it
-    uncritically: we should always cross-check the metadata with the
-    actual data values, with our intuition and prior understanding of the
-    subject matter, and with other sources of information that may be
-    available." (Pearson, 2018)
-    #+end_quote
+  With the rising importance of LLMs meta-data become even more
+  important because they provide context, improve user interaction
+  (cp. ChatGPT memory of you), allow for model updates, and bias
+  mitigation.
+  #+end_notes
+  #+begin_quote
+  "As potentially valuable as metadata is, we cannot afford to
+  accept it uncritically: we should always cross-check the metadata
+  with the actual data values, with our intuition and prior
+  understanding of the subject matter, and with other sources of
+  information that may be available." (Pearson, 2018)
+  #+end_quote
+
+- *What is the value of meta data:*
+  #+begin_notes
+  1. Data discovery and identification (e.g. data types, structure)
+  2. Context and provenance (e.g. where and by whom collected and used)
+  3. Data understanding and meaning
+  4. Data quality and constraints (e.g. acceptable value ranges,
+     size in memory, time of collection)
+  5. Data lineage (e.g. stuff done to the data after collection)
+  6. Licensing and usage restrictions (e.g. legal or ethical constraints)
+  7. Versioning
+  8. Data quality assessment (e.g. how accuracy of data was validated)
+
+  All of these point to the usefulness, meaning and truthfulness of
+  the data - without available meta data, the underlying data mean
+  little.
+  #+end_notes
 
 * Practice: meta or not meta?
 
@@ -158,7 +183,8 @@ places and transitions. Realtime visualization with [[https://youtu.be/KvDKgzkCP
 the screenshot of an online journal article.
 
 #+begin_notes
-1) *Article meta data:* Journal title, "Research paper", title, authors
+1) *Article content meta data:* Journal title, "Research paper", title,
+   authors, length, date, keywords, publication place.
 2) *Layout meta data:* HTML/CSS elements
 3) *Browser meta data:* browser data (buttons for: download, font size,
    print, login, register, menu options; browser console; URL)
@@ -170,8 +196,6 @@ the screenshot of an online journal article.
 #+end_notes
 
 * Installing older versions of packages
-
-We'll cover this also in the DSC 105 course (again).
 
 For example for the =MASS= package: check your R =version= and then pick
 an earlier package version using the [[https://cran.r-project.org/src/contrib/Archive/MASS/][CRAN archive]].
@@ -190,81 +214,97 @@ To list functions in a package, use =lsf.str= for lots of detail, or =ls=
 for an overview:
 #+begin_example
   lsf.str("package:MASS")
-  ls("package:MASS")  
+  ls("package:MASS")
 #+end_example
 
 * Problem: missing values
 
-#+attr_html: :width 500px
-#+caption: Pima Indians data sets in the MASS package
-[[../img/2_pima.png]]
+- The ~Pima~ datasets contained in ~MASS~ represent an interesting show case.
 
-Check out structure of Pima datasets:
-#+begin_src R :session *R* :results output
-  library(MASS)
-  str(Pima.te)
-  str(Pima.tr)
-  str(Pima.tr2)
-#+end_src
+- Load the ~MASS~ dataset and filter all data sets contained therein:
+  #+begin_src R :session *R* :results output :exports both
+    library(MASS)
+    data(package="MASS")$results[,"Item"] -> datasets  # filter "Items" attribute
+    datasets # a character vector of package names
+  #+end_src
 
-#+RESULTS:
-#+begin_example
-'data.frame':	332 obs. of  8 variables:
- $ npreg: int  6 1 1 3 2 5 0 1 3 9 ...
- $ glu  : int  148 85 89 78 197 166 118 103 126 119 ...
- $ bp   : int  72 66 66 50 70 72 84 30 88 80 ...
- $ skin : int  35 29 23 32 45 19 47 38 41 35 ...
- $ bmi  : num  33.6 26.6 28.1 31 30.5 25.8 45.8 43.3 39.3 29 ...
- $ ped  : num  0.627 0.351 0.167 0.248 0.158 0.587 0.551 0.183 0.704 0.263 ...
- $ age  : int  50 31 21 26 53 51 31 33 27 29 ...
- $ type : Factor w/ 2 levels "No","Yes": 2 1 1 2 2 2 2 1 1 2 ...
-'data.frame':	200 obs. of  8 variables:
- $ npreg: int  5 7 5 0 0 5 3 1 3 2 ...
- $ glu  : int  86 195 77 165 107 97 83 193 142 128 ...
- $ bp   : int  68 70 82 76 60 76 58 50 80 78 ...
- $ skin : int  28 33 41 43 25 27 31 16 15 37 ...
- $ bmi  : num  30.2 25.1 35.8 47.9 26.4 35.6 34.3 25.9 32.4 43.3 ...
- $ ped  : num  0.364 0.163 0.156 0.259 0.133 ...
- $ age  : int  24 55 35 26 23 52 25 24 63 31 ...
- $ type : Factor w/ 2 levels "No","Yes": 1 2 1 1 1 2 1 1 1 2 ...
-'data.frame':	300 obs. of  8 variables:
- $ npreg: int  5 7 5 0 0 5 3 1 3 2 ...
- $ glu  : int  86 195 77 165 107 97 83 193 142 128 ...
- $ bp   : int  68 70 82 76 60 76 58 50 80 78 ...
- $ skin : int  28 33 41 43 25 27 31 16 15 37 ...
- $ bmi  : num  30.2 25.1 35.8 47.9 26.4 35.6 34.3 25.9 32.4 43.3 ...
- $ ped  : num  0.364 0.163 0.156 0.259 0.133 ...
- $ age  : int  24 55 35 26 23 52 25 24 63 31 ...
- $ type : Factor w/ 2 levels "No","Yes": 1 2 1 1 1 2 1 1 1 2 ...
-#+end_example
+- Filter for datasets that contain "Pima":
+  #+begin_src R :session *R* :results output :exports both
+    grep("Pima",datasets) # character vector indices whose values have "Pima" in them
+    datasets[grep("Pima",datasets)] # return corresponding vector elements
+    datasets[c(58,59,60)]
+  #+end_src
+
+- For funnsies: in one command
+  #+begin_src R :session *R* :results output :exports both
+    data(package = "MASS")$results[grep("Pima", data(package = "MASS")$results[, "Item"]), "Item"]
+  #+end_src
+
+- Check out structure of Pima datasets:
+  #+begin_src R :session *R* :results output
+    library(MASS)
+    str(Pima.te)
+    str(Pima.tr)
+    str(Pima.tr2)
+  #+end_src
 
 - The MASS package contains three different versions of the Pima
   indians [[https://rdrr.io/cran/MASS/man/Pima.tr.html][data set]] (diabetes in women of the Pima tribe)
 
-- MASS metadata comments:
-
+- MASS metadata comments (from the documentation):
   #+begin_quote
   "The training set ~Pima.tr~ contains a randomly selected set of 200
   subjects, and ~Pima.te~ contains the remaining 332 subjects. ~Pima.tr2~
   contains ~Pima.tr~ plus 100 subjects with missing values in the
   explanatory variables."
   #+end_quote
-  
+
 - The [[https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database][kaggle.com database]] is yet another version: more records, one
   more variable - the "Metadata" information is missing
 
 - Missing data are often coded as ~0~ instead of ~NA~ leading to errors:
-
   #+begin_quote
   "A number of studies characterizing /binary classifiers/ have been
   published using [the Pima] dataset as a benchmark where the authors
   were not aware that data values were missing." (Pearson, 2018)
   #+end_quote
 
+- How many missing values ~NA~ do these different datasets have?
+  #+begin_src R :session *R* :results output :exports both
+    any(is.na(Pima.te))
+    any(is.na(Pima.tr))
+    any(is.na(Pima.tr2))        
+  #+end_src
+
+  #+RESULTS:
+  : [1] FALSE
+  : [1] FALSE
+  : [1] TRUE
+
+- The summary function is also useful in this regard:
+  #+begin_src R :session *R* :results output :exports both
+    summary(Pima.tr2)
+  #+end_src
+
+  #+RESULTS:
+  #+begin_example
+       npreg             glu              bp              skin            bmi             ped              age      
+   Min.   : 0.000   Min.   : 56.0   Min.   : 38.00   Min.   : 7.00   Min.   :18.20   Min.   :0.0780   Min.   :21.0  
+   1st Qu.: 1.000   1st Qu.:101.0   1st Qu.: 64.00   1st Qu.:21.00   1st Qu.:27.10   1st Qu.:0.2367   1st Qu.:24.0  
+   Median : 3.000   Median :121.0   Median : 72.00   Median :29.00   Median :32.00   Median :0.3360   Median :29.0  
+   Mean   : 3.787   Mean   :123.7   Mean   : 72.32   Mean   :29.15   Mean   :32.05   Mean   :0.4357   Mean   :33.1  
+   3rd Qu.: 6.000   3rd Qu.:142.0   3rd Qu.: 80.00   3rd Qu.:36.00   3rd Qu.:36.50   3rd Qu.:0.5867   3rd Qu.:40.0  
+   Max.   :14.000   Max.   :199.0   Max.   :114.00   Max.   :99.00   Max.   :52.90   Max.   :2.2880   Max.   :72.0  
+                                    NA's   :13       NA's   :98      NA's   :3                                      
+    type    
+   No :194  
+   Yes:106
+  #+end_example
+
 * Excursion: =NA= values in standard functions
 
 - Compute the average of three number 1,2,3 using the =mean= function.
-  #+begin_src R 
+  #+begin_src R
     mean(c(1,2,3))
   #+end_src
 
@@ -277,6 +317,11 @@ Check out structure of Pima datasets:
   #+begin_src R :session *R* :results output :exports both
     mean(c(1,2,3,NA),na.rm=TRUE)
   #+end_src
+
+- How could you have found out that this is the way it works?
+  #+begin_example R
+    ?mean
+  #+end_example
 
 * Problem: variable definitions
 
@@ -321,9 +366,6 @@ perceived, and experience with other data analyses." (Diaconis, 1985)
     fv <- factor(c("male","female"))
     fv
   #+end_src
-  #+RESULTS: level
-  : [1] male   female
-  : Levels: female male
 
 * Types of categorical variables
 #+attr_html: :width 600px
