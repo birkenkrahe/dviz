@@ -149,7 +149,7 @@ places and transitions. Realtime visualization with [[https://youtu.be/KvDKgzkCP
   mitigation.
   #+end_notes
 
-    #+begin_quote
+  #+begin_quote
   "As potentially valuable as metadata is, we cannot afford to
   accept it uncritically: we should always cross-check the metadata
   with the actual data values, with our intuition and prior
@@ -198,27 +198,29 @@ the screenshot of an online journal article.
 
 * Installing older versions of packages
 
-For example for the =MASS= package: check your R =version= and then pick
-an earlier package version using the [[https://cran.r-project.org/src/contrib/Archive/MASS/][CRAN archive]].
+- For example for the =MASS= package: check your R =version= and then pick
+  an earlier package version using the [[https://cran.r-project.org/src/contrib/Archive/MASS/][CRAN archive]].
 
-For example, if you have R version 4.0.4 (2021-02-15), then version
-7.3.54 from 2021-05-03 is a safe bet:
-#+begin_example R
+- If you have R version 4.0.4 (2021-02-15), then version 7.3.54 from
+  2021-05-03 is a safe bet:
+  #+begin_example R
   install.packages("remotes")
   require(remotes)
   install_version("MASS", version="7.3.54")
   library(MASS)
   search()  # MASS appears in environment list
-#+end_example
+  #+end_example
 
-To list functions in a package, use =lsf.str= for lots of detail, or =ls=
-for an overview:
-#+begin_example
+- To list functions in a package, use =lsf.str= for lots of detail, or
+  =ls= for an overview:
+  #+begin_example
   lsf.str("package:MASS")
   ls("package:MASS")
-#+end_example
+  #+end_example
 
 * Problem: missing values
+
+*Open an Org-mode file to code along.*
 
 - The ~Pima~ datasets contained in ~MASS~ represent an interesting show case.
 
@@ -274,33 +276,13 @@ for an overview:
   #+begin_src R :session *R* :results output :exports both
     any(is.na(Pima.te))
     any(is.na(Pima.tr))
-    any(is.na(Pima.tr2))        
+    any(is.na(Pima.tr2))
   #+end_src
-
-  #+RESULTS:
-  : [1] FALSE
-  : [1] FALSE
-  : [1] TRUE
 
 - The summary function is also useful in this regard:
   #+begin_src R :session *R* :results output :exports both
     summary(Pima.tr2)
   #+end_src
-
-  #+RESULTS:
-  #+begin_example
-       npreg             glu              bp              skin            bmi             ped              age      
-   Min.   : 0.000   Min.   : 56.0   Min.   : 38.00   Min.   : 7.00   Min.   :18.20   Min.   :0.0780   Min.   :21.0  
-   1st Qu.: 1.000   1st Qu.:101.0   1st Qu.: 64.00   1st Qu.:21.00   1st Qu.:27.10   1st Qu.:0.2367   1st Qu.:24.0  
-   Median : 3.000   Median :121.0   Median : 72.00   Median :29.00   Median :32.00   Median :0.3360   Median :29.0  
-   Mean   : 3.787   Mean   :123.7   Mean   : 72.32   Mean   :29.15   Mean   :32.05   Mean   :0.4357   Mean   :33.1  
-   3rd Qu.: 6.000   3rd Qu.:142.0   3rd Qu.: 80.00   3rd Qu.:36.00   3rd Qu.:36.50   3rd Qu.:0.5867   3rd Qu.:40.0  
-   Max.   :14.000   Max.   :199.0   Max.   :114.00   Max.   :99.00   Max.   :52.90   Max.   :2.2880   Max.   :72.0  
-                                    NA's   :13       NA's   :98      NA's   :3                                      
-    type    
-   No :194  
-   Yes:106
-  #+end_example
 
 * Excursion: =NA= values in standard functions
 
@@ -327,7 +309,6 @@ for an overview:
 * Problem: variable definitions
 
 - How many planets are there orbiting the sun?
-
   #+attr_html: :width 500px
   [[../img/2_solarsystem.png]]
 
@@ -341,8 +322,20 @@ for an overview:
     possible between those who /measure and record/ it, and those who
     use data in /analysis/.
 
-  - Prominent examples: when does a patient die of COVID-19? What is
-    the cause of death? When do two patients have the same disease?
+  - Prominent contemporary examples:
+    
+    1) *Epidemic data*: When does a patient die of COVID-19? What is the
+       cause of death? When do two patients have the same disease?
+       How reliable are data when a disease has not been studied?
+       
+    2) *Political data:* Who qualifies as "right-wing" or "left-wing"?
+       Are these defined the same or even similar in 1850, 1920, 2024?
+       Is it easy to get authentic data from people surveys?
+
+    3) *Economic data*: What qualifies as "poverty" in different
+       countries or even within the same country over time? Should one
+       focus on income only, or also on housing, healthcare, education? 
+       
   #+end_notes
 
 * Exploratory data analysis (eda)
@@ -367,6 +360,10 @@ perceived, and experience with other data analyses." (Diaconis, 1985)
     fv <- factor(c("male","female"))
     fv
   #+end_src
+
+- *Further study:* If you have not completed DSC 105 (introduction to
+  data science), check out chapter 4 ("Factors") of the DataCamp
+  course "Introduction to R".
 
 * Types of categorical variables
 #+attr_html: :width 600px
@@ -394,36 +391,34 @@ perceived, and experience with other data analyses." (Diaconis, 1985)
 * Practice: Plot the Anscombe quartet
 
 - We already looked at the =summary= data of this built-in dataset. Now
-  let's print all of the data:
+  let's print all of the data.
+
+- Search for the =Anscombe= dataset in R.
+  #+begin_example R
+    ??anscombe  # run help commands on the R shell
+  #+end_example
+
+- Print the dataset:
   #+begin_src R :session *R* :results output :exports both
     anscombe
   #+end_src
 
-  #+RESULTS:
-  #+begin_example
-     x1 x2 x3 x4    y1   y2    y3    y4
-  1  10 10 10  8  8.04 9.14  7.46  6.58
-  2   8  8  8  8  6.95 8.14  6.77  5.76
-  3  13 13 13  8  7.58 8.74 12.74  7.71
-  4   9  9  9  8  8.81 8.77  7.11  8.84
-  5  11 11 11  8  8.33 9.26  7.81  8.47
-  6  14 14 14  8  9.96 8.10  8.84  7.04
-  7   6  6  6  8  7.24 6.13  6.08  5.25
-  8   4  4  4 19  4.26 3.10  5.39 12.50
-  9  12 12 12  8 10.84 9.13  8.15  5.56
-  10  7  7  7  8  4.82 7.26  6.42  7.91
-  11  5  5  5  8  5.68 4.74  5.73  6.89
-  #+end_example
-
 - Now let's create a 2x2 facet plot with the Anscombe Quartet as shown
   in the figure, for the vector pairs (x1,y1), (x2,y2), (x3,y3), and
-  (x4,y4). We'll make a basic plot, which you customize later:
+  (x4,y4). We'll make a basic plot only:
+
+  1) Divide the plotting plane in 2 x 2 plots.
+
+  2) Plot the Anscombe plots (four plots, different x,y vectors).
+
+  3) Distinguish each plot by color (=col=) and point character (=pch=).
+     
   #+begin_src R :file ../img/anscombe.png :session *R* :results file graphics output :exports both
     par(mfrow=c(2,2))
-    plot(anscombe$x1,anscombe$y1, col="red", pch=19)
-    plot(anscombe$x2,anscombe$y2, col="blue", pch=19)
-    plot(anscombe$x3,anscombe$y3, col="green", pch=19)
-    plot(anscombe$x4,anscombe$y4, col="black", pch=19)
+    plot(anscombe$x1,anscombe$y1, col="red", pch=1)
+    plot(anscombe$x2,anscombe$y2, col="blue", pch=2)
+    plot(anscombe$x3,anscombe$y3, col="green", pch=3)
+    plot(anscombe$x4,anscombe$y4, col="black", pch=4)
   #+end_src
 
   #+RESULTS:
@@ -647,7 +642,8 @@ eliminating common words like "and", "of" and punctuation marks), and
 converted to numbers. The numbers are analyzed mathematically, and the
 result is transformed back to allow interpretation of the original
 text data. This technique leads to impressive NLP feats (so-called
-[[https://en.wikipedia.org/wiki/Transformer_(machine_learning_model)][transformer ML models]] based on massive mined data sets, like [[https://openai.com/api/][GPT-3]].)
+[[https://en.wikipedia.org/wiki/Transformer_(machine_learning_model)][transformer ML models]] based on massive mined data sets, like OpenAI's
+line of [[https://openai.com/api/][GPT]] models).
 
 [fn:2]The plots show /Anscombe's quartet/ - four scatterplots which
 despite having different numerical values all have identical mean,
@@ -656,7 +652,7 @@ variance, and standard correlation (Source: revolutionanalytics.com).
 [fn:3]This difference goes deeper than data science: explanatory
 research is usually confirmatory (of some theory), while exploratory
 research is used to construct, or build, theory. Personal note: All of
-my own research has been exploratory.
+my own research has been exploratory rather than confirmatory.
 
 [fn:4]Though they can also be enablers of education: e.g. Linux and
 the command line shell as a data science tool, and online REPL
