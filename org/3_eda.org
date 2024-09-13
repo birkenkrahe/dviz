@@ -231,17 +231,51 @@ the screenshot of an online journal article.
     datasets # a character vector of package names
   #+end_src
 
+#+begin_src R :session *R* :results output
+  data(package="MASS")$results[,"Item"] -> datasets
+  datasets
+#+end_src
+
+#+RESULTS:
+#+begin_example
+ [1] "Aids2"     "Animals"   "Boston"    "Cars93"    "Cushings"  "DDT"       "GAGurine"  "Insurance" "Melanoma" 
+[10] "OME"       "Pima.te"   "Pima.tr"   "Pima.tr2"  "Rabbit"    "Rubber"    "SP500"     "Sitka"     "Sitka89"  
+[19] "Skye"      "Traffic"   "UScereal"  "UScrime"   "VA"        "abbey"     "accdeaths" "anorexia"  "bacteria" 
+[28] "beav1"     "beav2"     "biopsy"    "birthwt"   "cabbages"  "caith"     "cats"      "cement"    "chem"     
+[37] "coop"      "cpus"      "crabs"     "deaths"    "drivers"   "eagles"    "epil"      "farms"     "fgl"      
+[46] "forbes"    "galaxies"  "gehan"     "genotype"  "geyser"    "gilgais"   "hills"     "housing"   "immer"    
+[55] "leuk"      "mammals"   "mcycle"    "menarche"  "michelson" "minn38"    "motors"    "muscle"    "newcomb"  
+[64] "nlschools" "npk"       "npr1"      "oats"      "painters"  "petrol"    "phones"    "quine"     "road"     
+[73] "rotifer"   "ships"     "shoes"     "shrimp"    "shuttle"   "snails"    "steam"     "stormer"   "survey"   
+[82] "synth.te"  "synth.tr"  "topo"      "waders"    "whiteside" "wtloss"
+#+end_example
+
+#+begin_src R :session *R* :results output
+ls()
+#+end_src
+
+#+RESULTS:
+: [1] "datasets"
+
 - Filter for datasets that contain "Pima":
   #+begin_src R :session *R* :results output :exports both
     grep("Pima",datasets) # character vector indices whose values have "Pima" in them
     datasets[grep("Pima",datasets)] # return corresponding vector elements
-    datasets[c(58,59,60)]
+    datasets[c(11,12,13)]
   #+end_src
+
+  #+RESULTS:
+  : [1] 11 12 13
+  : [1] "Pima.te"  "Pima.tr"  "Pima.tr2"
+  : [1] "Pima.te"  "Pima.tr"  "Pima.tr2"
 
 - For funnsies: in one command
   #+begin_src R :session *R* :results output :exports both
     data(package = "MASS")$results[grep("Pima", data(package = "MASS")$results[, "Item"]), "Item"]
   #+end_src
+
+  #+RESULTS:
+  : [1] "Pima.te"  "Pima.tr"  "Pima.tr2"
 
 - Check out structure of Pima datasets:
   #+begin_src R :session *R* :results output
@@ -250,6 +284,37 @@ the screenshot of an online journal article.
     str(Pima.tr)
     str(Pima.tr2)
   #+end_src
+
+  #+RESULTS:
+  #+begin_example
+  'data.frame':	332 obs. of  8 variables:
+   $ npreg: int  6 1 1 3 2 5 0 1 3 9 ...
+   $ glu  : int  148 85 89 78 197 166 118 103 126 119 ...
+   $ bp   : int  72 66 66 50 70 72 84 30 88 80 ...
+   $ skin : int  35 29 23 32 45 19 47 38 41 35 ...
+   $ bmi  : num  33.6 26.6 28.1 31 30.5 25.8 45.8 43.3 39.3 29 ...
+   $ ped  : num  0.627 0.351 0.167 0.248 0.158 0.587 0.551 0.183 0.704 0.263 ...
+   $ age  : int  50 31 21 26 53 51 31 33 27 29 ...
+   $ type : Factor w/ 2 levels "No","Yes": 2 1 1 2 2 2 2 1 1 2 ...
+  'data.frame':	200 obs. of  8 variables:
+   $ npreg: int  5 7 5 0 0 5 3 1 3 2 ...
+   $ glu  : int  86 195 77 165 107 97 83 193 142 128 ...
+   $ bp   : int  68 70 82 76 60 76 58 50 80 78 ...
+   $ skin : int  28 33 41 43 25 27 31 16 15 37 ...
+   $ bmi  : num  30.2 25.1 35.8 47.9 26.4 35.6 34.3 25.9 32.4 43.3 ...
+   $ ped  : num  0.364 0.163 0.156 0.259 0.133 ...
+   $ age  : int  24 55 35 26 23 52 25 24 63 31 ...
+   $ type : Factor w/ 2 levels "No","Yes": 1 2 1 1 1 2 1 1 1 2 ...
+  'data.frame':	300 obs. of  8 variables:
+   $ npreg: int  5 7 5 0 0 5 3 1 3 2 ...
+   $ glu  : int  86 195 77 165 107 97 83 193 142 128 ...
+   $ bp   : int  68 70 82 76 60 76 58 50 80 78 ...
+   $ skin : int  28 33 41 43 25 27 31 16 15 37 ...
+   $ bmi  : num  30.2 25.1 35.8 47.9 26.4 35.6 34.3 25.9 32.4 43.3 ...
+   $ ped  : num  0.364 0.163 0.156 0.259 0.133 ...
+   $ age  : int  24 55 35 26 23 52 25 24 63 31 ...
+   $ type : Factor w/ 2 levels "No","Yes": 1 2 1 1 1 2 1 1 1 2 ...
+  #+end_example
 
 - The MASS package contains three different versions of the Pima
   indians [[https://rdrr.io/cran/MASS/man/Pima.tr.html][data set]] (diabetes in women of the Pima tribe)
@@ -274,32 +339,61 @@ the screenshot of an online journal article.
 
 - How many missing values ~NA~ do these different datasets have?
   #+begin_src R :session *R* :results output :exports both
-    any(is.na(Pima.te))
-    any(is.na(Pima.tr))
-    any(is.na(Pima.tr2))
+    any(is.na(Pima.te))  # no missing values (NA)
+    any(is.na(Pima.tr))  # no missing values (NA)
+    any(is.na(Pima.tr2)) # has missing values (NA)
   #+end_src
+
+  #+RESULTS:
+  : [1] FALSE
+  : [1] FALSE
+  : [1] TRUE
 
 - The summary function is also useful in this regard:
   #+begin_src R :session *R* :results output :exports both
     summary(Pima.tr2)
   #+end_src
 
+  #+RESULTS:
+  #+begin_example
+       npreg             glu              bp              skin            bmi             ped              age      
+   Min.   : 0.000   Min.   : 56.0   Min.   : 38.00   Min.   : 7.00   Min.   :18.20   Min.   :0.0780   Min.   :21.0  
+   1st Qu.: 1.000   1st Qu.:101.0   1st Qu.: 64.00   1st Qu.:21.00   1st Qu.:27.10   1st Qu.:0.2367   1st Qu.:24.0  
+   Median : 3.000   Median :121.0   Median : 72.00   Median :29.00   Median :32.00   Median :0.3360   Median :29.0  
+   Mean   : 3.787   Mean   :123.7   Mean   : 72.32   Mean   :29.15   Mean   :32.05   Mean   :0.4357   Mean   :33.1  
+   3rd Qu.: 6.000   3rd Qu.:142.0   3rd Qu.: 80.00   3rd Qu.:36.00   3rd Qu.:36.50   3rd Qu.:0.5867   3rd Qu.:40.0  
+   Max.   :14.000   Max.   :199.0   Max.   :114.00   Max.   :99.00   Max.   :52.90   Max.   :2.2880   Max.   :72.0  
+                                    NA's   :13       NA's   :98      NA's   :3                                      
+    type    
+   No :194  
+   Yes:106
+  #+end_example
+
 * Excursion: =NA= values in standard functions
 
 - Compute the average of three number 1,2,3 using the =mean= function.
   #+begin_src R
-    mean(c(1,2,3))
+    mean(c(1,2,3))  # c(1,2,3) is the vector of elements 1,2,3
   #+end_src
+
+  #+RESULTS:
+  : 2
 
 - Now add an =NA= to the vector and compute the average again:
   #+begin_src R :session *R* :results output :exports both
-    mean(c(1,2,3,NA))
+    mean(c(1,2,3,NA)) # vector of elements 1,2,3 and one missing element
   #+end_src
+
+  #+RESULTS:
+  : [1] NA
 
 - How can we fix this?
   #+begin_src R :session *R* :results output :exports both
-    mean(c(1,2,3,NA),na.rm=TRUE)
+    mean(c(1,2,3,NA), na.rm=TRUE)
   #+end_src
+
+  #+RESULTS:
+  : [1] 2
 
 - How could you have found out that this is the way it works?
   #+begin_example R

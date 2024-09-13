@@ -936,8 +936,7 @@ session:
    and loaded into the session with =library(scatterplot3d)= so that the
    functions in the package were available to produce the plot!
 
-
-* NEXT Review: meta data
+* DONE Review: meta data
 
 1. Would "talking about this lecture" be considered meta data?
    
@@ -975,7 +974,6 @@ session:
    - Are the data correct?
      
    #+end_quote   
-
 
 * IN PROGRESS Exploratory Data Analysis (EDA) with R (Lecture & practice)
 #+attr_html: :width 600px:
