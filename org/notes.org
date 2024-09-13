@@ -541,7 +541,7 @@ different experience, use Google Colab at [[https://colab.research.google.com/][
 - [X] Enter project team & idea in Canvas ([[https://lyon.instructure.com/courses/2629/pages][wiki]]) by Friday 11 AM
 - [X] Emacs: add automatic code block header
 - [X] Practice: finish the 'dot plot' example from the DataCamp review
-- [ ] Review DataCamp lesson "The Color and the Shape"
+- [X] Review DataCamp lesson "The Color and the Shape"
 
 ** Warm-up: The Dark Matter Mystery
 
@@ -724,7 +724,7 @@ Test the new setup in a =.org= file with a graphics command:
     your own examples!
 
 
-** IN PROGRESS Review: DataCamp lesson "The Color and the Shape"
+** Review: DataCamp lesson "The Color and the Shape"
 
 /Emacs tip: to move up / down through a list, use =C-c C-p= / =C-c C-n=./
 
@@ -870,10 +870,11 @@ an audience (the more so if the audience is likely to care about it):
 - They want to live in wealthier countries (should they?)
 #+end_quote
 
-
 * Week 4 - Exploratory Data Analysis (EDA)
 #+attr_html: :width 600px: 
 [[../img/Christ-Rescuing-Peter-from-Drowning-1370_.jpg]]
+
+/Image: Christ rescuing Peter from drowning (Veneziano, 1370)/
 
 Housekeeping:
 - [X] New quiz coming at you later today
@@ -888,6 +889,7 @@ Content:
 - [X] Finish review DataCamp lesson "The Color and the Shape" (plots!)
 - [ ] Continue "Exploratory Data Analysis" lecture (with practice)
 - [ ] Review: debugging R graphics
+- [ ] Review: meta data
 
 * DONE Review: Debugging R graphics in Emacs Org-mode
 
@@ -934,13 +936,54 @@ session:
    and loaded into the session with =library(scatterplot3d)= so that the
    functions in the package were available to produce the plot!
 
-* TODO Exploratory Data Analysis (EDA) with R (Lecture & practice)
+
+* NEXT Review: meta data
+
+1. Would "talking about this lecture" be considered meta data?
+   
+   #+begin_quote
+   Talking about anything at all goes "beyond" or "with" the subject
+   that is being talked about and hence it qualifies as meta data.
+
+   However, until the "talking" is quantified and stored, the meta
+   data cannot be analyzed.
+   
+   #+end_quote
+
+2. Data can only be analyzed computationally when they're quantified
+   (quality turned into numeric or categorical values). What about
+   meta data? Which analysis methods are most important?
+
+   #+begin_quote
+   Meta data are data with a different context, meaning and function
+   but otherwise "meta data analysis" is first of all data analysis.
+
+   A lot of meta data are plain text, which means that text mining
+   methods are important for meta data analysis.
+   #+end_quote
+
+3. What are the common issues with meta data?
+
+   #+begin_quote
+   Same as with data but often harder to guarantee because proper meta
+   data maintenance is more difficult and less common:
+
+   - Are the data complete?
+     
+   - Are the data consistent?
+
+   - Are the data correct?
+     
+   #+end_quote   
+
+
+* IN PROGRESS Exploratory Data Analysis (EDA) with R (Lecture & practice)
 #+attr_html: :width 600px:
 [[../img/jules_verne.jpg]]
 
 /Image: Les illustrations de Jules Verne - Voyages Extraordinaires./
 
-- [ ] *Practice:* meta data
+- [X] *Practice:* meta data
 - [ ] Missing values (=NA=)
 - [ ] Categorical variables and =factor= vectors
 - [ ] *Practice:* Plotting the Anscombe Quartet

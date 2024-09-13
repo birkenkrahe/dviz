@@ -114,7 +114,7 @@ places and transitions. Realtime visualization with [[https://youtu.be/KvDKgzkCP
   - Stacks
   #+end_quote
 
-* NEXT Meta data
+* Meta data
 #+attr_html: :width 300px
 #+caption: Greek goddess of peace and spring "Eirene"
 [[../img/2_eirene.png]]
@@ -141,7 +141,7 @@ places and transitions. Realtime visualization with [[https://youtu.be/KvDKgzkCP
   Same as with data except often less reliable because has to be maintained:
   - *Completeness* - origin
   - *Consistency* - logic, values, (time) dependency
-  - *Accuracy* - origin and validity
+  - *Correctness* - accuracy of origin and validity
 
   With the rising importance of LLMs meta-data become even more
   important because they provide context, improve user interaction
@@ -174,7 +174,7 @@ places and transitions. Realtime visualization with [[https://youtu.be/KvDKgzkCP
   little.
   #+end_notes
 
-* Practice: meta or not meta?
+* NEXT Practice: meta or not meta?
 
 #+attr_html: :width 600px
 #+caption: datascience.codata.org/articles/10.5334/dsj-2022-010/
