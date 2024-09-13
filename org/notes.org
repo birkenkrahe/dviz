@@ -891,7 +891,7 @@ Content:
 - [ ] Review: debugging R graphics
 - [ ] Review: meta data
 
-* DONE Review: Debugging R graphics in Emacs Org-mode
+** Review: Debugging R graphics in Emacs Org-mode
 
 - You have an error in your code block header (all data after the
   error are ignored)
@@ -902,7 +902,7 @@ Content:
 - Your R session looks at the wrong directory (not where your .org
   file is - check with =getwd()= where you are and change with =setwd=)
 
-* DONE Review: package installation
+** Review: package installation
 #+attr_html: :width 400px:
 [[../img/R_Emacs_Linux2.png]]
 
@@ -936,7 +936,7 @@ session:
    and loaded into the session with =library(scatterplot3d)= so that the
    functions in the package were available to produce the plot!
 
-* DONE Review: meta data
+** Review: meta data
 
 1. Would "talking about this lecture" be considered meta data?
    
@@ -975,7 +975,7 @@ session:
      
    #+end_quote   
 
-* IN PROGRESS Exploratory Data Analysis (EDA) with R (Lecture & practice)
+** Exploratory Data Analysis (EDA) with R (Lecture & practice)
 #+attr_html: :width 600px:
 [[../img/jules_verne.jpg]]
 
