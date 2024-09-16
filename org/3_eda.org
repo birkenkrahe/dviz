@@ -400,7 +400,7 @@ the screenshot of an online journal article.
     ?mean
   #+end_example
 
-* NEXT Problem: variable definitions
+* Problem: variable definitions
 
 - How many planets are there orbiting the sun?
   #+attr_html: :width 500px
@@ -451,9 +451,13 @@ perceived, and experience with other data analyses." (Diaconis, 1985)
 - In R, each discrete value or category is also called a /level/.
   #+name: level
   #+begin_src R :exports both :session :results output
-    fv <- factor(c("male","female"))
+    fv <- factor(c("male","female","female","female","non-disclosed"))
     fv
   #+end_src
+
+  #+RESULTS: level
+  : [1] male          female        female        female        non-disclosed
+  : Levels: female male non-disclosed
 
 - *Further study:* If you have not completed DSC 105 (introduction to
   data science), check out chapter 4 ("Factors") of the DataCamp
@@ -468,6 +472,16 @@ perceived, and experience with other data analyses." (Diaconis, 1985)
 - Many levels (e.g. US ZIP code with 40,000 levels)
 
 - Exploitable sub-structure (e.g. text data[fn:1])
+
+#+begin_src R :session *R* :results output :exports both :noweb yes
+  str(ToothGrowth)
+#+end_src
+
+#+RESULTS:
+: 'data.frame':	60 obs. of  3 variables:
+:  $ len : num  4.2 11.5 7.3 5.8 6.4 10 11.2 11.2 5.2 7 ...
+:  $ supp: Factor w/ 2 levels "OJ","VC": 2 2 2 2 2 2 2 2 2 2 ...
+:  $ dose: num  0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 ...
 
 * Some issues with graphs
 
