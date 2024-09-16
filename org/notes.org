@@ -999,6 +999,94 @@ session:
 
 /Image: Rene Margritte, Ceci n'est pas une pipe./
 
+** Review questions
+
+1. What do you remember from the last session? Run one command that
+   you remember!
+   #+begin_example R
+   1. install.packages("remotes")
+   2. require(remotes)
+   3. install_version("MASS", version="7.3.54")
+   4. library(MASS)
+   5. search()
+   6. ls("package:MASS")
+   7. data(package="MASS")$results[,"Item"] -> datasets
+   8. datasets[grep("Pima",datasets)]
+   9. any(is.na(Pima.tr2))
+   10. summary(Pima.tr2)
+   11. mean(Pima.tr2)
+   12. ?mean
+   #+end_example
+
+2. Why may you have to install an older version of an R package?
+   #+begin_quote
+   You may have to install an older version of an R package if your
+   version of R (=version=) is out of sync with the latest package
+   version. This was the case for the MASS package (required R > 4.4).
+   #+end_quote
+
+3. How can you get an overview of the functions in a package,
+   e.g. =MASS=?
+   #+begin_src R :session *R* :results output :exports both     
+     ls("package:MASS")
+   #+end_src
+
+4. How can you filter a dataset for a pattern?
+   #+begin_src R :session *R* :results output :exports both
+     course <- "The number of this course is DSC 302"
+     class(course)
+     grep("DSC", course) # search for DSC in string
+   #+end_src
+
+   Another example:   
+   #+begin_src R :session *R* :results output :exports both
+     course2 <- unlist(strsplit(course," "))
+     is.vector(course2)
+     grep("DSC", course2)
+     course2
+   #+end_src   
+
+   #+RESULTS:
+   : [1] TRUE
+   : [1] 7
+   : [1] "The"    "number" "of"     "this"   "course" "is"     "DSC"    "302"
+
+5. How can you get the average of the =bp= feature of =Pima.tr2= and what
+   do you have to look out for?
+   #+begin_src R :session *R* :results output :exports both
+     library(MASS)
+     str(Pima.tr2)
+     summary(Pima.tr2)
+     mean(Pima.tr2$bp)
+   #+end_src
+
+   #+RESULTS:
+   #+begin_example
+   'data.frame':	300 obs. of  8 variables:
+    $ npreg: int  5 7 5 0 0 5 3 1 3 2 ...
+    $ glu  : int  86 195 77 165 107 97 83 193 142 128 ...
+    $ bp   : int  68 70 82 76 60 76 58 50 80 78 ...
+    $ skin : int  28 33 41 43 25 27 31 16 15 37 ...
+    $ bmi  : num  30.2 25.1 35.8 47.9 26.4 35.6 34.3 25.9 32.4 43.3 ...
+    $ ped  : num  0.364 0.163 0.156 0.259 0.133 ...
+    $ age  : int  24 55 35 26 23 52 25 24 63 31 ...
+    $ type : Factor w/ 2 levels "No","Yes": 1 2 1 1 1 2 1 1 1 2 ...
+   npreg             glu              bp              skin            bmi             ped              age      
+    Min.   : 0.000   Min.   : 56.0   Min.   : 38.00   Min.   : 7.00   Min.   :18.20   Min.   :0.0780   Min.   :21.0  
+    1st Qu.: 1.000   1st Qu.:101.0   1st Qu.: 64.00   1st Qu.:21.00   1st Qu.:27.10   1st Qu.:0.2367   1st Qu.:24.0  
+    Median : 3.000   Median :121.0   Median : 72.00   Median :29.00   Median :32.00   Median :0.3360   Median :29.0  
+    Mean   : 3.787   Mean   :123.7   Mean   : 72.32   Mean   :29.15   Mean   :32.05   Mean   :0.4357   Mean   :33.1  
+    3rd Qu.: 6.000   3rd Qu.:142.0   3rd Qu.: 80.00   3rd Qu.:36.00   3rd Qu.:36.50   3rd Qu.:0.5867   3rd Qu.:40.0  
+    Max.   :14.000   Max.   :199.0   Max.   :114.00   Max.   :99.00   Max.   :52.90   Max.   :2.2880   Max.   :72.0  
+                                     NA's   :13       NA's   :98      NA's   :3                                      
+     type    
+    No :194  
+    Yes:106
+   [1] NA
+   #+end_example
+
+** EDA lecture & practice
+
 - [X] *Practice:* meta data
 - [X] Missing values (=NA=)
 - [ ] Categorical variables and =factor= vectors
