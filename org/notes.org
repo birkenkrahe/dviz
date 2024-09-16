@@ -982,7 +982,25 @@ session:
 /Image: Les illustrations de Jules Verne - Voyages Extraordinaires./
 
 - [X] *Practice:* meta data
-- [ ] Missing values (=NA=)
+- [X] Missing values (=NA=)
+- [ ] Categorical variables and =factor= vectors
+- [ ] *Practice:* Plotting the Anscombe Quartet
+- [ ] Raw vs. transformed data
+- [ ] Math revision: logarithm and power laws
+- [ ] The case for R
+- [ ] Installing and loading R packages
+- [ ] *Practice:* Using Rterm and Rgui
+- [ ] Questions to ask from data
+- [ ] *Practice:* A representative R session
+
+* Week 5 - More EDA
+#+attr_html: :width 300px:
+[[../img/MagrittePipe.jpg]]
+
+/Image: Rene Margritte, Ceci n'est pas une pipe./
+
+- [X] *Practice:* meta data
+- [X] Missing values (=NA=)
 - [ ] Categorical variables and =factor= vectors
 - [ ] *Practice:* Plotting the Anscombe Quartet
 - [ ] Raw vs. transformed data

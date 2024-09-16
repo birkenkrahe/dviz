@@ -127,37 +127,37 @@ http://www.lyon.edu/standard-course-policies.
 
 | Week | DataCamp Assignments                              | PROJECT    |
 |------+---------------------------------------------------+------------|
-|    1 | [[https://app.datacamp.com/learn/courses/understanding-data-visualization][Understanding Data Visualization:]] Distributions   |            |
+|    0 | [[https://app.datacamp.com/learn/courses/understanding-data-visualization][Understanding Data Visualization:]] Distributions   |            |
 |------+---------------------------------------------------+------------|
-|    2 | Understanding Data Visualization: Two variables   |            |
+|    1 | Understanding Data Visualization: Two variables   |            |
 |------+---------------------------------------------------+------------|
-|    3 | Understanding Data Visualization: Color and shape |            |
+|    2 | Understanding Data Visualization: Color and shape |            |
 |------+---------------------------------------------------+------------|
-|    4 | Understanding Data Visualization: 99 problems ... | 1st review |
+|    3 | Understanding Data Visualization: 99 problems ... | 1st review |
 |------+---------------------------------------------------+------------|
-|    5 | [[https://app.datacamp.com/learn/courses/introduction-to-data-visualization-with-ggplot2][Introduction to Data Visualization with ggplot2]]   |            |
+|    4 | [[https://app.datacamp.com/learn/courses/introduction-to-data-visualization-with-ggplot2][Introduction to Data Visualization with ggplot2]]   |            |
 |------+---------------------------------------------------+------------|
-|    6 | Data Visualization with ggplot2: Aesthetics       |            |
+|    5 | Data Visualization with ggplot2: Aesthetics       |            |
 |------+---------------------------------------------------+------------|
-|    7 | Data Visualization with ggplot2: Geometries       |            |
+|    6 | Data Visualization with ggplot2: Geometries       |            |
 |------+---------------------------------------------------+------------|
-|    8 | [[https://app.datacamp.com/learn/courses/introduction-to-data-visualization-with-matplotlib][Introduction to Matplotlib]]                        | 2nd review |
+|    7 | [[https://app.datacamp.com/learn/courses/introduction-to-data-visualization-with-matplotlib][Introduction to Matplotlib]]                        | 2nd review |
 |------+---------------------------------------------------+------------|
-|    9 | Introduction to Matplotlib: Plotting time-series  |            |
+|    8 | Introduction to Matplotlib: Plotting time-series  |            |
 |------+---------------------------------------------------+------------|
-|   10 | Introduction to Matplotlib: Quantitative & stats  |            |
+|   9  | Introduction to Matplotlib: Quantitative & stats  |            |
 |------+---------------------------------------------------+------------|
-|   11 | [[https://app.datacamp.com/learn/courses/dashboard-design-concepts][Introduction to dashboards]]                        |            |
+|   10 | [[https://app.datacamp.com/learn/courses/dashboard-design-concepts][Introduction to dashboards]]                        |            |
 |------+---------------------------------------------------+------------|
-|   12 | [[https://app.datacamp.com/learn/courses/introduction-to-power-bi][Introduction to Power BI: Getting started]]         | 3rd review |
+|   11 | [[https://app.datacamp.com/learn/courses/introduction-to-power-bi][Introduction to Power BI: Getting started]]         | 3rd review |
 |------+---------------------------------------------------+------------|
-|   13 | Introduction to Power BI: Transforming data       |            |
+|   12 | Introduction to Power BI: Transforming data       |            |
 |------+---------------------------------------------------+------------|
-|   14 | Introduction to Power BI: Visualizing data        |            |
+|   13 | Introduction to Power BI: Visualizing data        |            |
 |------+---------------------------------------------------+------------|
-|   15 | Introduction to Power BI: Filtering               |            |
+|   14 | Introduction to Power BI: Filtering               |            |
 |------+---------------------------------------------------+------------|
-|   16 |                                                   | 4th review |
+|   15 |                                                   | 4th review |
 |------+---------------------------------------------------+------------|
 
 * A note on using AI to write code for you or debug your code

@@ -174,7 +174,7 @@ places and transitions. Realtime visualization with [[https://youtu.be/KvDKgzkCP
   little.
   #+end_notes
 
-* NEXT Practice: meta or not meta?
+* Practice: meta or not meta?
 
 #+attr_html: :width 600px
 #+caption: datascience.codata.org/articles/10.5334/dsj-2022-010/
