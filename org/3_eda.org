@@ -496,7 +496,7 @@ perceived, and experience with other data analyses." (Diaconis, 1985)
   - Usefulness of a graph depends on *how data* are displayed, and
     strongly on *which data* are chosen to be displayed
 
-* Practice: Plot the Anscombe quartet
+* NEXT Practice: Plot the Anscombe quartet
 
 - We already looked at the =summary= data of this built-in dataset. Now
   let's print all of the data.

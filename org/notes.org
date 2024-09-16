@@ -1127,3 +1127,4 @@ session:
 - [ ] *Practice:* Using Rterm and Rgui
 - [ ] Questions to ask from data
 - [ ] *Practice:* A representative R session
+
