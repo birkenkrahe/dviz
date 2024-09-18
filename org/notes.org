@@ -999,7 +999,7 @@ session:
 
 /Image: Rene Margritte, Ceci n'est pas une pipe./
 
-** Review questions
+** Review questions (last week)
 
 1. What do you remember from the last session? Run one command that
    you remember!
@@ -1114,11 +1114,74 @@ session:
    :    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
    :   38.00   64.00   72.00   72.32   80.00  114.00      13
 
+** Review questions (Monday session)
+
+1. What is a =level= in R? Example?
+   #+begin_quote
+   - In R, a =level= is a category or discrete value. The distinct
+     values of categorical variables are also called "levels".
+
+   - For example, the vector =c("male","male","female")= has two levels,
+     =male= and =female=, and three =character= elements.
+   #+end_quote
+   #+begin_src R
+     str(c("male","male","female"))
+   #+end_src
+
+   #+RESULTS:
+   :  chr [1:3] "male" "male" "female"
+
+2. What is a =factor= in R? Example?
+   #+begin_quote
+   - A factor is a =vector= with =levels=. There is also a function =factor=
+     that turns a =vector= into a factor vector.
+
+   - Example: =factor= of =c("male","male","female")=
+   #+end_quote
+   #+begin_src R
+     sex = c("male","male","female")
+     factor(sex)
+   #+end_src
+
+   #+RESULTS:
+   : [1] male   male   female
+   : Levels: female male
+
+3. What types of categorical variables are there? Examples?
+   #+begin_quote
+     - Nominal categorical variables: Their levels are not naturally
+       ordered ( e.g. animals, ZIP codes).
+       
+     - Ordinal categorical variables: Their levels are naturally ordered
+       (e.g. magnitude, feelings).
+   #+end_quote
+
+4. Why do we bother with categorical variables?
+   #+begin_quote
+   Categorical variables hold values that are most dear to us - they
+   encapsulate qualitative, rather than quantitative data.
+
+   For data analysis (other than grouping), qualitative data must be
+   converted to quantitative data (= abstraction = loss of meaning).
+   #+end_quote
+
+5. How are =factor= =levels=, category values, encoded in R?
+   #+begin_quote
+   In R =data.frame= structures, factor levels are encoded as positive
+   integers.
+   #+end_quote
+   #+begin_src R
+     str(ToothGrowth$supp) # vitamin supply type in `ToothGrowth` data frame
+   #+end_src
+
+   #+RESULTS:
+   :  Factor w/ 2 levels "OJ","VC": 2 2 2 2 2 2 2 2 2 2 ...
+
 ** EDA lecture & practice
 
 - [X] *Practice:* meta data
 - [X] Missing values (=NA=)
-- [ ] Categorical variables and =factor= vectors
+- [X] Categorical variables and =factor= vectors
 - [ ] *Practice:* Plotting the Anscombe Quartet
 - [ ] Raw vs. transformed data
 - [ ] Math revision: logarithm and power laws

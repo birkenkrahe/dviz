@@ -539,23 +539,37 @@ perceived, and experience with other data analyses." (Diaconis, 1985)
 - *What do you think which graphs are more meaningful and why?*
 
   #+begin_src R :file ../img/2_brain.png :exports both :session *R* :results output graphics file
+    ## load libraries
     library(MASS)
     library(EnvStats)
+
+    ## set up 2 x 2 plot panel
     par(mfrow=c(2,2))
-    truehist(mammals$brain)
+
+    ## plot true histograms of the brain size data
+    truehist(mammals$brain,
+             main="True histogram of mammals' brains",
+             xlab="Brain weight [g]")
     truehist(log(mammals$brain))
+
+    ## make a quantile-quantile plot of the brain data
     qqPlot(mammals$brain)
-    title("Normal QQ-plot")
-    qqPlot(log(mammals$brain))
+    qqPlot(log(mammals$brain),main="")
     title("Normal QQ-plot")
   #+end_src
 
+  #+RESULTS:
+  [[file:../img/2_brain.png]]
+
   #+begin_notes
+
   - The plots tell us something about the /distribution/ of data values.
+
   - The left-hand pair were generated from /raw data/ values, the
-    right-hand pair were generated from /log-transformed/ data
+    right-hand pair were generated from /log-transformed/ data.
+
   - The right-hand pair suggests that the data exhibit a /Gaussian/
-    (normal) distribution
+    (normal) distribution (QQ-plots compare two distributions).
   #+end_notes
 
 * R for exploratory analysis
@@ -593,8 +607,10 @@ perceived, and experience with other data analyses." (Diaconis, 1985)
 [[../img/2_computer.jpg]]
 
 - RAM is several orders of magnitude faster than NVM
+
 - Most R functions require raw data and results to fit in RAM
-- OS and Internet impose infrastructure constraints[fn:4]
+
+- OS and Internet impose severe infrastructure constraints [fn:4]
 
 * Why R?
 
@@ -602,8 +618,11 @@ perceived, and experience with other data analyses." (Diaconis, 1985)
 [[../img/2_Rlogo.png]]
 
 - R is FOSS (Free Open Source Software) available for all OS
+
 - Supported range of analysis methods ready for use
+
 - Unix-style package and version control system
+
 - Diverse, active community of users and developers
 
 * The structure of R
@@ -621,20 +640,20 @@ of > 800k downloads (Source: CRAN, 2021).
 
 * Installation and loading R packages
 
-- We'll do this directly on the command line ([[https://bookdown.org/ndphillips/YaRrr/packages.html][see e.g. here]]):
+- We'll do this directly on the command line ([[https://bookdown.org/ndphillips/YaRrr/packages.html][for more, see here]]):
 
 - Installation = download and unpacking of binary or compilation (on
   Windows, when you're asked, do not compile from source):
   #+begin_example R
   install.packages("MASS")
-  install.packages("car", dependencies=TRUE)  # this may not work for you either
+  install.packages("EnvStats")
   #+end_example
 
 - Loading = load package (functions + datasets) into current R
   session:
   #+begin_example R
   library(MASS)
-  library(car)  # if it can't be installed, it cannot be loaded
+  library(EnvStats) 
   #+end_example
 
 - Alternatively, you can use the Rgui program, or the RStudio IDE
@@ -660,7 +679,7 @@ of > 800k downloads (Source: CRAN, 2021).
 #+caption: Package management in the Rgui program
 [[../img/2_packages2.png]]
 
-* Questions to ask from data
+* TODO Questions to ask from data
 
 1. Where does the dataset come from, and how is it documented?
 2. How many records (rows) does this dataset contain?
@@ -673,7 +692,7 @@ of > 800k downloads (Source: CRAN, 2021).
 9. Are the variable values consistent with what we expect?
 10. Do the variables exhibit the relationships we expect?
 
-* Practice: a representative r session
+* Practice: a representative R session
 #+attr_html: :width 300px
 [[../img/2_github.png]]
 

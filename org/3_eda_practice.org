@@ -6,7 +6,7 @@
 
   - Practice instructions for the data visualization lectures
   - Emacs + ESS + Org-mode and R must be installed
-  - Upload the completed file as a class assignment ([[https://lyon.instructure.com/courses/571/assignments/1704][Canvas link]])
+  - Upload the completed practice file to Canvas
 
   #+name: tab:3_practice
   | PRACTICE         | MIN |
@@ -63,13 +63,14 @@
 
   4) If R is not installed, you need to install it. If you cannot
      execute R code blocks, you are probably missing the correct Emacs
-     init file ~/.emacs~: [[https://github.com/birkenkrahe/org/blob/master/emacs/.emacs][download the file from here]]. You might also miss
-     the ESS (Emacs Speaks Statistics) package. Try ~M-x load-library ESS
-     RET~.
+     init file ~/.emacs~: you can [[https://tinyurl.com/lyon-emacs][tinyurl.com/lyon-emacs]]. You might also
+     miss the ESS (Emacs Speaks Statistics) package. Try ~M-x
+     load-library ESS RET~ to check that you have it, otherwise,
+     install it with =M-x list-packages=.
 
   5) If you're in an R session now, exit by entering ~q()~. R is
-     case-sensitive, so this must be lower-case. When asked if you want
-     to save the workspace, say *no*[fn:1].
+     case-sensitive, so this must be lower-case. When asked if you
+     want to save the workspace, say *no*[fn:1].
 
 * TODO LOADING PACKAGES
 
@@ -106,7 +107,19 @@
        search()
      #+end_src
 
-  6) Interactions with the OS like loading a package are not
+  6) You can also use the functions =any=, =grep= and =search= to check that
+     =MASS= is loaded:
+     #+begin_src R :session *R* :results output :exports both
+       s <- search()
+       p <- "MASS"
+       g <- grep(p,s)
+       any(g)  # same as any(grep("MASS",search()))
+     #+end_src
+
+     #+RESULTS:
+     : [1] TRUE
+
+  7) Interactions with the OS like loading a package are not
      remembered by the system unless they are tied to a named R
      session. In the code block below, replace ~???~ with the
      name of the R session that you started in (1), e.g. ~*R*~. Then
@@ -117,8 +130,7 @@
        search()
      #+end_src
 
-     7) You should see output here, but if you check the R session
-        buffer, you should see the same output there, too.
+  8) What happens if you just run the block with =C-c C-c=
 
 * TODO LOOKING AT DATA
 
@@ -139,15 +151,24 @@
 
      #+name: head1
      #+begin_src R :session *R* :results output
-       head(x=whiteside,n)  # show first n=3 lines of x
+       head(x=whiteside)  # show first n=3 lines of x
      #+end_src
+
+     #+RESULTS: head1
+     :    Insul Temp Gas
+     : 1 Before -0.8 7.2
+     : 2 Before -0.7 6.9
+     : 3 Before  0.4 6.4
+     : 4 Before  2.5 6.0
+     : 5 Before  2.9 5.8
+     : 6 Before  3.2 5.8
 
   3) Show the last three records using the function ~tail~ using the block
      [[tail]], and run the block.
 
      #+name: tail
      #+begin_src R :session *R* :results output
-       _____________
+       ...
      #+end_src
 
   4) What does the first line of the data frame show? What do the
@@ -158,10 +179,10 @@
      - *The following lines show* ...
      #+end_quote
 
-  5) What data does the data frame ~whiteside~ as a whole show?
+  5) What data does the data frame ~whiteside~ contain?
 
      #+begin_quote
-     *The ~whiteside~ data frame shows* ...
+     The ~whiteside~ data frame shows ...
      #+end_quote
 
 * TODO FACTOR VECTORS
@@ -240,21 +261,6 @@
   - /sample maximum/: larges value in the dataset
   #+end_notes
 
-** SOLUTION
-
-   #+begin_src R :session :results output
-     summary(whiteside)
-   #+end_src
-
-   #+RESULTS:
-   :     Insul         Temp             Gas
-   :  Before:26   Min.   :-0.800   Min.   :1.300
-   :  After :30   1st Qu.: 3.050   1st Qu.:3.500
-   :              Median : 4.900   Median :3.950
-   :              Mean   : 4.875   Mean   :4.071
-   :              3rd Qu.: 7.125   3rd Qu.:4.625
-   :              Max.   :10.200   Max.   :7.200
-
 * TODO BOXPLOTS
 
   We'll finish this practice run with a few glimpses into R's graphics
@@ -304,28 +310,6 @@
        abline(h = avg_Temp, col="blue", lwd=2)
      #+end_example
 
-** SOLUTION
-
-   1) Plot ~whiteside$Gas~ splitting up the data according to factor
-      levels.
-      #+begin_src R :session *R* :results output graphics file :file ./img/boxplot1.png
-        boxplot(Gas ~ Insul, data = whiteside)
-        abline(h = mean(whiteside$Gas), col="blue", lwd=2, lty=2)
-      #+end_src
-      #+RESULTS:
-      [[file:./img/boxplot1.png]]
-
-   2) Plot ~whiteside$Temp~ splitting up the data according to factor
-      levels.
-
-      #+begin_src R :session *R* :results output graphics file :file ./img/boxplot2.png
-        boxplot(Temp ~ Insul, data = whiteside)
-        abline(h = mean(whiteside$Temp), col="red", lwd=2, lty=2)
-      #+end_src
-
-      #+RESULTS:
-      [[file:./img/boxplot2.png]]
-
 * TODO SCATTERPLOTS
 
   The ~plot~ function is another versatile, generic function in R. Applied
@@ -369,30 +353,6 @@
      warmest within each heating season.
      #+end_notes
 
-** SOLUTIONS
-
-   1) Run the code block named [[plot]] below. Open the notes to see the
-      explanation of this /scatterplot/ matrix.
-
-      #+name: plot_solution
-      #+begin_src R :session *R* :results output graphics file :file ./img/plot.png
-        plot(whiteside)
-      #+end_src
-
-      #+RESULTS: plot_solution
-      [[file:./img/plot.png]]
-
-   2) Create another code block ~plot1~ that uses ~plot~ to plot only the
-      ~Temp~ variable of the ~whiteside~ data set.
-
-      #+name: plot1_solution
-      #+begin_src R :session *R* :results output graphics file :file ./img/plot1.png
-        plot(whiteside$Temp)
-      #+end_src
-
-      #+RESULTS: plot1_solution
-      [[file:./img/plot1.png]]
-
 * TODO BARCHARTS
 
   When applying ~plot~ to a categorical variable, you get a /barchart/.
@@ -412,23 +372,6 @@
   insulation of Whiteside's house, made over two consecutive heating
   periods.
   #+end_notes
-
-** SOLUTIONS
-
-   This solution contains a few refinements such as a label for the
-   y-axis, and a title for the graph.
-
-   #+name: barchart
-   #+begin_src R :session *R* :results output graphics file :file ./img/barchart.png
-     plot(whiteside$Insul,
-          main =
-            "Measurements before and after insulation
-             of house walls from the whiteside dataset.",
-          ylab = "Number of measurements")
-   #+end_src
-
-   #+RESULTS: barchart
-   [[file:./img/barchart.png]]
 
 * TODO CUSTOMIZATION
 
@@ -453,9 +396,6 @@
             pch = c(6,16)[whiteside$Insul])
      #+end_src
 
-     #+RESULTS: custom1
-     [[file:./img/custom1.png]]
-
   2) In [[custom2]], a ~legend~ is added to the last scatterplot. The legend
      is laid on top of the plot using a vector of string values.
 
@@ -468,9 +408,6 @@
               legend=c("Insul = Before", "Insul = After"),
               pch = c(6,16))
      #+end_src
-
-     #+RESULTS: custom2
-     [[file:./img/custom2.png]]
 
   3) In [[custom3]], reference lines are added to the last scatterplot. The
      lines are drawn with different line types (~lty~). Two linear
@@ -494,9 +431,6 @@
        abline(model_1, lty=2)
        abline(model_2)
      #+end_src
-
-     #+RESULTS: custom3
-     [[file:./img/custom3.png]]
 
 * TODO TEST QUESTIONS
 
