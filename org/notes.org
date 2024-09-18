@@ -1125,10 +1125,13 @@ session:
      =male= and =female=, and three =character= elements.
    #+end_quote
    #+begin_src R
-     str(c("male","male","female"))
+     sex <- c("male","male","female")
+     sex
+     str(sex)
    #+end_src
 
    #+RESULTS:
+   : [1] "male"   "male"   "female"
    :  chr [1:3] "male" "male" "female"
 
 2. What is a =factor= in R? Example?
@@ -1139,17 +1142,19 @@ session:
    - Example: =factor= of =c("male","male","female")=
    #+end_quote
    #+begin_src R
-     sex = c("male","male","female")
-     factor(sex)
+     sexf <- factor(sex)
+     sexf
+     str(sexf)
    #+end_src
 
    #+RESULTS:
    : [1] male   male   female
    : Levels: female male
+   :  Factor w/ 2 levels "female","male": 2 2 1
 
 3. What types of categorical variables are there? Examples?
    #+begin_quote
-     - Nominal categorical variables: Their levels are not naturally
+     - Nominal categorical variables: Their levels are not 'naturally'
        ordered ( e.g. animals, ZIP codes).
        
      - Ordinal categorical variables: Their levels are naturally ordered
@@ -1168,7 +1173,7 @@ session:
 5. How are =factor= =levels=, category values, encoded in R?
    #+begin_quote
    In R =data.frame= structures, factor levels are encoded as positive
-   integers.
+   integers (labels)
    #+end_quote
    #+begin_src R
      str(ToothGrowth$supp) # vitamin supply type in `ToothGrowth` data frame
