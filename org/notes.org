@@ -993,7 +993,7 @@ session:
 - [ ] Questions to ask from data
 - [ ] *Practice:* A representative R session
 
-* Week 5 - More EDA
+* Week 5 - EDA Practice
 #+attr_html: :width 600px:
 [[../img/MagrittePipe.jpg]]
 
@@ -1182,17 +1182,88 @@ session:
    #+RESULTS:
    :  Factor w/ 2 levels "OJ","VC": 2 2 2 2 2 2 2 2 2 2 ...
 
+** Review questions (Wednesday session)
+
+1. What's special about some R functions like =plot=, =summary=?
+   #+begin_quote
+   They are "generic" functions because they can digest multiple types
+   of data structures.
+   #+end_quote
+   #+begin_src R
+     methods(plot)
+   #+end_src
+
+   #+RESULTS:
+   #+begin_example
+    [1] plot.acf*           plot.data.frame*    plot.decomposed.ts*
+    [4] plot.default        plot.dendrogram*    plot.density*      
+    [7] plot.ecdf           plot.factor*        plot.formula*      
+   [10] plot.function       plot.hclust*        plot.histogram*    
+   [13] plot.HoltWinters*   plot.isoreg*        plot.lm*           
+   [16] plot.medpolish*     plot.mlm*           plot.ppr*          
+   [19] plot.prcomp*        plot.princomp*      plot.profile.nls*  
+   [22] plot.raster*        plot.spec*          plot.stepfun       
+   [25] plot.stl*           plot.table*         plot.ts            
+   [28] plot.tskernel*      plot.TukeyHSD*     
+   see '?methods' for accessing help and source code
+   #+end_example
+
+2. What if you pass any old data set to =plot=? What will these plot:
+   - The =anscombe= data set
+   - The =mtcars= data set
+   - The =ToothGrowth= data set
+   - The =Nile= data set
+   
+   #+begin_quote
+   You get a pair plot - a plot of all variables with one another.
+   #+end_quote
+   #+begin_src R :file pairplot.png :session *R* :results file graphics output :exports both
+     plot(anscombe)     
+   #+end_src
+
+
+3. How can you divide a plot into four different quadrants (facets)?
+   #+begin_src R :results none
+     par(mfrow=c(2,2)) # nothing to see here
+   #+end_src
+   #+begin_quote
+   If you run this in a code block, an empty pane will open.
+   #+end_quote
+
+4. How can you draw a whole plot (not just some graphics elements,
+   like a legend, text, or a line) on top of another one?
+   #+begin_src R :file par.png :session *R* :results file graphics output :exports both
+     hist(Nile)
+     par(new=TRUE)
+     plot(rnorm(1000))
+   #+end_src
+
+5. What's a specialty of R with regard to computer architecture?
+   #+begin_quote
+   R is limited to "in-memory processing":
+   - One positive side effect of this is /vectorization/ - the ability
+     to efficiently operate on whole data sets at once.
+   - One negative side effect is that you cannot run "out-of-core
+     algorithms", all data must be loaded into memory for processing.
+   - The disadvantage can be overcome by mixing R with languages that
+     can perform out-of-core algorithms like C++ or SQL.
+   #+end_quote   
+   
+** Recommended: Feynman on the scientific method
+
+[[https://t.co/jnwRMsj3XO][I shared the video (10 min) in the Google chat.]]
+
 ** EDA lecture & practice
 
 - [X] *Practice:* meta data
 - [X] Missing values (=NA=)
 - [X] Categorical variables and =factor= vectors
-- [ ] *Practice:* Plotting the Anscombe Quartet
-- [ ] Raw vs. transformed data
+- [X] *Practice:* Plotting the Anscombe Quartet
+- [X] Raw vs. transformed data
 - [ ] Math revision: logarithm and power laws
-- [ ] The case for R
-- [ ] Installing and loading R packages
-- [ ] *Practice:* Using Rterm and Rgui
+- [X] The case for R
+- [X] Installing and loading R packages
+- [X] *Practice:* Using Rterm and Rgui
 - [ ] Questions to ask from data
 - [ ] *Practice:* A representative R session
 
