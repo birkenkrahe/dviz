@@ -1290,12 +1290,11 @@ Now you can for example open the Solar system mass tree map in an
 
 Running =M-x eww= without an argument brings you to your search engine.
 
-
 * EDA Lab
 
 - [X] Install =MASS= package with =whiteside= dataset
 - [ ] Look at the data (with understanding)
 - [ ] Factor vectors (modified)
 - [ ] Summary statistics (qualified)
-- [ ] 
+- [ ] Plotting: boxplots, scatterplots, barplots
 
