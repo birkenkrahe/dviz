@@ -993,7 +993,7 @@ session:
 - [ ] Questions to ask from data
 - [ ] *Practice:* A representative R session
 
-* Week 5 - EDA Practice
+* Week 5 - EDA Practice 
 #+attr_html: :width 600px:
 [[../img/MagrittePipe.jpg]]
 
@@ -1264,6 +1264,38 @@ session:
 - [X] The case for R
 - [X] Installing and loading R packages
 - [X] *Practice:* Using Rterm and Rgui
-- [ ] Questions to ask from data
-- [ ] *Practice:* A representative R session
+- [X] Questions to ask from data
+- [X] *Practice:* A representative R session
+
+* Week 6 - EDA Lab
+#+attr_html: :width 600px:
+#+caption:Photo Credit: © CORBIS/Corbis via Getty Images
+[[../img/neptune.png]]
+
+09/23/1846: German astronomer Johann Gottfried Galle discovers the
+planet Neptune at the Berlin Observatory. See also: AWS Neptune.
+
+* Emacs tip: browse with =eww=
+
+To open any URL in Emacs, add this line to your ~.emacs~ file and then 
+#+begin_example
+(setq browse-url-browser-function 'eww-browse-url)
+#+end_example
+
+You can also just put this in your =*scratch*= buffer and run it with
+=M-x eval-buffer=.
+
+Now you can for example open the Solar system mass tree map in an
+=*eww*= buffer: [[https://public.tableau.com/static/images/MA/MASSIVE/SolarSystem/1_rss.png][Where is the Solar system's mass?]]
+
+Running =M-x eww= without an argument brings you to your search engine.
+
+
+* EDA Lab
+
+- [X] Install =MASS= package with =whiteside= dataset
+- [ ] Look at the data (with understanding)
+- [ ] Factor vectors (modified)
+- [ ] Summary statistics (qualified)
+- [ ] 
 

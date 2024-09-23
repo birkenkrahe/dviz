@@ -4,25 +4,25 @@
 #+OPTIONS: toc:1 num:1 ^:nil
 * README
 
-  - Practice instructions for the data visualization lectures
-  - Emacs + ESS + Org-mode and R must be installed
-  - Upload the completed practice file to Canvas
+- Practice instructions for the data visualization lectures
+- Emacs + ESS + Org-mode and R must be installed
+- Upload the completed practice file to Canvas
 
-    #+name: tab:3_practice
-    | PRACTICE         | MIN |
-    |------------------+-----|
-    | Prerequisites    |  15 |
-    | Loading packages |  15 |
-    | Looking at data  |  15 |
-    | Factors vectors  |  15 |
-    | Summary stats    |  15 |
-    | Boxplots         |  10 |
-    | Scatterplots     |  10 |
-    | Bar charts       |  10 |
-    | Customization    |  15 |
-    |------------------+-----|
-    | TOTAL            | 120 |
-    #+TBLFM: @11$2=vsum(@2..@10)
+  #+name: tab:3_practice
+  | PRACTICE         | MIN |
+  |------------------+-----|
+  | Prerequisites    |  15 |
+  | Loading packages |  15 |
+  | Looking at data  |  15 |
+  | Factors vectors  |  15 |
+  | Summary stats    |  15 |
+  | Boxplots         |  10 |
+  | Scatterplots     |  10 |
+  | Bar charts       |  10 |
+  | Customization    |  15 |
+  |------------------+-----|
+  | TOTAL            | 120 |
+  #+TBLFM: @11$2=vsum(@2..@10)
 
 * TODO IDENTIFY YOURSELF
 
@@ -167,15 +167,6 @@ superficial view at its entries (values).
      head(x=whiteside)  # show first n=3 lines of x
    #+end_src
 
-   #+RESULTS: head1
-   :    Insul Temp Gas
-   : 1 Before -0.8 7.2
-   : 2 Before -0.7 6.9
-   : 3 Before  0.4 6.4
-   : 4 Before  2.5 6.0
-   : 5 Before  2.9 5.8
-   : 6 Before  3.2 5.8
-
 3) Show the last three records using the function ~tail~ using the block
    [[tail]], and run the block.
 
@@ -269,29 +260,27 @@ structure using the generic[fn:5] ~str~ function.
 R is strong on statistics. The ~summary~ function returns simple
 statistical properties of each variable.
 
-   1. Create a named code block ~summary~. In it, call the function
-      ~summary~ on the ~whiteside~ data frame. Open the explanatory notes
-      below with ~<TAB>~.
+1. Create a named code block ~summary~. In it, call the function
+   ~summary~ on the ~whiteside~ data frame. Open the explanatory notes
+   below with ~<TAB>~.
 
-      ----- PUT YOUR CODE BELOW THIS LINE -----
+   ----- PUT YOUR CODE BELOW THIS LINE -----
 
-      #+begin_notes
-      The output contains the ~mean~ (average of the variable ~x~ over all
-      records), and /Tukey's five-number summary/[fn:7].
+   #+begin_notes
+   The output contains the ~mean~ (average of the variable ~x~ over all
+   records), and /Tukey's five-number summary/[fn:7].
 
-      - /sample minimum/: smallest number in the dataset
-      - /lower quartile/: value for which 25% are smaller or equal
-      - /upper quartile/: value for which 75% are smaller or equal
-      - /sample median/: middle value of the data set
-      - /sample maximum/: larges value in the dataset
-      #+end_notes
+   - /sample minimum/: smallest number in the dataset
+   - /lower quartile/: value for which 25% are smaller or equal
+   - /upper quartile/: value for which 75% are smaller or equal
+   - /sample median/: middle value of the data set
+   - /sample maximum/: larges value in the dataset
+   #+end_notes
 
-   2. Below, create a =quote= block with =<q TAB=. In the block, write an
-      observation of the =summary= data - at least one sentence for each
-      variable that would help someone else reading this =summary=
-      understand what he sees.
-
-      
+2. Below, create a =quote= block with =<q TAB=. In the block, write an
+   observation of the =summary= data - at least one sentence for each
+   variable that would help someone else reading this =summary=
+   understand what he sees.
 
 * TODO BOXPLOTS
 
@@ -342,6 +331,19 @@ graphical representation of Tukey's five-number summary.
      abline(h = avg_Temp, col="blue", lwd=2)
    #+end_example
 
+4) Can you transfer this to recreating the boxplot for the =ToothGrowth=
+   data set, showing the distributions of the length (=len=) of the
+   teeth as a function of the Vitamin C supply type (=supp=)?
+
+   #+begin_src R :file toothbox.png :session *R* :results file graphics output :exports both
+
+
+   #+end_src
+
+   Add the average length as a thick dashed red line to the plot.
+
+4) Is =boxplot= a "generic" R function? How could you find out?
+
 * TODO SCATTERPLOTS
 
 The ~plot~ function is another versatile, generic function in R. Applied
@@ -373,6 +375,7 @@ each variable relates to the others.
 
 2) Create another code block ~plot1~ that uses ~plot~ to plot only the
    ~Temp~ variable of the ~whiteside~ data set. Can you explain the graph?
+   /Tip:/ Use =sort= to sort the values and plot again.
 
    ----- PUT YOUR CODE BELOW THIS LINE -----
 
@@ -389,21 +392,21 @@ each variable relates to the others.
 
 When applying ~plot~ to a categorical variable, you get a /barchart/.
 
-   1) Use ~plot~ to plot the ~Insul~ variable of the ~whiteside~ dataset
-      only. Put the code in the code block [[barchart]] below and run it.
-   2) Open and close the inline image that is generated for inspection
-   3) Open and close the explanation in the notes.
+1) Use ~plot~ to plot the ~Insul~ variable of the ~whiteside~ dataset
+   only. Put the code in the code block [[barchart]] below and run it.
+2) Open and close the inline image that is generated for inspection
+3) Open and close the explanation in the notes.
 
-      #+name: barchart
-      #+begin_src R :session *R* :results output graphics file :file barchart.png
-        _______________
-      #+end_src
+   #+name: barchart
+   #+begin_src R :session *R* :results output graphics file :file barchart.png
+     _______________
+   #+end_src
 
-      #+begin_notes
-      The chart shows the number of measurements before and after the wall
-      insulation of Whiteside's house, made over two consecutive heating
-      periods.
-      #+end_notes
+   #+begin_notes
+   The chart shows the number of measurements before and after the wall
+   insulation of Whiteside's house, made over two consecutive heating
+   periods.
+   #+end_notes
 
 * TODO CUSTOMIZATION
 
