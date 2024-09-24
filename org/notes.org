@@ -1293,8 +1293,8 @@ Running =M-x eww= without an argument brings you to your search engine.
 * EDA Lab
 
 - [X] Install =MASS= package with =whiteside= dataset
-- [ ] Look at the data (with understanding)
-- [ ] Factor vectors (modified)
-- [ ] Summary statistics (qualified)
+- [X] Look at the data (with understanding)
+- [X] Factor vectors (modified)
+- [X] Summary statistics (qualified)
 - [ ] Plotting: boxplots, scatterplots, barplots
 
