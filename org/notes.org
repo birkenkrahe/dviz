@@ -1294,6 +1294,9 @@ Running =M-x eww= without an argument brings you to your search engine.
 
 1. Provided =whiteside= is loaded, which of these commands will not work?
    #+begin_src R :session *R* :results output :exports both
+     library(MASS)
+     data(whiteside)
+     
      head(n=1, whiteside)
 
      head(whiteside,1)
@@ -1302,6 +1305,16 @@ Running =M-x eww= without an argument brings you to your search engine.
 
      head(1, whiteside)
    #+end_src
+
+   #+RESULTS:
+   :    Insul Temp Gas
+   : 1 Before -0.8 7.2
+   :    Insul Temp Gas
+   : 1 Before -0.8 7.2
+   :    Insul Temp Gas
+   : 1 Before -0.8 7.2
+   : Error in checkHT(n, dx <- dim(x)) : 
+   :   invalid 'n' - must have length one when dim(x) is NULL, got 3
 
    #+begin_quote
    =head(1,whiteside)= will not work because the parameters are
@@ -1315,7 +1328,7 @@ Running =M-x eww= without an argument brings you to your search engine.
    #+end_src
 
    #+RESULTS:
-   : 'data.frame':      56 obs. of  3 variables:
+   : 'data.frame':	56 obs. of  3 variables:
    :  $ Insul: Factor w/ 2 levels "Before","After": 1 1 1 1 1 1 1 1 1 1 ...
    :  $ Temp : num  -0.8 -0.7 0.4 2.5 2.9 3.2 3.6 3.9 4.2 4.3 ...
    :  $ Gas  : num  7.2 6.9 6.4 6 5.8 5.8 5.6 4.7 5.8 5.2 ...
@@ -1326,7 +1339,7 @@ Running =M-x eww= without an argument brings you to your search engine.
    #+end_src
 
    #+RESULTS:
-   :    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.
+   :    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
    :       1       1       1       1       1       1
 
 4. What does =summary= return when applied to a =factor=?
@@ -1335,31 +1348,36 @@ Running =M-x eww= without an argument brings you to your search engine.
    #+end_src
 
    #+RESULTS:
-   : Before  After
+   : Before  After 
    :     26     30
 
 5. What does =summary= return when applied to a =character= vector?
    #+begin_src R :session *R* :results output :exports both
      summary(state.abb)
+     summary(factor(state.abb))
    #+end_src
 
    #+RESULTS:
-   :    Length     Class      Mode
-   :        50 character character
+   : AK AL AR AZ CA CO CT DE FL GA HI IA ID IL IN KS KY LA MA MD ME MI MN MO MS MT NC ND NE NH NJ NM NV NY 
+   :  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1 
+   : OH OK OR PA RI SC SD TN TX UT VA VT WA WI WV WY 
+   :  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1
 
 6. How would you check whether =whiteside$Insul= is a =factor=?
    #+begin_src R :session *R* :results output :exports both
      is.factor(whiteside$Insul)
      levels(whiteside$Insul)
      str(whiteside$Insul)
-     class(whiteside$Insul)
+     class(whiteside$Insul)     
+     typeof(whiteside$Insul)  # not an answer
    #+end_src
 
    #+RESULTS:
    : [1] TRUE
    : [1] "Before" "After"
-   : Factor w/ 2 levels "Before","After": 1 1 1 1 1 1 1 1 1 1 ...
+   :  Factor w/ 2 levels "Before","After": 1 1 1 1 1 1 1 1 1 1 ...
    : [1] "factor"
+   : [1] "integer"
 
 7. What happens when you insert a new value into a =factor=?
    #+begin_src R :session *R* :results output :exports both
@@ -1399,8 +1417,10 @@ Running =M-x eww= without an argument brings you to your search engine.
    : [1] male   female female
    : Levels: female male
    : [1] "factor"
-   : [1] "male"   "female" "female"
+   
+    : [1] "male"   "female" "female"
    : [1] "character"
+   
    : [1] "male"    "Unknown" "female"
 
 9. Is the =as.factor= function generic?
@@ -1421,15 +1441,14 @@ Running =M-x eww= without an argument brings you to your search engine.
 
     #+RESULTS:
     : [1] "function"
-    : [1] as.character.condition       as.character.Date           
-    :  [3] as.character.default         as.character.error          
-    :  [5] as.character.factor          as.character.fractions*     
-    :  [7] as.character.hexmode         as.character.numeric_version
-    :  [9] as.character.octmode         as.character.person*        
-    : [11] as.character.POSIXt          as.character.Rd*            
+    :  [1] as.character.condition       as.character.Date            as.character.default        
+    :  [4] as.character.error           as.character.factor          as.character.fractions*     
+    :  [7] as.character.hexmode         as.character.numeric_version as.character.octmode        
+    : [10] as.character.person*         as.character.POSIXt          as.character.Rd*            
     : [13] as.character.roman*          as.character.srcref         
     : see '?methods' for accessing help and source code
 
+  
 ** EDA Lab
 
 - [X] Install =MASS= package with =whiteside= dataset

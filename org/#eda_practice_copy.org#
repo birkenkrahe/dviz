@@ -481,7 +481,14 @@ graphical representation of Tukey's five-number summary.
    :  $ dose: num  0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 ...
 
 4) Is =boxplot= a "generic" R function? How could you find out?
+   #+begin_src R :session *R* :results output :exports both :noweb yes
+     methods(boxplot)
+   #+end_src
 
+   #+RESULTS:
+   : [1] boxplot.default  boxplot.formula* boxplot.matrix  
+   : see '?methods' for accessing help and source code
+   
 * TODO SCATTERPLOTS
 
 The ~plot~ function is another versatile, generic function in R. Applied
