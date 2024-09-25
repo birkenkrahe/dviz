@@ -325,7 +325,7 @@ graphical representation of Tukey's five-number summary.
      abline(h = avg_Gas, col="blue", lwd=2)
    #+end_example
 
-   #+name: avg_Gas
+   #+name: avg_Temp
    #+begin_example R
      avg_Temp <- mean(whiteside$Temp)
      abline(h = avg_Temp, col="blue", lwd=2)

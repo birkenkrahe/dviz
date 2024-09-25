@@ -318,35 +318,6 @@ structure using the generic[fn:5] ~str~ function.
    :  chr [1:56] "Before" "Unknown" "Before" "Before" "Before" "Before" "Before" "Before" "Before" ...
    :  Factor w/ 3 levels "After","Before",..: 2 3 2 2 2 2 2 2 2 2 ...
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 * TODO SUMMARY STATS
 
 R is strong on statistics. The ~summary~ function returns simple
@@ -415,6 +386,9 @@ graphical representation of Tukey's five-number summary.
    #+begin_src R :session *R* :results output graphics file :file boxplot1.png
      boxplot(Gas ~ Insul, data = whiteside)
    #+end_src
+
+   #+RESULTS: boxplot
+   [[file:boxplot1.png]]
 
    #+begin_notes
    In the boxplot, the "whiskers" at the top and the bottom represent

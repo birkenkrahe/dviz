@@ -613,67 +613,67 @@ Open Zoom + a GUI Emacs (not =emacs -nw=)
 
 Test the new setup in a =.org= file with a graphics command:
 
-   1. Enter =<rg <TAB>=
+1. Enter =<rg <TAB>=
 
-   2. In the code block, add =Nile.png= after the =:file= header argument
+2. In the code block, add =Nile.png= after the =:file= header argument
 
-   3. Add and run the code =hist(Nile)=
+3. Add and run the code =hist(Nile)=
 
-   4. You should get the following result: code block with =#+RESULTS=
-      block and link to the graphics file that you can open with =<F6>=
-      or in another buffer with =C-c C-o=:
+4. You should get the following result: code block with =#+RESULTS=
+   block and link to the graphics file that you can open with =<F6>=
+   or in another buffer with =C-c C-o=:
 
-      #+begin_src R :file Nile.png :session *R* :results file graphics output :exports both
-        hist(Nile)
-      #+end_src
+   #+begin_src R :file Nile.png :session *R* :results file graphics output :exports both
+     hist(Nile)
+   #+end_src
 
-      #+RESULTS:
-      [[file:Nile.png]]
+   #+RESULTS:
+   [[file:Nile.png]]
 
-   5. If you don't see a file then your Org-mode buffer and the =*R*=
-      session console are not in sync, and you need to change working
-      directory to where you're putting the file: in the case of =:file
-      Nile.png= you're putting it into =pwd= or =$PWD= (present working
-      directory). To check the directory of your file:
-      #+begin_src bash :results output :exports both
-        pwd
-      #+end_src
+5. If you don't see a file then your Org-mode buffer and the =*R*=
+   session console are not in sync, and you need to change working
+   directory to where you're putting the file: in the case of =:file
+   Nile.png= you're putting it into =pwd= or =$PWD= (present working
+   directory). To check the directory of your file:
+   #+begin_src bash :results output :exports both
+     pwd
+   #+end_src
 
-      #+RESULTS:
-      : /home/marcus/GitHub/dviz/org
+   #+RESULTS:
+   : /home/marcus/GitHub/dviz/org
 
-   6. Open the =*R*= buffer, check its =$PWD= with one of these R commands:
-      #+begin_src R :session *R* :results output :exports both
-        getwd()
-        system("echo $PWD")
-      #+end_src
+6. Open the =*R*= buffer, check its =$PWD= with one of these R commands:
+   #+begin_src R :session *R* :results output :exports both
+     getwd()
+     system("echo $PWD")
+   #+end_src
 
-      #+RESULTS:
-      : [1] "/home/aletheia/GitHub/admin/RoamNotes"
-      : /home/aletheia/GitHub/admin/RoamNotes
+   #+RESULTS:
+   : [1] "/home/aletheia/GitHub/admin/RoamNotes"
+   : /home/aletheia/GitHub/admin/RoamNotes
 
-   7. To change the R console's =$PWD=, use =setwd= and pass the directory
-      you want to point at as a string with the (relative) =PATH=
-      argument (as long as the location exists):
-      #+begin_src R :session *R* :results output :exports both
-        getwd()  # where you were
-        setwd("../../dviz/org")  # relative path to where the Org-mode file is
-        getwd()  # check where you are
-      #+end_src
+7. To change the R console's =$PWD=, use =setwd= and pass the directory
+   you want to point at as a string with the (relative) =PATH=
+   argument (as long as the location exists):
+   #+begin_src R :session *R* :results output :exports both
+     getwd()  # where you were
+     setwd("../../dviz/org")  # relative path to where the Org-mode file is
+     getwd()  # check where you are
+   #+end_src
 
-      #+RESULTS:
-      : [1] "/home/aletheia/GitHub/admin/RoamNotes"
-      : [1] "/home/aletheia/GitHub/dviz/org"
+   #+RESULTS:
+   : [1] "/home/aletheia/GitHub/admin/RoamNotes"
+   : [1] "/home/aletheia/GitHub/dviz/org"
 
-   8. The absolute path would work, too (as long as it
-      exists). Relocating to where you already are does nothing.
-      #+begin_src R :session *R* :results output :exports both
-        setwd("/home/aletheia/GitHub/dviz/org")  # relative path to where the Org-mode file is
-        system("pwd")
-      #+end_src
+8. The absolute path would work, too (as long as it
+   exists). Relocating to where you already are does nothing.
+   #+begin_src R :session *R* :results output :exports both
+     setwd("/home/aletheia/GitHub/dviz/org")  # relative path to where the Org-mode file is
+     system("pwd")
+   #+end_src
 
-      #+RESULTS:
-      : /home/aletheia/GitHub/dviz/org
+   #+RESULTS:
+   : /home/aletheia/GitHub/dviz/org
 
 
 ** Chart and Shell Exercise
@@ -771,7 +771,7 @@ C-c C-c:
 **** Size
 #+begin_src R :file sizePlot.png :session *R* :results file graphics output :exports both
   point_size = mtcars$cyl / max(mtcars$cyl) * 3
-  
+
   plot(mtcars$wt, mtcars$mpg,
        cex = point_size)
 #+end_src
@@ -781,7 +781,7 @@ C-c C-c:
 
 **** Transparency
 #+begin_src R :file transPlot.png :session *R* :results file graphics output :exports both
-  transparency <- mtcars$cyl / max(mtcars$cyl) 
+  transparency <- mtcars$cyl / max(mtcars$cyl)
 
   plot(mtcars$wt, mtcars$mpg,
        col = rgb(1, 0, 0, alpha = transparency),# sets transparency in [0,1]
@@ -871,7 +871,7 @@ an audience (the more so if the audience is likely to care about it):
 #+end_quote
 
 * Week 4 - Exploratory Data Analysis (EDA)
-#+attr_html: :width 600px: 
+#+attr_html: :width 600px:
 [[../img/Christ-Rescuing-Peter-from-Drowning-1370_.jpg]]
 
 /Image: Christ rescuing Peter from drowning (Veneziano, 1370)/
@@ -939,14 +939,14 @@ session:
 ** Review: meta data
 
 1. Would "talking about this lecture" be considered meta data?
-   
+
    #+begin_quote
    Talking about anything at all goes "beyond" or "with" the subject
    that is being talked about and hence it qualifies as meta data.
 
    However, until the "talking" is quantified and stored, the meta
    data cannot be analyzed.
-   
+
    #+end_quote
 
 2. Data can only be analyzed computationally when they're quantified
@@ -968,12 +968,12 @@ session:
    data maintenance is more difficult and less common:
 
    - Are the data complete?
-     
+
    - Are the data consistent?
 
    - Are the data correct?
-     
-   #+end_quote   
+
+   #+end_quote
 
 ** Exploratory Data Analysis (EDA) with R (Lecture & practice)
 #+attr_html: :width 600px:
@@ -993,7 +993,7 @@ session:
 - [ ] Questions to ask from data
 - [ ] *Practice:* A representative R session
 
-* Week 5 - EDA Practice 
+* Week 5 - EDA Practice
 #+attr_html: :width 600px:
 [[../img/MagrittePipe.jpg]]
 
@@ -1031,26 +1031,26 @@ session:
 
    #+RESULTS:
    #+begin_example
-                  _                           
-   platform       x86_64-pc-linux-gnu         
-   arch           x86_64                      
-   os             linux-gnu                   
-   system         x86_64, linux-gnu           
-   status                                     
-   major          4                           
-   minor          1.2                         
-   year           2021                        
-   month          11                          
-   day            01                          
-   svn rev        81115                       
-   language       R                           
+                  _
+   platform       x86_64-pc-linux-gnu
+   arch           x86_64
+   os             linux-gnu
+   system         x86_64, linux-gnu
+   status
+   major          4
+   minor          1.2
+   year           2021
+   month          11
+   day            01
+   svn rev        81115
+   language       R
    version.string R version 4.1.2 (2021-11-01)
    nickname       Bird Hippie
    #+end_example
 
 3. How can you get an overview of the functions in a package,
    e.g. =MASS=?
-   #+begin_src R :session *R* :results output :exports both     
+   #+begin_src R :session *R* :results output :exports both
      ls("package:MASS")
    #+end_src
 
@@ -1065,13 +1065,13 @@ session:
    : [1] "character"
    : [1] 1
 
-   Another example:   
+   Another example:
    #+begin_src R :session *R* :results output :exports both
      course2 <- unlist(strsplit(course," "))
      course2
      is.vector(course2)
      grep("DSC", course2)
-   #+end_src   
+   #+end_src
 
    #+RESULTS:
    : [1] "The"    "number" "of"     "this"   "course" "is"     "DSC"    "302"
@@ -1090,7 +1090,7 @@ session:
    #+begin_src R :session *R* :results output :exports both :noweb yes
      library(MASS)  # package
      data(Pima.tr2)   # dataset in MASS
-     ls() 
+     ls()
      str(Pima.tr2)
      mean(Pima.tr2$bp,na.rm=TRUE)  # average & remove missing values
    #+end_src
@@ -1111,7 +1111,7 @@ session:
    #+end_src
 
    #+RESULTS:
-   :    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+   :    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's
    :   38.00   64.00   72.00   72.32   80.00  114.00      13
 
 ** Review questions (Monday session)
@@ -1154,11 +1154,11 @@ session:
 
 3. What types of categorical variables are there? Examples?
    #+begin_quote
-     - Nominal categorical variables: Their levels are not 'naturally'
-       ordered ( e.g. animals, ZIP codes).
-       
-     - Ordinal categorical variables: Their levels are naturally ordered
-       (e.g. magnitude, feelings).
+   - Nominal categorical variables: Their levels are not 'naturally'
+     ordered ( e.g. animals, ZIP codes).
+
+   - Ordinal categorical variables: Their levels are naturally ordered
+     (e.g. magnitude, feelings).
    #+end_quote
 
 4. Why do we bother with categorical variables?
@@ -1196,15 +1196,15 @@ session:
    #+RESULTS:
    #+begin_example
     [1] plot.acf*           plot.data.frame*    plot.decomposed.ts*
-    [4] plot.default        plot.dendrogram*    plot.density*      
-    [7] plot.ecdf           plot.factor*        plot.formula*      
-   [10] plot.function       plot.hclust*        plot.histogram*    
-   [13] plot.HoltWinters*   plot.isoreg*        plot.lm*           
-   [16] plot.medpolish*     plot.mlm*           plot.ppr*          
-   [19] plot.prcomp*        plot.princomp*      plot.profile.nls*  
-   [22] plot.raster*        plot.spec*          plot.stepfun       
-   [25] plot.stl*           plot.table*         plot.ts            
-   [28] plot.tskernel*      plot.TukeyHSD*     
+    [4] plot.default        plot.dendrogram*    plot.density*
+    [7] plot.ecdf           plot.factor*        plot.formula*
+   [10] plot.function       plot.hclust*        plot.histogram*
+   [13] plot.HoltWinters*   plot.isoreg*        plot.lm*
+   [16] plot.medpolish*     plot.mlm*           plot.ppr*
+   [19] plot.prcomp*        plot.princomp*      plot.profile.nls*
+   [22] plot.raster*        plot.spec*          plot.stepfun
+   [25] plot.stl*           plot.table*         plot.ts
+   [28] plot.tskernel*      plot.TukeyHSD*
    see '?methods' for accessing help and source code
    #+end_example
 
@@ -1213,12 +1213,12 @@ session:
    - The =mtcars= data set
    - The =ToothGrowth= data set
    - The =Nile= data set
-   
+
    #+begin_quote
    You get a pair plot - a plot of all variables with one another.
    #+end_quote
    #+begin_src R :file pairplot.png :session *R* :results file graphics output :exports both
-     plot(anscombe)     
+     plot(anscombe)
    #+end_src
 
 
@@ -1247,8 +1247,8 @@ session:
      algorithms", all data must be loaded into memory for processing.
    - The disadvantage can be overcome by mixing R with languages that
      can perform out-of-core algorithms like C++ or SQL.
-   #+end_quote   
-   
+   #+end_quote
+
 ** Recommended: Feynman on the scientific method
 
 [[https://t.co/jnwRMsj3XO][I shared the video (10 min) in the Google chat.]]
@@ -1275,9 +1275,9 @@ session:
 09/23/1846: German astronomer Johann Gottfried Galle discovers the
 planet Neptune at the Berlin Observatory. See also: AWS Neptune.
 
-* Emacs tip: browse with =eww=
+** DONE Emacs tip: browse with =eww=
 
-To open any URL in Emacs, add this line to your ~.emacs~ file and then 
+To open any URL in Emacs, add this line to your ~.emacs~ file and then
 #+begin_example
 (setq browse-url-browser-function 'eww-browse-url)
 #+end_example
@@ -1290,11 +1290,150 @@ Now you can for example open the Solar system mass tree map in an
 
 Running =M-x eww= without an argument brings you to your search engine.
 
-* EDA Lab
+** Review questions (Monday session)
+
+1. Provided =whiteside= is loaded, which of these commands will not work?
+   #+begin_src R :session *R* :results output :exports both
+     head(n=1, whiteside)
+
+     head(whiteside,1)
+
+     head(1, x=whiteside)
+
+     head(1, whiteside)
+   #+end_src
+
+   #+begin_quote
+   =head(1,whiteside)= will not work because the parameters are
+   "positional", identified by position only, and while =x=1= is okay,
+   =n = whiteside= is not recognized.
+   #+end_quote
+
+2. How can you identify the type of every variable in =whiteside=?
+   #+begin_src R :session *R* :results output :exports both
+     str(whiteside)
+   #+end_src
+
+   #+RESULTS:
+   : 'data.frame':      56 obs. of  3 variables:
+   :  $ Insul: Factor w/ 2 levels "Before","After": 1 1 1 1 1 1 1 1 1 1 ...
+   :  $ Temp : num  -0.8 -0.7 0.4 2.5 2.9 3.2 3.6 3.9 4.2 4.3 ...
+   :  $ Gas  : num  7.2 6.9 6.4 6 5.8 5.8 5.6 4.7 5.8 5.2 ...
+
+3. What does =summary= return when applied to a number, e.g. =1=?
+   #+begin_src R :session *R* :results output :exports both
+     summary(1)
+   #+end_src
+
+   #+RESULTS:
+   :    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.
+   :       1       1       1       1       1       1
+
+4. What does =summary= return when applied to a =factor=?
+   #+begin_src R :session *R* :results output :exports both
+     summary(whiteside$Insul)
+   #+end_src
+
+   #+RESULTS:
+   : Before  After
+   :     26     30
+
+5. What does =summary= return when applied to a =character= vector?
+   #+begin_src R :session *R* :results output :exports both
+     summary(state.abb)
+   #+end_src
+
+   #+RESULTS:
+   :    Length     Class      Mode
+   :        50 character character
+
+6. How would you check whether =whiteside$Insul= is a =factor=?
+   #+begin_src R :session *R* :results output :exports both
+     is.factor(whiteside$Insul)
+     levels(whiteside$Insul)
+     str(whiteside$Insul)
+     class(whiteside$Insul)
+   #+end_src
+
+   #+RESULTS:
+   : [1] TRUE
+   : [1] "Before" "After"
+   : Factor w/ 2 levels "Before","After": 1 1 1 1 1 1 1 1 1 1 ...
+   : [1] "factor"
+
+7. What happens when you insert a new value into a =factor=?
+   #+begin_src R :session *R* :results output :exports both
+     x <- as.factor(c("male","female", "female"))
+     x
+     class(x)
+
+     x[2] <- "Unknown"
+     x
+   #+end_src
+
+   #+RESULTS:
+   : [1] male   female female
+   : Levels: female male
+   : [1] "factor"
+   : Warning message:
+   : In `[<-.factor`(`*tmp*`, 2, value = "Unknown") :
+   :   invalid factor level, NA generated
+   : [1] male   <NA>   female
+   : Levels: female male
+
+8. How can you insert a new value into a =factor=?
+   #+begin_src R :session *R* :results output :exports both
+     x <- as.factor(c("male","female","female"))
+     x
+     class(x)
+
+     x <- as.character(x)
+     x
+     class(x)
+
+     x[2] <- "Unknown"
+     x
+   #+end_src   
+
+   #+RESULTS:
+   : [1] male   female female
+   : Levels: female male
+   : [1] "factor"
+   : [1] "male"   "female" "female"
+   : [1] "character"
+   : [1] "male"    "Unknown" "female"
+
+9. Is the =as.factor= function generic?
+   #+begin_src R :session *R* :results output :exports both
+     class(as.factor)
+     methods(as.factor)
+   #+end_src
+
+   #+RESULTS:
+   : [1] "function"
+   : no methods found
+
+10. Is the =as.character= function generic?
+    #+begin_src R :session *R* :results output :exports both
+      class(as.character)
+      methods(as.character)
+    #+end_src   
+
+    #+RESULTS:
+    : [1] "function"
+    : [1] as.character.condition       as.character.Date           
+    :  [3] as.character.default         as.character.error          
+    :  [5] as.character.factor          as.character.fractions*     
+    :  [7] as.character.hexmode         as.character.numeric_version
+    :  [9] as.character.octmode         as.character.person*        
+    : [11] as.character.POSIXt          as.character.Rd*            
+    : [13] as.character.roman*          as.character.srcref         
+    : see '?methods' for accessing help and source code
+
+** EDA Lab
 
 - [X] Install =MASS= package with =whiteside= dataset
 - [X] Look at the data (with understanding)
 - [X] Factor vectors (modified)
 - [X] Summary statistics (qualified)
 - [ ] Plotting: boxplots, scatterplots, barplots
-
