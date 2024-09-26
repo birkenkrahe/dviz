@@ -1449,7 +1449,9 @@ Running =M-x eww= without an argument brings you to your search engine.
     : [13] as.character.roman*          as.character.srcref         
     : see '?methods' for accessing help and source code
 
-  
+
+** TODO Review questions (Wednesday session)
+
 ** EDA Lab
 
 - [X] Install =MASS= package with =whiteside= dataset
