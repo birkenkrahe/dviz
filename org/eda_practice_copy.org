@@ -2,6 +2,7 @@
 #+AUTHOR: [your name here]
 #+SUBTITLE: Data visualization (DSC 302) Fall 2022
 #+OPTIONS: toc:1 num:1 ^:nil
+#+startup: overview hideblocks indent entitiespretty: 
 * README
 
 - Practice instructions for the data visualization lectures
@@ -235,12 +236,12 @@ structure using the generic[fn:5] ~str~ function.
    ----- PUT YOUR CODE BELOW THIS LINE -----
 
    #+name: structure
-   #+begin_src R :session *R* :results output 
+   #+begin_src R :session *R* :results output
      str(whiteside)
    #+end_src
 
    #+RESULTS: structure
-   : 'data.frame':	56 obs. of  3 variables:
+   : 'data.frame':      56 obs. of  3 variables:
    :  $ Insul: Factor w/ 2 levels "Before","After": 1 1 1 1 1 1 1 1 1 1 ...
    :  $ Temp : num  -0.8 -0.7 0.4 2.5 2.9 3.2 3.6 3.9 4.2 4.3 ...
    :  $ Gas  : num  7.2 6.9 6.4 6 5.8 5.8 5.6 4.7 5.8 5.2 ...
@@ -310,7 +311,7 @@ structure using the generic[fn:5] ~str~ function.
      str(x)
      as.factor(x) -> x
      str(x)
-        #+end_src
+   #+end_src
 
    #+RESULTS: char
    :  Factor w/ 2 levels "Before","After": 1 1 1 1 1 1 1 1 1 1 ...
@@ -335,12 +336,12 @@ statistical properties of each variable.
    #+end_src
 
    #+RESULTS: summary
-   :     Insul         Temp             Gas       
-   :  Before:26   Min.   :-0.800   Min.   :1.300  
-   :  After :30   1st Qu.: 3.050   1st Qu.:3.500  
-   :              Median : 4.900   Median :3.950  
-   :              Mean   : 4.875   Mean   :4.071  
-   :              3rd Qu.: 7.125   3rd Qu.:4.625  
+   :     Insul         Temp             Gas
+   :  Before:26   Min.   :-0.800   Min.   :1.300
+   :  After :30   1st Qu.: 3.050   1st Qu.:3.500
+   :              Median : 4.900   Median :3.950
+   :              Mean   : 4.875   Mean   :4.071
+   :              3rd Qu.: 7.125   3rd Qu.:4.625
    :              Max.   :10.200   Max.   :7.200
 
    #+begin_notes
@@ -384,12 +385,12 @@ graphical representation of Tukey's five-number summary.
 #+end_src
 
 #+RESULTS:
-:     Insul         Temp             Gas               
-:  Before:26   Min.   :-0.800   Min.   :1.30000000000  
-:  After :30   1st Qu.: 3.050   1st Qu.:3.50000000000  
-:              Median : 4.900   Median :3.95000000000  
-:              Mean   : 4.875   Mean   :4.07142857143  
-:              3rd Qu.: 7.125   3rd Qu.:4.62500000000  
+:     Insul         Temp             Gas
+:  Before:26   Min.   :-0.800   Min.   :1.30000000000
+:  After :30   1st Qu.: 3.050   1st Qu.:3.50000000000
+:              Median : 4.900   Median :3.95000000000
+:              Mean   : 4.875   Mean   :4.07142857143
+:              3rd Qu.: 7.125   3rd Qu.:4.62500000000
 :              Max.   :10.200   Max.   :7.20000000000
 
 1) Run the code block [[boxplot]] below to generate a ~boxplot~[fn:8]. Open
@@ -412,7 +413,7 @@ graphical representation of Tukey's five-number summary.
 
    #+RESULTS:
    : /home/marcus/GitHub/dviz/org
-   
+
    #+begin_notes
    In the boxplot, the "whiskers" at the top and the bottom represent
    the sample *minimum* and *maximum*. The "box" is bounded by the *upper
@@ -435,7 +436,7 @@ graphical representation of Tukey's five-number summary.
 
    #+RESULTS:
    [[file:TempInsul.png]]
-   
+
 3) When comparing with the output of ~summary~, we're missing the
    average value, or ~mean~. Modify your code blocks by adding these two
    lines below the ~boxplot~ command, and run each block again: the
@@ -460,9 +461,9 @@ graphical representation of Tukey's five-number summary.
    #+begin_src R :file toothbox.png :session *R* :results file graphics output :exports both
      boxplot(len ~ supp, data=ToothGrowth,horizontal=TRUE)
      abline(v=mean(ToothGrowth$len),
-	    col="red",
-	    lty=4,
-	    lwd=4)
+            col="red",
+            lty=4,
+            lwd=4)
    #+end_src
 
    #+RESULTS:
@@ -475,7 +476,7 @@ graphical representation of Tukey's five-number summary.
    #+end_src
 
    #+RESULTS:
-   : 'data.frame':	60 obs. of  3 variables:
+   : 'data.frame':      60 obs. of  3 variables:
    :  $ len : num  4.2 11.5 7.3 5.8 6.4 10 11.2 11.2 5.2 7 ...
    :  $ supp: Factor w/ 2 levels "OJ","VC": 2 2 2 2 2 2 2 2 2 2 ...
    :  $ dose: num  0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 ...
@@ -486,9 +487,9 @@ graphical representation of Tukey's five-number summary.
    #+end_src
 
    #+RESULTS:
-   : [1] boxplot.default  boxplot.formula* boxplot.matrix  
+   : [1] boxplot.default  boxplot.formula* boxplot.matrix
    : see '?methods' for accessing help and source code
-   
+
 * TODO SCATTERPLOTS
 
 The ~plot~ function is another versatile, generic function in R. Applied
@@ -500,7 +501,7 @@ each variable relates to the others.
 
    #+name: plot
    #+begin_src R :session *R* :results output graphics file :file plot.png
-     plot(whiteside)
+     plot(whiteside) # so called "pair plot'
    #+end_src
 
    #+begin_notes

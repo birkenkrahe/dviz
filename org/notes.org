@@ -993,7 +993,7 @@ session:
 - [ ] Questions to ask from data
 - [ ] *Practice:* A representative R session
 
-* Week 5 - EDA Practice
+* Week 5 - EDA: "Ceci n'est pas une pipe"
 #+attr_html: :width 600px:
 [[../img/MagrittePipe.jpg]]
 
@@ -1267,7 +1267,7 @@ session:
 - [X] Questions to ask from data
 - [X] *Practice:* A representative R session
 
-* Week 6 - EDA Lab
+* Week 6 - EDA Lab with =MASS::whiteside=
 #+attr_html: :width 600px:
 #+caption:Photo Credit: © CORBIS/Corbis via Getty Images
 [[../img/neptune.png]]
@@ -1275,7 +1275,17 @@ session:
 09/23/1846: German astronomer Johann Gottfried Galle discovers the
 planet Neptune at the Berlin Observatory. See also: AWS Neptune.
 
-** DONE Emacs tip: browse with =eww=
++ [X] Emacs tip: browsing with =eww=
++ [-] Sample EDA session:
+  - [X] Looking at data
+  - [X] Factor vectors
+  - [X] Summary statistics
+  - [X] Box plots
+  - [ ] Scatterplots
+  - [ ] Barplots
+  - [ ] Customization
+
+* DONE Emacs tip: browse with =eww=
 
 To open any URL in Emacs, add this line to your ~.emacs~ file and then
 #+begin_example
@@ -1291,7 +1301,7 @@ Now you can for example open the Solar system mass tree map in an
 Running =M-x eww= without an argument brings you to your search engine.
 
 
-** Review questions (Monday session)
+* Review questions (Monday session)
 
 1. Provided =whiteside= is loaded, which of these commands will not work?
    #+begin_src R :session *R* :results output :exports both
@@ -1450,12 +1460,87 @@ Running =M-x eww= without an argument brings you to your search engine.
     : see '?methods' for accessing help and source code
 
 
-** TODO Review questions (Wednesday session)
+* TODO Review questions (Wednesday session)
+#+attr_html: :width 400px: 
+[[../img/boxplot.png]]
 
-** EDA Lab
+1. So your grandma sees your class notes and asks "What's a box plot",
+   and why do they make you learn this? What's it good for?
+   #+begin_quote
+
+   A box plot is a graphical representation of
+   - Tukey's five-number summary (25%, 50% aka median, 75% percentile,
+     minimum, maximum)
+   - the results of R's =summary= function (without the =mean=)
+
+   A box plot is useful to
+   - check for outliers (they're shown outside the whiskers)
+   - compare numerical distributions of different categories, e.g. the
+     numerical length =len= of the two supply categories =supp= in
+     =ToothGrowth=.
+   
+   #+end_quote
+
+2. Is =boxplot= a generic function? Could you make a box plot of =mtcars=?
+   What about a box plot of =Nile=? What about a =factor= vector?
+   #+begin_src R :file box.png :session *R* :results file graphics output :exports both
+     boxplot(mtcars)
+   #+end_src
+
+   #+begin_src R :file NileBox.png :session *R* :results file graphics output :exports both
+     boxplot(Nile,horizontal=TRUE)
+     abline(v=mean(Nile),col="red",lwd=3)
+   #+end_src
+
+   #+begin_src R :file suppBox.png :session *R* :results file graphics output :exports both
+     boxplot(ToothGrowth$supp)
+   #+end_src
+
+   #+begin_src R :session *R* :results output :exports both
+     summary(ToothGrowth$supp)
+   #+end_src
+
+   #+begin_src R :file factorBox.png :session *R* :results file graphics output :exports both
+     foo <- as.factor(c("male","male","male","female"))
+     boxplot(foo)
+   #+end_src
+
+   #+begin_src R :session *R* :results output :exports both
+     summary(foo)
+   #+end_src
+
+3. What does the 'ab' in =abline= refer to, and how can you draw a
+   vertical/horizontal line through any plot?
+   #+begin_quote
+   a: slope, b: intercept of the line y = a x + b
+   #+end_quote
+
+   #+begin_src R :file abline.png :session *R* :results file graphics output :exports both
+     plot.new()
+     abline(v=0.5,col="blue",lwd=3)
+     abline(h=0.5,col="red",lwd=3)
+   #+end_src
+
+   #+RESULTS:
+   [[file:abline.png]]
+
+* EDA Lab
+#+attr_html: :width 400px:
+[[../img/lab2.jpg]]
 
 - [X] Install =MASS= package with =whiteside= dataset
 - [X] Look at the data (with understanding)
 - [X] Factor vectors (modified)
 - [X] Summary statistics (qualified)
-- [ ] Plotting: boxplots, scatterplots, barplots
+- [ ] Plotting: boxplots
+- [ ] Plotting: scatterplots
+- [ ] Plotting: barplots
+
+* Next week:
+#+attr_html: :width 600px:
+[[../img/mammals.jpg]]
+
+- Another lab (with =MASS::mammals=) will follow next week
+- We will also review =ggplot2= commands and theory
+- I will give you a lecture (with practice) on "graphics"
+  
