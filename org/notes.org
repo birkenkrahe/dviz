@@ -1300,7 +1300,6 @@ Now you can for example open the Solar system mass tree map in an
 
 Running =M-x eww= without an argument brings you to your search engine.
 
-
 * Review questions (Monday session)
 
 1. Provided =whiteside= is loaded, which of these commands will not work?
@@ -1459,7 +1458,6 @@ Running =M-x eww= without an argument brings you to your search engine.
     : [13] as.character.roman*          as.character.srcref         
     : see '?methods' for accessing help and source code
 
-
 * TODO Review questions (Wednesday session)
 #+attr_html: :width 400px: 
 [[../img/boxplot.png]]
@@ -1487,27 +1485,54 @@ Running =M-x eww= without an argument brings you to your search engine.
      boxplot(mtcars)
    #+end_src
 
+   #+RESULTS:
+   [[file:box.png]]
+
    #+begin_src R :file NileBox.png :session *R* :results file graphics output :exports both
      boxplot(Nile,horizontal=TRUE)
      abline(v=mean(Nile),col="red",lwd=3)
    #+end_src
 
+   #+RESULTS:
+   [[file:NileBox.png]]
+
+   #+begin_src R :session *R* :results output :exports both :noweb yes
+     str(ToothGrowth$supp)
+   #+end_src
+
+   #+RESULTS:
+   :  Factor w/ 2 levels "OJ","VC": 2 2 2 2 2 2 2 2 2 2 ...
+
    #+begin_src R :file suppBox.png :session *R* :results file graphics output :exports both
      boxplot(ToothGrowth$supp)
    #+end_src
 
+   #+RESULTS:
+   [[file:suppBox.png]]
+
    #+begin_src R :session *R* :results output :exports both
      summary(ToothGrowth$supp)
    #+end_src
+
+   #+RESULTS:
+   : OJ VC 
+   : 30 30
 
    #+begin_src R :file factorBox.png :session *R* :results file graphics output :exports both
      foo <- as.factor(c("male","male","male","female"))
      boxplot(foo)
    #+end_src
 
+   #+RESULTS:
+   [[file:factorBox.png]]
+
    #+begin_src R :session *R* :results output :exports both
      summary(foo)
    #+end_src
+
+   #+RESULTS:
+   : female   male 
+   :      1      3
 
 3. What does the 'ab' in =abline= refer to, and how can you draw a
    vertical/horizontal line through any plot?

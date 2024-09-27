@@ -372,7 +372,7 @@ statistical properties of each variable.
    4. The measurements are accurate to the third decimal!
    #+end_quote
 
-* TODO BOXPLOTS
+* BOXPLOTS
 
 We'll finish this practice run with a few glimpses into R's graphics
 capabilities.
@@ -490,7 +490,7 @@ graphical representation of Tukey's five-number summary.
    : [1] boxplot.default  boxplot.formula* boxplot.matrix
    : see '?methods' for accessing help and source code
 
-* TODO SCATTERPLOTS
+* SCATTERPLOTS
 
 The ~plot~ function is another versatile, generic function in R. Applied
 to a data frame, it produces a matrix of /scatterplots/, showing how
@@ -500,9 +500,13 @@ each variable relates to the others.
    explanation of this /scatterplot/ matrix with ~<TAB>~.
 
    #+name: plot
-   #+begin_src R :session *R* :results output graphics file :file plot.png
+   #+begin_src R :file plotWhiteside.png :session *R* :results output graphics file 
+     library(MASS)
      plot(whiteside) # so called "pair plot'
    #+end_src
+
+   #+RESULTS: plot
+   [[file:plotWhiteside.png]]
 
    #+begin_notes
    The diagonal elements of the output identify the x-axis in all
@@ -525,6 +529,13 @@ each variable relates to the others.
 
    ----- PUT YOUR CODE BELOW THIS LINE -----
 
+   #+begin_src R :file plot1.png :session *R* :results output graphics file
+     plot(sort(whiteside$Temp))
+   #+end_src
+
+   #+RESULTS:
+   [[file:plot1.png]]
+
    #+begin_notes
    The left set of data points represents the 26 values with
    ~Insul=Before~, the right set of data points represents the 30 values
@@ -534,7 +545,43 @@ each variable relates to the others.
    warmest within each heating season.
    #+end_notes
 
-* TODO BARCHARTS
+- Use =sort= to sort the values of =whiteside$Temp=.
+
+- How =sort= works:
+  #+begin_src R :session *R* :results output :exports both :noweb yes
+    c(4,5,1,2,4,5,3) |> sort()
+    sort(c(4,5,1,2,4,5,3))
+  #+end_src
+
+  #+RESULTS:
+  : [1] 1 2 3 4 4 5 5
+  : [1] 1 2 3 4 4 5 5
+
+- To distinguish which points belong to "Before" vs. "After", use color
+  #+begin_src R :file color1.png :session *R* :results output graphics file
+    colors <- ifelse(whiteside$Insul == "Before",
+                     "red",   # before
+                     "blue")  # after
+    plot(whiteside$Temp,
+         col=colors,      # pick color according to `colors`
+         pch=16)  # solid points
+  #+end_src
+
+  #+RESULTS:
+  [[file:color1.png]]
+
+- Another way to this (without =ifelse=) converts the =factor= into a
+  =numeric= vector:
+  #+begin_src R :file color2.png :session *R* :results output graphics file
+    plot(whiteside$Temp,
+         col=c("red","blue")[unclass(whiteside$Insul)],
+         pch=16)
+  #+end_src  
+
+  #+RESULTS:
+  [[file:color2.png]]
+
+* BARCHARTS
 
 When applying ~plot~ to a categorical variable, you get a /barchart/.
 
@@ -544,9 +591,15 @@ When applying ~plot~ to a categorical variable, you get a /barchart/.
 3) Open and close the explanation in the notes.
 
    #+name: barchart
-   #+begin_src R :session *R* :results output graphics file :file barchart.png
-     _______________
+   #+begin_src R :file barInsul.png :session *R* :results output graphics file
+     plot(whiteside$Insul,
+          main="Measurements before and after insulation\
+     of house walls from the `whiteside` datset.",
+     ylab="Number of measurements")
    #+end_src
+
+   #+RESULTS: barchart
+   [[file:barInsul.png]]
 
    #+begin_notes
    The chart shows the number of measurements before and after the wall
@@ -554,7 +607,23 @@ When applying ~plot~ to a categorical variable, you get a /barchart/.
    periods.
    #+end_notes
 
-* TODO CUSTOMIZATION
+   Is =barplot= generic?
+   #+begin_src R :session *R* :results output :exports both :noweb yes
+     methods(barplot)
+   #+end_src
+
+   #+RESULTS:
+   : [1] barplot.default  barplot.formula*
+   : see '?methods' for accessing help and source code
+
+   #+begin_src R :file barplot.png :session *R* :results output graphics file
+     barplot(whiteside$Insul)
+   #+end_src
+
+   #+RESULTS:
+   [[file:barplot.png]]
+
+* CUSTOMIZATION
 
 Three extensions to the scatterplots shown: changing plotting symbols,
 the inclusion of a legend, and linear regression reference
@@ -574,8 +643,185 @@ lines.
    #+begin_src R :session *R* :results output graphics file :file custom1.png
      plot(x = whiteside$Temp,
           y = whiteside$Gas,
-          pch = c(6,16)[whiteside$Insul])
+          pch = c(6,16)[whiteside$Insul])  # could use 'col' instead
    #+end_src
+   
+   #+RESULTS: custom1
+   [[file:custom1.png]]
+
+   How are the colors stored anyway?
+   #+begin_src R :session *R* :results output :exports both :noweb yes
+     colors()
+   #+end_src
+
+   #+RESULTS:
+   #+begin_example
+     [1] "white"                "aliceblue"            "antiquewhite"         "antiquewhite1"       
+     [5] "antiquewhite2"        "antiquewhite3"        "antiquewhite4"        "aquamarine"          
+     [9] "aquamarine1"          "aquamarine2"          "aquamarine3"          "aquamarine4"         
+    [13] "azure"                "azure1"               "azure2"               "azure3"              
+    [17] "azure4"               "beige"                "bisque"               "bisque1"             
+    [21] "bisque2"              "bisque3"              "bisque4"              "black"               
+    [25] "blanchedalmond"       "blue"                 "blue1"                "blue2"               
+    [29] "blue3"                "blue4"                "blueviolet"           "brown"               
+    [33] "brown1"               "brown2"               "brown3"               "brown4"              
+    [37] "burlywood"            "burlywood1"           "burlywood2"           "burlywood3"          
+    [41] "burlywood4"           "cadetblue"            "cadetblue1"           "cadetblue2"          
+    [45] "cadetblue3"           "cadetblue4"           "chartreuse"           "chartreuse1"         
+    [49] "chartreuse2"          "chartreuse3"          "chartreuse4"          "chocolate"           
+    [53] "chocolate1"           "chocolate2"           "chocolate3"           "chocolate4"          
+    [57] "coral"                "coral1"               "coral2"               "coral3"              
+    [61] "coral4"               "cornflowerblue"       "cornsilk"             "cornsilk1"           
+    [65] "cornsilk2"            "cornsilk3"            "cornsilk4"            "cyan"                
+    [69] "cyan1"                "cyan2"                "cyan3"                "cyan4"               
+    [73] "darkblue"             "darkcyan"             "darkgoldenrod"        "darkgoldenrod1"      
+    [77] "darkgoldenrod2"       "darkgoldenrod3"       "darkgoldenrod4"       "darkgray"            
+    [81] "darkgreen"            "darkgrey"             "darkkhaki"            "darkmagenta"         
+    [85] "darkolivegreen"       "darkolivegreen1"      "darkolivegreen2"      "darkolivegreen3"     
+    [89] "darkolivegreen4"      "darkorange"           "darkorange1"          "darkorange2"         
+    [93] "darkorange3"          "darkorange4"          "darkorchid"           "darkorchid1"         
+    [97] "darkorchid2"          "darkorchid3"          "darkorchid4"          "darkred"             
+   [101] "darksalmon"           "darkseagreen"         "darkseagreen1"        "darkseagreen2"       
+   [105] "darkseagreen3"        "darkseagreen4"        "darkslateblue"        "darkslategray"       
+   [109] "darkslategray1"       "darkslategray2"       "darkslategray3"       "darkslategray4"      
+   [113] "darkslategrey"        "darkturquoise"        "darkviolet"           "deeppink"            
+   [117] "deeppink1"            "deeppink2"            "deeppink3"            "deeppink4"           
+   [121] "deepskyblue"          "deepskyblue1"         "deepskyblue2"         "deepskyblue3"        
+   [125] "deepskyblue4"         "dimgray"              "dimgrey"              "dodgerblue"          
+   [129] "dodgerblue1"          "dodgerblue2"          "dodgerblue3"          "dodgerblue4"         
+   [133] "firebrick"            "firebrick1"           "firebrick2"           "firebrick3"          
+   [137] "firebrick4"           "floralwhite"          "forestgreen"          "gainsboro"           
+   [141] "ghostwhite"           "gold"                 "gold1"                "gold2"               
+   [145] "gold3"                "gold4"                "goldenrod"            "goldenrod1"          
+   [149] "goldenrod2"           "goldenrod3"           "goldenrod4"           "gray"                
+   [153] "gray0"                "gray1"                "gray2"                "gray3"               
+   [157] "gray4"                "gray5"                "gray6"                "gray7"               
+   [161] "gray8"                "gray9"                "gray10"               "gray11"              
+   [165] "gray12"               "gray13"               "gray14"               "gray15"              
+   [169] "gray16"               "gray17"               "gray18"               "gray19"              
+   [173] "gray20"               "gray21"               "gray22"               "gray23"              
+   [177] "gray24"               "gray25"               "gray26"               "gray27"              
+   [181] "gray28"               "gray29"               "gray30"               "gray31"              
+   [185] "gray32"               "gray33"               "gray34"               "gray35"              
+   [189] "gray36"               "gray37"               "gray38"               "gray39"              
+   [193] "gray40"               "gray41"               "gray42"               "gray43"              
+   [197] "gray44"               "gray45"               "gray46"               "gray47"              
+   [201] "gray48"               "gray49"               "gray50"               "gray51"              
+   [205] "gray52"               "gray53"               "gray54"               "gray55"              
+   [209] "gray56"               "gray57"               "gray58"               "gray59"              
+   [213] "gray60"               "gray61"               "gray62"               "gray63"              
+   [217] "gray64"               "gray65"               "gray66"               "gray67"              
+   [221] "gray68"               "gray69"               "gray70"               "gray71"              
+   [225] "gray72"               "gray73"               "gray74"               "gray75"              
+   [229] "gray76"               "gray77"               "gray78"               "gray79"              
+   [233] "gray80"               "gray81"               "gray82"               "gray83"              
+   [237] "gray84"               "gray85"               "gray86"               "gray87"              
+   [241] "gray88"               "gray89"               "gray90"               "gray91"              
+   [245] "gray92"               "gray93"               "gray94"               "gray95"              
+   [249] "gray96"               "gray97"               "gray98"               "gray99"              
+   [253] "gray100"              "green"                "green1"               "green2"              
+   [257] "green3"               "green4"               "greenyellow"          "grey"                
+   [261] "grey0"                "grey1"                "grey2"                "grey3"               
+   [265] "grey4"                "grey5"                "grey6"                "grey7"               
+   [269] "grey8"                "grey9"                "grey10"               "grey11"              
+   [273] "grey12"               "grey13"               "grey14"               "grey15"              
+   [277] "grey16"               "grey17"               "grey18"               "grey19"              
+   [281] "grey20"               "grey21"               "grey22"               "grey23"              
+   [285] "grey24"               "grey25"               "grey26"               "grey27"              
+   [289] "grey28"               "grey29"               "grey30"               "grey31"              
+   [293] "grey32"               "grey33"               "grey34"               "grey35"              
+   [297] "grey36"               "grey37"               "grey38"               "grey39"              
+   [301] "grey40"               "grey41"               "grey42"               "grey43"              
+   [305] "grey44"               "grey45"               "grey46"               "grey47"              
+   [309] "grey48"               "grey49"               "grey50"               "grey51"              
+   [313] "grey52"               "grey53"               "grey54"               "grey55"              
+   [317] "grey56"               "grey57"               "grey58"               "grey59"              
+   [321] "grey60"               "grey61"               "grey62"               "grey63"              
+   [325] "grey64"               "grey65"               "grey66"               "grey67"              
+   [329] "grey68"               "grey69"               "grey70"               "grey71"              
+   [333] "grey72"               "grey73"               "grey74"               "grey75"              
+   [337] "grey76"               "grey77"               "grey78"               "grey79"              
+   [341] "grey80"               "grey81"               "grey82"               "grey83"              
+   [345] "grey84"               "grey85"               "grey86"               "grey87"              
+   [349] "grey88"               "grey89"               "grey90"               "grey91"              
+   [353] "grey92"               "grey93"               "grey94"               "grey95"              
+   [357] "grey96"               "grey97"               "grey98"               "grey99"              
+   [361] "grey100"              "honeydew"             "honeydew1"            "honeydew2"           
+   [365] "honeydew3"            "honeydew4"            "hotpink"              "hotpink1"            
+   [369] "hotpink2"             "hotpink3"             "hotpink4"             "indianred"           
+   [373] "indianred1"           "indianred2"           "indianred3"           "indianred4"          
+   [377] "ivory"                "ivory1"               "ivory2"               "ivory3"              
+   [381] "ivory4"               "khaki"                "khaki1"               "khaki2"              
+   [385] "khaki3"               "khaki4"               "lavender"             "lavenderblush"       
+   [389] "lavenderblush1"       "lavenderblush2"       "lavenderblush3"       "lavenderblush4"      
+   [393] "lawngreen"            "lemonchiffon"         "lemonchiffon1"        "lemonchiffon2"       
+   [397] "lemonchiffon3"        "lemonchiffon4"        "lightblue"            "lightblue1"          
+   [401] "lightblue2"           "lightblue3"           "lightblue4"           "lightcoral"          
+   [405] "lightcyan"            "lightcyan1"           "lightcyan2"           "lightcyan3"          
+   [409] "lightcyan4"           "lightgoldenrod"       "lightgoldenrod1"      "lightgoldenrod2"     
+   [413] "lightgoldenrod3"      "lightgoldenrod4"      "lightgoldenrodyellow" "lightgray"           
+   [417] "lightgreen"           "lightgrey"            "lightpink"            "lightpink1"          
+   [421] "lightpink2"           "lightpink3"           "lightpink4"           "lightsalmon"         
+   [425] "lightsalmon1"         "lightsalmon2"         "lightsalmon3"         "lightsalmon4"        
+   [429] "lightseagreen"        "lightskyblue"         "lightskyblue1"        "lightskyblue2"       
+   [433] "lightskyblue3"        "lightskyblue4"        "lightslateblue"       "lightslategray"      
+   [437] "lightslategrey"       "lightsteelblue"       "lightsteelblue1"      "lightsteelblue2"     
+   [441] "lightsteelblue3"      "lightsteelblue4"      "lightyellow"          "lightyellow1"        
+   [445] "lightyellow2"         "lightyellow3"         "lightyellow4"         "limegreen"           
+   [449] "linen"                "magenta"              "magenta1"             "magenta2"            
+   [453] "magenta3"             "magenta4"             "maroon"               "maroon1"             
+   [457] "maroon2"              "maroon3"              "maroon4"              "mediumaquamarine"    
+   [461] "mediumblue"           "mediumorchid"         "mediumorchid1"        "mediumorchid2"       
+   [465] "mediumorchid3"        "mediumorchid4"        "mediumpurple"         "mediumpurple1"       
+   [469] "mediumpurple2"        "mediumpurple3"        "mediumpurple4"        "mediumseagreen"      
+   [473] "mediumslateblue"      "mediumspringgreen"    "mediumturquoise"      "mediumvioletred"     
+   [477] "midnightblue"         "mintcream"            "mistyrose"            "mistyrose1"          
+   [481] "mistyrose2"           "mistyrose3"           "mistyrose4"           "moccasin"            
+   [485] "navajowhite"          "navajowhite1"         "navajowhite2"         "navajowhite3"        
+   [489] "navajowhite4"         "navy"                 "navyblue"             "oldlace"             
+   [493] "olivedrab"            "olivedrab1"           "olivedrab2"           "olivedrab3"          
+   [497] "olivedrab4"           "orange"               "orange1"              "orange2"             
+   [501] "orange3"              "orange4"              "orangered"            "orangered1"          
+   [505] "orangered2"           "orangered3"           "orangered4"           "orchid"              
+   [509] "orchid1"              "orchid2"              "orchid3"              "orchid4"             
+   [513] "palegoldenrod"        "palegreen"            "palegreen1"           "palegreen2"          
+   [517] "palegreen3"           "palegreen4"           "paleturquoise"        "paleturquoise1"      
+   [521] "paleturquoise2"       "paleturquoise3"       "paleturquoise4"       "palevioletred"       
+   [525] "palevioletred1"       "palevioletred2"       "palevioletred3"       "palevioletred4"      
+   [529] "papayawhip"           "peachpuff"            "peachpuff1"           "peachpuff2"          
+   [533] "peachpuff3"           "peachpuff4"           "peru"                 "pink"                
+   [537] "pink1"                "pink2"                "pink3"                "pink4"               
+   [541] "plum"                 "plum1"                "plum2"                "plum3"               
+   [545] "plum4"                "powderblue"           "purple"               "purple1"             
+   [549] "purple2"              "purple3"              "purple4"              "red"                 
+   [553] "red1"                 "red2"                 "red3"                 "red4"                
+   [557] "rosybrown"            "rosybrown1"           "rosybrown2"           "rosybrown3"          
+   [561] "rosybrown4"           "royalblue"            "royalblue1"           "royalblue2"          
+   [565] "royalblue3"           "royalblue4"           "saddlebrown"          "salmon"              
+   [569] "salmon1"              "salmon2"              "salmon3"              "salmon4"             
+   [573] "sandybrown"           "seagreen"             "seagreen1"            "seagreen2"           
+   [577] "seagreen3"            "seagreen4"            "seashell"             "seashell1"           
+   [581] "seashell2"            "seashell3"            "seashell4"            "sienna"              
+   [585] "sienna1"              "sienna2"              "sienna3"              "sienna4"             
+   [589] "skyblue"              "skyblue1"             "skyblue2"             "skyblue3"            
+   [593] "skyblue4"             "slateblue"            "slateblue1"           "slateblue2"          
+   [597] "slateblue3"           "slateblue4"           "slategray"            "slategray1"          
+   [601] "slategray2"           "slategray3"           "slategray4"           "slategrey"           
+   [605] "snow"                 "snow1"                "snow2"                "snow3"               
+   [609] "snow4"                "springgreen"          "springgreen1"         "springgreen2"        
+   [613] "springgreen3"         "springgreen4"         "steelblue"            "steelblue1"          
+   [617] "steelblue2"           "steelblue3"           "steelblue4"           "tan"                 
+   [621] "tan1"                 "tan2"                 "tan3"                 "tan4"                
+   [625] "thistle"              "thistle1"             "thistle2"             "thistle3"            
+   [629] "thistle4"             "tomato"               "tomato1"              "tomato2"             
+   [633] "tomato3"              "tomato4"              "turquoise"            "turquoise1"          
+   [637] "turquoise2"           "turquoise3"           "turquoise4"           "violet"              
+   [641] "violetred"            "violetred1"           "violetred2"           "violetred3"          
+   [645] "violetred4"           "wheat"                "wheat1"               "wheat2"              
+   [649] "wheat3"               "wheat4"               "whitesmoke"           "yellow"              
+   [653] "yellow1"              "yellow2"              "yellow3"              "yellow4"             
+   [657] "yellowgreen"
+   #+end_example
 
 2) In [[custom2]], a ~legend~ is added to the last scatterplot. The legend
    is laid on top of the plot using a vector of string values.
@@ -590,6 +836,9 @@ lines.
             pch = c(6,16))
    #+end_src
 
+   #+RESULTS: custom2
+   [[file:custom2.png]]
+
 3) In [[custom3]], reference lines are added to the last scatterplot. The
    lines are drawn with different line types (~lty~). Two linear
    regression models (~lm~) are defined that fit the observed
@@ -599,7 +848,8 @@ lines.
    #+begin_src R :session *R* :results output graphics file :file custom3.png
      plot(x = whiteside$Temp,
           y = whiteside$Gas,
-          pch = c(6,16)[whiteside$Insul])
+          pch = c(6,16)[whiteside$Insul],
+          cex=2)
      legend(x = "topright",
             legend=c("Insul = Before", "Insul = After"),
             pch = c(6,16))
@@ -609,11 +859,14 @@ lines.
      model_2 <- lm(Gas~Temp,
                    data=whiteside,
                    subset=which(Insul == "After"))
-     abline(model_1, lty=2)
-     abline(model_2)
+     abline(model_1, lty=2,col="blue",lwd=3)
+     abline(model_2,col="red",lwd=3)
    #+end_src
 
-* TODO TEST QUESTIONS
+   #+RESULTS: custom3
+   [[file:custom3.png]]
+
+* TEST QUESTIONS
 
 You now should be able to answer these test questions. You can find
 short answers in the footnote[fn:12]:
