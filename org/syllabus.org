@@ -145,19 +145,19 @@ http://www.lyon.edu/standard-course-policies.
 |------+---------------------------------------------------+------------|
 |    8 | Introduction to Matplotlib: Plotting time-series  |            |
 |------+---------------------------------------------------+------------|
-|   9  | Introduction to Matplotlib: Quantitative & stats  |            |
+|    9 | Introduction to Matplotlib: Quantitative & stats  |            |
 |------+---------------------------------------------------+------------|
-|   10 | [[https://app.datacamp.com/learn/courses/dashboard-design-concepts][Introduction to dashboards]]                        |            |
+|   10 | [[https://app.datacamp.com/learn/courses/introduction-to-data-visualization-with-plotly-in-python][Introduction to Plotly]]                            |            |
 |------+---------------------------------------------------+------------|
-|   11 | [[https://app.datacamp.com/learn/courses/introduction-to-power-bi][Introduction to Power BI: Getting started]]         | 3rd review |
+|   11 | [[https://app.datacamp.com/learn/courses/dashboard-design-concepts][Introduction to dashboards]]                        | 3rd review |
 |------+---------------------------------------------------+------------|
-|   12 | Introduction to Power BI: Transforming data       |            |
+|   12 | [[https://app.datacamp.com/learn/courses/introduction-to-power-bi][Introduction to Power BI: Getting started]]         |            |
 |------+---------------------------------------------------+------------|
-|   13 | Introduction to Power BI: Visualizing data        |            |
+|   13 | Introduction to Power BI: Transforming data       |            |
 |------+---------------------------------------------------+------------|
-|   14 | Introduction to Power BI: Filtering               |            |
+|   14 | Introduction to Power BI: Visualizing data        |            |
 |------+---------------------------------------------------+------------|
-|   15 |                                                   | 4th review |
+|   15 | Introduction to Power BI: Filtering               | 4th review |
 |------+---------------------------------------------------+------------|
 
 * A note on using AI to write code for you or debug your code
