@@ -1613,17 +1613,19 @@ From the discussion in DSC 105:
 
   6. Which skills will be required from me?
 
-  7. *What will I be able to learn and from whom?*
+  7. What will I be able to learn and from whom?
 
   8. Whom will I be working with?
-
 
 - You should work out your favorite answers to these questions before
   the fair.
 
+- If you can, do some research beforehand on companies in the area
+
 - You should have a 1-page resume to hand out (bring 30 copies)
 
 - You can send me your resume for my opinion.
+
 
 ** Projects Update (2nd sprint: Oct 11)
 #+attr_html: :width 400px: 
@@ -1641,9 +1643,11 @@ do this is down to you (I'm happy to help). Others did it before you!
 - Articulate clearly:
   1) What is your main research question?
   2) What is your main methodology?
-  3) What is your literature review strategy?
+  3) What is your literature review/source strategy?
+  4) How are you going to distribute the work
 
 - Contact me or arrange a visit to discuss details of your project!
+
 
 ** Review (last session):
 
@@ -1730,8 +1734,6 @@ do this is down to you (I'm happy to help). Others did it before you!
 
    
 ** Graphics
-
-- 
 
 ** Lab: =MASS::mammals=
 #+attr_html: :width 600px:
