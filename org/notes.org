@@ -1578,7 +1578,54 @@ Running =M-x eww= without an argument brings you to your search engine.
 - Introduction to R graphics
 - Lab exercises with =MASS::mammals= and graphics
 
-** Projects Update
+** Go to the Lyon Career Fair (Oct 1)
+#+attr_html: :width 200px:
+[[../img/careerfair.png]]
+
+From the discussion in DSC 105:
+#+attr_html: :width 400px:
+[[../img/careerfair_whiteboard.jpg]]
+
+- Why should you be going?
+
+  1. Meet local companies, agencies, and organizations (like:
+     LifePlus, Bad Boy Mowers, the FBI, White River Health, UAMS etc.)
+
+  2. Learn how to ask questions, use (or develop) social skills, and
+     show off your elegant wardrobe!
+     
+  3. Public relations and marketing opportunity for you and for Lyon
+     (your alma-mater-to-be).
+
+  4. Credit! (Activate the QR code)
+
+- Which questions should we ask?
+
+  1. Why are you here at the fair?
+
+  2. Do you offer internships, short or long?
+
+  3. How much do you pay (if at all)? Other perks?
+
+  4. When will the internship be?
+
+  5. What exactly am I going to do?
+
+  6. Which skills will be required from me?
+
+  7. *What will I be able to learn and from whom?*
+
+  8. Whom will I be working with?
+
+
+- You should work out your favorite answers to these questions before
+  the fair.
+
+- You should have a 1-page resume to hand out (bring 30 copies)
+
+- You can send me your resume for my opinion.
+
+** Projects Update (2nd sprint: Oct 11)
 #+attr_html: :width 400px: 
 [[../img/projects.png]]
 
@@ -1587,20 +1634,107 @@ your proposal, as in the remainder of your project work, you need to
 clearly demonstrate the difference between the two projects. How you
 do this is down to you (I'm happy to help). Others did it before you!
 
-- Give a very short overview of your project status
+*You must meet the deadline* or lose 50% (sprint review = 6% of grade).
+
+- *Now*: Give a very short overview of your project status
+
 - Articulate clearly:
   1) What is your main research question?
   2) What is your main methodology?
   3) What is your literature review strategy?
 
-** Graphics:
+- Contact me or arrange a visit to discuss details of your project!
+
+** Review (last session):
+
+1. What is this type of plot good for, and how is it generated?
+   #+attr_html: :width 200px: 
+   [[file:../img/plotWhiteside.png]]
+
+   #+begin_quote
+   Apply =plot= to a =data.frame= (e.g. =whiteside=)
+   #+end_quote
+
+2. How is this plot generated, and what does it suggest?
+   (=whiteside$Temp= is a numeric variable in the =whiteside= =data.frame=.
+   #+attr_html: :width 200px: 
+   [[file:../img/plot1.png]]
+
+   #+begin_quote
+   The two distinct groups of points suggest that there is a
+   categorical variable (in this case =whiteside$Insul=) at work.
+   #+end_quote
+
+3. What could you do with the previous plot?
+   #+begin_quote
+   You could =sort= the values of =whiteside$Temp=. Now the grouping of
+   the categorical variable is removed.
+
+   #+attr_html: :width 200px: 
+   [[file:../img/plot2.png]]
+   
+   You could color points according to the categories. Now the
+   grouping is more clearly visible.
+
+   #+attr_html: :width 200px: 
+   [[file:../img/color1.png]]
+   #+end_quote
+
+
+4. What's the difference between a bar plot and a histogram?
+   #+begin_quote
+   A bar plot shows the numeric heights of its categorical variables.
+
+   A histogram shows the counts/frequencies of its single continuous
+   numeric variable.
+   #+end_quote
+   
+5. How are colors stored in R?
+   #+begin_src R :session *R* :results output :exports both
+     colors()
+   #+end_src
+
+6. What does this code do?
+   #+begin_src R :session *R* :results output graphics file :file ../img/custom2.png
+     plot(x = whiteside$Temp,
+          y = whiteside$Gas,
+          pch = c(6,16)[whiteside$Insul])
+     legend(x = "topright",
+            legend=c("Insul = Before", "Insul = After"),
+            pch = c(6,16))
+   #+end_src
+
+   #+RESULTS:
+   [[file:../img/custom2.png]]
+
+   #+begin_quote
+   - Plot gas consumption as a function of outside temperature.
+   - Distinguish points depending on before/after insulation.
+   - Add a legend that shows the different point symbols.
+   #+end_quote
+
+7. How can point characteristics be exchanged for colors?
+  #+begin_src R :session *R* :results output graphics file :file ../img/custom3.png
+    plot(x = whiteside$Temp,
+         y = whiteside$Gas,
+         col = c(6,16)[whiteside$Insul],
+         pch=16)
+    legend(x = "topright",
+           legend=c("Insul = Before", "Insul = After"),
+           col = c(6,16),
+           pch=16)
+   #+end_src
+
+   #+RESULTS:
+   [[file:../img/custom3.png]]
+
+   
+** Graphics
+
+- 
 
 ** Lab: =MASS::mammals=
 #+attr_html: :width 600px:
 [[../img/mammals.jpg]]
-
-
-
-
 
 

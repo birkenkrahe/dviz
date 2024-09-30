@@ -23,7 +23,9 @@
 
 * TODO The world of data visualization
 
-Watch the video and/or look at the slides ([[https://drive.google.com/drive/folders/1KM9n3kJ8kjGSbuPYT3fFkMCzsOD1_Uyw?usp=sharing][GDrive]]).
+- This DataCamp course was unfortunately archived
+- I have saved a few of the videos for you
+- Watch the video and/or look at the slides ([[https://drive.google.com/drive/folders/1KM9n3kJ8kjGSbuPYT3fFkMCzsOD1_Uyw?usp=sharing][GDrive]]).
 
 * TODO Creating an exploratory plot array
 
