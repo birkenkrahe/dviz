@@ -607,7 +607,7 @@ When applying ~plot~ to a categorical variable, you get a /barchart/.
    #+end_src
 
    #+RESULTS: barchart
-   [[file:barInsul.png]]
+   [[file:../img/barInsul.png]]
 
    #+begin_notes
    The chart shows the number of measurements before and after the wall
