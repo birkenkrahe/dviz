@@ -1,0 +1,102 @@
+#+Title: Project Proposal
+#+Author: Timothy, Donna, Nate
+#+startup: overview hideblocks indent entitiespretty:
+
+#+begin_notes
+I added a =startup= line at the top so you'd get some indentation going.
+#+end_notes
+
+* Problem Description:
+
+Where were the bulk of signatures collected from? Were many of the
+individuals that signed are male or female? In relation to the
+population of the county these signatures were collected from, and
+how many signatures were collected given that population, which
+county had the most efficient canvasser effort?
+
+#+begin_notes
+Though I know of the problem, this needs a little more embedding and
+introduction.
+#+end_notes
+
+* Reason:
+
+Its interesting to actually put visuals behind statistics.  You can
+read the data that may say, "15% increase in average amount sold over
+the past year" but seeing a graph can make it easier to understand and
+to share with those that don't speak the (metaphorical) language.
+
+#+begin_notes
+It's interesting, yes, but who will specifically benefit from this
+project except you as the learners? This is a little philosophical -
+"metaphorical language"? I'm all for conceptual overload but for a
+proposal you need to be specific and give examples if you
+can. Otherwise the reader or customer may think you don't really know
+what you want.
+#+end_notes
+
+* Constraints:
+
+The bulk of the data comes from handwritten signatures.  This could
+pose a problem when trying to extract info that may be hidden in the
+handwritten text.
+
+#+begin_notes
+Why is this a constraint? What is the state-of-art of reading
+handwriting? Every phone has that now - so what's the problem?
+#+end_notes
+
+Time-management (getting the group together or collaborating because
+we both have our own busy schedules/ lives, Learning curve - We are
+all at different levels in our knowledge and it can make it difficult
+for us to all be on the same page
+
+#+begin_notes
+Though important to you, this is a trivial problem that all projects
+share, so it's not noteworthy unless there are special issues related
+to your lives that transcend your persons.
+#+end_notes
+
+* Goals:
+Build/ refine skills in R, document project journey
+
+Teamwork- help each other out when someone doesn't understand a subject,
+so that we are all on the same page.
+
+This is a non-goal, We'll aim for it if we are within reach:
+A dashboard the depicts 3-4 visuals that make it understanding
+the data comfortable. About one dashboard for one of the problems
+listed above.
+
+#+begin_notes
+From this it is not clear what the final goal is - what are you going
+to deliver? You had a bunch of individual questions and you need to
+sort through them, identify the simpler and the harder ones, etc.
+#+end_notes
+
+* Metrics:
+We will know if the project is successful or not based on if we are
+able to convert the data successfully and if our visualization is
+comprehendible.
+
+#+begin_notes
+So you want to convert data from PDF to... please spell it out in an
+update of this proposal. Typo: "comprehensible".
+#+end_notes
+
+* References:
+-  Arkansas Family Council,Personal email contact, July 2024
+-  R Core Team (2021). R: A language and environment for statistical
+  computing. R Foundation for Statistical Computing, Vienna, Austria.
+  URL https://www.R-project.org/
+
+  #+begin_notes
+  You need a lot more references including some related to the method
+  (how), and to the result (examples), and to the background. The
+  references need to be complete and consistent. The easiest will be
+  to split the research job up amongst yourselves since you're a team
+  of three.
+
+  Also, you've got different levels of R mastery - this should also
+  guide the way in which you split up the tasks among yourselves.
+  #+end_notes

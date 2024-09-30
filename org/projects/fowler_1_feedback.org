@@ -1,0 +1,48 @@
+#+begin_notes
+I was confused at first - Sidney isn't even in this class. The two
+projects really are two projects though they can cover the same topic.
+
+You need to resubmit an updated proposal to reflect what exactly you
+are going to do different in this project.
+
+All the other comments for the DSC 105 project hold.
+#+end_notes
+
+
+Fowler & Sidney
+Sprint Review
+September 13th 2024
+
+* Project Summary
+** Problem
+Analyze NCAA statistics for the Oklahoma State Wrestling team from the
+past couple years to determine how they will perform this year.
+** Reason
+I think to people interested in sports or those who play sports it
+would be benificial to know how those atheletes will perform.
+** Constraints
+I think that it is a pretty straightforward project.  The only
+difficutlies or constraints would be creating the code for the
+project, the graphs, and the math involved.  
+** Goal
+The goal to show off at the end of the semester is a list of the
+players and their projected outcome of matches as well as graphs to
+display and the code to show.  
+** Metrics
+I think if we have completed code and results to show in the final
+presentation we have at least partially completed our goals.  I think
+how many players are in our completed data sets determine our success.
+** References
+
+Both of these references are rosters and stats for players which is
+all we need to start coding the project.
+
+Find Schedules,Rosters, and Results for Youth,High School & College
+Wrestling Teams and CLubs. Trackwrestling.com Published 2024. Accessed
+September 14, 2024.
+https://www.trackwrestling.com/seasons/index.jsp?
+
+WrestleStat | College Wrestling Rankings, Dual Comparison, Rosters,
+Schedules, Fantasy.www.wrestlestat.com.
+https://www.wrestlestat.com/
+

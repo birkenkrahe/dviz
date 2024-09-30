@@ -1276,16 +1276,16 @@ session:
 planet Neptune at the Berlin Observatory. See also: AWS Neptune.
 
 + [X] Emacs tip: browsing with =eww=
-+ [-] Sample EDA session:
++ [X] Sample EDA session:
   - [X] Looking at data
   - [X] Factor vectors
   - [X] Summary statistics
   - [X] Box plots
-  - [ ] Scatterplots
-  - [ ] Barplots
-  - [ ] Customization
+  - [X] Scatterplots
+  - [X] Barplots
+  - [X] Customization
 
-* DONE Emacs tip: browse with =eww=
+** Emacs tip: browse with =eww=
 
 To open any URL in Emacs, add this line to your ~.emacs~ file and then
 #+begin_example
@@ -1300,7 +1300,7 @@ Now you can for example open the Solar system mass tree map in an
 
 Running =M-x eww= without an argument brings you to your search engine.
 
-* Review questions (Monday session)
+** Review questions (Monday session)
 
 1. Provided =whiteside= is loaded, which of these commands will not work?
    #+begin_src R :session *R* :results output :exports both
@@ -1458,7 +1458,7 @@ Running =M-x eww= without an argument brings you to your search engine.
     : [13] as.character.roman*          as.character.srcref         
     : see '?methods' for accessing help and source code
 
-* TODO Review questions (Wednesday session)
+** Review questions (Wednesday session)
 #+attr_html: :width 400px: 
 [[../img/boxplot.png]]
 
@@ -1549,7 +1549,7 @@ Running =M-x eww= without an argument brings you to your search engine.
    #+RESULTS:
    [[file:abline.png]]
 
-* EDA Lab
+** EDA Lab
 #+attr_html: :width 400px:
 [[../img/lab2.jpg]]
 
@@ -1561,11 +1561,46 @@ Running =M-x eww= without an argument brings you to your search engine.
 - [ ] Plotting: scatterplots
 - [ ] Plotting: barplots
 
-* Next week:
+** Next week:
 #+attr_html: :width 600px:
 [[../img/mammals.jpg]]
 
 - Another lab (with =MASS::mammals=) will follow next week
 - We will also review =ggplot2= commands and theory
 - I will give you a lecture (with practice) on "graphics"
-  
+
+* Week 7 - Graphics
+#+attr_html: :width 400px:
+#+caption: Henri Matisse, The Snail (French: L'escargot) 1953
+[[../img/3_matisse.png]]
+
+- Project Update
+- Introduction to R graphics
+- Lab exercises with =MASS::mammals= and graphics
+
+** Projects Update
+#+attr_html: :width 400px: 
+[[../img/projects.png]]
+
+*Projects:* Some projects were reassigned - you cannot get a 2-for-1. In
+your proposal, as in the remainder of your project work, you need to
+clearly demonstrate the difference between the two projects. How you
+do this is down to you (I'm happy to help). Others did it before you!
+
+- Give a very short overview of your project status
+- Articulate clearly:
+  1) What is your main research question?
+  2) What is your main methodology?
+  3) What is your literature review strategy?
+
+** Graphics:
+
+** Lab: =MASS::mammals=
+#+attr_html: :width 600px:
+[[../img/mammals.jpg]]
+
+
+
+
+
+

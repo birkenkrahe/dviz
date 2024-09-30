@@ -1,0 +1,93 @@
+#+TITLE: Proposal for Data Visualization first sprint review
+#+AUTHOR: Jackson Shurley and Jakobe Alcorn(pledged)
+#+startup: overview hideblocks indent entitiespretty:
+#+begin_notes
+Nice use of Org-mode - I added a =startup= line for automatic indent and
+headline collapse, which improves readability. Also, use M-q to
+auto-indent your paragraphs. If you wrote this elsewhere and copied it
+here, shame on you...or rather: why the extra work? You need Org-mode
+anyway if you want to create an interactive notebook, which is the
+best way to present your data science exploration work.
+#+end_notes
+
+* Introduction
+Our design for this project is to collect data from cross country and
+track results and use them to make inferences and predict results for
+future events.
+
+* A. Problem
+We want to use the data to make predictions for what peoples times
+will be and see what the trend is on certain peoples times from
+milesplit which is a website that shows what individual people run and
+their times for certain events. We can also use Jakobes data to
+visually show how he has improved throughout his running career.
+
+#+begin_notes
+Slight grammar issues with genitives here (people's and Jakobe's). Use
+inline links for sites like [[https://milesplit.com][milesplit]]. You should sort and prioritize
+the problems so that you can start with one and park others.
+
+To prioritize use your skill level, availability of data etc.
+#+end_notes
+
+* B. Reason
+It could be useful to have this data if you are a coach or somebody
+that wants to have this data collected and be able to make predictions
+on how certain races will go.
+
+#+begin_notes
+Surely you can do better than guess. Ask the coach (Trausch in
+this case, who I know is interested), and check out the literature.
+#+end_notes
+
+* C. Constraints
+The only constraint I can see is if there is knowing if the data that
+is shown on milesplit is the actual data on someone because sometimes
+it might have not been collected but other than that I think we should
+be pretty good.
+
+#+begin_notes
+Author issue here - mostly you say "we" (which is appropriate since
+you're a team of two) but here you say "I". This sentence is too
+unstructured and informal. It appears you may have data issues, and it
+would be worth being more specific here.
+#+end_notes
+
+* D. Goals
+We want to visually show Jakobe's data from milesplit so we have a
+detailed representation of it and have a detailed representation on
+many more people's data so that we can make predictions on future
+events.
+
+#+begin_notes
+That is a clear deliverable. You may already be able to say what type
+of plots you might want to generate. See also below, references.
+#+end_notes
+
+* E. Metrics
+We might not be able to predict the future but we can try to within
+reason. I think as long as none of our claims are unreasonable we are
+probably pretty accurate. Also we need to know that there is not any
+bias in our claims such as leaving out certain data and
+over-representing some data. So we need to go over the data to make
+sure that there is not any bias.
+
+#+begin_notes
+You need to be more clear here. Visually showing historical data is
+not the same as predicting performance or some other label/feature. Be
+specific, look for references or try to solve the problem from scratch
+yourself first.
+
+Bias does not belong in this section but in the section on
+"Constraints".
+#+end_notes
+
+* F. References
+
+https://www.milesplit.com/
+
+#+begin_notes
+References need to be consistent and complete - this one is not, and
+you probably have other references - are you going to do some
+programming?
+#+end_notes

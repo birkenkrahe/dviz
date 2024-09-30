@@ -1,0 +1,107 @@
+#+TITLE: Sprint Proposal 1
+#+AUTHORS: Keidrick Wooten, Austin Swaim, Clifford Washington (pledged)
+#+COURSE: Data Visualization
+#+STARTUP: overview hideblocks indent 
+#+begin_notes
+Excellent use of Org-mode here. To get indentation going and collapse
+the headlines, I added a =startup= line.
+
+Too bad you submitted late, which would normally cost you 50% of the
+points - since this was your first project deadline, I've only taken
+10% from you.
+#+end_notes
+
+* Problem
+  What are you trying to do? We are trying to see how many people use
+  cash and how many people use debit/credit cards.
+
+  #+begin_notes
+  A little unspecific: people everywhere? In the US? In Batesville? At
+  Lyon? What population are you targetting - that will influence which
+  sample is sufficient and whom you should sample.
+
+  I presume you are going to use public records though (see below).
+  #+end_notes
+  
+* Reason
+  Why is this problem interesting to you or others? This problem is
+  interesting because we are in a time period where physical cash
+  isn't used as often as digital "=cash=".
+
+  #+begin_notes
+  It's interesting but also likely to have been worked on. See below -
+  constraints and references.
+  #+end_notes
+
+* Constraints
+  Which difficulties do you foresee? The only difficulties we could
+  expereince is if the card reading machine wasn't working during the
+  time of the project. Or if something were to happen the store
+  getting shut down.
+
+  #+begin_notes
+  Typo here. Use the team power to check submissions for grammatical
+  and content mistakes. I don't think I understand yet how you want to
+  do this.
+
+  If you propose an experiment with taking of data, you are in for a
+  lot of work because you'll be interacting with humans and as some of
+  your co-students can testify, you need to get clearance from the
+  Institutional Review Board for research involving human
+  participants. Unless you only "experiment" on yourselves.
+  #+end_notes
+
+* Goals
+  What deliverables are you going to develop? We hope to develop a
+  system that can track how many people use cards vs. cash. Other
+  goals include tracking amount of people, average transaction of
+  cash, and average transaction of cards. Some more goals include adding
+  some visualization to the data we get. 
+  Goals we might not achieve would be the longevity of cash flow
+  vs. card cash flow to see what people use more over a long period of time.
+
+  #+begin_notes
+  There's a bunch of sub-problems here and you need to separate and
+  prioritize them according to doability and availability of
+  data. Doability means "can we do it" given the available data, time,
+  and our present skills.
+
+  Alternatively, you could turn this into a study where you read,
+  analyze and comment on other people's work. Given the prominence of
+  digital cash, there must be a lot of related studies.
+  #+end_notes
+  
+* Metrics
+  How are you going to measure if your project is successful or not?
+  To be successful in a project using technilogical devices is
+  difficult because technology doesn't work all the time like it
+  should. But we think if everything goes accordingly we can have a
+  good argument whether physical cash or card "=cash=" is used more. 
+
+  #+begin_notes
+  Because of the issue with technology that you identified (that's a
+  constraint, not a metric), you should have a plan B that does not
+  depend on devices.
+
+  Only now I am beginning to understand (and remember, because
+  Keidrick at some point said something to me) that you want to use
+  Popeye's as your base of operations and for the "experiment".
+
+  This might work, but it depends on your access to data. 
+  #+end_notes
+  
+* Refrences
+1.)  Popeyes Louisiana Kitchen. (n.d.). About us. Retrieved
+  September 15, 2024, from https://www.popeyes.com/about-us
+
+2.) R Core Team. (2023). R: A language and environment for
+statistical computing [Software]. R Foundation for Statistical
+Computing. https://www.R-project.org/
+
+#+begin_notes
+You need more references. Also: typo in the headline, and you can
+create a list in Org-mode like this:
+1. 
+2.
+and then choose different formats with SHIFT + RIGHT-ARROW.
+#+end_notes

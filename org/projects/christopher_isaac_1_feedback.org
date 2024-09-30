@@ -1,0 +1,52 @@
+#+begin_notes
+You submitted an identical proposal as far as I can see. It shares the
+same issues that your other proposal had - see there - most
+importantly, it also does not give the impression that you put a lot
+of time into it.
+
+In terms of content, as you perhaps misunderstood: you don't get a
+2-for-1. You can work on the same topic in DSC 105 and in DSC 302 but
+the project deliverables need to be different - you have the
+opportunity to deepen one topic but you must take care to distinguish
+between the projects.
+
+I suggest you change this proposal accordingly and resubmit it within
+a week (in time for mid-terms).
+
+The section where the changes will be most visible is "goals" (what
+will you deliver), and "problems", or research question (what are you
+trying to do).
+#+end_notes
+
+
+* 1st Sprint Review
+Names: Chris Burris and Isaac Rice, pledged
+Class: Intro to R and Data Visualization
+Date: 13 Sep 2024
+
+** Problem
+We are trying to find a correlation between players' ages and their
+points in fantasy football
+** Reason
+According to statista.com, 29.2 million people played fantasy football
+in 2023.
+** Constraints
+There are certainly players that perform at an elite level for far
+longer than expected(e.g. Tom Brady). It will be difficult to account
+for their exceptionally consistent production in our model.
+** Goals
+- What age groups produce the largest number of points on average
+- What is the impact of age on players versus years they are pro.
+- What positions' scores are more affected by age
+- On average, at what age does production "tick up," and when does it
+  begin to deteriorate.
+** Metrics
+A success will result in high levels of correlation between players'
+ages and their average points scored per game. A failure would mean no
+conclusions could be drawn as to the relationship between age and
+production.
+** References
+- "Search StatMuse, Save Time." /StatMuse/, www.statmuse.com/. Accessed
+  13 Sep. 2024
+- "The Statistics Portal." /Statista/, www.statista.com/. Accessed 13
+  Sep. 2024
