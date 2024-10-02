@@ -1649,10 +1649,10 @@ do this is down to you (I'm happy to help). Others did it before you!
 - Contact me or arrange a visit to discuss details of your project!
 
 
-** Review (last session):
+** NEXT Review (last session):
 
 1. What is this type of plot good for, and how is it generated?
-   #+attr_html: :width 200px: 
+   #+attr_html: :width4600px: 
    [[file:../img/plotWhiteside.png]]
 
    #+begin_quote
@@ -1661,7 +1661,7 @@ do this is down to you (I'm happy to help). Others did it before you!
 
 2. How is this plot generated, and what does it suggest?
    (=whiteside$Temp= is a numeric variable in the =whiteside= =data.frame=.
-   #+attr_html: :width 200px: 
+   #+attr_html: :width 400px: 
    [[file:../img/plot1.png]]
 
    #+begin_quote
@@ -1674,13 +1674,13 @@ do this is down to you (I'm happy to help). Others did it before you!
    You could =sort= the values of =whiteside$Temp=. Now the grouping of
    the categorical variable is removed.
 
-   #+attr_html: :width 200px: 
+   #+attr_html: :width 400px: 
    [[file:../img/plot2.png]]
    
    You could color points according to the categories. Now the
    grouping is more clearly visible.
 
-   #+attr_html: :width 200px: 
+   #+attr_html: :width 400px: 
    [[file:../img/color1.png]]
    #+end_quote
 
@@ -1700,6 +1700,7 @@ do this is down to you (I'm happy to help). Others did it before you!
 
 6. What does this code do?
    #+begin_src R :session *R* :results output graphics file :file ../img/custom2.png
+     library(MASS)
      plot(x = whiteside$Temp,
           y = whiteside$Gas,
           pch = c(6,16)[whiteside$Insul])
@@ -1707,9 +1708,6 @@ do this is down to you (I'm happy to help). Others did it before you!
             legend=c("Insul = Before", "Insul = After"),
             pch = c(6,16))
    #+end_src
-
-   #+RESULTS:
-   [[file:../img/custom2.png]]
 
    #+begin_quote
    - Plot gas consumption as a function of outside temperature.
@@ -1729,14 +1727,11 @@ do this is down to you (I'm happy to help). Others did it before you!
            pch=16)
    #+end_src
 
-   #+RESULTS:
-   [[file:../img/custom3.png]]
-
-   
-** Graphics
-
 ** Lab: =MASS::mammals=
 #+attr_html: :width 600px:
 [[../img/mammals.jpg]]
+
+
+** Graphics
 
 
