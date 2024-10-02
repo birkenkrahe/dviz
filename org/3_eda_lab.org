@@ -46,13 +46,9 @@
 
     1. Load the =Animals2= data frame.
 
-    2. Look at the top of the data frame.
+    2. Load the =mammals= data frame.
 
-    3. Check the structure of the =data.frame=.
-
-  #+begin_src R :session *R* :results output :exports both
-    
-  #+end_src
+    3. Look at the top of the data frame.
 
 * TODO Identify common data
 
@@ -60,11 +56,11 @@
   frame, and the ~intersect~ function computes the intersection of two
   sets, returning a vector of their common elements.
 
-  Using these functions, construct and display the vector
-  ~commonAnimals~ of animal names common to both data frames.
+  1. Using these functions, construct and display the vector
+     ~commonAnimals~ of animal names common to both data frames.
 
-  How many animals are included in this set? Tip: you can check the
-  length of a vector with the function ~length~.
+  2. How many animals are included in this set? Tip: you can check the
+     length of a vector with the function ~length~.
 
 * TODO Identify different data
 

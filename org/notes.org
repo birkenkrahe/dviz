@@ -1727,11 +1727,19 @@ do this is down to you (I'm happy to help). Others did it before you!
            pch=16)
    #+end_src
 
-** Lab: =MASS::mammals=
+
+** Set theory: =MASS::mammals= & =robustbase::Animals2=
 #+attr_html: :width 600px:
 [[../img/mammals.jpg]]
 
+- *Some of you have not uploaded their EDA practice file to Canvas.*
 
-** Graphics
+- This is optional but shows your active participation in class.
+
+- Get the practice file here: [[https://tinyurl.com/eda-lab-org][tinyurl.com/eda-lab-org]].
+
+- Complete the practice file and upload it to Canvas.  
+
+
 
 
