@@ -1569,16 +1569,15 @@ Running =M-x eww= without an argument brings you to your search engine.
 - We will also review =ggplot2= commands and theory
 - I will give you a lecture (with practice) on "graphics"
 
-* Week 7 - Graphics
+* Week 7 - Project update & EDA Lab II
 #+attr_html: :width 400px:
-#+caption: Henri Matisse, The Snail (French: L'escargot) 1953
-[[../img/3_matisse.png]]
+[[../img/career.jpeg]]
 
 - Project Update
 - Introduction to R graphics
 - Lab exercises with =MASS::mammals= and graphics
 
-** DONE Go to the Lyon Career Fair (Oct 1)
+** Go to the Lyon Career Fair (Oct 1)
 #+attr_html: :width 200px:
 [[../img/careerfair.png]]
 
@@ -1627,7 +1626,7 @@ From the discussion in DSC 105:
 - You can send me your resume for my opinion.
 
 
-** DONE Projects Update (2nd sprint: Oct 11)
+** Projects Update (2nd sprint: Oct 11)
 #+attr_html: :width 400px: 
 [[../img/projects.png]]
 
@@ -1920,6 +1919,11 @@ do this is down to you (I'm happy to help). Others did it before you!
   #+RESULTS:
 
 - Complete the practice file and upload it to Canvas.  
+
+* Week 8 - Graphics in R
+#+attr_html: :width 400px:
+#+caption: Henri Matisse, The Snail (French: L'escargot) 1953
+[[../img/3_matisse.png]]
 
 
 
