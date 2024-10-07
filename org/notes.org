@@ -1925,3 +1925,150 @@ do this is down to you (I'm happy to help). Others did it before you!
 #+caption: Henri Matisse, The Snail (French: L'escargot) 1953
 [[../img/3_matisse.png]]
 
+* Base R EDA and =ggplot2= popquiz
+
+1. Plot f(x) = 5x-3  for x in [0,10].
+   #+begin_src R :file linear.png :session *R* :results file graphics output
+     x <- c(0,10)
+     plot(x,y=5*x-3)
+   #+end_src
+
+   #+RESULTS:
+   [[file:linear.png]]
+
+   Another possibility:
+   #+begin_src R :file linear2.png :session *R* :results file graphics output
+     x <- c(0,1)
+     plot(1)
+     abline(-3,5)  # intercept + slope
+   #+end_src
+
+   #+RESULTS:
+   [[file:linear2.png]]
+
+2. Plot f(x) = (1-x)^2 for x in [0,10].
+   #+begin_src R :file nonlinear.png :session *R* :results file graphics output
+     ##x <- c(0,1,2,3,4,5,6,7,8,9,10)
+     x <- seq(0,10,by=0.1)  # more granular     
+     plot(x,y=(1-x)^2, type="l") # as a line instead of scatterplot
+   #+end_src
+
+   #+RESULTS:
+   [[file:nonlinear.png]]
+
+   To create a sequence of equally spaced values, use =seq=:
+   #+begin_src R
+     seq(0,10,by=0.1)
+   #+end_src
+
+   #+RESULTS:
+   :  [1]  0  1  2  3  4  5  6  7  8  9 10
+
+3. In base R, plot the measurements before and after insulation in the
+   =whiteside= data set (distinguished by the values of =Insul = "Before"=
+   and =Insul = "After"=).
+   #+begin_src R :file insulplot.png :session *R* :results file graphics output
+     library(MASS)
+     data(whiteside)
+     plot(x=whiteside$Insul)
+   #+end_src
+
+   #+RESULTS:
+   [[file:insulplot.png]]
+
+4. Make a pair plot of the variables of the built-in =iris= dataset.
+   #+begin_src R :file iris.png :session *R* :results file graphics output
+     plot(iris)
+   #+end_src
+
+   #+RESULTS:
+   [[file:iris.png]]
+
+   Information about =iris=:
+   #+begin_src R :session *R* :results output :exports both :noweb yes
+     str(iris)
+   #+end_src
+
+   #+RESULTS:
+   : 'data.frame':	150 obs. of  5 variables:
+   :  $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
+   :  $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...
+   :  $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
+   :  $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...
+   :  $ Species     : Factor w/ 3 levels "setosa","versicolor",..: 1 1 1 1 1 1 1 1 1 1 ...
+
+5. The built-in data set =AirPassengers= is a time series. It contains
+   the monthly totals of international airline passengers from 1949
+   to 1960. In base R, make a line plot of the time series data, and
+   title it "Monthly number of int. air passengers 1949-1960".
+   #+begin_src R :file AirPassengers.png :session *R* :results file graphics output
+     plot(AirPassengers)
+         ## main="Monthly no. of int. passengers 1949-1960")
+     title("Monthly no. of int. passengers 1949-1960")
+   #+end_src
+
+   #+RESULTS:
+   [[file:AirPassengers.png]]
+
+6. In base R, make a histogram of the =AirPassengers= time series, and
+   change the default y-axis label to "Count of Int. air passengers".
+   #+begin_src R :file AirPassengers2.png :session *R* :results file graphics output
+     hist(AirPassengers,
+          ylab="Count of Int. air passengers")
+   #+end_src
+
+   #+RESULTS:
+   [[file:AirPassengers2.png]]
+
+7. Plot the statistical =summary= values including the =mean= for the
+   =AirPassengers= dataset.
+   #+begin_src R :file airbox.png :session *R* :results file graphics output
+     boxplot(AirPassengers)
+     abline(h=mean(AirPassengers),col="red",lwd=2)
+   #+end_src
+
+   #+RESULTS:
+   [[file:airbox.png]]
+
+   #+begin_src R
+     AirPassengers |> summary()
+   #+end_src
+
+   #+RESULTS:
+   :    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   :   104.0   180.0   265.5   280.3   360.5   622.0
+
+8. Using =ggplot2=, make a histogram of the time series data set
+   =AirPassengers= and label the y-axis "Count of int. air passengers")
+
+   Convert to data.frame:
+   #+begin_src R :session *R* :results output :exports both :noweb yes
+     df <- data.frame(Passengers=as.numeric(AirPassengers))
+     str(df)
+   #+end_src
+
+   #+RESULTS:
+   : 'data.frame':	144 obs. of  1 variable:
+   :  $ Passengers: num  112 118 132 129 121 135 148 148 136 119 ...
+   
+   #+begin_src R :file airHistggplot2.png :session *R* :results file graphics output
+     library(ggplot2)
+     ggplot(df, aes(x=Passengers)) +
+       geom_histogram(binwidth=30,
+                      fill='lightblue',
+                      color='black') +
+       labs(y="Count of Int. Air Passengers")
+   #+end_src
+
+   #+RESULTS:
+   [[file:airHistggplot2.png]]
+
+9. Using =ggplot2=, plot f(x) = 5x-3  for x in [0,10].
+   #+begin_src R :file linPlotggplot2.png :session *R* :results file graphics output
+
+   #+end_src
+
+10. Using =ggplot2=, plot f(x) = (1-x)^2 for x in [0,10].
+    #+begin_src R :file nonLinearPlotggplot2.png :session *R* :results file graphics output
+
+    #+end_src
