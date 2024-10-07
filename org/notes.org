@@ -1920,40 +1920,8 @@ do this is down to you (I'm happy to help). Others did it before you!
 
 - Complete the practice file and upload it to Canvas.  
 
-* Week 8 - Graphics in R
+* Week 8 - Graphics in R & =ggplot2= plotting
 #+attr_html: :width 400px:
 #+caption: Henri Matisse, The Snail (French: L'escargot) 1953
 [[../img/3_matisse.png]]
-
-* Warm-up plotting exercises
-
-To solve these problems, you need two lines in each case.
-
-1. Compute f(x) = 5x -3  for x \in [0,10]
-   #+begin_src R :file linear.png :session *R* :results file graphics output :exports both
-     x <- c(0,1)
-     plot(x,5*x-3,type="l")
-     #abline(-3,5)   # alternative for linear functions
-   #+end_src
-
-   #+RESULTS:
-   [[file:linear.png]]
-
-2. Plot f(x) = (1-x)^2 for x in [0,10] as a line plot. 
-   #+begin_src R :file nonlinear.png :session *R* :results file graphics output :exports both
-     x <- seq(0,10)
-     plot(x,(1-x)^2,type="l")
-   #+end_src
-
-   #+RESULTS:
-   [[file:nonlinear.png]]
-
-3. BARCHART
-
-4. HISTORGRAM
-
-5. BOXPLOT
-
-
-
 
