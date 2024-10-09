@@ -1929,7 +1929,7 @@ do this is down to you (I'm happy to help). Others did it before you!
 - [ ] How to plot with Python in Emacs + Org-mode
 - [ ] Graphics lecture & code along
 
-** IN PROGRESS Base R EDA and =ggplot2= popquiz
+** DONE Base R EDA and =ggplot2= popquiz
 
 1. Plot f(x) = 5x-3  for x in [0,10].
    #+begin_src R :file linear.png :session *R* :results file graphics output
@@ -2045,6 +2045,15 @@ do this is down to you (I'm happy to help). Others did it before you!
 8. Using =ggplot2=, make a histogram of the time series data set
    =AirPassengers= and label the y-axis "Count of int. air passengers")
 
+   #+begin_src R
+     str(AirPassengers)
+     is.numeric(AirPassengers)
+   #+end_src
+
+   #+RESULTS:
+   :  Time-Series [1:144] from 1949 to 1961: 112 118 132 129 121 135 148 148 136 119 ...
+   : [1] TRUE
+
    Convert to data.frame:
    #+begin_src R :session *R* :results output :exports both :noweb yes
      df <- data.frame(Passengers=as.numeric(AirPassengers))
@@ -2057,7 +2066,7 @@ do this is down to you (I'm happy to help). Others did it before you!
 
    #+begin_src R :file airHistggplot2.png :session *R* :results file graphics output
      library(ggplot2)
-     ggplot(df, aes(x=Passengers)) +
+     ggplot(df, aes(x=Passengers)) +  # dataset + aesthetics
        geom_histogram(binwidth=30,
                       fill='lightblue',
                       color='black') +
@@ -2068,14 +2077,44 @@ do this is down to you (I'm happy to help). Others did it before you!
    [[file:airHistggplot2.png]]
 
 9. Using =ggplot2=, plot f(x) = 5x-3  for x in [0,10].
-   #+begin_src R :file linPlotggplot2.png :session *R* :results file graphics output
 
+   Create dataframe:
+   #+begin_src R
+     x <- c(0,10)
+     y <- 5 * x - 3  # vectorized
+     df_lin <- data.frame(x,y)
+     str(df_lin)
    #+end_src
 
-10. Using =ggplot2=, plot f(x) = (1-x)^2 for x in [0,10].
-    #+begin_src R :file nonLinearPlotggplot2.png :session *R* :results file graphics output
+   #+begin_src R :file linGG.png :session *R* :results output graphics file
+     library(ggplot2)
+     ggplot(df_lin, aes(x,y)) +
+       geom_line()
+   #+end_src
 
+   - To see that =ggplot2= was actually loaded:
+     #+begin_src R
+     search()
+     #+end_src
+
+10. Using =ggplot2=, plot f(x) = (1-x)^2 for x in [0,10].
+
+    Create dataframe from x,y vectors:
+    #+begin_src R
+      x1 <- seq(0,10,0.1)
+      y1 <- (1-x1)^2
+      df_nonlin <- data.frame(x1,y1)
+      str(df_nonlin)
     #+end_src
+
+    #+begin_src R :file nonlinGG.png :session *R* :results output graphics file
+      library(ggplot2)
+      ggplot(df_nonlin, aes(x1,y1)) +
+        geom_line()
+    #+end_src
+
+    #+RESULTS:
+    [[file:nonlinGG.png]]
 
 ** Data visualization with =matplotlib= in Emacs
 
@@ -2083,26 +2122,77 @@ do this is down to you (I'm happy to help). Others did it before you!
   org-structure-template-alist=:
 
   1) Python block (assumes that your Python program is =python3=):
-        #+begin_example
-        Key: p
-        Template: src python :results output :session *Python* :python python3
-        #+end_example
+     #+begin_example
+     Key: p
+     Template: src python :results output :session *Python* :python python3
+     #+end_example
+
+     #+begin_src python :session *Python* :python python3 :results output :exports both :noweb yes 
+       print("hello world")
+     #+end_src
+
+     #+RESULTS:
+     : hello world
 
   2) Python graphics block (saves file to =plot.png= by default):
-        #+begin_example
-        Key: pg
-        Template: src python :file plot.png :results file graphics output :session *Python* :python python3 
-        #+end_example
+     #+begin_example
+     Key: pg
+     Template: src python :file plot.png :results file graphics output :session *Python* :python python3 
+     #+end_example
 
+     #+begin_src python :file plot.png :results file graphics output :session *Python* :python python3
+
+     #+end_src
+
+  3) In future files, add this to the top of your Org file:
+     #+begin_example
+     #+PROPERTY: header-args:python :python python3 :session *Python* :results output
+     #+end_example
+     
 - Make a sample plot: Use the example from the DataCamp lesson.
 
   1) Load the =pyplot= submodule from the =matplotlib= graphics library:
-     
-     #+begin_src python :results none :session *Python* :python python3 :exports both
+
+     #+begin_src python :session *Python* :python python3 :results none :exports both :noweb yes 
        import matplotlib.pyplot as plt
      #+end_src
 
   2) Create a vector from (0,0) to (10,10) to plot:
+
+     #+begin_src python :session *Python* :python python3 :results output :exports both :noweb yes 
+       x = range(10)
+       print(x)
+       print(type(x))
+       [print(i) for i in x]
+     #+end_src
+
+     #+RESULTS:
+     #+begin_example
+     range(0, 10)
+     <class 'range'>
+     0
+     1
+     2
+     3
+     4
+     5
+     6
+     7
+     8
+     9
+     #+end_example
+
+     #+begin_src python :file xplot.png :results file graphics output :session *Python* :python python3
+       plt.clf()  # clear graphics canvas
+
+       plt.plot(x)
+
+       plt.savefig("xplot.png") # plt.show()
+     #+end_src
+
+     #+RESULTS:
+     [[file:xplot.png]]
+
      #+begin_src python :results output :session *Python* :python python3 :exports both
        x = range(10) # define vector (range object)
        print(type(x))  # Python object class
