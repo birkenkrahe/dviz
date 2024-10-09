@@ -1306,7 +1306,7 @@ Running =M-x eww= without an argument brings you to your search engine.
    #+begin_src R :session *R* :results output :exports both
      library(MASS)
      data(whiteside)
-     
+
      head(n=1, whiteside)
 
      head(whiteside,1)
@@ -1323,7 +1323,7 @@ Running =M-x eww= without an argument brings you to your search engine.
    : 1 Before -0.8 7.2
    :    Insul Temp Gas
    : 1 Before -0.8 7.2
-   : Error in checkHT(n, dx <- dim(x)) : 
+   : Error in checkHT(n, dx <- dim(x)) :
    :   invalid 'n' - must have length one when dim(x) is NULL, got 3
 
    #+begin_quote
@@ -1338,7 +1338,7 @@ Running =M-x eww= without an argument brings you to your search engine.
    #+end_src
 
    #+RESULTS:
-   : 'data.frame':	56 obs. of  3 variables:
+   : 'data.frame':      56 obs. of  3 variables:
    :  $ Insul: Factor w/ 2 levels "Before","After": 1 1 1 1 1 1 1 1 1 1 ...
    :  $ Temp : num  -0.8 -0.7 0.4 2.5 2.9 3.2 3.6 3.9 4.2 4.3 ...
    :  $ Gas  : num  7.2 6.9 6.4 6 5.8 5.8 5.6 4.7 5.8 5.2 ...
@@ -1349,7 +1349,7 @@ Running =M-x eww= without an argument brings you to your search engine.
    #+end_src
 
    #+RESULTS:
-   :    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   :    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.
    :       1       1       1       1       1       1
 
 4. What does =summary= return when applied to a =factor=?
@@ -1358,7 +1358,7 @@ Running =M-x eww= without an argument brings you to your search engine.
    #+end_src
 
    #+RESULTS:
-   : Before  After 
+   : Before  After
    :     26     30
 
 5. What does =summary= return when applied to a =character= vector?
@@ -1368,9 +1368,9 @@ Running =M-x eww= without an argument brings you to your search engine.
    #+end_src
 
    #+RESULTS:
-   : AK AL AR AZ CA CO CT DE FL GA HI IA ID IL IN KS KY LA MA MD ME MI MN MO MS MT NC ND NE NH NJ NM NV NY 
-   :  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1 
-   : OH OK OR PA RI SC SD TN TX UT VA VT WA WI WV WY 
+   : AK AL AR AZ CA CO CT DE FL GA HI IA ID IL IN KS KY LA MA MD ME MI MN MO MS MT NC ND NE NH NJ NM NV NY
+   :  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1
+   : OH OK OR PA RI SC SD TN TX UT VA VT WA WI WV WY
    :  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1
 
 6. How would you check whether =whiteside$Insul= is a =factor=?
@@ -1378,7 +1378,7 @@ Running =M-x eww= without an argument brings you to your search engine.
      is.factor(whiteside$Insul)
      levels(whiteside$Insul)
      str(whiteside$Insul)
-     class(whiteside$Insul)     
+     class(whiteside$Insul)
      typeof(whiteside$Insul)  # not an answer
    #+end_src
 
@@ -1421,16 +1421,16 @@ Running =M-x eww= without an argument brings you to your search engine.
 
      x[2] <- "Unknown"
      x
-   #+end_src   
+   #+end_src
 
    #+RESULTS:
    : [1] male   female female
    : Levels: female male
    : [1] "factor"
-   
-    : [1] "male"   "female" "female"
+
+   : [1] "male"   "female" "female"
    : [1] "character"
-   
+
    : [1] "male"    "Unknown" "female"
 
 9. Is the =as.factor= function generic?
@@ -1447,36 +1447,36 @@ Running =M-x eww= without an argument brings you to your search engine.
     #+begin_src R :session *R* :results output :exports both
       class(as.character)
       methods(as.character)
-    #+end_src   
+    #+end_src
 
     #+RESULTS:
     : [1] "function"
-    :  [1] as.character.condition       as.character.Date            as.character.default        
-    :  [4] as.character.error           as.character.factor          as.character.fractions*     
-    :  [7] as.character.hexmode         as.character.numeric_version as.character.octmode        
-    : [10] as.character.person*         as.character.POSIXt          as.character.Rd*            
-    : [13] as.character.roman*          as.character.srcref         
+    :  [1] as.character.condition       as.character.Date            as.character.default
+    :  [4] as.character.error           as.character.factor          as.character.fractions*
+    :  [7] as.character.hexmode         as.character.numeric_version as.character.octmode
+    : [10] as.character.person*         as.character.POSIXt          as.character.Rd*
+    : [13] as.character.roman*          as.character.srcref
     : see '?methods' for accessing help and source code
 
 ** Review questions (Wednesday session)
-#+attr_html: :width 400px: 
+#+attr_html: :width 400px:
 [[../img/boxplot.png]]
 
 1. So your grandma sees your class notes and asks "What's a box plot",
    and why do they make you learn this? What's it good for?
    #+begin_quote
 
-   A box plot is a graphical representation of
-   - Tukey's five-number summary (25%, 50% aka median, 75% percentile,
-     minimum, maximum)
-   - the results of R's =summary= function (without the =mean=)
+A box plot is a graphical representation of
+- Tukey's five-number summary (25%, 50% aka median, 75% percentile,
+  minimum, maximum)
+- the results of R's =summary= function (without the =mean=)
 
-   A box plot is useful to
-   - check for outliers (they're shown outside the whiskers)
-   - compare numerical distributions of different categories, e.g. the
-     numerical length =len= of the two supply categories =supp= in
-     =ToothGrowth=.
-   
+  A box plot is useful to
+  - check for outliers (they're shown outside the whiskers)
+  - compare numerical distributions of different categories, e.g. the
+    numerical length =len= of the two supply categories =supp= in
+    =ToothGrowth=.
+
    #+end_quote
 
 2. Is =boxplot= a generic function? Could you make a box plot of =mtcars=?
@@ -1515,7 +1515,7 @@ Running =M-x eww= without an argument brings you to your search engine.
    #+end_src
 
    #+RESULTS:
-   : OJ VC 
+   : OJ VC
    : 30 30
 
    #+begin_src R :file factorBox.png :session *R* :results file graphics output :exports both
@@ -1531,7 +1531,7 @@ Running =M-x eww= without an argument brings you to your search engine.
    #+end_src
 
    #+RESULTS:
-   : female   male 
+   : female   male
    :      1      3
 
 3. What does the 'ab' in =abline= refer to, and how can you draw a
@@ -1592,7 +1592,7 @@ From the discussion in DSC 105:
 
   2. Learn how to ask questions, use (or develop) social skills, and
      show off your elegant wardrobe!
-     
+
   3. Public relations and marketing opportunity for you and for Lyon
      (your alma-mater-to-be).
 
@@ -1627,7 +1627,7 @@ From the discussion in DSC 105:
 
 
 ** Projects Update (2nd sprint: Oct 11)
-#+attr_html: :width 400px: 
+#+attr_html: :width 400px:
 [[../img/projects.png]]
 
 *Projects:* Some projects were reassigned - you cannot get a 2-for-1. In
@@ -1651,7 +1651,7 @@ do this is down to you (I'm happy to help). Others did it before you!
 ** Review (last session):
 
 1. What is this type of plot good for, and how is it generated?
-   #+attr_html: :width4600px: 
+   #+attr_html: :width4600px:
    [[file:../img/plotWhiteside.png]]
 
    #+begin_quote
@@ -1662,7 +1662,7 @@ do this is down to you (I'm happy to help). Others did it before you!
 
 2. How is this plot generated, and what does it suggest?
    (=whiteside$Temp= is a numeric variable in the =whiteside= =data.frame)=.
-   #+attr_html: :width 400px: 
+   #+attr_html: :width 400px:
    [[file:../img/plot1.png]]
 
    #+begin_quote
@@ -1675,13 +1675,13 @@ do this is down to you (I'm happy to help). Others did it before you!
    You could =sort= the values of =whiteside$Temp=. Now the grouping of
    the categorical variable is removed.
 
-   #+attr_html: :width 400px: 
+   #+attr_html: :width 400px:
    [[file:../img/plot2.png]]
-   
+
    You could color points according to the categories. Now the
    grouping is more clearly visible.
 
-   #+attr_html: :width 400px: 
+   #+attr_html: :width 400px:
    [[file:../img/color1.png]]
    #+end_quote
 
@@ -1692,7 +1692,7 @@ do this is down to you (I'm happy to help). Others did it before you!
    A histogram shows the counts/frequencies of its single continuous
    numeric variable. A histogram always has bins (grouped values)
    #+end_quote
-   
+
 5. How are colors stored in R?
    #+begin_src R :session *R* :results output :exports both
      colors()
@@ -1700,170 +1700,170 @@ do this is down to you (I'm happy to help). Others did it before you!
 
    #+RESULTS:
    #+begin_example
-     [1] "white"                "aliceblue"            "antiquewhite"         "antiquewhite1"       
-     [5] "antiquewhite2"        "antiquewhite3"        "antiquewhite4"        "aquamarine"          
-     [9] "aquamarine1"          "aquamarine2"          "aquamarine3"          "aquamarine4"         
-    [13] "azure"                "azure1"               "azure2"               "azure3"              
-    [17] "azure4"               "beige"                "bisque"               "bisque1"             
-    [21] "bisque2"              "bisque3"              "bisque4"              "black"               
-    [25] "blanchedalmond"       "blue"                 "blue1"                "blue2"               
-    [29] "blue3"                "blue4"                "blueviolet"           "brown"               
-    [33] "brown1"               "brown2"               "brown3"               "brown4"              
-    [37] "burlywood"            "burlywood1"           "burlywood2"           "burlywood3"          
-    [41] "burlywood4"           "cadetblue"            "cadetblue1"           "cadetblue2"          
-    [45] "cadetblue3"           "cadetblue4"           "chartreuse"           "chartreuse1"         
-    [49] "chartreuse2"          "chartreuse3"          "chartreuse4"          "chocolate"           
-    [53] "chocolate1"           "chocolate2"           "chocolate3"           "chocolate4"          
-    [57] "coral"                "coral1"               "coral2"               "coral3"              
-    [61] "coral4"               "cornflowerblue"       "cornsilk"             "cornsilk1"           
-    [65] "cornsilk2"            "cornsilk3"            "cornsilk4"            "cyan"                
-    [69] "cyan1"                "cyan2"                "cyan3"                "cyan4"               
-    [73] "darkblue"             "darkcyan"             "darkgoldenrod"        "darkgoldenrod1"      
-    [77] "darkgoldenrod2"       "darkgoldenrod3"       "darkgoldenrod4"       "darkgray"            
-    [81] "darkgreen"            "darkgrey"             "darkkhaki"            "darkmagenta"         
-    [85] "darkolivegreen"       "darkolivegreen1"      "darkolivegreen2"      "darkolivegreen3"     
-    [89] "darkolivegreen4"      "darkorange"           "darkorange1"          "darkorange2"         
-    [93] "darkorange3"          "darkorange4"          "darkorchid"           "darkorchid1"         
-    [97] "darkorchid2"          "darkorchid3"          "darkorchid4"          "darkred"             
-   [101] "darksalmon"           "darkseagreen"         "darkseagreen1"        "darkseagreen2"       
-   [105] "darkseagreen3"        "darkseagreen4"        "darkslateblue"        "darkslategray"       
-   [109] "darkslategray1"       "darkslategray2"       "darkslategray3"       "darkslategray4"      
-   [113] "darkslategrey"        "darkturquoise"        "darkviolet"           "deeppink"            
-   [117] "deeppink1"            "deeppink2"            "deeppink3"            "deeppink4"           
-   [121] "deepskyblue"          "deepskyblue1"         "deepskyblue2"         "deepskyblue3"        
-   [125] "deepskyblue4"         "dimgray"              "dimgrey"              "dodgerblue"          
-   [129] "dodgerblue1"          "dodgerblue2"          "dodgerblue3"          "dodgerblue4"         
-   [133] "firebrick"            "firebrick1"           "firebrick2"           "firebrick3"          
-   [137] "firebrick4"           "floralwhite"          "forestgreen"          "gainsboro"           
-   [141] "ghostwhite"           "gold"                 "gold1"                "gold2"               
-   [145] "gold3"                "gold4"                "goldenrod"            "goldenrod1"          
-   [149] "goldenrod2"           "goldenrod3"           "goldenrod4"           "gray"                
-   [153] "gray0"                "gray1"                "gray2"                "gray3"               
-   [157] "gray4"                "gray5"                "gray6"                "gray7"               
-   [161] "gray8"                "gray9"                "gray10"               "gray11"              
-   [165] "gray12"               "gray13"               "gray14"               "gray15"              
-   [169] "gray16"               "gray17"               "gray18"               "gray19"              
-   [173] "gray20"               "gray21"               "gray22"               "gray23"              
-   [177] "gray24"               "gray25"               "gray26"               "gray27"              
-   [181] "gray28"               "gray29"               "gray30"               "gray31"              
-   [185] "gray32"               "gray33"               "gray34"               "gray35"              
-   [189] "gray36"               "gray37"               "gray38"               "gray39"              
-   [193] "gray40"               "gray41"               "gray42"               "gray43"              
-   [197] "gray44"               "gray45"               "gray46"               "gray47"              
-   [201] "gray48"               "gray49"               "gray50"               "gray51"              
-   [205] "gray52"               "gray53"               "gray54"               "gray55"              
-   [209] "gray56"               "gray57"               "gray58"               "gray59"              
-   [213] "gray60"               "gray61"               "gray62"               "gray63"              
-   [217] "gray64"               "gray65"               "gray66"               "gray67"              
-   [221] "gray68"               "gray69"               "gray70"               "gray71"              
-   [225] "gray72"               "gray73"               "gray74"               "gray75"              
-   [229] "gray76"               "gray77"               "gray78"               "gray79"              
-   [233] "gray80"               "gray81"               "gray82"               "gray83"              
-   [237] "gray84"               "gray85"               "gray86"               "gray87"              
-   [241] "gray88"               "gray89"               "gray90"               "gray91"              
-   [245] "gray92"               "gray93"               "gray94"               "gray95"              
-   [249] "gray96"               "gray97"               "gray98"               "gray99"              
-   [253] "gray100"              "green"                "green1"               "green2"              
-   [257] "green3"               "green4"               "greenyellow"          "grey"                
-   [261] "grey0"                "grey1"                "grey2"                "grey3"               
-   [265] "grey4"                "grey5"                "grey6"                "grey7"               
-   [269] "grey8"                "grey9"                "grey10"               "grey11"              
-   [273] "grey12"               "grey13"               "grey14"               "grey15"              
-   [277] "grey16"               "grey17"               "grey18"               "grey19"              
-   [281] "grey20"               "grey21"               "grey22"               "grey23"              
-   [285] "grey24"               "grey25"               "grey26"               "grey27"              
-   [289] "grey28"               "grey29"               "grey30"               "grey31"              
-   [293] "grey32"               "grey33"               "grey34"               "grey35"              
-   [297] "grey36"               "grey37"               "grey38"               "grey39"              
-   [301] "grey40"               "grey41"               "grey42"               "grey43"              
-   [305] "grey44"               "grey45"               "grey46"               "grey47"              
-   [309] "grey48"               "grey49"               "grey50"               "grey51"              
-   [313] "grey52"               "grey53"               "grey54"               "grey55"              
-   [317] "grey56"               "grey57"               "grey58"               "grey59"              
-   [321] "grey60"               "grey61"               "grey62"               "grey63"              
-   [325] "grey64"               "grey65"               "grey66"               "grey67"              
-   [329] "grey68"               "grey69"               "grey70"               "grey71"              
-   [333] "grey72"               "grey73"               "grey74"               "grey75"              
-   [337] "grey76"               "grey77"               "grey78"               "grey79"              
-   [341] "grey80"               "grey81"               "grey82"               "grey83"              
-   [345] "grey84"               "grey85"               "grey86"               "grey87"              
-   [349] "grey88"               "grey89"               "grey90"               "grey91"              
-   [353] "grey92"               "grey93"               "grey94"               "grey95"              
-   [357] "grey96"               "grey97"               "grey98"               "grey99"              
-   [361] "grey100"              "honeydew"             "honeydew1"            "honeydew2"           
-   [365] "honeydew3"            "honeydew4"            "hotpink"              "hotpink1"            
-   [369] "hotpink2"             "hotpink3"             "hotpink4"             "indianred"           
-   [373] "indianred1"           "indianred2"           "indianred3"           "indianred4"          
-   [377] "ivory"                "ivory1"               "ivory2"               "ivory3"              
-   [381] "ivory4"               "khaki"                "khaki1"               "khaki2"              
-   [385] "khaki3"               "khaki4"               "lavender"             "lavenderblush"       
-   [389] "lavenderblush1"       "lavenderblush2"       "lavenderblush3"       "lavenderblush4"      
-   [393] "lawngreen"            "lemonchiffon"         "lemonchiffon1"        "lemonchiffon2"       
-   [397] "lemonchiffon3"        "lemonchiffon4"        "lightblue"            "lightblue1"          
-   [401] "lightblue2"           "lightblue3"           "lightblue4"           "lightcoral"          
-   [405] "lightcyan"            "lightcyan1"           "lightcyan2"           "lightcyan3"          
-   [409] "lightcyan4"           "lightgoldenrod"       "lightgoldenrod1"      "lightgoldenrod2"     
-   [413] "lightgoldenrod3"      "lightgoldenrod4"      "lightgoldenrodyellow" "lightgray"           
-   [417] "lightgreen"           "lightgrey"            "lightpink"            "lightpink1"          
-   [421] "lightpink2"           "lightpink3"           "lightpink4"           "lightsalmon"         
-   [425] "lightsalmon1"         "lightsalmon2"         "lightsalmon3"         "lightsalmon4"        
-   [429] "lightseagreen"        "lightskyblue"         "lightskyblue1"        "lightskyblue2"       
-   [433] "lightskyblue3"        "lightskyblue4"        "lightslateblue"       "lightslategray"      
-   [437] "lightslategrey"       "lightsteelblue"       "lightsteelblue1"      "lightsteelblue2"     
-   [441] "lightsteelblue3"      "lightsteelblue4"      "lightyellow"          "lightyellow1"        
-   [445] "lightyellow2"         "lightyellow3"         "lightyellow4"         "limegreen"           
-   [449] "linen"                "magenta"              "magenta1"             "magenta2"            
-   [453] "magenta3"             "magenta4"             "maroon"               "maroon1"             
-   [457] "maroon2"              "maroon3"              "maroon4"              "mediumaquamarine"    
-   [461] "mediumblue"           "mediumorchid"         "mediumorchid1"        "mediumorchid2"       
-   [465] "mediumorchid3"        "mediumorchid4"        "mediumpurple"         "mediumpurple1"       
-   [469] "mediumpurple2"        "mediumpurple3"        "mediumpurple4"        "mediumseagreen"      
-   [473] "mediumslateblue"      "mediumspringgreen"    "mediumturquoise"      "mediumvioletred"     
-   [477] "midnightblue"         "mintcream"            "mistyrose"            "mistyrose1"          
-   [481] "mistyrose2"           "mistyrose3"           "mistyrose4"           "moccasin"            
-   [485] "navajowhite"          "navajowhite1"         "navajowhite2"         "navajowhite3"        
-   [489] "navajowhite4"         "navy"                 "navyblue"             "oldlace"             
-   [493] "olivedrab"            "olivedrab1"           "olivedrab2"           "olivedrab3"          
-   [497] "olivedrab4"           "orange"               "orange1"              "orange2"             
-   [501] "orange3"              "orange4"              "orangered"            "orangered1"          
-   [505] "orangered2"           "orangered3"           "orangered4"           "orchid"              
-   [509] "orchid1"              "orchid2"              "orchid3"              "orchid4"             
-   [513] "palegoldenrod"        "palegreen"            "palegreen1"           "palegreen2"          
-   [517] "palegreen3"           "palegreen4"           "paleturquoise"        "paleturquoise1"      
-   [521] "paleturquoise2"       "paleturquoise3"       "paleturquoise4"       "palevioletred"       
-   [525] "palevioletred1"       "palevioletred2"       "palevioletred3"       "palevioletred4"      
-   [529] "papayawhip"           "peachpuff"            "peachpuff1"           "peachpuff2"          
-   [533] "peachpuff3"           "peachpuff4"           "peru"                 "pink"                
-   [537] "pink1"                "pink2"                "pink3"                "pink4"               
-   [541] "plum"                 "plum1"                "plum2"                "plum3"               
-   [545] "plum4"                "powderblue"           "purple"               "purple1"             
-   [549] "purple2"              "purple3"              "purple4"              "red"                 
-   [553] "red1"                 "red2"                 "red3"                 "red4"                
-   [557] "rosybrown"            "rosybrown1"           "rosybrown2"           "rosybrown3"          
-   [561] "rosybrown4"           "royalblue"            "royalblue1"           "royalblue2"          
-   [565] "royalblue3"           "royalblue4"           "saddlebrown"          "salmon"              
-   [569] "salmon1"              "salmon2"              "salmon3"              "salmon4"             
-   [573] "sandybrown"           "seagreen"             "seagreen1"            "seagreen2"           
-   [577] "seagreen3"            "seagreen4"            "seashell"             "seashell1"           
-   [581] "seashell2"            "seashell3"            "seashell4"            "sienna"              
-   [585] "sienna1"              "sienna2"              "sienna3"              "sienna4"             
-   [589] "skyblue"              "skyblue1"             "skyblue2"             "skyblue3"            
-   [593] "skyblue4"             "slateblue"            "slateblue1"           "slateblue2"          
-   [597] "slateblue3"           "slateblue4"           "slategray"            "slategray1"          
-   [601] "slategray2"           "slategray3"           "slategray4"           "slategrey"           
-   [605] "snow"                 "snow1"                "snow2"                "snow3"               
-   [609] "snow4"                "springgreen"          "springgreen1"         "springgreen2"        
-   [613] "springgreen3"         "springgreen4"         "steelblue"            "steelblue1"          
-   [617] "steelblue2"           "steelblue3"           "steelblue4"           "tan"                 
-   [621] "tan1"                 "tan2"                 "tan3"                 "tan4"                
-   [625] "thistle"              "thistle1"             "thistle2"             "thistle3"            
-   [629] "thistle4"             "tomato"               "tomato1"              "tomato2"             
-   [633] "tomato3"              "tomato4"              "turquoise"            "turquoise1"          
-   [637] "turquoise2"           "turquoise3"           "turquoise4"           "violet"              
-   [641] "violetred"            "violetred1"           "violetred2"           "violetred3"          
-   [645] "violetred4"           "wheat"                "wheat1"               "wheat2"              
-   [649] "wheat3"               "wheat4"               "whitesmoke"           "yellow"              
-   [653] "yellow1"              "yellow2"              "yellow3"              "yellow4"             
+     [1] "white"                "aliceblue"            "antiquewhite"         "antiquewhite1"
+     [5] "antiquewhite2"        "antiquewhite3"        "antiquewhite4"        "aquamarine"
+     [9] "aquamarine1"          "aquamarine2"          "aquamarine3"          "aquamarine4"
+    [13] "azure"                "azure1"               "azure2"               "azure3"
+    [17] "azure4"               "beige"                "bisque"               "bisque1"
+    [21] "bisque2"              "bisque3"              "bisque4"              "black"
+    [25] "blanchedalmond"       "blue"                 "blue1"                "blue2"
+    [29] "blue3"                "blue4"                "blueviolet"           "brown"
+    [33] "brown1"               "brown2"               "brown3"               "brown4"
+    [37] "burlywood"            "burlywood1"           "burlywood2"           "burlywood3"
+    [41] "burlywood4"           "cadetblue"            "cadetblue1"           "cadetblue2"
+    [45] "cadetblue3"           "cadetblue4"           "chartreuse"           "chartreuse1"
+    [49] "chartreuse2"          "chartreuse3"          "chartreuse4"          "chocolate"
+    [53] "chocolate1"           "chocolate2"           "chocolate3"           "chocolate4"
+    [57] "coral"                "coral1"               "coral2"               "coral3"
+    [61] "coral4"               "cornflowerblue"       "cornsilk"             "cornsilk1"
+    [65] "cornsilk2"            "cornsilk3"            "cornsilk4"            "cyan"
+    [69] "cyan1"                "cyan2"                "cyan3"                "cyan4"
+    [73] "darkblue"             "darkcyan"             "darkgoldenrod"        "darkgoldenrod1"
+    [77] "darkgoldenrod2"       "darkgoldenrod3"       "darkgoldenrod4"       "darkgray"
+    [81] "darkgreen"            "darkgrey"             "darkkhaki"            "darkmagenta"
+    [85] "darkolivegreen"       "darkolivegreen1"      "darkolivegreen2"      "darkolivegreen3"
+    [89] "darkolivegreen4"      "darkorange"           "darkorange1"          "darkorange2"
+    [93] "darkorange3"          "darkorange4"          "darkorchid"           "darkorchid1"
+    [97] "darkorchid2"          "darkorchid3"          "darkorchid4"          "darkred"
+   [101] "darksalmon"           "darkseagreen"         "darkseagreen1"        "darkseagreen2"
+   [105] "darkseagreen3"        "darkseagreen4"        "darkslateblue"        "darkslategray"
+   [109] "darkslategray1"       "darkslategray2"       "darkslategray3"       "darkslategray4"
+   [113] "darkslategrey"        "darkturquoise"        "darkviolet"           "deeppink"
+   [117] "deeppink1"            "deeppink2"            "deeppink3"            "deeppink4"
+   [121] "deepskyblue"          "deepskyblue1"         "deepskyblue2"         "deepskyblue3"
+   [125] "deepskyblue4"         "dimgray"              "dimgrey"              "dodgerblue"
+   [129] "dodgerblue1"          "dodgerblue2"          "dodgerblue3"          "dodgerblue4"
+   [133] "firebrick"            "firebrick1"           "firebrick2"           "firebrick3"
+   [137] "firebrick4"           "floralwhite"          "forestgreen"          "gainsboro"
+   [141] "ghostwhite"           "gold"                 "gold1"                "gold2"
+   [145] "gold3"                "gold4"                "goldenrod"            "goldenrod1"
+   [149] "goldenrod2"           "goldenrod3"           "goldenrod4"           "gray"
+   [153] "gray0"                "gray1"                "gray2"                "gray3"
+   [157] "gray4"                "gray5"                "gray6"                "gray7"
+   [161] "gray8"                "gray9"                "gray10"               "gray11"
+   [165] "gray12"               "gray13"               "gray14"               "gray15"
+   [169] "gray16"               "gray17"               "gray18"               "gray19"
+   [173] "gray20"               "gray21"               "gray22"               "gray23"
+   [177] "gray24"               "gray25"               "gray26"               "gray27"
+   [181] "gray28"               "gray29"               "gray30"               "gray31"
+   [185] "gray32"               "gray33"               "gray34"               "gray35"
+   [189] "gray36"               "gray37"               "gray38"               "gray39"
+   [193] "gray40"               "gray41"               "gray42"               "gray43"
+   [197] "gray44"               "gray45"               "gray46"               "gray47"
+   [201] "gray48"               "gray49"               "gray50"               "gray51"
+   [205] "gray52"               "gray53"               "gray54"               "gray55"
+   [209] "gray56"               "gray57"               "gray58"               "gray59"
+   [213] "gray60"               "gray61"               "gray62"               "gray63"
+   [217] "gray64"               "gray65"               "gray66"               "gray67"
+   [221] "gray68"               "gray69"               "gray70"               "gray71"
+   [225] "gray72"               "gray73"               "gray74"               "gray75"
+   [229] "gray76"               "gray77"               "gray78"               "gray79"
+   [233] "gray80"               "gray81"               "gray82"               "gray83"
+   [237] "gray84"               "gray85"               "gray86"               "gray87"
+   [241] "gray88"               "gray89"               "gray90"               "gray91"
+   [245] "gray92"               "gray93"               "gray94"               "gray95"
+   [249] "gray96"               "gray97"               "gray98"               "gray99"
+   [253] "gray100"              "green"                "green1"               "green2"
+   [257] "green3"               "green4"               "greenyellow"          "grey"
+   [261] "grey0"                "grey1"                "grey2"                "grey3"
+   [265] "grey4"                "grey5"                "grey6"                "grey7"
+   [269] "grey8"                "grey9"                "grey10"               "grey11"
+   [273] "grey12"               "grey13"               "grey14"               "grey15"
+   [277] "grey16"               "grey17"               "grey18"               "grey19"
+   [281] "grey20"               "grey21"               "grey22"               "grey23"
+   [285] "grey24"               "grey25"               "grey26"               "grey27"
+   [289] "grey28"               "grey29"               "grey30"               "grey31"
+   [293] "grey32"               "grey33"               "grey34"               "grey35"
+   [297] "grey36"               "grey37"               "grey38"               "grey39"
+   [301] "grey40"               "grey41"               "grey42"               "grey43"
+   [305] "grey44"               "grey45"               "grey46"               "grey47"
+   [309] "grey48"               "grey49"               "grey50"               "grey51"
+   [313] "grey52"               "grey53"               "grey54"               "grey55"
+   [317] "grey56"               "grey57"               "grey58"               "grey59"
+   [321] "grey60"               "grey61"               "grey62"               "grey63"
+   [325] "grey64"               "grey65"               "grey66"               "grey67"
+   [329] "grey68"               "grey69"               "grey70"               "grey71"
+   [333] "grey72"               "grey73"               "grey74"               "grey75"
+   [337] "grey76"               "grey77"               "grey78"               "grey79"
+   [341] "grey80"               "grey81"               "grey82"               "grey83"
+   [345] "grey84"               "grey85"               "grey86"               "grey87"
+   [349] "grey88"               "grey89"               "grey90"               "grey91"
+   [353] "grey92"               "grey93"               "grey94"               "grey95"
+   [357] "grey96"               "grey97"               "grey98"               "grey99"
+   [361] "grey100"              "honeydew"             "honeydew1"            "honeydew2"
+   [365] "honeydew3"            "honeydew4"            "hotpink"              "hotpink1"
+   [369] "hotpink2"             "hotpink3"             "hotpink4"             "indianred"
+   [373] "indianred1"           "indianred2"           "indianred3"           "indianred4"
+   [377] "ivory"                "ivory1"               "ivory2"               "ivory3"
+   [381] "ivory4"               "khaki"                "khaki1"               "khaki2"
+   [385] "khaki3"               "khaki4"               "lavender"             "lavenderblush"
+   [389] "lavenderblush1"       "lavenderblush2"       "lavenderblush3"       "lavenderblush4"
+   [393] "lawngreen"            "lemonchiffon"         "lemonchiffon1"        "lemonchiffon2"
+   [397] "lemonchiffon3"        "lemonchiffon4"        "lightblue"            "lightblue1"
+   [401] "lightblue2"           "lightblue3"           "lightblue4"           "lightcoral"
+   [405] "lightcyan"            "lightcyan1"           "lightcyan2"           "lightcyan3"
+   [409] "lightcyan4"           "lightgoldenrod"       "lightgoldenrod1"      "lightgoldenrod2"
+   [413] "lightgoldenrod3"      "lightgoldenrod4"      "lightgoldenrodyellow" "lightgray"
+   [417] "lightgreen"           "lightgrey"            "lightpink"            "lightpink1"
+   [421] "lightpink2"           "lightpink3"           "lightpink4"           "lightsalmon"
+   [425] "lightsalmon1"         "lightsalmon2"         "lightsalmon3"         "lightsalmon4"
+   [429] "lightseagreen"        "lightskyblue"         "lightskyblue1"        "lightskyblue2"
+   [433] "lightskyblue3"        "lightskyblue4"        "lightslateblue"       "lightslategray"
+   [437] "lightslategrey"       "lightsteelblue"       "lightsteelblue1"      "lightsteelblue2"
+   [441] "lightsteelblue3"      "lightsteelblue4"      "lightyellow"          "lightyellow1"
+   [445] "lightyellow2"         "lightyellow3"         "lightyellow4"         "limegreen"
+   [449] "linen"                "magenta"              "magenta1"             "magenta2"
+   [453] "magenta3"             "magenta4"             "maroon"               "maroon1"
+   [457] "maroon2"              "maroon3"              "maroon4"              "mediumaquamarine"
+   [461] "mediumblue"           "mediumorchid"         "mediumorchid1"        "mediumorchid2"
+   [465] "mediumorchid3"        "mediumorchid4"        "mediumpurple"         "mediumpurple1"
+   [469] "mediumpurple2"        "mediumpurple3"        "mediumpurple4"        "mediumseagreen"
+   [473] "mediumslateblue"      "mediumspringgreen"    "mediumturquoise"      "mediumvioletred"
+   [477] "midnightblue"         "mintcream"            "mistyrose"            "mistyrose1"
+   [481] "mistyrose2"           "mistyrose3"           "mistyrose4"           "moccasin"
+   [485] "navajowhite"          "navajowhite1"         "navajowhite2"         "navajowhite3"
+   [489] "navajowhite4"         "navy"                 "navyblue"             "oldlace"
+   [493] "olivedrab"            "olivedrab1"           "olivedrab2"           "olivedrab3"
+   [497] "olivedrab4"           "orange"               "orange1"              "orange2"
+   [501] "orange3"              "orange4"              "orangered"            "orangered1"
+   [505] "orangered2"           "orangered3"           "orangered4"           "orchid"
+   [509] "orchid1"              "orchid2"              "orchid3"              "orchid4"
+   [513] "palegoldenrod"        "palegreen"            "palegreen1"           "palegreen2"
+   [517] "palegreen3"           "palegreen4"           "paleturquoise"        "paleturquoise1"
+   [521] "paleturquoise2"       "paleturquoise3"       "paleturquoise4"       "palevioletred"
+   [525] "palevioletred1"       "palevioletred2"       "palevioletred3"       "palevioletred4"
+   [529] "papayawhip"           "peachpuff"            "peachpuff1"           "peachpuff2"
+   [533] "peachpuff3"           "peachpuff4"           "peru"                 "pink"
+   [537] "pink1"                "pink2"                "pink3"                "pink4"
+   [541] "plum"                 "plum1"                "plum2"                "plum3"
+   [545] "plum4"                "powderblue"           "purple"               "purple1"
+   [549] "purple2"              "purple3"              "purple4"              "red"
+   [553] "red1"                 "red2"                 "red3"                 "red4"
+   [557] "rosybrown"            "rosybrown1"           "rosybrown2"           "rosybrown3"
+   [561] "rosybrown4"           "royalblue"            "royalblue1"           "royalblue2"
+   [565] "royalblue3"           "royalblue4"           "saddlebrown"          "salmon"
+   [569] "salmon1"              "salmon2"              "salmon3"              "salmon4"
+   [573] "sandybrown"           "seagreen"             "seagreen1"            "seagreen2"
+   [577] "seagreen3"            "seagreen4"            "seashell"             "seashell1"
+   [581] "seashell2"            "seashell3"            "seashell4"            "sienna"
+   [585] "sienna1"              "sienna2"              "sienna3"              "sienna4"
+   [589] "skyblue"              "skyblue1"             "skyblue2"             "skyblue3"
+   [593] "skyblue4"             "slateblue"            "slateblue1"           "slateblue2"
+   [597] "slateblue3"           "slateblue4"           "slategray"            "slategray1"
+   [601] "slategray2"           "slategray3"           "slategray4"           "slategrey"
+   [605] "snow"                 "snow1"                "snow2"                "snow3"
+   [609] "snow4"                "springgreen"          "springgreen1"         "springgreen2"
+   [613] "springgreen3"         "springgreen4"         "steelblue"            "steelblue1"
+   [617] "steelblue2"           "steelblue3"           "steelblue4"           "tan"
+   [621] "tan1"                 "tan2"                 "tan3"                 "tan4"
+   [625] "thistle"              "thistle1"             "thistle2"             "thistle3"
+   [629] "thistle4"             "tomato"               "tomato1"              "tomato2"
+   [633] "tomato3"              "tomato4"              "turquoise"            "turquoise1"
+   [637] "turquoise2"           "turquoise3"           "turquoise4"           "violet"
+   [641] "violetred"            "violetred1"           "violetred2"           "violetred3"
+   [645] "violetred4"           "wheat"                "wheat1"               "wheat2"
+   [649] "wheat3"               "wheat4"               "whitesmoke"           "yellow"
+   [653] "yellow1"              "yellow2"              "yellow3"              "yellow4"
    [657] "yellowgreen"
    #+end_example
 
@@ -1889,14 +1889,14 @@ do this is down to you (I'm happy to help). Others did it before you!
    #+end_quote
 
 7. How can point characteristics be exchanged for colors?
-  #+begin_src R :session *R* :results output graphics file :file ../img/custom3.png
-    plot(x = whiteside$Temp,
-         y = whiteside$Gas,
-         col = c(6,16)[whiteside$Insul],
-         pch=16)
-    legend(x = "topright",
-           legend=c("Insul = Before", "Insul = After"),
-           col = c(6,16), pch=16)
+   #+begin_src R :session *R* :results output graphics file :file ../img/custom3.png
+     plot(x = whiteside$Temp,
+          y = whiteside$Gas,
+          col = c(6,16)[whiteside$Insul],
+          pch=16)
+     legend(x = "topright",
+            legend=c("Insul = Before", "Insul = After"),
+            col = c(6,16), pch=16)
    #+end_src
 
    #+RESULTS:
@@ -1918,7 +1918,7 @@ do this is down to you (I'm happy to help). Others did it before you!
 
   #+RESULTS:
 
-- Complete the practice file and upload it to Canvas.  
+- Complete the practice file and upload it to Canvas.
 
 * Week 8 - Graphics in R & =ggplot2= plotting
 #+attr_html: :width 400px:
@@ -1953,7 +1953,7 @@ do this is down to you (I'm happy to help). Others did it before you!
 2. Plot f(x) = (1-x)^2 for x in [0,10].
    #+begin_src R :file nonlinear.png :session *R* :results file graphics output
      ##x <- c(0,1,2,3,4,5,6,7,8,9,10)
-     x <- seq(0,10,by=0.1)  # more granular     
+     x <- seq(0,10,by=0.1)  # more granular
      plot(x,y=(1-x)^2, type="l") # as a line instead of scatterplot
    #+end_src
 
@@ -1994,7 +1994,7 @@ do this is down to you (I'm happy to help). Others did it before you!
    #+end_src
 
    #+RESULTS:
-   : 'data.frame':	150 obs. of  5 variables:
+   : 'data.frame':      150 obs. of  5 variables:
    :  $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
    :  $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...
    :  $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
@@ -2007,7 +2007,7 @@ do this is down to you (I'm happy to help). Others did it before you!
    title it "Monthly number of int. air passengers 1949-1960".
    #+begin_src R :file AirPassengers.png :session *R* :results file graphics output
      plot(AirPassengers)
-         ## main="Monthly no. of int. passengers 1949-1960")
+     ## main="Monthly no. of int. passengers 1949-1960")
      title("Monthly no. of int. passengers 1949-1960")
    #+end_src
 
@@ -2039,7 +2039,7 @@ do this is down to you (I'm happy to help). Others did it before you!
    #+end_src
 
    #+RESULTS:
-   :    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   :    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.
    :   104.0   180.0   265.5   280.3   360.5   622.0
 
 8. Using =ggplot2=, make a histogram of the time series data set
@@ -2052,9 +2052,9 @@ do this is down to you (I'm happy to help). Others did it before you!
    #+end_src
 
    #+RESULTS:
-   : 'data.frame':	144 obs. of  1 variable:
+   : 'data.frame':      144 obs. of  1 variable:
    :  $ Passengers: num  112 118 132 129 121 135 148 148 136 119 ...
-   
+
    #+begin_src R :file airHistggplot2.png :session *R* :results file graphics output
      library(ggplot2)
      ggplot(df, aes(x=Passengers)) +
@@ -2077,4 +2077,113 @@ do this is down to you (I'm happy to help). Others did it before you!
 
     #+end_src
 
-** 
+** Data visualization with =matplotlib= in Emacs
+
+- Create a new template for regular and for graphics plots, via =C-h v
+  org-structure-template-alist=:
+
+  1) Python block (assumes that your Python program is =python3=):
+        #+begin_example
+        Key: p
+        Template: src python :results output :session *Python* :python python3
+        #+end_example
+
+  2) Python graphics block (saves file to =plot.png= by default):
+        #+begin_example
+        Key: pg
+        Template: src python :file plot.png :results file graphics output :session *Python* :python python3 
+        #+end_example
+
+- Make a sample plot: Use the example from the DataCamp lesson.
+
+  1) Load the =pyplot= submodule from the =matplotlib= graphics library:
+     
+     #+begin_src python :results none :session *Python* :python python3 :exports both
+       import matplotlib.pyplot as plt
+     #+end_src
+
+  2) Create a vector from (0,0) to (10,10) to plot:
+     #+begin_src python :results output :session *Python* :python python3 :exports both
+       x = range(10) # define vector (range object)
+       print(type(x))  # Python object class
+       print(x)  # print vector
+       [print(_) for _ in range(10)] # print vector as a list (comprehension)
+     #+end_src
+
+     #+RESULTS:
+     #+begin_example
+     <class 'range'>
+     range(0, 10)
+     0
+     1
+     2
+     3
+     4
+     5
+     6
+     7
+     8
+     9
+     #+end_example
+
+  3) Plot vector:
+     #+begin_src python :file vector.png :results file graphics output :session *Python* :python python3 :exports both
+       plt.clf()  # clear graphics cache
+       plt.plot(x)
+       plt.savefig("vector.png")
+     #+end_src
+
+- How about rebuilding the =mtcars= plot that we always do?
+
+  1) [[https://gist.githubusercontent.com/seankross/a412dfbd88b3db70b74b/raw/5f23f993cd87c283ce766e7ac6b329ee7cc2e1d1/mtcars.csv][Get mtcars from GitHub]] as a CSV file: [[https://tinyurl.com/mtcars-csv-data][tinyurl.com/mtcars-csv-data]]
+     and check if there's a header.
+     #+begin_src bash :results output :exports both
+       wget -O mtcars.csv tinyurl.com/mtcars-csv-data
+       ls -l mtcars.csv
+       head -2 mtcars.csv
+     #+end_src
+
+     #+RESULTS:
+     : -rw-rw-r-- 1 aletheia aletheia 1700 Oct  9 14:42 mtcars.csv
+     : model,mpg,cyl,disp,hp,drat,wt,qsec,vs,am,gear,carb
+     : Mazda RX4,21,6,160,110,3.9,2.62,16.46,0,1,4,4
+
+  2) Load the =pandas= data frame library
+     #+begin_src python :results none :session *Python* :python python3 :exports both
+       import pandas as pd
+     #+end_src
+
+  3) Import CSV into dataframe
+     #+begin_src python :results output :session *Python* :python python3 :exports both
+       mtcars = pd.read_csv('mtcars.csv')
+       print(mtcars.head())
+     #+end_src
+
+     #+RESULTS:
+     :                model   mpg  cyl   disp   hp  drat     wt   qsec  vs  am  gear  carb
+     : 0          Mazda RX4  21.0    6  160.0  110  3.90  2.620  16.46   0   1     4     4
+     : 1      Mazda RX4 Wag  21.0    6  160.0  110  3.90  2.875  17.02   0   1     4     4
+     : 2         Datsun 710  22.8    4  108.0   93  3.85  2.320  18.61   1   1     4     1
+     : 3     Hornet 4 Drive  21.4    6  258.0  110  3.08  3.215  19.44   1   0     3     1
+     : 4  Hornet Sportabout  18.7    8  360.0  175  3.15  3.440  17.02   0   0     3     2
+
+  4) Plot miles-per-gallon vs weight:
+     #+begin_src python :file mtcars.png :results file graphics output :session *Python* :python python3 :exports both
+       import pandas as pd
+       import matplotlib.pyplot as plt
+
+       # Assuming mtcars is already imported as a pandas DataFrame
+       # Plot mpg vs. wt
+       plt.scatter(mtcars['wt'], mtcars['mpg'])
+       plt.xlabel('Weight (1000 lbs)')
+       plt.ylabel('Miles per Gallon (mpg)')
+       plt.title('MPG vs. Weight')
+       plt.savefig("mtcars.png")
+     #+end_src
+
+     #+RESULTS:
+     [[file:mtcars.png]]
+
+
+
+
