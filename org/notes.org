@@ -2275,5 +2275,7 @@ do this is down to you (I'm happy to help). Others did it before you!
      [[file:mtcars.png]]
 
 
+** Fun fact about boxplots
 
+https://x.com/i/status/1843976603925192842
 
