@@ -2118,7 +2118,7 @@ do this is down to you (I'm happy to help). Others did it before you!
     [[file:nonlinGG.png]]
 
 
-** TODO Project update - first podcasts & literature reviews
+** DONE Project update - first podcasts & literature reviews
 #+attr_html: :width 400px: 
 [[../img/notebooklm_example2.png]]
 
@@ -2142,17 +2142,17 @@ Tips:
 - [ ] Give yourself *time* to *evaluate* & *discuss* the NotebookLM output.
 - [ ] *Share* your comments and thoughts in a *thread* in Canvas.
 
-Example: "Arkansas Signature Insights"
+Example: *"Arkansas Signature Insights"*
 - [X] Shared notebook with me (it shows up in my dashboard)
 - [X] Uploaded podcast in a GDrive
 - [ ] No link submitted in Canvas (yet)
 - [ ] No references found or added (blank Litmap PDF
 
 Q&A:
-- [ ] Is it OK that the podcast is more about the sources?
-- [ ] Should we add more references without commenting?
-- [ ] Should we add our first proposal to the notebook?
-- [ ] Do we each have to upload a submission?
+- [X] Is it OK that the podcast is more about the sources?
+- [X] Should we add more references without commenting?
+- [X] Should we add our first proposal to the notebook?
+- [X] Do we each have to upload a submission?
 
 
 ** IN PROGRESS Data visualization with =matplotlib= in Emacs
@@ -2224,9 +2224,9 @@ Q&A:
      #+begin_src python :file xplot.png :results file graphics output :session *Python* :python python3
        plt.clf()  # clear graphics canvas
 
-       plt.plot(x)
+       plt.plot(x)  # draw the plot
 
-       plt.savefig("xplot.png") # plt.show()
+       plt.savefig("xplot.png") # save plot to file. On console: plt.show()
      #+end_src
 
      #+RESULTS:
@@ -2269,11 +2269,11 @@ Q&A:
      #+begin_src bash :results output :exports both
        wget -O mtcars.csv tinyurl.com/mtcars-csv-data
        ls -l mtcars.csv
-       head -2 mtcars.csv
+       head -n 2 mtcars.csv
      #+end_src
 
      #+RESULTS:
-     : -rw-rw-r-- 1 aletheia aletheia 1700 Oct  9 14:42 mtcars.csv
+     : -rw-rw-r-- 1 marcus marcus 1700 Oct 11 15:33 mtcars.csv
      : model,mpg,cyl,disp,hp,drat,wt,qsec,vs,am,gear,carb
      : Mazda RX4,21,6,160,110,3.9,2.62,16.46,0,1,4,4
 
@@ -2298,11 +2298,8 @@ Q&A:
 
   4) Plot miles-per-gallon vs weight:
      #+begin_src python :file mtcars.png :results file graphics output :session *Python* :python python3 :exports both
-       import pandas as pd
        import matplotlib.pyplot as plt
-
-       # Assuming mtcars is already imported as a pandas DataFrame
-       # Plot mpg vs. wt
+       plt.clf()
        plt.scatter(mtcars['wt'], mtcars['mpg'])
        plt.xlabel('Weight (1000 lbs)')
        plt.ylabel('Miles per Gallon (mpg)')
