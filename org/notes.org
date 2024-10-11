@@ -1927,6 +1927,7 @@ do this is down to you (I'm happy to help). Others did it before you!
 
 - [X] Finish =ggplot2= examples
 - [X] How to plot with Python in Emacs + Org-mode
+- [ ] How to plot ~mtcars~ with Python in Emacs + Org-mode
 - [ ] Graphics lecture & code along
 
 ** DONE Base R EDA and =ggplot2= popquiz
@@ -2117,7 +2118,44 @@ do this is down to you (I'm happy to help). Others did it before you!
     [[file:nonlinGG.png]]
 
 
-** DONE Data visualization with =matplotlib= in Emacs
+** TODO Project update - first podcasts & literature reviews
+#+attr_html: :width 400px: 
+[[../img/notebooklm_example2.png]]
+
+Your deliverables for this 2nd sprint are:
+1. [ ] *Find* at least one *scholarly* article relevant to your project.
+2. [ ] *Build* a litmap for the article with litmaps.com.
+3. [ ] Make a screenshot of the litmap.
+4. [ ] Convert the screenshot to a PDF (e.g. using Google Docs).
+5. [ ] *Upload* the LitMap screenshot & other sources to NotebookLM.
+6. [ ] *Improve* your proposal by adding relevant references.
+7. [ ] *Upload* your (improved) project proposal (as text) to NotebookLM.
+8. [ ] *Generate* a podcast based on your collected sources.
+9. [ ] *Share* your Google NotebookLM project with me.
+10. [ ] *Submit* the link to your Google NotebookLM project in Canvas.
+11. [ ] *Upload* your podcast to your shared drive.
+12. [ ] *Share* the link to the podcast on the Chat for this class.
+
+Tips:
+- [ ] *Meet* the deadline or earn a 50% penalty.
+- [ ] *Start* this assignment *early*, don't leave it to the last minute.
+- [ ] Give yourself *time* to *evaluate* & *discuss* the NotebookLM output.
+- [ ] *Share* your comments and thoughts in a *thread* in Canvas.
+
+Example: "Arkansas Signature Insights"
+- [X] Shared notebook with me (it shows up in my dashboard)
+- [X] Uploaded podcast in a GDrive
+- [ ] No link submitted in Canvas (yet)
+- [ ] No references found or added (blank Litmap PDF
+
+Q&A:
+- [ ] Is it OK that the podcast is more about the sources?
+- [ ] Should we add more references without commenting?
+- [ ] Should we add our first proposal to the notebook?
+- [ ] Do we each have to upload a submission?
+
+
+** IN PROGRESS Data visualization with =matplotlib= in Emacs
 
 - Create a new template for regular and for graphics plots, via =C-h v
   org-structure-template-alist=:
@@ -2275,45 +2313,61 @@ do this is down to you (I'm happy to help). Others did it before you!
      #+RESULTS:
      [[file:mtcars.png]]
 
+- How does this compare to the ~mtcars~ plot in R that you already know?
+  Try to reproduce the R plot from memory so that it looks like this. 
 
-** TODO Project update - first podcasts & literature reviews
-#+attr_html: :width 400px: 
-[[../img/notebooklm_example2.png]]
+- Tip: build the plot up step by step:
+  1) Basic plot (x,y)
+  2) Alter the points and the color
+  3) Add title and labels
 
-Your deliverables for this 2nd sprint are:
-1. [ ] *Find* at least one *scholarly* article relevant to your project.
-2. [ ] *Build* a litmap for the article with litmaps.com.
-3. [ ] Make a screenshot of the litmap.
-4. [ ] Convert the screenshot to a PDF (e.g. using Google Docs).
-5. [ ] *Upload* the LitMap screenshot & other sources to NotebookLM.
-6. [ ] *Improve* your proposal by adding relevant references.
-7. [ ] *Upload* your (improved) project proposal (as text) to NotebookLM.
-8. [ ] *Generate* a podcast based on your collected sources.
-9. [ ] *Share* your Google NotebookLM project with me.
-10. [ ] *Submit* the link to your Google NotebookLM project in Canvas.
-11. [ ] *Upload* your podcast to your shared drive.
-12. [ ] *Share* the link to the podcast on the Chat for this class.
+- Would you know how to put these three improvements into one plot?     
 
-Tips:
-- [ ] *Meet* the deadline or earn a 50% penalty.
-- [ ] *Start* this assignment *early*, don't leave it to the last minute.
-- [ ] Give yourself *time* to *evaluate* & *discuss* the NotebookLM output.
-- [ ] *Share* your comments and thoughts in a *thread* in Canvas.
+- Solution:
+  #+begin_src R :file mtcarsR.png :session *R* :results file graphics output :exports both
+    data(mtcars)
+    par(mfrow=c(3,1)) # add pty='s' to preserve the scale of the original plots
+    plot(mtcars$wt,mtcars$mpg) # basic plot
+    plot(mtcars$wt,mtcars$mpg, pch=16, cex=1.5, col="steelblue")  # points
+    plot(mtcars$wt,mtcars$mpg,
+         pch=16,
+         cex=1.5,
+         col="steelblue",  # points
+         main="MPG vs. Weight",
+         xlab="Weight (1000 lbs)",
+         ylab="Miles per Gallon (mpg)") # title, labels
+  #+end_src
 
-Example: "Arkansas Signature Insights"
-- [X] Shared notebook with me (it shows up in my dashboard)
-- [X] Uploaded podcast in a GDrive
-- [ ] No link submitted in Canvas (yet)
-- [ ] No references found or added (blank Litmap PDF
+  #+RESULTS:
+  [[file:mtcarsR.png]]
 
-Q&A:
-- [ ] Is it OK that the podcast is more about the sources?
-- [ ] Should we add more references without commenting?
-- [ ] Should we add our first proposal to the notebook?
-- [ ] Do we each have to upload a submission?
+- Linux/Infrastructure question: if you check your current directory,
+  how about all those PNG files. Could you delete them (and how)?
+  #+begin_src bash :results output :exports both
+    pwd
+    ls *.png
+  #+end_src
 
-** IN PROGRESS Fun fact about boxplots - can you verify this?
-
-https://x.com/i/status/1843976603925192842
-
-
+  #+RESULTS:
+  #+begin_example
+  /home/aletheia/GitHub/dviz/org
+  airbox.png
+  airHistggplot2.png
+  AirPassengers2.png
+  AirPassengers.png
+  barplot.png
+  color1.png
+  insulplot.png
+  iris.png
+  linear2.png
+  linear.png
+  linGG.png
+  mtcars.png
+  mtcarsR.png
+  nonlinear.png
+  nonlinGG.png
+  plotWhiteside.png
+  tooth.png
+  vector.png
+  xplot.png
+  #+end_example
