@@ -1920,7 +1920,7 @@ do this is down to you (I'm happy to help). Others did it before you!
 
 - Complete the practice file and upload it to Canvas.
 
-* Week 8 - Graphics in R & =ggplot2= plotting
+* Week 8 - Python =matplotlib= & =ggplot2= plotting
 #+attr_html: :width 400px:
 #+caption: Henri Matisse, The Snail (French: L'escargot) 1953
 [[../img/3_matisse.png]]
@@ -2368,3 +2368,14 @@ Q&A:
   vector.png
   xplot.png
   #+end_example
+
+* Week 9 - Graphics & Grammar of Graphics  
+#+attr_html: :width 600px: 
+[[../img/leonardo.jpg]]
+
+/Image: Leonardo Da Vinci, The Last Supper/
+
+- [ ] Finish =matplotlib= introduction (=mtcars=)
+- [ ] Review plotting time series with Python and R
+- [ ] Alternative R graphics packages
+- [ ] The Grammar of Graphics (gg)
