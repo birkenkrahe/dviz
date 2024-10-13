@@ -1,0 +1,77 @@
+#+TITLE: Propsoal
+#+AUTHOR: Johnzelle Bush (pledged)
+#+SUBTITLE: Data Visualization - Lyon College, Fall'24
+#+STARTUP: overview hideblocks indent
+#+PROPERTY: header-args:C :main yes :includes <stdio.h> :results output
+ 
+* Problem:
+This project involves creating one or more scatter plots using Excel
+to visualize the Twitch subscriber count across different days of the
+week. By plotting the data points on a graph, we can effectively
+analyze the trends and patterns in subscriber counts over time. This
+visualization will provide valuable insights into the popularity of
+the Twitch channel on specific days of the week, helping the channel
+owner make informed decisions on content scheduling and audience
+engagement strategies. Through the scatter plot analysis, we can
+identify peak days of subscriber growth, as well as any potential
+patterns or anomalies that may impact the channel's overall
+performance. Overall, this project aims to leverage data visualization
+techniques to enhance the understanding of Twitch subscriber behavior.
+
+* Reasons:
+Understanding which streaming platform stands out in terms of
+influence and effectiveness is valuable for multiple stakeholders like
+consumers and creators. For consumers, it gives ideas about the
+platform which provide proper and good content without unnecessary
+content. It also gives the best idea to choose which platform and
+which services to use. For creators, it helps identify best platform
+to partner with based on reach and engagement on them.
+
+* Constraints:
+- Technical: Some platforms may not provide every data to
+  public. Combining data from different source may require significant
+  effort in terms of standardizing formats and handling
+  inconsistencies.
+- Conceptual: Choosing the right metrics to measure influence and
+  effectiveness can be a little subjective and may vary based on each
+  perspective.
+- Personal: Specific skills and tools may need for advance
+  analysis. Time management can be another one.
+
+* Goals:
+- The goals of this visualization are to identify any patterns or
+  trends in sub counts based on the day of the week, as well as to
+  compare the performance of the channel on different days. By
+  examining the data in this format, we can gain valuable insights
+  into the audience behavior and preferences, which can inform content
+  scheduling and marketing strategies.
+- Non-Goals: Using the data of only five years (which may change in
+  future but never above 5).  Technical performance reviews of the
+  platforms are not part of the scope.  Only the top three platforms
+  will be given priority and not others.
+
+* Metrics
+Change in the consumer numbers.
+Annual revenue figures and growth rates.
+Number of titles and genres available.
+Overall market share relative to other platforms.
+
+* References:
+
+- Software: R and its packages (some) (https://www.R-project.org)
+- Emacs.
+- Litmaps Statista (Portal for market data)
+- Nielsen (Portal with insights about what people watch and listen)
+
+#+begin_notes
+This is better than the proposal in the other class. I changed the
+Org-mode layout a bit: with =*= you can create headlines, and with =-= you
+can create bullet points. Improvement: the references are not
+consistent or complete. "Emacs" is not a reference, and you need more
+than the name of a platform (like Litmaps). Also, you need more
+references for the work itself (where do the data come from, what
+other studies are there that do try to do similar things etc.).
+
+What is confusing is that you want to visualize in Excel (why?) but
+you cite R. You should, if you can, make visualizations in R.
+#+end_notes  
