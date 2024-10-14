@@ -2369,7 +2369,7 @@ Q&A:
   xplot.png
   #+end_example
 
-* Week 9 - Graphics & Grammar of Graphics  
+* Week 9 - Graphics & Grammar of Graphics
 #+attr_html: :width 600px: 
 [[../img/leonardo.jpg]]
 
@@ -2379,3 +2379,7 @@ Q&A:
 - [ ] Review plotting time series with Python and R
 - [ ] Alternative R graphics packages
 - [ ] The Grammar of Graphics (gg)
+
+** TODO Review: Plotting time series with Python and R
+
+
