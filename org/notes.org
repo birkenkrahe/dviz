@@ -2382,4 +2382,75 @@ Q&A:
 
 ** TODO Review: Plotting time series with Python and R
 
+1. Why are we using the =pyplot= submodule?
+     #+begin_quote
+  Answer: check the online documentation for [[https://matplotlib.org/stable/api/pyplot_summary.html][matplotlib.pyplot]]:
+  "=pyplot= is mainly intended for interactive plots and simple cases of
+  [...] plot generation."
+  #+end_quote
 
+2. Why doesn't the function =print= have a dot operator but =plot= does?
+   #+begin_src python :results output :session *Python* :python python3 :exports both
+     print("I don't need no dot.")
+
+     import matplotlib.pyplot as plt
+     plt.plot()  # I do need a dot
+   #+end_src     
+
+   #+RESULTS:
+   : I don't need no dot.
+
+3. What does the command with =subplots= below *mean*, and what does it *do*?
+   #+begin_src python :file subplot.png :results file graphics output :session *Python* :python python3 :exports both
+     fig, ax = plt.subplots()
+   #+end_src
+
+   #+begin_quote
+   The command creates a frame in the form of an object with a figure
+   and axes. Since no data were specified, only the frame was created.
+   #+end_quote
+
+4. How can we get data, for example in CSV format, into Python?
+   #+begin_quote
+   You can get the data from DataCamp (download from dashboard).
+
+   We can import CSV data into a =DataFrame= format using the =pandas=
+   function =read_csv=, which works very similar to R's =read.csv=.
+   #+end_quote
+
+   #+begin_src python :results output :session *Python* :python python3 :exports both
+     df = pd.read_csv("../data/seattle_weather.csv")
+     #print(df.info()) # similar to Rs `str`
+     print(df.head())  # similar to Rs `head`
+   #+end_src
+
+   #+RESULTS:
+   :        STATION                 NAME  ...  MLY-TMIN-PRBOCC-LSTH036  MLY-TMIN-STDDEV
+   : 0  USC00456295  PALMER 3 ESE, WA US  ...                   1000.0              2.8
+   : 1  USC00456295  PALMER 3 ESE, WA US  ...                   1000.0              3.1
+   : 2  USC00456295  PALMER 3 ESE, WA US  ...                   1000.0              2.1
+   : 3  USC00456295  PALMER 3 ESE, WA US  ...                    978.0              2.0
+   : 4  USC00456295  PALMER 3 ESE, WA US  ...                    610.0              2.0
+   : 
+   : [5 rows x 80 columns]
+
+5. How do we add the data to the plot, and how do we plot?
+   #+begin_src python :python python3 :session *Python* :results output
+    # extract 12 temperature column values (not averages)
+    data = {
+        'MONTH': ["Jan","Feb","Mar","Apr","May","Jun",
+                  "Jul","Aug","Sep","Oct","Nov","Dec"],
+        'TEMP' : [42.1,43.4,46.6,50.5,56.0,61.0,
+                  65.9,66.5,61.6,53.3,46.2,41.1]
+    }
+    df = pd.DataFrame(data)
+    print(df)
+  #+end_src
+
+   #+begin_src python :file axes.png :results file graphics output :session *Python* :python python3 :exports both
+     plt.clf()
+     fig,ax=plt.subplots()
+     ax.plot(df["MONTH"],df["TEMP"])
+     plt.savefig("axes.png")
+    #+end_src
+   
