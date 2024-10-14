@@ -2155,7 +2155,7 @@ Q&A:
 - [X] Do we each have to upload a submission?
 
 
-** IN PROGRESS Data visualization with =matplotlib= in Emacs
+** Data visualization with =matplotlib= in Emacs
 
 - Create a new template for regular and for graphics plots, via =C-h v
   org-structure-template-alist=:
@@ -2263,7 +2263,7 @@ Q&A:
      #+end_src
 
 - How about rebuilding the =mtcars= plot that we always do?
-
+  
   1) [[https://gist.githubusercontent.com/seankross/a412dfbd88b3db70b74b/raw/5f23f993cd87c283ce766e7ac6b329ee7cc2e1d1/mtcars.csv][Get mtcars from GitHub]] as a CSV file: [[https://tinyurl.com/mtcars-csv-data][tinyurl.com/mtcars-csv-data]]
      and check if there's a header.
      #+begin_src bash :results output :exports both
@@ -2273,7 +2273,7 @@ Q&A:
      #+end_src
 
      #+RESULTS:
-     : -rw-rw-r-- 1 marcus marcus 1700 Oct 11 15:33 mtcars.csv
+     : -rw-rw-r-- 1 marcus marcus 1700 Oct 14 15:03 mtcars.csv
      : model,mpg,cyl,disp,hp,drat,wt,qsec,vs,am,gear,carb
      : Mazda RX4,21,6,160,110,3.9,2.62,16.46,0,1,4,4
 
@@ -2287,14 +2287,6 @@ Q&A:
        mtcars = pd.read_csv('mtcars.csv')
        print(mtcars.head())
      #+end_src
-
-     #+RESULTS:
-     :                model   mpg  cyl   disp   hp  drat     wt   qsec  vs  am  gear  carb
-     : 0          Mazda RX4  21.0    6  160.0  110  3.90  2.620  16.46   0   1     4     4
-     : 1      Mazda RX4 Wag  21.0    6  160.0  110  3.90  2.875  17.02   0   1     4     4
-     : 2         Datsun 710  22.8    4  108.0   93  3.85  2.320  18.61   1   1     4     1
-     : 3     Hornet 4 Drive  21.4    6  258.0  110  3.08  3.215  19.44   1   0     3     1
-     : 4  Hornet Sportabout  18.7    8  360.0  175  3.15  3.440  17.02   0   0     3     2
 
   4) Plot miles-per-gallon vs weight:
      #+begin_src python :file mtcars.png :results file graphics output :session *Python* :python python3 :exports both
@@ -2317,6 +2309,29 @@ Q&A:
   1) Basic plot (x,y)
   2) Alter the points and the color
   3) Add title and labels
+  4) Put 1-3 on one page
+
+#+begin_src R :session *R* :results output :exports both :noweb yes
+  str(mtcars)
+#+end_src     
+
+Now the plot
+#+begin_src R :file mtcars2.png :session *R* :results output graphics file
+  data(mtcars)
+  par(mfrow=c(3,1),pty='s')
+  y <- mtcars$mpg
+  x <- mtcars$wt
+  plot(x,y)
+  plot(x,y, pch=16, cex=1.5, col="steelblue")
+  plot(x,y, pch=16, cex=1.5, col="steelblue",
+       main="MPG vs. Weight",
+       xlab="Weight (1000 lbs.)",
+       ylab="Miles per Gallon (mpg)")
+#+end_src
+
+#+RESULTS:
+[[file:mtcars2.png]]
+
 
 - Would you know how to put these three improvements into one plot?     
 
@@ -2347,11 +2362,12 @@ Q&A:
 
   #+RESULTS:
   #+begin_example
-  /home/aletheia/GitHub/dviz/org
+  /home/marcus/GitHub/dviz/org
   airbox.png
   airHistggplot2.png
   AirPassengers2.png
   AirPassengers.png
+  axes.png
   barplot.png
   color1.png
   insulplot.png
@@ -2359,14 +2375,45 @@ Q&A:
   linear2.png
   linear.png
   linGG.png
+  mtcars2.png
   mtcars.png
   mtcarsR.png
   nonlinear.png
   nonlinGG.png
   plotWhiteside.png
+  subplot.png
   tooth.png
   vector.png
   xplot.png
+  #+end_example
+
+- To delete them in one fell swoop:
+  #+begin_src bash :results output
+    ls
+  #+end_src  
+
+  #+RESULTS:
+  #+begin_example
+  1_overview.org
+  2_trendline.org
+  3_base_R_ggplot2_popquiz.org
+  3_eda_lab.org
+  3_eda.org
+  3_eda_practice.org
+  4_graphics.org
+  5_ggplot2_review.org
+  eda_practice_copy.org
+  graphics_practice.org
+  mtcars.csv
+  #notes.org#
+  notes.org
+  notes.org_archive
+  projects
+  syllabus.org
+  syllabus_pdf.org
+  testCustom.org
+  test.org
+  wdtest.org
   #+end_example
 
 * Week 9 - Graphics & Grammar of Graphics
@@ -2375,15 +2422,15 @@ Q&A:
 
 /Image: Leonardo Da Vinci, The Last Supper/
 
-- [ ] Finish =matplotlib= introduction (=mtcars=)
-- [ ] Review plotting time series with Python and R
+- [X] Finish =matplotlib= introduction (=mtcars=)
+- [X] Review plotting with matplotlib.pyplot.subplot
 - [ ] Alternative R graphics packages
 - [ ] The Grammar of Graphics (gg)
 
-** TODO Review: Plotting time series with Python and R
+** Review: Plotting with =matplotlib.pyplot=
 
 1. Why are we using the =pyplot= submodule?
-     #+begin_quote
+   #+begin_quote
   Answer: check the online documentation for [[https://matplotlib.org/stable/api/pyplot_summary.html][matplotlib.pyplot]]:
   "=pyplot= is mainly intended for interactive plots and simple cases of
   [...] plot generation."
@@ -2403,7 +2450,11 @@ Q&A:
 3. What does the command with =subplots= below *mean*, and what does it *do*?
    #+begin_src python :file subplot.png :results file graphics output :session *Python* :python python3 :exports both
      fig, ax = plt.subplots()
+     plt.savefig("subplot.png")
    #+end_src
+
+   #+RESULTS:
+   [[file:subplot.png]]
 
    #+begin_quote
    The command creates a frame in the form of an object with a figure
@@ -2419,20 +2470,103 @@ Q&A:
    #+end_quote
 
    #+begin_src python :results output :session *Python* :python python3 :exports both
+     import pandas as pd
      df = pd.read_csv("../data/seattle_weather.csv")
-     #print(df.info()) # similar to Rs `str`
-     print(df.head())  # similar to Rs `head`
+     print(df.info()) # similar to Rs `str`
+     #print(df.head())  # similar to Rs `head`
    #+end_src
 
    #+RESULTS:
-   :        STATION                 NAME  ...  MLY-TMIN-PRBOCC-LSTH036  MLY-TMIN-STDDEV
-   : 0  USC00456295  PALMER 3 ESE, WA US  ...                   1000.0              2.8
-   : 1  USC00456295  PALMER 3 ESE, WA US  ...                   1000.0              3.1
-   : 2  USC00456295  PALMER 3 ESE, WA US  ...                   1000.0              2.1
-   : 3  USC00456295  PALMER 3 ESE, WA US  ...                    978.0              2.0
-   : 4  USC00456295  PALMER 3 ESE, WA US  ...                    610.0              2.0
-   : 
-   : [5 rows x 80 columns]
+   #+begin_example
+   <class 'pandas.core.frame.DataFrame'>
+   RangeIndex: 204 entries, 0 to 203
+   Data columns (total 80 columns):
+    #   Column                   Non-Null Count  Dtype  
+   ---  ------                   --------------  -----  
+    0   STATION                  204 non-null    object 
+    1   NAME                     204 non-null    object 
+    2   DATE                     204 non-null    int64  
+    3   MLY-CLDD-BASE45          180 non-null    float64
+    4   MLY-CLDD-BASE50          180 non-null    float64
+    5   MLY-CLDD-BASE55          180 non-null    float64
+    6   MLY-CLDD-BASE57          180 non-null    float64
+    7   MLY-CLDD-BASE60          180 non-null    float64
+    8   MLY-CLDD-BASE70          180 non-null    float64
+    9   MLY-CLDD-BASE72          180 non-null    float64
+    10  MLY-CLDD-NORMAL          180 non-null    float64
+    11  MLY-DUTR-NORMAL          180 non-null    float64
+    12  MLY-DUTR-STDDEV          180 non-null    float64
+    13  MLY-GRDD-BASE40          180 non-null    float64
+    14  MLY-GRDD-BASE45          180 non-null    float64
+    15  MLY-GRDD-BASE50          180 non-null    float64
+    16  MLY-GRDD-BASE55          180 non-null    float64
+    17  MLY-GRDD-BASE57          180 non-null    float64
+    18  MLY-GRDD-BASE60          180 non-null    float64
+    19  MLY-GRDD-BASE65          180 non-null    float64
+    20  MLY-GRDD-BASE70          180 non-null    float64
+    21  MLY-GRDD-BASE72          180 non-null    float64
+    22  MLY-GRDD-TB4886          180 non-null    float64
+    23  MLY-GRDD-TB5086          180 non-null    float64
+    24  MLY-HTDD-BASE40          180 non-null    float64
+    25  MLY-HTDD-BASE45          180 non-null    float64
+    26  MLY-HTDD-BASE50          180 non-null    float64
+    27  MLY-HTDD-BASE55          180 non-null    float64
+    28  MLY-HTDD-BASE57          180 non-null    float64
+    29  MLY-HTDD-BASE60          180 non-null    float64
+    30  MLY-HTDD-NORMAL          180 non-null    float64
+    31  MLY-PRCP-25PCTL          156 non-null    float64
+    32  MLY-PRCP-50PCTL          156 non-null    float64
+    33  MLY-PRCP-75PCTL          156 non-null    float64
+    34  MLY-PRCP-AVGNDS-GE001HI  156 non-null    float64
+    35  MLY-PRCP-AVGNDS-GE010HI  156 non-null    float64
+    36  MLY-PRCP-AVGNDS-GE050HI  156 non-null    float64
+    37  MLY-PRCP-AVGNDS-GE100HI  156 non-null    float64
+    38  MLY-PRCP-NORMAL          204 non-null    float64
+    39  MLY-SNOW-25PCTL          120 non-null    float64
+    40  MLY-SNOW-50PCTL          120 non-null    float64
+    41  MLY-SNOW-75PCTL          120 non-null    float64
+    42  MLY-SNOW-AVGNDS-GE001TI  120 non-null    float64
+    43  MLY-SNOW-AVGNDS-GE010TI  120 non-null    float64
+    44  MLY-SNOW-AVGNDS-GE030TI  120 non-null    float64
+    45  MLY-SNOW-AVGNDS-GE050TI  120 non-null    float64
+    46  MLY-SNOW-AVGNDS-GE100TI  120 non-null    float64
+    47  MLY-SNOW-NORMAL          120 non-null    float64
+    48  MLY-SNWD-AVGNDS-GE001WI  120 non-null    float64
+    49  MLY-SNWD-AVGNDS-GE003WI  120 non-null    float64
+    50  MLY-SNWD-AVGNDS-GE005WI  120 non-null    float64
+    51  MLY-SNWD-AVGNDS-GE010WI  120 non-null    float64
+    52  MLY-TAVG-NORMAL          180 non-null    float64
+    53  MLY-TAVG-STDDEV          180 non-null    float64
+    54  MLY-TMAX-AVGNDS-GRTH040  180 non-null    float64
+    55  MLY-TMAX-AVGNDS-GRTH050  180 non-null    float64
+    56  MLY-TMAX-AVGNDS-GRTH060  180 non-null    float64
+    57  MLY-TMAX-AVGNDS-GRTH070  180 non-null    float64
+    58  MLY-TMAX-AVGNDS-GRTH080  180 non-null    float64
+    59  MLY-TMAX-AVGNDS-GRTH090  180 non-null    float64
+    60  MLY-TMAX-AVGNDS-GRTH100  180 non-null    float64
+    61  MLY-TMAX-AVGNDS-LSTH032  180 non-null    float64
+    62  MLY-TMAX-NORMAL          180 non-null    float64
+    63  MLY-TMAX-STDDEV          180 non-null    float64
+    64  MLY-TMIN-AVGNDS-LSTH000  180 non-null    float64
+    65  MLY-TMIN-AVGNDS-LSTH010  180 non-null    float64
+    66  MLY-TMIN-AVGNDS-LSTH020  180 non-null    float64
+    67  MLY-TMIN-AVGNDS-LSTH032  180 non-null    float64
+    68  MLY-TMIN-AVGNDS-LSTH040  180 non-null    float64
+    69  MLY-TMIN-AVGNDS-LSTH050  180 non-null    float64
+    70  MLY-TMIN-AVGNDS-LSTH060  180 non-null    float64
+    71  MLY-TMIN-AVGNDS-LSTH070  180 non-null    float64
+    72  MLY-TMIN-NORMAL          180 non-null    float64
+    73  MLY-TMIN-PRBOCC-LSTH016  180 non-null    float64
+    74  MLY-TMIN-PRBOCC-LSTH020  180 non-null    float64
+    75  MLY-TMIN-PRBOCC-LSTH024  180 non-null    float64
+    76  MLY-TMIN-PRBOCC-LSTH028  180 non-null    float64
+    77  MLY-TMIN-PRBOCC-LSTH032  180 non-null    float64
+    78  MLY-TMIN-PRBOCC-LSTH036  180 non-null    float64
+    79  MLY-TMIN-STDDEV          180 non-null    float64
+   dtypes: float64(77), int64(1), object(2)
+   memory usage: 127.6+ KB
+   None
+   #+end_example
 
 5. How do we add the data to the plot, and how do we plot?
    #+begin_src python :python python3 :session *Python* :results output
@@ -2447,10 +2581,30 @@ Q&A:
     print(df)
   #+end_src
 
+  #+RESULTS:
+  #+begin_example
+     MONTH  TEMP
+  0    Jan  42.1
+  1    Feb  43.4
+  2    Mar  46.6
+  3    Apr  50.5
+  4    May  56.0
+  5    Jun  61.0
+  6    Jul  65.9
+  7    Aug  66.5
+  8    Sep  61.6
+  9    Oct  53.3
+  10   Nov  46.2
+  11   Dec  41.1
+  #+end_example
+
    #+begin_src python :file axes.png :results file graphics output :session *Python* :python python3 :exports both
-     plt.clf()
-     fig,ax=plt.subplots()
-     ax.plot(df["MONTH"],df["TEMP"])
-     plt.savefig("axes.png")
+     plt.clf()  # clearing the graphics canvas
+     fig,ax=plt.subplots()  # setting up a graphics frame
+     ax.plot(df["MONTH"],df["TEMP"])  # adding the data
+     plt.savefig("axes.png")  # writing the file
     #+end_src
+
+    #+RESULTS:
+    [[file:axes.png]]
    
