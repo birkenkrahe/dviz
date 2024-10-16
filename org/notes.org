@@ -2423,11 +2423,11 @@ Now the plot
 /Image: Leonardo Da Vinci, The Last Supper/
 
 - [X] Finish =matplotlib= introduction (=mtcars=)
-- [X] Review plotting with matplotlib.pyplot.subplot
+- [X] Review plotting with =matplotlib.pyplot.subplot=
 - [ ] Alternative R graphics packages
 - [ ] The Grammar of Graphics (gg)
 
-** Review: Plotting with =matplotlib.pyplot=
+** DONE Review: Plotting with =matplotlib.pyplot=
 
 1. Why are we using the =pyplot= submodule?
    #+begin_quote
@@ -2608,3 +2608,14 @@ Now the plot
     #+RESULTS:
     [[file:axes.png]]
    
+
+** WE MEET ON FRIDAY BUT THERE WILL BE NO CLASS ON MONDAY
+#+attr_html: :width 600px:
+[[../img/zwei_maenner.jpeg]]
+
+You will get a practice file instead (with simple Python plotting
+exercises) & you can also use the time to work on your projects.
+
+I should have finished checking your literature reviews by end of the
+week, and I will give you feedback as usual (prob at NotebookLM).
+
