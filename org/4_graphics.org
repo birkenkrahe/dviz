@@ -48,11 +48,11 @@ pasted,mounted on canvas, 268.4 x 287 cm). Tate Gallery, London.
 
 *How would you describe the difference? Got an example?*
 
-| INFOGRAPHICS DEFINITION | DATA VISUALIZATION |
-|-------------------------+--------------------|
-|                         |                    |
-|                         |                    |
-|                         |                    |
+| INFOGRAPHICS DEFINITION  | DATA VISUALIZATION      |
+|--------------------------+-------------------------|
+| Gives you information    | Gives you info (data)   |
+| Contains graphics        | Can be without graphics |
+| Information without data | Data are central        |
 
 * Infographics
 
@@ -81,9 +81,9 @@ using JavaScript to visualize complex graphs ([[https://www.r-bloggers.com/2019/
 
 *How would you describe the difference? Got an example?*
 
-| EXPLORATORY DATA VISUALIZATION | EXPLANATORY DATA VISUALIZATION |
+| EXPLANATORY DATA VISUALIZATION | EXPLORATORY DATA VISUALIZATION |
 |--------------------------------+--------------------------------|
-|                                |                                |
+| Explain                        | Explore                        |
 |                                |                                |
 |                                |                                |
 
@@ -106,7 +106,7 @@ Example: CRAN ggplot2 package downloads 2012-2019
 * Explanatory data visualization
 
 - Help us *convey* findings to others
-- Alternate name: Data Storytelling
+- Alternate name: "Data Storytelling"
 - Known to you at the outset (apart from *feedback*)
 - *Design* to accommodate a particular *audience*
 - Best done after *editorial decisions* what is relevant
@@ -149,6 +149,7 @@ Source: [[https://mmarteaga.github.io/post/VisualCV/][How to create a visual CV 
 - Do:
   1) load the =MASS= package
   2) load the =MASS::UScereal= dataset
+  3) Look at the dataset structure
 #+begin_src R :session :results output
   library(MASS)  # load MASS package
   data(UScereal) # load UScereal data frame
@@ -157,7 +158,7 @@ Source: [[https://mmarteaga.github.io/post/VisualCV/][How to create a visual CV 
 
 #+RESULTS:
 #+begin_example
-'data.frame':   65 obs. of  11 variables:
+'data.frame':	65 obs. of  11 variables:
  $ mfr      : Factor w/ 6 levels "G","K","N","P",..: 3 2 2 1 2 1 6 4 5 1 ...
  $ calories : num  212 212 100 147 110 ...
  $ protein  : num  12.12 12.12 8 2.67 2 ...
@@ -180,6 +181,9 @@ scatterplots to summarize the data frame.
   #+begin_src R :exports both :session :results output graphics file :file ../img/cereal.png
     plot(UScereal, las = 2)
   #+end_src
+
+  #+RESULTS:
+  [[file:../img/cereal.png]]
 
   #+begin_notes
   - The ~las~ parameter sets the position of the tick labels - ~las=2~ means
@@ -204,8 +208,12 @@ scatterplots to summarize the data frame.
 
   - Check the structure of =par()=, list =par()=, check the value of =las=:
     #+begin_src R
-      str(par())
+      ##str(par())
+      par()$las
     #+end_src
+
+    #+RESULTS:
+    : [1] 0
 
 * Explanatory scatterplot
 
