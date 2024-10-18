@@ -2634,7 +2634,7 @@ live the National Convention, which through its energy and vigilance
 has delivered the Republic from its tyrants."
 
 
-** TODO Review: Plotting Time-Series with Python vs. R
+** TODO Review: Plotting with =subplots=
 
 /Tip: Don't wait with the DataCamp lessons to the last moment./ To learn
 anything from them, you must work through the examples on your own. In
@@ -2704,32 +2704,106 @@ this way you'll learn Python and visualization with Python, for free!
    #+RESULTS:
    [[file:axes4.png]]
 
-4. 
+4. How do you plot two graphs on top of one another?
+   #+begin_src python :file overplot.png :results file graphics output :session *Python* :python python3 :exports both
+     import matplotlib.pyplot as plt
+     import random
+     fig,ax=plt.subplots()
 
-** TODO Exercise: Plotting in Python
+     data = [random.random() for _ in range(10)] # list comprehension
+     data2 = [random.random() for _ in range(10)] # list comprehension
 
-1. Using =wget=, ownload Seattle weather data (precipitation, tmax,
-   tmin, rain): [[https://tinyurl.com/seattle-weather-csv][tinyurl.com/seattle-weather-csv]], and check with =ls -l=
-   that the file was created and is available.
-   #+begin_src bash :results output :exports both
-     wget -O seattle_weather.csv tinyurl.com/seattle-weather-csv
-     ls -l seattle_weather.csv
-   #+end_src
-   
-2. Look at the first couple of lines of the file to ascertain that the
-   data have a header:
-   #+begin_src python :results output :session *Python* :python python3 :exports both
-     head --lines=2 seattle_weather.csv
+     ax.plot(data)
+     ax.plot(data2)
    #+end_src
 
    #+RESULTS:
+   [[file:overplot.png]]
 
-3. Import the data into a =pandas= data frame:
-   #+begin_src python :results output :session *Python* :python python3 :exports both
-     import pandas as pd
-     pd.read_csv(
+   #+begin_src python :file overplot2.png :results file graphics output :session *Python* :python python3 :exports both
+     fig,ax=plt.subplots()
+     ax.plot(data,
+             label="data",
+             color='b',
+             marker='o',
+             linestyle='--')
+     ax.plot(data2,
+             label="data2",
+             color='r',
+             marker='v',
+             linestyle='--')
+     plt.legend()
+     plt.grid()
    #+end_src
-   
-   
-   
-   
+
+   #+RESULTS:
+   [[file:overplot2.png]]
+
+5. How do you make multiple small plots on one page?
+   #+begin_src python :file subplots.png :results file graphics output :session *Python* :python python3 :exports both
+     import matplotlib.pyplot as plt
+     plt.clf()
+     fig, ax = plt.subplots(3,2)
+     plt.savefig("subplots.png")
+   #+end_src
+
+   #+RESULTS:
+   [[file:subplots.png]]
+
+
+** TODO Exercise: Plotting in Python
+
+1. Using =wget= on the shell, download Seattle weather data:
+   [[https://tinyurl.com/seattle-weather-csv][tinyurl.com/seattle-weather-csv]].
+   #+begin_src bash :results silent
+
+   #+end_src
+
+2. Check with =ls -l= on the shellthat the file was created:
+   #+begin_src bash :results output :exports both
+
+   #+end_src
+
+3. Using =head= on the shell, look at the first couple of lines of the
+   file to ascertain that the data have a header:
+   #+begin_src bash :results output :exports both
+
+   #+end_src
+
+4. Import the data into a =pandas= data frame using =pd.read_csv=, save it
+   to =df= and print the data:
+   #+begin_src python :results output :session *Python* :python python3 :exports both
+
+   #+end_src
+
+5. Save the first 12 rows of the data frame to =df2=
+    #+begin_src python :results output :session *Python* :python python3 :exports both
+
+    #+end_src
+
+6. Plot maximum temperature against the date:
+   #+begin_src python :file seattle.png :results file graphics output :session *Python* :python python3 :exports both
+
+   #+end_src
+
+7. Hard to read! Turn the x-axis labels, tighten the layout:
+   #+begin_src python :file seattle2.png :results file graphics output :session *Python* :python python3 :exports both
+
+   #+end_src
+
+8. Add a second plot with the minimum temperatures:
+   #+begin_src python :file seattle3.png :results file graphics output :session *Python* :python python3 :exports both
+
+   #+end_src
+
+9. Add a suitable title, x- and y-labels, a legend, different markers
+   and colors, a legend and a grid:
+   #+begin_src python :file seattle4.png :results file graphics output :session *Python* :python python3 :exports both
+
+   #+end_src
+
+10. Put the two plots next to one another instead of on top of one
+    another:
+    #+begin_src python :file :results file graphics output :session *Python* :python python3 :exports both
+
+    #+end_src
