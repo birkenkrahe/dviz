@@ -246,6 +246,9 @@ scatterplots to summarize the data frame.
     plot(data=ToothGrowth, len ~ supp)
   #+end_src
 
+  #+RESULTS:
+  [[file:tg.png]]
+
 * Base graphics plot functions
 
 - Base graphics is the system originally built into the R language
@@ -255,7 +258,7 @@ scatterplots to summarize the data frame.
 - Examples: ~abline~, ~lines~, ~points~, ~text~, ~legend~ etc.
 
 #+name: tab:graphicsfunctions
-| FUNCTION      | OBJECT TYPE            | NATURE OF PLOT[fn:1]         |
+| FUNCTION      | OBJECT TYPE            | NATURE OF PLOT[fn:1]   |
 |---------------+------------------------+------------------------|
 | ~plot~          | Many                   | Depends on object type |
 | ~barplot~       | Numeric                | Bar plot               |
@@ -283,7 +286,7 @@ scatterplots to summarize the data frame.
 
 - More info: [[https://www.stat.auckland.ac.nz/~paul/grid/grid.html#downloaddocs][Paul Murrell's documents]]
 
-#+attr_html: :width 500px
+#+attr_html: :width 600px
 [[../img/grid2.png]]
 
 * ~grid~ graphics example
@@ -301,6 +304,9 @@ scatterplots to summarize the data frame.
          ylab="Calories")
     title("UScereal calories vs. sugars")
   #+end_src
+
+  #+RESULTS:
+  [[file:../img/3_cereal.png]]
 
 - Scatterplot with ~grid~ package:
   #+begin_src R :exports both :results output graphics file :file ../img/3_grid.png

@@ -2609,6 +2609,7 @@ Now the plot
    #+RESULTS:
    [[file:axes.png]]
 
+
 ** NEXT WE MEET ON FRIDAY BUT THERE WILL BE NO CLASS ON MONDAY
 #+attr_html: :width 600px:
 [[../img/zwei_maenner.jpeg]]
@@ -2660,10 +2661,10 @@ this way you'll learn Python and visualization with Python, for free!
      plt.clf()
      fig, ax = plt.subplots()
      ax.plot(data,
-             marker='o',
-             linestyle='--',
-             color='red')
-     plt.savefig("axes.png")
+             marker='v',   # R: pch
+             linestyle='--', # R: lty
+             color='r') # R: col
+     plt.savefig("axes2.png")
    #+end_src
 
    #+RESULTS:
@@ -2679,7 +2680,7 @@ this way you'll learn Python and visualization with Python, for free!
      # add title and axis labels using the state-based interface
      plt.xlabel("Random numbers")
      plt.ylabel("Random values")
-     plt.title("Random number plot (pyplot customization)")
+     plt.title("Random number plot (state-based customization)")
      # save plot
      plt.savefig("axes3.png")
    #+end_src
@@ -2700,9 +2701,6 @@ this way you'll learn Python and visualization with Python, for free!
      # save plot
      plt.savefig("axes3.png")
    #+end_src
-
-   #+RESULTS:
-   [[file:axes4.png]]
 
 4. How do you plot two graphs on top of one another?
    #+begin_src python :file overplot.png :results file graphics output :session *Python* :python python3 :exports both
@@ -2750,41 +2748,92 @@ this way you'll learn Python and visualization with Python, for free!
    #+RESULTS:
    [[file:subplots.png]]
 
-
 ** TODO Exercise: Plotting in Python
 
 1. Using =wget= on the shell, download Seattle weather data:
    [[https://tinyurl.com/seattle-weather-csv][tinyurl.com/seattle-weather-csv]].
    #+begin_src bash :results silent
-
+     wget -O weather.csv tinyurl.com/seattle-weather2-csv
    #+end_src
 
-2. Check with =ls -l= on the shellthat the file was created:
+2. Check with =ls -l= on the shell that the file was created:
    #+begin_src bash :results output :exports both
-
+     ls -l weather.csv
    #+end_src
+
+   #+RESULTS:
+   : -rw-rw-r-- 1 marcus marcus 761976 Oct 18 15:44 weather.csv
 
 3. Using =head= on the shell, look at the first couple of lines of the
    file to ascertain that the data have a header:
    #+begin_src bash :results output :exports both
-
+     head --lines=2 weather.csv
    #+end_src
+
+   #+RESULTS:
+   : "DATE","PRCP","TMAX","TMIN","RAIN"
+   : "1948-01-01",0.47,51,42,"TRUE"
 
 4. Import the data into a =pandas= data frame using =pd.read_csv=, save it
    to =df= and print the data:
    #+begin_src python :results output :session *Python* :python python3 :exports both
-
+     import pandas as pd
+     df = pd.read_csv("weather.csv")
+     print(df)
    #+end_src
+
+   #+RESULTS:
+   #+begin_example
+                DATE  PRCP  TMAX  TMIN   RAIN
+   0      1948-01-01  0.47    51    42   True
+   1      1948-01-02  0.59    45    36   True
+   2      1948-01-03  0.42    45    35   True
+   3      1948-01-04  0.31    45    34   True
+   4      1948-01-05  0.17    45    32   True
+   ...           ...   ...   ...   ...    ...
+   25546  2017-12-10  0.00    49    34  False
+   25547  2017-12-11  0.00    49    29  False
+   25548  2017-12-12  0.00    46    32  False
+   25549  2017-12-13  0.00    48    34  False
+   25550  2017-12-14  0.00    50    36  False
+
+   [25551 rows x 5 columns]
+   #+end_example
 
 5. Save the first 12 rows of the data frame to =df2=
     #+begin_src python :results output :session *Python* :python python3 :exports both
-
+      df2 = df.head(n=12)   # in R: head(df, n=12)
+      print(df2)
     #+end_src
+
+    #+RESULTS:
+    #+begin_example
+              DATE  PRCP  TMAX  TMIN   RAIN
+    0   1948-01-01  0.47    51    42   True
+    1   1948-01-02  0.59    45    36   True
+    2   1948-01-03  0.42    45    35   True
+    3   1948-01-04  0.31    45    34   True
+    4   1948-01-05  0.17    45    32   True
+    5   1948-01-06  0.44    48    39   True
+    6   1948-01-07  0.41    50    40   True
+    7   1948-01-08  0.04    48    35   True
+    8   1948-01-09  0.12    50    31   True
+    9   1948-01-10  0.74    43    34   True
+    10  1948-01-11  0.01    42    32   True
+    11  1948-01-12  0.00    41    26  False
+    #+end_example
 
 6. Plot maximum temperature against the date:
    #+begin_src python :file seattle.png :results file graphics output :session *Python* :python python3 :exports both
-
+     fig,ax=plt.subplots()
+     ax.plot(df2["DATE"], df2["TMAX"])
+     plt.xticks(rotation=45, ha='right')
+     plt.tight_layout()
+     plt.savefig("seattle.png")     
    #+end_src
+
+   #+RESULTS:
+   [[file:seattle.png]]
 
 7. Hard to read! Turn the x-axis labels, tighten the layout:
    #+begin_src python :file seattle2.png :results file graphics output :session *Python* :python python3 :exports both
