@@ -2715,6 +2715,9 @@ this way you'll learn Python and visualization with Python, for free!
      wget -O seattle_weather.csv tinyurl.com/seattle-weather-csv
      ls -l seattle_weather.csv
    #+end_src
+
+   #+RESULTS:
+   : -rw-rw-r-- 1 aletheia aletheia 9122 Oct 18 13:36 seattle_weather.csv
    
 2. Look at the first couple of lines of the file to ascertain that the
    data have a header:

@@ -234,8 +234,12 @@ scatterplots to summarize the data frame.
 
 - Let's plot it.
   #+begin_src R :exports both :session :results output graphics file :file ../img/3_calories.png :exports both
+    library(MASS)
     plot(data=UScereal, calories ~ sugars)
   #+end_src
+
+  #+RESULTS:
+  [[file:../img/3_calories.png]]
 
 - You must be careful which variables you're trying to plot:
   #+begin_src R :file tg.png :session *R* :results file graphics output :exports both
@@ -315,6 +319,9 @@ scatterplots to summarize the data frame.
     popViewport(2)
   #+end_src
 
+  #+RESULTS:
+  [[file:../img/3_grid.png]]
+
 * ~lattice~ graphics
 
 - Based on grid graphics, shipped with base R (needs to be loaded)
@@ -333,7 +340,7 @@ scatterplots to summarize the data frame.
 
   #+RESULTS:
   #+begin_example
-  'data.frame': 65 obs. of  11 variables:
+  'data.frame':	65 obs. of  11 variables:
    $ mfr      : Factor w/ 6 levels "G","K","N","P",..: 3 2 2 1 2 1 6 4 5 1 ...
    $ calories : num  212 212 100 147 110 ...
    $ protein  : num  12.12 12.12 8 2.67 2 ...
@@ -369,7 +376,7 @@ scatterplots to summarize the data frame.
 
   #+RESULTS:
   #+begin_example
-  'data.frame': 93 obs. of  27 variables:
+  'data.frame':	93 obs. of  27 variables:
    $ Manufacturer      : Factor w/ 32 levels "Acura","Audi",..: 1 1 2 2 3 4 4 4 4 5 ...
    $ Model             : Factor w/ 93 levels "100","190E","240",..: 49 56 9 1 6 24 54 74 73 35 ...
    $ Type              : Factor w/ 6 levels "Compact","Large",..: 4 3 1 3 3 3 2 2 3 2 ...
@@ -408,9 +415,9 @@ scatterplots to summarize the data frame.
   #+RESULTS:
   [[file:../img/lattice.png]]
 
-- You can ~group~ variables and get an automatic legend per group
+- You can ~group~ variables and get an automatic legend per group.
 
-- Price to be paid: simple annotations are harder to do than base R
+- Price to be paid: simple annotations are harder to do than base R.
 
 * Grammar of graphics with ~ggplot2~
 
