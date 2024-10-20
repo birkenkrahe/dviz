@@ -2428,7 +2428,7 @@ Now the plot
 - [ ] The Grammar of Graphics (gg).
 - [ ] Working with R and Python in parallel.
 
-** DONE Review: Plotting with =matplotlib.pyplot=
+** Review: Plotting with =matplotlib.pyplot=
 
 1. Why are we using the =pyplot= submodule?
    #+begin_quote
@@ -2610,7 +2610,7 @@ Now the plot
    [[file:axes.png]]
 
 
-** NEXT WE MEET ON FRIDAY BUT THERE WILL BE NO CLASS ON MONDAY
+** WE MEET ON FRIDAY BUT THERE WILL BE NO CLASS ON MONDAY
 #+attr_html: :width 600px:
 [[../img/zwei_maenner.jpeg]]
 
@@ -2626,7 +2626,7 @@ tinyurl.com/graphics-practice-org - don't forget your R skills!
 Next week: Python plotting lab with practice file.
 
 
-** TODO Graphics: Alternative Packages
+** Graphics: Alternative Packages
 #+attr_html: :width 700px:
 [[../img/execution_of_robespierre.jpg]]
 
@@ -2635,7 +2635,7 @@ live the National Convention, which through its energy and vigilance
 has delivered the Republic from its tyrants."
 
 
-** TODO Review: Plotting with =subplots=
+** Review: Plotting with =subplots=
 
 /Tip: Don't wait with the DataCamp lessons to the last moment./ To learn
 anything from them, you must work through the examples on your own. In
@@ -2748,7 +2748,8 @@ this way you'll learn Python and visualization with Python, for free!
    #+RESULTS:
    [[file:subplots.png]]
 
-** TODO Exercise: Plotting in Python
+
+** IN PROGRESS Exercise: Plotting in Python
 
 1. Using =wget= on the shell, download Seattle weather data:
    [[https://tinyurl.com/seattle-weather-csv][tinyurl.com/seattle-weather-csv]].
@@ -2856,3 +2857,14 @@ this way you'll learn Python and visualization with Python, for free!
     #+begin_src python :file :results file graphics output :session *Python* :python python3 :exports both
 
     #+end_src
+
+* Week 10
+
+** Project: 2nd sprint review with NotebookLM/podcasts
+#+attr_html: :width 600px: 
+[[../img/litreview.png]]
+
+- Very interesting results! Not everybody understood how the
+  application works. You've been sent feedback via Team Chat.
+
+ - What did you learn from this exercise? Did it help at all?
