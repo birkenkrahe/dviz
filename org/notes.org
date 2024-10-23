@@ -2864,7 +2864,7 @@ this way you'll learn Python and visualization with Python, for free!
 #+attr_html: :width 600px: 
 [[../img/litreview.png]]
 
-- Very interesting results! Not everybody understood how the
-  application works. You've been sent feedback via Team Chat.
-
- - What did you learn from this exercise? Did it help at all?
+- You'll get feedback some time this week.
+- Remember that there is no 2-for-1 (every team must submit).
+- The feedback will be a note in your NotebookLM dashboard.
+- The next sprint review is on November 15 (abstract + results).
