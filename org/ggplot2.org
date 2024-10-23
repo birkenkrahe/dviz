@@ -1,0 +1,359 @@
+#+TITLE:  DataCamp Review: introduction to data visualization with ggplot2
+#+AUTHOR: Marcus Birkenkrahe (pledged)
+#+Subtitle: Introduction to Data Visualization
+#+STARTUP: hideblocks overview indent inlineimages
+#+PROPERTY: header-args:R :exports both :results output :session *R*
+* README
+
+- Review of the 1st chapter of the DataCamp course
+- Add your name and ~(pledged)~ in the ~#+AUTHOR:~ meta headline
+- When you've completed the file, submit it in Canvas
+
+* Identify yourself
+
+1) Add your name and ~(pledged)~ at the top
+2) Run the ~#+PROPERTY~ and ~#+STARTUP~ lines with ~C-c C-c~
+3) You should open the R session in the same directory as this file
+4) To check, run ~getwd()~ in the R console window
+
+Check that we have an R console:
+#+begin_src R
+  "hello good afternoon"
+#+end_src   
+
+#+RESULTS:
+: [1] "hello good afternoon"
+   
+* TODO Answer conceptual questions about =ggplot2= and base R
+
+- What is the requirement for the DataCamp course "[[https://app.datacamp.com/learn/courses/introduction-to-data-visualization-with-ggplot2][Introduction to
+  Data Visualization with ggplot2]]", and where can you find this
+  information?
+  #+begin_quote
+  The prerequisite for this course is "Introduction to the Tidyverse"
+  #+end_quote
+  
+- What is the "[[https://www.tidyverse.org/][Tidyverse]]"?
+  #+begin_quote
+   "This is an introduction to the programming language R, focused on
+   a powerful set of tools known as the Tidyverse..." more at
+   tidyverse.org.
+  #+end_quote
+
+- What are the layers of the 'Grammar of Graphics'?
+  #+begin_quote
+  It's a graphics framework used to design =ggplot2=. Its layers:
+  1) Data (dataset)
+  2) Aesthetics (which data do you want to plot?)
+  3) Geometries (what type of plot do I want?)
+  4) Facets (how many panels of plots do you want?)
+  5) Statistics (what do the data have to tell us?)
+  6) Coordinates (do I want transform the data?)
+  7) Theme (what look do I want for my plot?)
+  #+end_quote
+
+- What are some examples for these elements in ~ggplot2~?
+  #+begin_quote
+  - =aes()=
+  - =geom_point=
+  - =theme_minimal=
+  - ..
+  #+end_quote
+
+- Can you save a ~ggplot2~ plot as an R object?
+  #+begin_src R :file gg.png :session *R* :results file graphics 
+    ## Save a ggplot histogram of `Nile` to an R object `g` and print it
+    library(ggplot2)
+    ggplot(
+      data = data.frame(Nile),
+      aes(Nile)) +
+      geom_histogram() -> gg
+    gg
+  #+end_src
+
+  #+RESULTS:
+  [[file:gg.png]]
+
+- Look at the structure of this =ggplot2= object:
+  #+begin_src R
+    attributes(gg)
+    str(gg)
+  #+end_src  
+
+  #+RESULTS:
+  #+begin_example
+  $names
+  [1] "data"        "layers"      "scales"      "mapping"     "theme"       "coordinates" "facet"      
+  [8] "plot_env"    "labels"     
+
+  $class
+  [1] "gg"     "ggplot"
+  List of 9
+   $ data       :'data.frame':	100 obs. of  1 variable:
+    ..$ Nile: Time-Series [1:100] from 1871 to 1970: 1120 1160 963 1210 1160 1160 813 1230 1370 1140 ...
+   $ layers     :List of 1
+    ..$ :Classes 'LayerInstance', 'Layer', 'ggproto', 'gg' <ggproto object: Class LayerInstance, Layer, gg>
+      aes_params: list
+      compute_aesthetics: function
+      compute_geom_1: function
+      compute_geom_2: function
+      compute_position: function
+      compute_statistic: function
+      computed_geom_params: list
+      computed_mapping: uneval
+      computed_stat_params: list
+      constructor: call
+      data: waiver
+      draw_geom: function
+      finish_statistics: function
+      geom: <ggproto object: Class GeomBar, GeomRect, Geom, gg>
+          aesthetics: function
+          default_aes: uneval
+          draw_group: function
+          draw_key: function
+          draw_layer: function
+          draw_panel: function
+          extra_params: just na.rm orientation
+          handle_na: function
+          non_missing_aes: xmin xmax ymin ymax
+          optional_aes: 
+          parameters: function
+          rename_size: TRUE
+          required_aes: x y
+          setup_data: function
+          setup_params: function
+          use_defaults: function
+          super:  <ggproto object: Class GeomRect, Geom, gg>
+      geom_params: list
+      inherit.aes: TRUE
+      layer_data: function
+      map_statistic: function
+      mapping: NULL
+      position: <ggproto object: Class PositionStack, Position, gg>
+          compute_layer: function
+          compute_panel: function
+          fill: FALSE
+          required_aes: 
+          reverse: FALSE
+          setup_data: function
+          setup_params: function
+          type: NULL
+          vjust: 1
+          super:  <ggproto object: Class Position, gg>
+      print: function
+      setup_layer: function
+      show.legend: NA
+      stat: <ggproto object: Class StatBin, Stat, gg>
+          aesthetics: function
+          compute_group: function
+          compute_layer: function
+          compute_panel: function
+          default_aes: uneval
+          dropped_aes: weight
+          extra_params: na.rm orientation
+          finish_layer: function
+          non_missing_aes: 
+          optional_aes: 
+          parameters: function
+          required_aes: x|y
+          retransform: TRUE
+          setup_data: function
+          setup_params: function
+          super:  <ggproto object: Class Stat, gg>
+      stat_params: list
+      super:  <ggproto object: Class Layer, gg> 
+   $ scales     :Classes 'ScalesList', 'ggproto', 'gg' <ggproto object: Class ScalesList, gg>
+      add: function
+      clone: function
+      find: function
+      get_scales: function
+      has_scale: function
+      input: function
+      n: function
+      non_position_scales: function
+      scales: list
+      super:  <ggproto object: Class ScalesList, gg> 
+   $ mapping    :List of 1
+    ..$ x: language ~Nile
+    .. ..- attr(*, ".Environment")=<environment: R_GlobalEnv> 
+    ..- attr(*, "class")= chr "uneval"
+   $ theme      : list()
+   $ coordinates:Classes 'CoordCartesian', 'Coord', 'ggproto', 'gg' <ggproto object: Class CoordCartesian, Coord, gg>
+      aspect: function
+      backtransform_range: function
+      clip: on
+      default: TRUE
+      distance: function
+      expand: TRUE
+      is_free: function
+      is_linear: function
+      labels: function
+      limits: list
+      modify_scales: function
+      range: function
+      render_axis_h: function
+      render_axis_v: function
+      render_bg: function
+      render_fg: function
+      setup_data: function
+      setup_layout: function
+      setup_panel_guides: function
+      setup_panel_params: function
+      setup_params: function
+      train_panel_guides: function
+      transform: function
+      super:  <ggproto object: Class CoordCartesian, Coord, gg> 
+   $ facet      :Classes 'FacetNull', 'Facet', 'ggproto', 'gg' <ggproto object: Class FacetNull, Facet, gg>
+      compute_layout: function
+      draw_back: function
+      draw_front: function
+      draw_labels: function
+      draw_panels: function
+      finish_data: function
+      init_scales: function
+      map_data: function
+      params: list
+      setup_data: function
+      setup_params: function
+      shrink: TRUE
+      train_scales: function
+      vars: function
+      super:  <ggproto object: Class FacetNull, Facet, gg> 
+   $ plot_env   :<environment: R_GlobalEnv> 
+   $ labels     :List of 3
+    ..$ x     : chr "Nile"
+    ..$ y     : chr "count"
+    .. ..- attr(*, "fallback")= logi TRUE
+    ..$ weight: chr "weight"
+    .. ..- attr(*, "fallback")= logi TRUE
+   - attr(*, "class")= chr [1:2] "gg" "ggplot"
+  #+end_example
+  
+- Can you save a ~base R~ plot as an R object?
+  #+begin_src R :file hist.png :session *R* :results file graphics 
+    ## Save a base R histogram of `Nile` to an R object `h` and print it
+    
+  #+end_src
+
+  #+begin_src R :file hist.png :session *R* :results file graphics 
+    ## Save a base R line plot of `Nile` to an R object `p` and print it
+    
+  #+end_src
+
+  #+begin_src R
+    ## Print the `attributes` and the `str`[ucture] of the histogram `h`
+    
+  #+end_src
+
+- Can you combine ~ggplot2~ and ~base R~ graphics in one plot array?
+  #+begin_quote
+
+  #+end_quote
+
+* TODO Create simple scatterplots with =ggplot2= and base R
+
+We're going to work with ~MASS::mammals~ using ~ggplot2~ and ~base R~.
+
+1) Load the relevant packages.
+
+   #+begin_src R :results silent
+
+
+   #+end_src
+
+2) Show the data structure of ~mammals~.
+
+   #+begin_src R
+
+   #+end_src
+
+3) Create a scatterplot of ~brain~ vs ~body~ of the ~mammals~ data set in
+   ~ggplot2~.
+
+   #+begin_src R :results graphics file :file mammals_gg.png
+
+   #+end_src
+
+4) Create a scatterplot of ~brain~ vs ~body~ of the ~mammals~ data set in
+   ~base R~.
+
+   #+begin_src R :results graphics file :file mammals.png
+
+   #+end_src
+
+* TODO Transform plots
+
+1) What's the problem with these plots and what could you do about it?
+
+   #+begin_quote
+   *The problem:* ...
+
+   *The solution:* ...
+   #+end_quote
+
+2) Implement the solution with ~plot~.
+   #+begin_src R :results graphics file :file mammals1.png
+     
+   #+end_src
+
+3) Implement the solution with ~ggplot~ - save the plot as ~gg~ for later,
+   and print it.
+   #+begin_src R :results graphics file :file ./img/mammals1_gg.png
+     # get the solution via chat from me
+   #+end_src
+
+4) What does the ~geom_point~ argument ~alpha~ do?
+
+   #+begin_quote
+   Answer: ...
+   #+end_quote
+   
+* TODO Create trendlines
+
+1) Create a linear trendline for the ~ggplot2~ plot ~gg~. Inside the
+   smoothing geometry, use ~method="lm"~ to fix the model.
+
+   #+begin_src R :results graphics file :file mammalslog_gg_lm.png
+
+   #+end_src
+
+2) Create a linear model in ~base R~ using ~lm~ and
+   ~data-log10(mammals)~. Save it as ~line~ and print it.
+
+   #+begin_src R
+
+   #+end_src
+
+3) Create a trendline plot in ~base R~ using the linear model. The line
+   should be red, dashed and double wide.
+
+   #+begin_src R :results graphics file :file mammals_lm.png
+
+   #+end_src
+
+* TODO Map 'aesthetics' to variables
+
+Recall that the ~mtcars~ data frame lists the characteristics mileage
+(~mpg~), weight (~wt~) and number of cylinders (~cyl~) as ~numeric~ variables.
+
+1) Create a ~ggplot~ of mileage vs. weight using ~ggplot2~, save it as ~gg~
+   and print it.
+
+   #+begin_src R :results graphics file :file mtcars_gg_aes.png
+
+   #+end_src
+
+2) Create a scatterplot where the color 'aesthetic' is mapped to the
+   number of cylinders by adding a 'geometry' to ~gg~.
+
+   #+begin_src R :results graphics file :file mtcars_gg_col.png
+
+   #+end_src
+
+3) What's the difference between mapping 'aesthetics' inside the
+   'geometry' or inside the ~ggplot~ function?
+
+   #+begin_quote
+   Answer: ...
+   #+end_quote
+   
