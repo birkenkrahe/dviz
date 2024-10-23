@@ -8,7 +8,6 @@
 - Review of the 1st chapter of the DataCamp course
 - Add your name and ~(pledged)~ in the ~#+AUTHOR:~ meta headline
 - When you've completed the file, submit it in Canvas
-- You'll get solutions after the deadline has passed
 
 * TODO Identify yourself
 
@@ -17,24 +16,59 @@
 3) You should open the R session in the same directory as this file
 4) To check, run ~getwd()~ in the R console window
 
-* TODO Answer conceptual questions
+* TODO Answer conceptual questions about =ggplot2= and base R
 
-- What is the requirement for this course and where can you find this
+- What is the requirement for the DataCamp course "[[https://app.datacamp.com/learn/courses/introduction-to-data-visualization-with-ggplot2][Introduction to
+  Data Visualization with ggplot2]]", and where can you find this
   information?
+  #+begin_quote
+
+  #+end_quote
   
-- What is the "Tidyverse"?
+- What is the "[[https://www.tidyverse.org/][Tidyverse]]"?
+  #+begin_quote
+
+  #+end_quote
 
 - What are the layers of the 'Grammar of Graphics'?
+  #+begin_quote
+
+  #+end_quote
 
 - What are some examples for these elements in ~ggplot2~?
+  #+begin_quote
+
+  #+end_quote
 
 - Can you save a ~ggplot2~ plot as an R object?
+  #+begin_src R :file gg.png :session *R* :results file graphics 
+    ## Save a ggplot histogram of `Nile` to an R object `g` and print it
 
+  #+end_src
+
+  
 - Can you save a ~base R~ plot as an R object?
+  #+begin_src R :file hist.png :session *R* :results file graphics 
+    ## Save a base R histogram of `Nile` to an R object `h` and print it
+    
+  #+end_src
+
+  #+begin_src R :file hist.png :session *R* :results file graphics 
+    ## Save a base R line plot of `Nile` to an R object `p` and print it
+    
+  #+end_src
+
+  #+begin_src R
+    ## Print the `attributes` and the `str`[ucture] of the histogram `h`
+    
+  #+end_src
 
 - Can you combine ~ggplot2~ and ~base R~ graphics in one plot array?
+  #+begin_quote
 
-* TODO Create simple scatterplots
+  #+end_quote
+
+* TODO Create simple scatterplots with =ggplot2= and base R
 
 We're going to work with ~MASS::mammals~ using ~ggplot2~ and ~base R~.
 
