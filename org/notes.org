@@ -2416,6 +2416,7 @@ Now the plot
   wdtest.org
   #+end_example
 
+
 * Week 9 - Alternative R graphics packages / Python plotting with =subplots=
 #+attr_html: :width 600px:
 [[../img/leonardo.jpg]]
@@ -2633,7 +2634,6 @@ Next week: Python plotting lab with practice file.
 /Image: 1794 Infographic - Execution of the Tyrant Robespierre/: "Long
 live the National Convention, which through its energy and vigilance
 has delivered the Republic from its tyrants."
-
 
 ** Review: Plotting with =subplots=
 
@@ -2948,7 +2948,8 @@ this way you'll learn Python and visualization with Python, for free!
     #+RESULTS:
     [[file:seattle6.png]]
     
-* Week 10 - Grammar of graphics plotting lab / 
+
+* Week 10 - Grammar of graphics plotting lab
 #+attr_html: :width 700px: 
 [[../img/helgoland.jpg]]
 
@@ -2961,7 +2962,7 @@ this way you'll learn Python and visualization with Python, for free!
 - [ ] Next DataCamp lesson due: Stats with =matplotlib=
 - [ ] Next week: The =plotly= package & quiz 8 (DataCamp and ggplot2)
 
-* DONE Graphics practice (failed? Again? Also?)
+** Graphics practice (failed? Again? Also?)
 #+attr_html: :width 400px:
 [[../img/plotting_practice.png]]
 
@@ -2971,7 +2972,7 @@ this way you'll learn Python and visualization with Python, for free!
 - Check your solutions with the PDF and/or my video.
 - Remember to keep up your DataCamp practice!
 
-* DONE Project: 2nd sprint review with NotebookLM/podcasts
+** Project: 2nd sprint review with NotebookLM/podcasts
 #+attr_html: :width 600px: 
 [[../img/litreview.png]]
 
@@ -2980,7 +2981,7 @@ this way you'll learn Python and visualization with Python, for free!
 - The feedback will be a note in your NotebookLM dashboard.
 - The next sprint review is on November 15 (abstract + results).
 
-* IN PROGRESS DataCamp review: Grammar of Graphics lab
+** IN PROGRESS DataCamp review: Grammar of Graphics lab
 
 - [X] Conceptual comparison =ggplot2= vs. base R
 - [ ] Creating simple scatterplots
@@ -3004,3 +3005,13 @@ Open Emacs on =ggplot2.org= with
 
 Let's work through the questions together.
 
+
+* Week 11: Base R Plotting [Oct 28]
+
+* Week 12: Package =plotly= & Dashboard Design [Nov 4]
+
+* Week 13: Advanced Customization & Project review [Nov 11]
+
+* Week 14: Power BI [Nov 25]
+
+* Week 15: Final presentations [Dec 2]
