@@ -2948,7 +2948,6 @@ this way you'll learn Python and visualization with Python, for free!
     #+RESULTS:
     [[file:seattle6.png]]
     
-
 * Week 10 - Grammar of graphics plotting lab / 
 #+attr_html: :width 700px: 
 [[../img/helgoland.jpg]]
@@ -2962,7 +2961,7 @@ this way you'll learn Python and visualization with Python, for free!
 - [ ] Next DataCamp lesson due: Stats with =matplotlib=
 - [ ] Next week: The =plotly= package & quiz 8 (DataCamp and ggplot2)
 
-* Graphics practice (failed? Again? Also?)
+* DONE Graphics practice (failed? Again? Also?)
 #+attr_html: :width 400px:
 [[../img/plotting_practice.png]]
 
@@ -2972,7 +2971,7 @@ this way you'll learn Python and visualization with Python, for free!
 - Check your solutions with the PDF and/or my video.
 - Remember to keep up your DataCamp practice!
 
-* Project: 2nd sprint review with NotebookLM/podcasts
+* DONE Project: 2nd sprint review with NotebookLM/podcasts
 #+attr_html: :width 600px: 
 [[../img/litreview.png]]
 
@@ -2981,8 +2980,9 @@ this way you'll learn Python and visualization with Python, for free!
 - The feedback will be a note in your NotebookLM dashboard.
 - The next sprint review is on November 15 (abstract + results).
 
-* DataCamp review: Grammar of Graphics lab
+* IN PROGRESS DataCamp review: Grammar of Graphics lab
 
+- [X] Conceptual comparison =ggplot2= vs. base R
 - [ ] Creating simple scatterplots
 - [ ] Transform plots
 - [ ] Create trendlines
@@ -2996,8 +2996,6 @@ Download [[https://tinyurl.com/ggplot2-review-org][tinyurl.com/ggplot2-review-or
 
 #+RESULTS:
 : -rw-rw-r-- 1 marcus marcus 4597 Oct 23 15:30 ggplot2.org
-
-
 
 Open Emacs on =ggplot2.org= with
 #+begin_example sh
