@@ -24,7 +24,7 @@ Check that we have an R console:
 #+RESULTS:
 : [1] "hello good afternoon"
    
-* TODO Answer conceptual questions about =ggplot2= and base R
+* DONE Answer conceptual questions about =ggplot2= and base R
 
 - What is the requirement for the DataCamp course "[[https://app.datacamp.com/learn/courses/introduction-to-data-visualization-with-ggplot2][Introduction to
   Data Visualization with ggplot2]]", and where can you find this
@@ -232,80 +232,147 @@ Check that we have an R console:
 - Can you save a ~base R~ plot as an R object?
   #+begin_src R :file hist.png :session *R* :results file graphics 
     ## Save a base R histogram of `Nile` to an R object `h` and print it
-    
+    hist(Nile) -> h
+    h
   #+end_src
+
+  #+RESULTS:
+  [[file:hist.png]]
 
   #+begin_src R :file hist.png :session *R* :results file graphics 
     ## Save a base R line plot of `Nile` to an R object `p` and print it
-    
+    plot(Nile) -> p
+    p
   #+end_src
+
+  #+RESULTS:
+  [[file:hist.png]]
 
   #+begin_src R
     ## Print the `attributes` and the `str`[ucture] of the histogram `h`
-    
+    str(h)
+    attributes(h)
   #+end_src
+
+  #+RESULTS:
+  #+begin_example
+  List of 6
+   $ breaks  : int [1:11] 400 500 600 700 800 900 1000 1100 1200 1300 ...
+   $ counts  : int [1:10] 1 0 5 20 25 19 12 11 6 1
+   $ density : num [1:10] 0.0001 0 0.0005 0.002 0.0025 0.0019 0.0012 0.0011 0.0006 0.0001
+   $ mids    : num [1:10] 450 550 650 750 850 950 1050 1150 1250 1350
+   $ xname   : chr "Nile"
+   $ equidist: logi TRUE
+   - attr(*, "class")= chr "histogram"
+  $names
+  [1] "breaks"   "counts"   "density"  "mids"     "xname"    "equidist"
+
+  $class
+  [1] "histogram"
+  #+end_example
 
 - Can you combine ~ggplot2~ and ~base R~ graphics in one plot array?
   #+begin_quote
-
+  Answer: No. Base R and ggplot2 graphics are complete different.
+  In base R, plots are created by opening and closing graphics devices.
+  In ggplot2, plots are layered R objects.
   #+end_quote
 
-* TODO Create simple scatterplots with =ggplot2= and base R
+- Graphics devices:
+  #+begin_src R
+    dev.off()
+  #+end_src
+
+  #+RESULTS:
+  : Error in dev.off() : cannot shut down device 1 (the null device)
+
+* DONE Create simple scatterplots with =ggplot2= and base R
 
 We're going to work with ~MASS::mammals~ using ~ggplot2~ and ~base R~.
 
 1) Load the relevant packages.
 
-   #+begin_src R :results silent
-
-
+   #+begin_src R :results output
+     library(MASS)
+     library(ggplot2)
+     search()
    #+end_src
+
+   #+RESULTS:
+   :  [1] ".GlobalEnv"        "package:MASS"      "package:ggplot2"   "ESSR"              "package:stats"    
+   :  [6] "package:graphics"  "package:grDevices" "package:utils"     "package:datasets"  "package:methods"  
+   : [11] "Autoloads"         "package:base"
 
 2) Show the data structure of ~mammals~.
 
    #+begin_src R
-
+     str(mammals)
    #+end_src
+
+   #+RESULTS:
+   : 'data.frame':	62 obs. of  2 variables:
+   :  $ body : num  3.38 0.48 1.35 465 36.33 ...
+   :  $ brain: num  44.5 15.5 8.1 423 119.5 ...
 
 3) Create a scatterplot of ~brain~ vs ~body~ of the ~mammals~ data set in
    ~ggplot2~.
 
    #+begin_src R :results graphics file :file mammals_gg.png
-
+     ggplot(data=mammals, aes(x=body,y=brain)) +
+       geom_point()
    #+end_src
+
+   #+RESULTS:
+   [[file:mammals_gg.png]]
 
 4) Create a scatterplot of ~brain~ vs ~body~ of the ~mammals~ data set in
    ~base R~.
 
    #+begin_src R :results graphics file :file mammals.png
-
+     plot(mammals,las=1)
    #+end_src
+
+   #+RESULTS:
+   [[file:mammals.png]]
 
 * TODO Transform plots
 
 1) What's the problem with these plots and what could you do about it?
 
    #+begin_quote
-   *The problem:* ...
+   *The problem:* The data points are too bunched up because there are some
+   extreme outliers (brain/body ratio of some animals is very large).
 
-   *The solution:* ...
+   *The solution:* Transform both axes logarithmically!
    #+end_quote
 
 2) Implement the solution with ~plot~.
    #+begin_src R :results graphics file :file mammals1.png
-     
+     plot(log10(mammals))  # x -> log(x,base = 10)
    #+end_src
+
+   #+RESULTS:
+   [[file:mammals1.png]]
 
 3) Implement the solution with ~ggplot~ - save the plot as ~gg~ for later,
    and print it.
-   #+begin_src R :results graphics file :file ./img/mammals1_gg.png
-     # get the solution via chat from me
+   #+begin_src R :results graphics file :file mammals1_gg.png
+     ggplot(
+       data=mammals,
+       aes(x=body,y=brain)) +
+       geom_point(alpha=0.6) +   # alpha specifies point transparency
+       coord_fixed() +    
+       scale_x_log10() +
+       scale_y_log10() -> gg
    #+end_src
+
+   #+RESULTS:
+   [[file:mammals1_gg.png]]
 
 4) What does the ~geom_point~ argument ~alpha~ do?
 
    #+begin_quote
-   Answer: ...
+   Answer: alpha reduces the transparency by 40% (factor 0.6)
    #+end_quote
    
 * TODO Create trendlines
@@ -314,22 +381,40 @@ We're going to work with ~MASS::mammals~ using ~ggplot2~ and ~base R~.
    smoothing geometry, use ~method="lm"~ to fix the model.
 
    #+begin_src R :results graphics file :file mammalslog_gg_lm.png
-
+     gg +
+       geom_smooth(method="lm") # create a linear regression trendline
    #+end_src
+
+   #+RESULTS:
+   [[file:mammalslog_gg_lm.png]]
 
 2) Create a linear model in ~base R~ using ~lm~ and
    ~data-log10(mammals)~. Save it as ~line~ and print it.
 
    #+begin_src R
-
+     lm(brain ~ body, data=log10(mammals)) -> line
+     line
    #+end_src
+
+   #+RESULTS:
+   : 
+   : Call:
+   : lm(formula = brain ~ body, data = log10(mammals))
+   : 
+   : Coefficients:
+   : (Intercept)         body  
+   :      0.9271       0.7517
 
 3) Create a trendline plot in ~base R~ using the linear model. The line
    should be red, dashed and double wide.
 
    #+begin_src R :results graphics file :file mammals_lm.png
-
+     plot(log10(mammals))
+     abline(line, col="red", lty=2, lwd=2)
    #+end_src
+
+   #+RESULTS:
+   [[file:mammals_lm.png]]
 
 * TODO Map 'aesthetics' to variables
 
@@ -340,20 +425,29 @@ Recall that the ~mtcars~ data frame lists the characteristics mileage
    and print it.
 
    #+begin_src R :results graphics file :file mtcars_gg_aes.png
-
+     ggplot(data=mtcars, aes(wt,mpg)) -> gg
    #+end_src
+
+   #+RESULTS:
+   [[file:mtcars_gg_aes.png]]
 
 2) Create a scatterplot where the color 'aesthetic' is mapped to the
    number of cylinders by adding a 'geometry' to ~gg~.
 
    #+begin_src R :results graphics file :file mtcars_gg_col.png
-
+     gg +
+       geom_point(aes(color=factor(cyl))) 
    #+end_src
+
+   #+RESULTS:
+   [[file:mtcars_gg_col.png]]
 
 3) What's the difference between mapping 'aesthetics' inside the
    'geometry' or inside the ~ggplot~ function?
 
    #+begin_quote
-   Answer: ...
+   Answer: The =aes= function knows about the dataset from =data=. You can
+   also layer additional dimensions on top of the original plot using
+   =aes= inside the =geom_= function.
    #+end_quote
    
