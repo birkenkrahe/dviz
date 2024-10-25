@@ -2970,6 +2970,7 @@ this way you'll learn Python and visualization with Python, for free!
 - Check your solutions with the PDF and/or my video.
 - Remember to keep up your DataCamp practice!
 
+
 ** IN PROGRESS Project: 2nd sprint review with NotebookLM/podcasts
 #+attr_html: :width 600px: 
 [[../img/litreview.png]]
@@ -2993,6 +2994,7 @@ of sources doesn't seem to be what increases the podcast length.
 Keidrick/Austin/Clifford's podcast). The review was oddly detailed and
 the podcasters were oddly giddy...
 
+
 ** IN PROGRESS DataCamp review: Grammar of Graphics lab
 
 - [X] Conceptual comparison =ggplot2= vs. base R
@@ -3010,7 +3012,6 @@ Download [[https://tinyurl.com/ggplot2-review-org][tinyurl.com/ggplot2-review-or
 #+RESULTS:
 : -rw-rw-r-- 1 marcus marcus 4597 Oct 23 15:30 ggplot2.org
 
-<<<<<<< HEAD
 #+begin_src R
   system("ls -l ggplot2.org")
 #+end_src
@@ -3018,8 +3019,6 @@ Download [[https://tinyurl.com/ggplot2-review-org][tinyurl.com/ggplot2-review-or
 #+RESULTS:
 : -rw-rw-r-- 1 marcus marcus 4597 Oct 23 15:30 ggplot2.org
 
-=======
->>>>>>> 5ea89ff6162ca40421d94198e0167f987476752f
 Open Emacs on =ggplot2.org= with
 #+begin_example sh
   emacs --file ggplot2.org
