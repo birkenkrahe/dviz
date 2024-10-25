@@ -2997,7 +2997,12 @@ Download [[https://tinyurl.com/ggplot2-review-org][tinyurl.com/ggplot2-review-or
 #+RESULTS:
 : -rw-rw-r-- 1 marcus marcus 4597 Oct 23 15:30 ggplot2.org
 
+#+begin_src R
+  system("ls -l ggplot2.org")
+#+end_src
 
+#+RESULTS:
+: -rw-rw-r-- 1 marcus marcus 4597 Oct 23 15:30 ggplot2.org
 
 Open Emacs on =ggplot2.org= with
 #+begin_example sh
