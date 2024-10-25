@@ -1,0 +1,293 @@
+#+title:Practice: plotting with ggplot2
+#+author: Marcus Birkenkrahe (pledged)
+#+subttitle: CSC 105, Introduction to Data Science, Lyon College, Fall 24
+#+startup: overview hideblocks indent entitiespretty:
+#+options: toc:nil num:nil ^:nil:
+#+property: header-args:R :session *R* :results output
+* README
+- Review of the 1st chapter of the DataCamp course
+- Add your name and ~(pledged)~ in the ~#+AUTHOR:~ meta headline
+- When you've completed the file, submit it in Canvas
+- You'll get solutions after the deadline has passed
+
+* DONE Identify yourself
+
+1) Add your name and ~(pledged)~ at the top
+2) Run the ~#+PROPERTY~ and ~#+STARTUP~ lines with ~C-c C-c~
+3) You should open the R session in the same directory as this file
+4) To check, run ~getwd()~ in the R console window
+
+* DONE Answer conceptual questions
+
+- *What is the requirement for this course and where can you find this
+  information?* - "[[https://app.datacamp.com/learn/courses/introduction-to-the-tidyverse][Introduction to the Tidyverse]]" (Bottom of dashboard)
+  #+attr_html: :width 600px
+  [[../../img/dc_tidyverse.png]]
+
+- *What is the "Tidyverse"?* It's a bundle of R packages including
+  ~ggplot2~ (which predates the "Tidyverse" by several years), ~dplyr~ for
+  data frame manipulation, and many more. Its functions rely on data
+  being "tidy", which corresponds to Codds 3rd normal form for
+  relational or tabular data.
+  #+attr_html: :width 600xp
+  [[../../img//dc_tidyverse1.png]]
+  (Image source: [[https://hbctraining.github.io/Intro-to-R/lessons/tidyverse_data_wrangling.html][hbctraining.github.io]])
+
+- *Base R is the foundation that every data scientist should know.*
+  #+begin_quote
+  "If the user knows base-R (not difficult), she can handle any
+  situation with just a few simple operations. The old adage applies:
+  "Give a man a fish, and he can eat for a day. Teach him how to
+  fish, and he can eat for a lifetime." From: [[https://github.com/matloff/TidyverseSkeptic]["TidyverseSceptic"]]
+  (Matloff, 2022)
+  #+end_quote
+
+- *What is the "Grammar of Graphics"?*
+  #+begin_quote
+  The "Grammar of Graphics" (gg) is a plotting framework by Leland
+  Wilkinson (1999) implemented in R's ~ggplot2~ plotting package. Its
+  core *ideas* are[fn:14]:
+  1) Graphics are distinct layers of 'grammatical' elements
+  2) Plots are given meaning through 'aesthetic' mappings
+  #+end_quote
+
+- *What are the layers of the 'Grammar of Graphics'?*
+  #+attr_html: :width 500px
+  [[../../img/dc_ggplot2_gglayers.png]]
+  ([[https://r.qcbs.ca/workshop03/book-en/grammar-of-graphics-gg-basics.html][Image source: r.qcbs.ca]])
+
+- *What are some examples for these elements in ~ggplot2~?*
+  #+attr_html: :width 500px
+  [[../../img/dc_ggplot2_gglayers1.png]]
+
+- *Can you save a ~ggplot2~ plot as an R object?*
+  #+begin_src R :results graphics file :file ../../img/ggNile1.png
+    library(ggplot2)
+    g <- ggplot(
+      data = data.frame(Nile),
+      aes(Nile)) +
+      geom_histogram()
+    g
+  #+end_src
+
+  #+RESULTS:
+  [[file:../../img/ggNile1.png]]
+
+- Show the structure and attributes of =g=:
+  #+begin_src R
+    attributes(g)
+    str(g)
+  #+end_src
+
+- *Can you save a ~base R~ plot as an R object?*
+  #+begin_src R :results graphics file :file ../../img/Nile.png
+    h <- hist(Nile)
+    h
+  #+end_src
+
+  #+RESULTS:
+  [[file:../../img/Nile.png]]
+
+
+  #+begin_src R :results graphics file :file ../../img/Nileplot.png
+    p <- plot(Nile)
+    p
+  #+end_src
+
+  #+RESULTS:
+  [[file:../../img/Nileplot.png]]
+
+  #+begin_src R
+    attributes(h)  # saving histogram to access its attributes and
+                                            # structure
+    str(h)
+  #+end_src
+
+  #+RESULTS:
+  #+begin_example
+  $names
+  [1] "breaks"   "counts"   "density"  "mids"     "xname"    "equidist"
+
+  $class
+  [1] "histogram"
+  List of 6
+   $ breaks  : int [1:11] 400 500 600 700 800 900 1000 1100 1200 1300 ...
+   $ counts  : int [1:10] 1 0 5 20 25 19 12 11 6 1
+   $ density : num [1:10] 0.0001 0 0.0005 0.002 0.0025 0.0019 0.0012 0.0011 0.0006 0.0001
+   $ mids    : num [1:10] 450 550 650 750 850 950 1050 1150 1250 1350
+   $ xname   : chr "Nile"
+   $ equidist: logi TRUE
+   - attr(*, "class")= chr "histogram"
+  #+end_example
+
+
+- *Can you combine ~ggplot2~ and ~base R~ graphics in one plot array?*
+  #+begin_notes
+  Answer: no. Base R graphics and ggplot2 graphics are completely
+  different and cannot be mixed. In base R, plots are created by
+  opening graphics devices, in ggplot2, plots are layered R objects.
+  #+end_notes
+
+* DONE Create simple scatterplots
+
+We're going to work with ~MASS::mammals~ using ~ggplot2~ and ~base R~.
+
+1) Load the relevant packages.
+
+   #+begin_src R :results silent
+     library(MASS)
+     library(ggplot2)
+   #+end_src
+
+2) Show the data structure of ~mammals~.
+
+   #+begin_src R
+     str(mammals)
+   #+end_src
+
+   #+RESULTS:
+   : 'data.frame':	62 obs. of  2 variables:
+   :  $ body : num  3.38 0.48 1.35 465 36.33 ...
+   :  $ brain: num  44.5 15.5 8.1 423 119.5 ...
+
+3) Create a scatterplot of ~brain~ vs ~body~ of the ~mammals~ data set in
+   ~ggplot2~.
+
+   #+begin_src R :results graphics file :file ../../img/mammals_gg2.png
+     ggplot(mammals, aes(x=body,y=brain)) +
+       geom_point()
+   #+end_src
+
+   #+RESULTS:
+   [[file:../../img/mammals_gg2.png]]
+
+4) Create a scatterplot of ~brain~ vs ~body~ of the ~mammals~ data set in
+   ~base R~.
+
+   #+begin_src R :results graphics file :file ../../img/mammals1.png
+     plot(mammals)
+   #+end_src
+
+   #+RESULTS:
+   [[file:../../img/mammals1.png]]
+
+* DONE Transform plots
+
+1) What's the problem with these plots and what could you do about it?
+
+   #+begin_quote
+   *The problem:* the data points are too bunched up because mammals have a wide
+   spectrum of body and brain weights (there are very small and very
+   large ones).
+
+   *The solution:* transform the x- and y-axis logarithmically.
+   #+end_quote
+
+2) Implement the solution with ~plot~.
+   #+begin_src R :results graphics file :file ../../img/mammalslog1.png
+     plot(log10(mammals))
+   #+end_src
+
+   #+RESULTS:
+   [[file:../../img/mammalslog1.png]]
+
+3) Implement the solution with ~ggplot~ - save the plot as ~gg~ for later,
+   and print it.
+   #+begin_src R :results graphics file :file ../../img/mammalslog_gg1.png
+     gg <- ggplot(
+       data=mammals,
+       aes(x=body,y=brain)) +
+       geom_point(alpha=0.6) +
+       coord_fixed() +
+       scale_x_log10() +
+       scale_y_log10()
+     gg
+   #+end_src
+
+   #+RESULTS:
+   [[file:../../img/mammalslog_gg1.png]]
+
+4) What does the ~geom_point~ argument ~alpha~ do?
+
+   #+begin_quote
+   Answer: it reduces the transparency of the points by 40%.
+   #+end_quote
+
+* DONE Create trendlines with =ggplot2= and base R
+
+1) Create a linear trendline for the ~ggplot2~ plot ~gg~. Inside the
+   smoothing geometry, use ~method="lm"~ to fix the model.
+
+   #+begin_src R :results graphics file :file mammalslog_gg_lm1.png
+     gg +
+       geom_smooth(method="lm")
+   #+end_src
+
+   #+RESULTS:
+   [[file:mammalslog_gg_lm1.png]]
+
+2) Create a linear model in ~base R~ using ~lm~ and
+   ~data-log10(mammals)~. Save it as ~line~ and print it.
+
+   #+begin_src R
+     line <- lm(brain ~ body, data=log10(mammals))
+     line
+   #+end_src
+
+   #+RESULTS:
+   : 
+   : Call:
+   : lm(formula = brain ~ body, data = log10(mammals))
+   : 
+   : Coefficients:
+   : (Intercept)         body  
+   :      0.9271       0.7517
+
+3) Create a trendline plot in ~base R~ using the linear model. The line
+   should be red, dashed and double wide.
+
+   #+begin_src R :results graphics file :file ../../img/mammals_lm.png
+     plot(log10(mammals))
+     abline(line, col="red", lty=2, lwd=2)
+   #+end_src
+
+   #+RESULTS:
+   [[file:../../img/mammals_lm.png]]
+
+* DONE Map 'aesthetics' to variables
+
+Recall that the ~mtcars~ data frame lists the characteristics mileage
+(~mpg~), weight (~wt~) and number of cylinders (~cyl~) as ~numeric~ variables.
+
+1) Create a ~ggplot~ of mileage vs. weight using ~ggplot2~, save it as ~gg~
+   and print it.
+   #+begin_src R :results graphics file :file ../../img/mtcars_gg_aes1.png
+     gg <- ggplot(data=mtcars, aes(wt,mpg))
+     gg
+   #+end_src
+
+   #+RESULTS:
+   [[file:../../img/mtcars_gg_aes1.png]]
+
+2) Create a scatterplot where the color 'aesthetic' is mapped to the
+   number of cylinders by adding a 'geometry' to ~gg~.
+   #+begin_src R :results graphics file :file ../../img/mtcars_gg_col1.png
+     ggplot(data=mtcars,
+            aes(wt,mpg)) +
+       geom_point(
+         aes(color=cyl))
+   #+end_src
+
+   #+RESULTS:
+   [[file:../../img/mtcars_gg_col1.png]]
+
+3) What's the difference between mapping 'aesthetics' inside the
+   'geometry' or inside the ~ggplot~ function?
+
+   #+begin_quote
+   Answer: the ~aes~ function knows about the dataset from ~data~. You can
+   also pipe the data set into the function using ~|>~ or ~%>%~. Without
+   ~aes~, you need to specify ~geom_point(mtcars$cyl)~. You can subset
+   data for a specific geometry by putting ~aes~ into the function.
+   #+end_quote
+
