@@ -2416,7 +2416,6 @@ Now the plot
   wdtest.org
   #+end_example
 
-
 * Week 9 - Alternative R graphics packages / Python plotting with =subplots=
 #+attr_html: :width 600px:
 [[../img/leonardo.jpg]]
@@ -2948,15 +2947,14 @@ this way you'll learn Python and visualization with Python, for free!
     #+RESULTS:
     [[file:seattle6.png]]
     
-
 * Week 10 - Grammar of graphics plotting lab
 #+attr_html: :width 700px: 
 [[../img/helgoland.jpg]]
 
 /Image: Morgenstern, "Küste von Helgoland/Coast of Helgoland" (1863)/
 
-- [ ] Graphics lab last Monday (failed)
-- [ ] Finish Python plotting (=subplots=).
+- [X] Graphics lab last Monday (failed)
+- [X] Finish Python plotting (=subplots=).
 - [ ] DataCamp review: The Grammar of Graphics (gg) plotting lab.
 - [ ] Base R =plot= function revisited.
 - [ ] Next DataCamp lesson due: Stats with =matplotlib=
@@ -2972,14 +2970,28 @@ this way you'll learn Python and visualization with Python, for free!
 - Check your solutions with the PDF and/or my video.
 - Remember to keep up your DataCamp practice!
 
-** Project: 2nd sprint review with NotebookLM/podcasts
+** IN PROGRESS Project: 2nd sprint review with NotebookLM/podcasts
 #+attr_html: :width 600px: 
 [[../img/litreview.png]]
 
-- You'll get feedback some time this week.
 - Remember that there is no 2-for-1 (every team must submit).
-- The feedback will be a note in your NotebookLM dashboard.
 - The next sprint review is on November 15 (abstract + results).
+
+*Most interesting podcast this sprint:* Jakobe and Jackson's literature
+review - good sources, and SQL database with primary data. Very well
+prepared (prompted) podcast.
+
+*Others*: Fowler inspired the podcasters because of the topic and
+because of the information in his proposal (missed out scientific
+publication though). 
+
+*Interestingly*, almost all of the podcasts in this project round were
+shorter than the "introduction to data science" projects. The number
+of sources doesn't seem to be what increases the podcast length.
+
+*The Litmap* seems to be analyzed by the AI (according to
+Keidrick/Austin/Clifford's podcast). The review was oddly detailed and
+the podcasters were oddly giddy...
 
 ** IN PROGRESS DataCamp review: Grammar of Graphics lab
 
@@ -3004,7 +3016,6 @@ Open Emacs on =ggplot2.org= with
 #+end_example
 
 Let's work through the questions together.
-
 
 * Week 11: Base R Plotting [Oct 28]
 
