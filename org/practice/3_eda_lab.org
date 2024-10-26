@@ -1,0 +1,183 @@
+#+title:Lab: Exploratory Data Analysis
+#+author: Marcus Birkenkrahe (pledged)
+#+subttitle: CSC 105, Introduction to Data Science, Lyon College, Fall 24
+#+startup: overview hideblocks indent entitiespretty:
+#+options: toc:nil num:nil ^:nil:
+#+property: header-args:R :session *R* :results output
+In the [[https://github.com/birkenkrahe/dviz/blob/piHome/org/2_data_eda_R.org][last lecture]], you saw [[https://github.com/birkenkrahe/dviz/blob/piHome/img/2_brain.png][some plots]] from the ~mammals~ data frame of
+the ~MASS~ package, giving body weights and brain weights for 62
+animals.
+
+[[../../img/2_brain.png]]
+
+The ~Animals2~ data frame from the ~robustbase~ package gives the same
+characterizations for a different set of animals.
+
+In both cases, the row names for these data frames identify these
+animals, and the objective of this exercise is to examine the
+differences between the animals characterized in these data frames:
+
+1) Make the required packages available.
+
+   /Tip: packages need to be installed (once) and loaded (per session)./
+
+   Use this code block to start a session and run the necessary commands:
+
+   #+begin_src R :session :results silent
+     ...
+   #+end_src
+
+   Remember when asked to start the session in the same directory
+   where your practice file resides.
+
+   ----- SOLUTION -----
+
+   - Install ~MASS~ and ~robustbase~ install using ~install.packages~. You
+     have to do this only once (unless you upgrade or change your
+     version of R).
+
+   - Load the packages.
+     #+begin_src R :session :results output
+       library(MASS)
+       library(robustbase)
+     #+end_src
+
+2) The ~rownames~ function returns a vector or row names for a data
+   frame, and the ~intersect~ function computes the intersection of two
+   sets, returning a vector of their common elements.
+
+   Using these functions, construct and display the vector
+   ~commonAnimals~ of animal names common to both data frames.
+
+   How many animals are included in this set? Tip: you can check the
+   length of a vector with the function ~length~.
+
+   ----- SOLUTION -----
+
+   - Check both data frames with ~str~.
+
+     #+begin_src R :exports both :session :results output
+       str(Animals2)
+       str(mammals)
+     #+end_src
+
+     #+RESULTS:
+     : 'data.frame':    65 obs. of  2 variables:
+     :  $ body : num  1.35 465 36.33 27.66 1.04 ...
+     :  $ brain: num  8.1 423 119.5 115 5.5 ...
+     : 'data.frame':    62 obs. of  2 variables:
+     :  $ body : num  3.38 0.48 1.35 465 36.33 ...
+     :  $ brain: num  44.5 15.5 8.1 423 119.5 ...
+
+   - Look at row names with ~rownames~.
+
+     #+begin_src R :session :results silent
+       rownames(Animals2)
+       rownames(mammals)
+     #+end_src
+
+   - Check the use of ~intersect~ with ~help(intersect)~.
+
+   - Store the intersection using ~intersect~ in ~commonAnimals~.
+
+     #+begin_src R :exports both :session :results silent
+       commonAnimals <- intersect(rownames(Animals2), rownames(mammals))
+       commonAnimals
+     #+end_src
+
+   - Check the length of ~commonAnimals~ with ~length~ or ~str~.
+
+     #+begin_src R :exports both :session :results output
+       length(commonAnimals)
+       str(commonAnimals)
+     #+end_src
+
+     #+RESULTS:
+     : [1] 58
+     :  chr [1:58] "Mountain beaver" "Cow" "Grey wolf" "Goat" "Guinea pig" "Asian elephant" "Donkey" "Horse" "Cat" ...
+
+3) The ~setdiff~ function returns a vector of elements contained in one
+   set but not in the other: ~setdiff(A,B)~~ returns a vector of
+   elements in set ~A~ that are not in set ~B~.
+
+   Use ~setdiff~ to display the animals present in ~mammals~ that are *not*
+   present in ~Animals2~.
+
+   ----- SOLUTION -----
+
+   #+begin_src R :exports both :session :results output
+     setdiff(rownames(mammals), rownames(Animals2))
+   #+end_src
+
+   #+RESULTS:
+   : [1] "Arctic fox"             "Arctic ground squirrel" "Patas monkey"           "Mole rat"
+
+4) Use ~setdiff~ to display the animals present in ~Animals2~ that are *not*
+   present in ~mammals~.
+
+   ----- SOLUTION -----
+
+   #+begin_src R :exports both :session :results output
+     setdiff(rownames(Animals2), rownames(mammals))
+   #+end_src
+
+   #+RESULTS:
+   : [1] "Dipliodocus"           "Potar monkey"          "Triceratops"           "Brachiosaurus"
+   : [5] "Mole"                  "Artic fox"             "Artic ground squirrel"
+
+5) Can you give a simple (qualitative) characterization of these
+   differences between the two sets of animals?
+
+   /Tip: you have to look at the output of the last two tasks to
+   identify these differences./
+
+   ----- SOLUTION -----
+
+   1. The ~Animals2~ data frame contains three dinosaurs ("Triceratops",
+      "Dipliodocus", and "Brachiosaurus")
+
+   2. The word "Arctic" is misspelled in ~Animals2~ - "Arctic fox" and
+      "Arctic ground squirrel" are actually in both data frames.
+
+   3. ~mammals~ lists "Mole rat" while ~Animals2~ lists "Mole" but body
+      and brain weights are the same:
+
+      #+begin_src R :exports both :session :results output
+        mammals["Mole rat",]
+        Animals2["Mole",]
+      #+end_src
+
+      #+RESULTS:
+      :           body brain
+      : Mole rat 0.122     3
+      :       body brain
+      : Mole 0.122     3
+
+      More detailed using ~which~ for indices and ~rownames~ with ~==~:
+      #+begin_src R :exports both :session :results output
+        mammals[which(rownames(mammals) == "Mole rat"),]
+        Animals2[which(rownames(Animals2) == "Mole"),]
+      #+end_src
+
+      #+RESULTS:
+      :           body brain
+      : Mole rat 0.122     3
+      :       body brain
+      : Mole 0.122     3
+
+   4. ~mammals~ lists "Patas monkey" while ~Animals2~ lists "Potar monkey" but body
+      and brain weights are the same:
+
+      #+begin_src R :exports both :session :results output
+        mammals["Patas monkey",]
+        Animals2["Potar monkey",]
+      #+end_src
+
+      #+RESULTS:
+      :              body brain
+      : Patas monkey   10   115
+      :              body brain
+      : Potar monkey   10   115
+
+6) Make some meaningful plots! (Next week.)
+

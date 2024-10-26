@@ -2971,7 +2971,7 @@ this way you'll learn Python and visualization with Python, for free!
 - Remember to keep up your DataCamp practice!
 
 
-** IN PROGRESS Project: 2nd sprint review with NotebookLM/podcasts
+** Project: 2nd sprint review with NotebookLM/podcasts
 #+attr_html: :width 600px: 
 [[../img/litreview.png]]
 
@@ -2995,7 +2995,7 @@ Keidrick/Austin/Clifford's podcast). The review was oddly detailed and
 the podcasters were oddly giddy...
 
 
-** IN PROGRESS DataCamp review: Grammar of Graphics lab
+** DataCamp review: Grammar of Graphics lab
 
 - [X] Conceptual comparison =ggplot2= vs. base R
 - [ ] Creating simple scatterplots
@@ -3025,6 +3025,7 @@ Open Emacs on =ggplot2.org= with
 #+end_example
 
 Let's work through the questions together.
+
 
 * Week 11: Base R Plotting [Oct 28]
 

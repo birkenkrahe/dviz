@@ -3,7 +3,7 @@
 #+subttitle: CSC 105, Introduction to Data Science, Lyon College, Fall 24
 #+startup: overview hideblocks indent entitiespretty:
 #+options: toc:nil num:nil ^:nil:
-#+property: header-args:R :session *R* :results output
+#+property: header-args:R :session *R* :results output :exports both
 * README
 - Review of the 1st chapter of the DataCamp course
 - Add your name and ~(pledged)~ in the ~#+AUTHOR:~ meta headline
@@ -46,7 +46,7 @@
   #+begin_quote
   The "Grammar of Graphics" (gg) is a plotting framework by Leland
   Wilkinson (1999) implemented in R's ~ggplot2~ plotting package. Its
-  core *ideas* are[fn:14]:
+  core *ideas* are:
   1) Graphics are distinct layers of 'grammatical' elements
   2) Plots are given meaning through 'aesthetic' mappings
   #+end_quote
@@ -61,7 +61,7 @@
   [[../../img/dc_ggplot2_gglayers1.png]]
 
 - *Can you save a ~ggplot2~ plot as an R object?*
-  #+begin_src R :results graphics file :file ../../img/ggNile1.png
+  #+begin_src R :results graphics file :file ../../img/ggNile1.png 
     library(ggplot2)
     g <- ggplot(
       data = data.frame(Nile),
@@ -218,7 +218,7 @@ We're going to work with ~MASS::mammals~ using ~ggplot2~ and ~base R~.
 1) Create a linear trendline for the ~ggplot2~ plot ~gg~. Inside the
    smoothing geometry, use ~method="lm"~ to fix the model.
 
-   #+begin_src R :results graphics file :file mammalslog_gg_lm1.png
+   #+begin_src R :results graphics file :file ../../img/mammalslog_gg_lm1.png
      gg +
        geom_smooth(method="lm")
    #+end_src
