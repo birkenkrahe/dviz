@@ -3,7 +3,7 @@
 #+SUBTITLE: DSC 302 Lyon College Fall 2024
 #+STARTUP: overview hideblocks indent entitiespretty:
 #+PROPERTY: header-args:R :session *R* :results output :exports both
-* Week 0 - Orientation & Examples
+* DONE Week 0 - Orientation & Examples
 
 #+attr_html: :width 200px:
 [[../img/Ways-to-Search-Google.jpg]]
@@ -11,7 +11,7 @@
 What we achieved in our first session: Course orientation, and
 critical discussion of a few visualization examples.
 
-* Week 1 - What is Data Visualization & =mtcars= Demo
+* DONE Week 1 - What is Data Visualization & =mtcars= Demo
 #+attr_html: :width 600px:
 #+caption: Napoleon's Retreat from Moscow - Adolph Northen (1851)
 [[../img/napoleon.jpg]]
@@ -160,7 +160,7 @@ See =2_trendline.org= ([[https://github.com/birkenkrahe/dviz/blob/main/org/2_tre
     4) A way to draw the trendline (=abline=)
     #+end_quote
 
-* Week 2 - Linux Party & Introduction to Visualization
+* DONE Week 2 - Linux Party & Introduction to Visualization
 #+attr_html: :width 400px:
 [[../img/mtcars_lm.png]]
 
@@ -531,7 +531,7 @@ different experience, use Google Colab at [[https://colab.research.google.com/][
   champion. His book "The Art of R Programming" is a jewel, too.
   #+end_quote
 
-* Week 3 - Emacs + R + Linux
+* DONE Week 3 - Emacs + R + Linux
 #+attr_html: :width 400px:
 [[../img/R_Emacs_Linux.png]]
 
@@ -870,7 +870,7 @@ an audience (the more so if the audience is likely to care about it):
 - They want to live in wealthier countries (should they?)
 #+end_quote
 
-* Week 4 - Exploratory Data Analysis (EDA)
+* DONE Week 4 - Exploratory Data Analysis (EDA)
 #+attr_html: :width 600px:
 [[../img/Christ-Rescuing-Peter-from-Drowning-1370_.jpg]]
 
@@ -993,7 +993,7 @@ session:
 - [ ] Questions to ask from data
 - [ ] *Practice:* A representative R session
 
-* Week 5 - EDA: "Ceci n'est pas une pipe"
+* DONE Week 5 - EDA: "Ceci n'est pas une pipe"
 #+attr_html: :width 600px:
 [[../img/MagrittePipe.jpg]]
 
@@ -1267,7 +1267,7 @@ session:
 - [X] Questions to ask from data
 - [X] *Practice:* A representative R session
 
-* Week 6 - EDA Lab with =MASS::whiteside=
+* DONE Week 6 - EDA Lab with =MASS::whiteside=
 #+attr_html: :width 600px:
 #+caption:Photo Credit: © CORBIS/Corbis via Getty Images
 [[../img/neptune.png]]
@@ -1569,7 +1569,7 @@ A box plot is a graphical representation of
 - We will also review =ggplot2= commands and theory
 - I will give you a lecture (with practice) on "graphics"
 
-* Week 7 - Project update & EDA Lab II
+* DONE Week 7 - Project update & EDA Lab II
 #+attr_html: :width 400px:
 [[../img/career.jpeg]]
 
@@ -1920,7 +1920,7 @@ do this is down to you (I'm happy to help). Others did it before you!
 
 - Complete the practice file and upload it to Canvas.
 
-* Week 8 - Python =matplotlib= & =ggplot2= plotting
+* DONE Week 8 - Python =matplotlib= & =ggplot2= plotting
 #+attr_html: :width 400px:
 #+caption: Henri Matisse, The Snail (French: L'escargot) 1953
 [[../img/3_matisse.png]]
@@ -2416,7 +2416,7 @@ Now the plot
   wdtest.org
   #+end_example
 
-* Week 9 - Alternative R graphics packages / Python plotting with =subplots=
+* DONE Week 9 - Alternative R graphics packages / Python plotting with =subplots=
 #+attr_html: :width 600px:
 [[../img/leonardo.jpg]]
 
@@ -2947,7 +2947,7 @@ this way you'll learn Python and visualization with Python, for free!
     #+RESULTS:
     [[file:seattle6.png]]
     
-* Week 10 - Grammar of graphics plotting lab
+* DONE Week 10 - Grammar of graphics plotting lab
 #+attr_html: :width 700px: 
 [[../img/helgoland.jpg]]
 
@@ -2955,10 +2955,10 @@ this way you'll learn Python and visualization with Python, for free!
 
 - [X] Graphics lab last Monday (failed)
 - [X] Finish Python plotting (=subplots=).
-- [ ] DataCamp review: The Grammar of Graphics (gg) plotting lab.
-- [ ] Base R =plot= function revisited.
-- [ ] Next DataCamp lesson due: Stats with =matplotlib=
-- [ ] Next week: The =plotly= package & quiz 8 (DataCamp and ggplot2)
+- [X] DataCamp review: The Grammar of Graphics (gg) plotting lab.
+- [X] Base R =plot= function revisited.
+- [X] Next DataCamp lesson due: Stats with =matplotlib=
+- [X] Next week: The =plotly= package & quiz 8 (DataCamp and ggplot2)
 
 ** Graphics practice (failed? Again? Also?)
 #+attr_html: :width 400px:
