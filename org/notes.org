@@ -3040,7 +3040,8 @@ Let's work through the questions together.
 - [ ] Customization with vectors
 - [ ] Customizing axes
 - [ ] Practice lab
-  
+
+Download the code along file: [[https://tinyurl.com/plot-codealong ][tinyurl.com/plot-codealong]]
 * Week 12: Package =plotly= & Dashboard Design [Nov 4]
 
 * Week 13: Advanced Customization & Project review [Nov 11]
