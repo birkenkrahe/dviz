@@ -3026,7 +3026,6 @@ Open Emacs on =ggplot2.org= with
 
 Let's work through the questions together.
 
-
 * Week 11: Base R Plotting [Oct 28]
 
 * Week 12: Package =plotly= & Dashboard Design [Nov 4]
