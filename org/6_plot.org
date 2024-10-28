@@ -105,6 +105,7 @@ line plot.
 
   #+RESULTS: whitesideplot2
   [[file:../img/4_whiteside2.png]]
+
 * Decision tree models with ~plot~
 
 - Many modeling functions in R return a object that can be plotted
@@ -127,9 +128,6 @@ line plot.
     class(rpartModel)
   #+end_src
 
-  #+RESULTS: rpart1
-  : [1] "rpart"
-
 - Plot the model and add generic text using ~text~ for ~rpart~ models:
 
   #+begin_src R :results graphics file :file ../img/4_rpart.png :exports both
@@ -140,7 +138,7 @@ line plot.
   #+RESULTS:
   [[file:../img/4_rpart.png]]
 
-- [X] What methods are available for ~rpart~ and ~text~?
+- What methods are available for ~rpart~ and ~text~?
   #+begin_src R
     methods(class = "rpart")
     methods(text)
@@ -150,6 +148,7 @@ line plot.
   #+begin_src R
     summary(rpartModel)
   #+end_src
+
 * Model-based recursive partitioning with ~plot~
 
 - MOB models have tree-based structures like decision tree models

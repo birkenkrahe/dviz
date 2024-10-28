@@ -3026,8 +3026,21 @@ Open Emacs on =ggplot2.org= with
 
 Let's work through the questions together.
 
-* Week 11: Base R Plotting [Oct 28]
 
+* Week 11: Base R Plotting [Oct 28]
+#+attr_html: :width 400px:
+#+caption: Conspirators plotting, by Suthamma Byrne (Saatchi Gallery)
+[[../img/conspirators.jpg]]
+
+- [ ] The =plot= function revisited
+- [ ] Decision tree models (=rpart=)
+- [ ] Optional parameters for base graphics (=par=)
+- [ ] Multiple plots and passing parameters
+- [ ] Adding =text= and =points= to highlight outliers
+- [ ] Customization with vectors
+- [ ] Customizing axes
+- [ ] Practice lab
+  
 * Week 12: Package =plotly= & Dashboard Design [Nov 4]
 
 * Week 13: Advanced Customization & Project review [Nov 11]

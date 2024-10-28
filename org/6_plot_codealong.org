@@ -1,0 +1,216 @@
+#+TITLE:  Base R plot function - part 1
+#+AUTHOR: Marcus Birkenkrahe
+#+Subtitle: Introduction to Data Visualization
+#+STARTUP: hideblocks overview indent inlineimages
+#+PROPERTY: header-args:R :exports both :results output :session *R*
+* The ~plot~ function
+
+- ~plot(x,y)~ is a /generic/ function - it adapts to its arguments: e.g.
+
+  | Plot type   | ~x~       | ~y~       |
+  |-------------+---------+---------|
+  | Scatterplot | ~numeric~ | ~numeric~ |
+  | Boxplot     | ~factor~  | ~numeric~ |
+  | Bar chart   | ~factor~  | ~NA~      |
+  | Mosaic plot | ~factor~  | ~factor~  |
+
+- For an overview of the different methods available, use ~methods~.
+
+  #+name: methods
+  #+begin_src R
+
+  #+end_src
+
+- In the extended example, we already applied ~plot~ to a data frame, a
+  numeric vector, a factor, and a pair of numeric variables, leading
+  to an array of scatterplots, a bar chart, and a scatterplot.
+
+* Bar chart with ~plot~
+
+When only one categorical variable is given, ~plot~ generates a bar
+chart with one bar per factor level.
+
+#+begin_src R
+
+#+end_src
+
+Plot the factor vector:
+#+begin_src R :results graphics file :file 4_barchart.png :exports both
+
+#+end_src
+
+* Line plot with ~plot~
+
+When a time series is given like the data set ~Nile~, ~plot~ generates a
+line plot.
+
+#+begin_src R
+
+#+end_src
+
+#+begin_src R :results graphics file :file 4_lineplot.png :exports both
+
+#+end_src
+
+* Box plots with ~plot~
+
+- We used the ~boxplot~ function to create a boxplot summary of heating
+  gas consumption before and after installation of insulation in
+  =MASS::whiteside=:
+
+- The same result with ~plot~ instead of =boxplot=:
+  #+name: whitesideplot1
+  #+begin_src R :results graphics file :file 4_whiteside1.png
+
+  #+end_src
+
+- Customization is simple:
+  #+name: whitesideplot2
+  #+begin_src R :results graphics file :file 4_whiteside2.png :exports both
+
+  #+end_src
+
+* Decision tree models with ~plot~
+
+- Many modeling functions in R return a object that can be plotted
+
+- You can store these objects and work with them during analysis
+
+- Example: /decision tree models/ from the ~whiteside~ data frame using
+  the ~rpart~ package.
+
+- This model predicts the average value of the dependent variable,
+  ~Gas~, from the values of the other variables, ~Insul~ and ~Temp~.
+
+- Build the model: the formula only has two parts. The period operator
+  ~.~ stands for "all other variables" - it's common in other graphics
+  packages, too.
+  #+name: rpart1
+  #+begin_src R
+
+  #+end_src
+
+- Plot the model and add generic text using ~text~ for ~rpart~ models:
+
+  #+begin_src R :results graphics file :file 4_rpart.png :exports both
+
+  #+end_src
+
+- What methods are available for ~rpart~ and ~text~?
+  #+begin_src R
+
+  #+end_src
+
+- Let's try ~summary~, which generated Tukey's summary for data frames:
+  #+begin_src R
+
+  #+end_src
+
+* Model-based recursive partitioning with ~plot~
+
+- MOB models have tree-based structures like decision tree models
+
+- Each terminal node contains a linear regression model that generates
+  predictions from other covariates (independent variables)
+
+- The code to generate the model looks very similar to ~rpart~: the
+  formula has three parts - ~Gas~ is predicted, ~Temp~ is the covariate to
+  predict, and ~Insul~ is the partitioning variable used to build the
+  tree.
+  #+name: MOB1
+  #+begin_src R
+
+  #+end_src
+
+- In the plot, all records are assigned to one of the nodes, and a
+  separate linear regression model that predicts ~Gas~ from ~Temp~ is
+  built for each node.
+  #+name: MOB2
+  #+begin_src R :results graphics file :file ../img/4_mob.png :exports both
+
+  #+end_src
+
+- What methods are available for ~lmtree~ ?
+  #+begin_src R
+
+  #+end_src
+
+* What does this mean?
+
+1) Enormous graphics flexibility even within the base R graphics
+   package. Regrettably, there seems to be a "package envy" phenomenon
+   within the R community, fostered by RStudio's aggressive marketing
+
+2) You can define your own object classes and construct methods for
+   generic functions like ~plot~ or ~summary~ that make them generate
+   specialized results for our object classes.
+
+3) ~methods~ reveals the "S3 Object" character of R, dependent on the
+   packages loaded into your R session. S is the language that came
+   before R. In OOP, objects have /methods/ and /attributes/.
+
+   #+begin_src R
+
+   #+end_src
+
+   For an example of the information stored in this model, run
+   ~plot(lmod)~ in the R console - this will produce several plots at
+   once (click on the graph to move to the next one).
+
+* Optional parameters for base graphics
+
+- There are 72 optional base graphics parameters set by the ~par~
+  function
+
+- Check out the help for ~par~ right now (*on the R console*).
+
+- ~par~ can also be called (like ~options~ and other system functions)
+
+  #+begin_src R
+
+  #+end_src
+
+- As you can read in ~help(par)~, some of these parameters are
+  read-only (i.e. their values are fixed)
+
+* Important parameters for ~plot~ customization
+
+- ~mfrow~ is a 2-dim vector that sets up an array of plots.
+
+- Make two plots with two panels, both line plots, to plot 100 and
+  1000 random numbers: =rnorm(100)= generates 100 normally distributed
+  pseudo-random numbers.
+  #+name: mfrow
+  #+begin_src R :session *R* :results graphics file :file 4_mfrow.png :exports both
+
+  #+end_src
+
+- Now put the scatterplot versions of these plots on one page, on top
+  of one another.
+  #+begin_src R :session *R* :results graphics file :file 4_mfrow1.png :exports both
+
+  #+end_src
+
+- Several parameters come in groups:
+
+  1) The ~cex~ family scales text and symbols in relation to one
+     another, e.g. ~cex.main~ scales the main plot title relative to ~cex~
+     #+name: cex
+     #+begin_src R :session *R* :results graphics file :file 4_cex.png :exports both
+ 
+     #+end_src
+
+   2) The ~col~ family specifies colors for points, lines, text. To see
+      the complete set of colors, enter ~colors()~.
+
+     #+begin_src R :session *R* :results graphics file :file 4_col.png :exports both
+ 
+     #+end_src
+
+  3) The ~font~ family specifies font types (plain = 1, bold = 2, italic
+     = 3, bold italic = 4).
+     #+name: font
+     #+begin_src R :session *R* :results graphics file :file ../img/4_font.png :exports both
+
+     #+end_src
+
