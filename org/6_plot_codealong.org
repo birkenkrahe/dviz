@@ -5,7 +5,8 @@
 #+PROPERTY: header-args:R :exports both :results output :session *R*
 * The ~plot~ function
 
-- ~plot(x,y)~ is a /generic/ function - it adapts to its arguments: e.g.
+- ~plot(x,y,...)~ is a /generic/ function - it adapts to its arguments:
+  e.g.
 
   | Plot type   | ~x~       | ~y~       |
   |-------------+---------+---------|
@@ -18,8 +19,17 @@
 
   #+name: methods
   #+begin_src R
-
+    methods(plot)
   #+end_src
+
+  #+RESULTS: methods
+  :  [1] plot.acf*           plot.data.frame*    plot.decomposed.ts* plot.default        plot.dendrogram*   
+  :  [6] plot.density*       plot.ecdf           plot.factor*        plot.formula*       plot.function      
+  : [11] plot.hclust*        plot.histogram*     plot.HoltWinters*   plot.isoreg*        plot.lm*           
+  : [16] plot.medpolish*     plot.mlm*           plot.ppr*           plot.prcomp*        plot.princomp*     
+  : [21] plot.profile.nls*   plot.raster*        plot.spec*          plot.stepfun        plot.stl*          
+  : [26] plot.table*         plot.ts             plot.tskernel*      plot.TukeyHSD*     
+  : see '?methods' for accessing help and source code
 
 - In the extended example, we already applied ~plot~ to a data frame, a
   numeric vector, a factor, and a pair of numeric variables, leading
@@ -31,13 +41,22 @@ When only one categorical variable is given, ~plot~ generates a bar
 chart with one bar per factor level.
 
 #+begin_src R
-
+  x <- c(1,2,2,3,3,3)  # (numeric) vector with three values
+  x_f <- factor(x)  # (nominal) factor with three levels
+  x_f
 #+end_src
+
+#+RESULTS:
+: [1] 1 2 2 3 3 3
+: Levels: 1 2 3
 
 Plot the factor vector:
 #+begin_src R :results graphics file :file 4_barchart.png :exports both
-
+  plot(x_f)
 #+end_src
+
+#+RESULTS:
+[[file:4_barchart.png]]
 
 * Line plot with ~plot~
 
@@ -45,12 +64,21 @@ When a time series is given like the data set ~Nile~, ~plot~ generates a
 line plot.
 
 #+begin_src R
-
+  class(Nile)
+  str(Nile)
 #+end_src
+
+#+RESULTS:
+: [1] "ts"
+:  Time-Series [1:100] from 1871 to 1970: 1120 1160 963 1210 1160 1160 813 1230 1370 1140 ...
 
 #+begin_src R :results graphics file :file 4_lineplot.png :exports both
-
+  plot(Nile,type="b")
+  grid()
 #+end_src
+
+#+RESULTS:
+[[file:4_lineplot.png]]
 
 * Box plots with ~plot~
 
@@ -58,17 +86,46 @@ line plot.
   gas consumption before and after installation of insulation in
   =MASS::whiteside=:
 
-- The same result with ~plot~ instead of =boxplot=:
+- The same result with ~plot~ instead of =boxplot=: use the =Insul= and the
+  =Gas= variable of the =whiteside= dataset to do this:
+
+  #+begin_src R
+    library(MASS)
+    data(whiteside)
+    str(whiteside)
+    whiteside$Insul -> insul
+    whiteside$Gas -> gas
+  #+end_src
+
+  #+RESULTS:
+  : 'data.frame':	56 obs. of  3 variables:
+  :  $ Insul: Factor w/ 2 levels "Before","After": 1 1 1 1 1 1 1 1 1 1 ...
+  :  $ Temp : num  -0.8 -0.7 0.4 2.5 2.9 3.2 3.6 3.9 4.2 4.3 ...
+  :  $ Gas  : num  7.2 6.9 6.4 6 5.8 5.8 5.6 4.7 5.8 5.2 ...
+
   #+name: whitesideplot1
   #+begin_src R :results graphics file :file 4_whiteside1.png
-
+    # plot(gas , insul)   # not what we want
+    plot(insul, gas)  # or with formula: plot(gas ~ insul)
   #+end_src
+
+  #+RESULTS: whitesideplot1
+  [[file:4_whiteside1.png]]
 
 - Customization is simple:
+  1) "Insulation" for x
+  2) "Gas consumption" for y
+  3) "Whiteside data set" for the title
   #+name: whitesideplot2
   #+begin_src R :results graphics file :file 4_whiteside2.png :exports both
-
+    plot(x=insul, y=gas,   # data
+         xlab="Insulation",
+         ylab="Gas consumption [cubic feet/1000] ",
+         main="Whiteside data set")
   #+end_src
+
+  #+RESULTS: whitesideplot2
+  [[file:4_whiteside2.png]]
 
 * Decision tree models with ~plot~
 
@@ -87,24 +144,102 @@ line plot.
   packages, too.
   #+name: rpart1
   #+begin_src R
-
+    library(MASS)
+    library(rpart)
+    # model Gas vs all other columns
+    rpart(Gas ~ ., data = whiteside) -> rpartModel 
+    class(rpartModel)
   #+end_src
+
+  #+RESULTS: rpart1
+  : [1] "rpart"
 
 - Plot the model and add generic text using ~text~ for ~rpart~ models:
 
   #+begin_src R :results graphics file :file 4_rpart.png :exports both
-
+    plot(rpartModel)
+    text(rpartModel)
   #+end_src
+
+  #+RESULTS:
+  [[file:4_rpart.png]]
 
 - What methods are available for ~rpart~ and ~text~?
   #+begin_src R
-
+    methods(class="rpart")
+    methods(text)
   #+end_src
+
+  #+RESULTS:
+  :  [1] labels      meanvar     model.frame plot        post        predict     print       prune       residuals  
+  : [10] summary     text       
+  : see '?methods' for accessing help and source code
+  : [1] text.default  text.formula* text.rpart*  
+  : see '?methods' for accessing help and source code
 
 - Let's try ~summary~, which generated Tukey's summary for data frames:
   #+begin_src R
-
+    summary(rpartModel)
   #+end_src
+
+  #+RESULTS:
+  #+begin_example
+  Call:
+  rpart(formula = Gas ~ ., data = whiteside)
+    n= 56 
+
+            CP nsplit rel error    xerror       xstd
+  1 0.30233737      0 1.0000000 1.0335777 0.22255362
+  2 0.15906314      2 0.3953253 0.8899163 0.15104463
+  3 0.03529048      3 0.2362621 0.6442837 0.09494637
+  4 0.01000000      4 0.2009716 0.5870547 0.09558054
+
+  Variable importance
+   Temp Insul 
+     67    33 
+
+  Node number 1: 56 observations,    complexity param=0.3023374
+    mean=4.071429, MSE=1.339541 
+    left son=2 (30 obs) right son=3 (26 obs)
+    Primary splits:
+        Insul splits as  RL,       improve=0.2979115, (0 missing)
+        Temp  < 7.05 to the right, improve=0.2905559, (0 missing)
+    Surrogate splits:
+        Temp < 5.35 to the left,  agree=0.679, adj=0.308, (0 split)
+
+  Node number 2: 30 observations,    complexity param=0.1590631
+    mean=3.483333, MSE=0.6287222 
+    left son=4 (8 obs) right son=5 (22 obs)
+    Primary splits:
+        Temp < 5.75 to the right, improve=0.6326062, (0 missing)
+
+  Node number 3: 26 observations,    complexity param=0.3023374
+    mean=4.75, MSE=1.300192 
+    left son=6 (16 obs) right son=7 (10 obs)
+    Primary splits:
+        Temp < 4.85 to the right, improve=0.6807166, (0 missing)
+
+  Node number 4: 8 observations
+    mean=2.4375, MSE=0.3723437 
+
+  Node number 5: 22 observations,    complexity param=0.03529048
+    mean=3.863636, MSE=0.1795868 
+    left son=10 (15 obs) right son=11 (7 obs)
+    Primary splits:
+        Temp < 2.4  to the right, improve=0.6700458, (0 missing)
+
+  Node number 6: 16 observations
+    mean=4.00625, MSE=0.3630859 
+
+  Node number 7: 10 observations
+    mean=5.94, MSE=0.4984 
+
+  Node number 10: 15 observations
+    mean=3.626667, MSE=0.04595556 
+
+  Node number 11: 7 observations
+    mean=4.371429, MSE=0.0877551
+  #+end_example
 
 * Model-based recursive partitioning with ~plot~
 
@@ -119,21 +254,33 @@ line plot.
   tree.
   #+name: MOB1
   #+begin_src R
-
+    library(partykit)  # this will load 3 other packages
+    lmtree(Gas ~ Temp | Insul, data=whiteside) -> MOBmodel
+    class(MOBmodel)
   #+end_src
+
+  #+RESULTS: MOB1
+  : [1] "lmtree"     "modelparty" "party"
 
 - In the plot, all records are assigned to one of the nodes, and a
   separate linear regression model that predicts ~Gas~ from ~Temp~ is
   built for each node.
   #+name: MOB2
   #+begin_src R :results graphics file :file ../img/4_mob.png :exports both
-
+    plot(MOBmodel)
   #+end_src
+
+  #+RESULTS: MOB2
+  [[file:../img/4_mob.png]]
 
 - What methods are available for ~lmtree~ ?
   #+begin_src R
-
+    methods(class="lmtree")
   #+end_src
+
+  #+RESULTS:
+  : [1] plot    predict print   prune  
+  : see '?methods' for accessing help and source code
 
 * What does this mean?
 
@@ -150,7 +297,7 @@ line plot.
    before R. In OOP, objects have /methods/ and /attributes/.
 
    #+begin_src R
-
+     attributes(mtcars)
    #+end_src
 
    For an example of the information stored in this model, run
