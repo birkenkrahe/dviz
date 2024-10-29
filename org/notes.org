@@ -3032,8 +3032,8 @@ Let's work through the questions together.
 #+caption: Conspirators plotting, by Suthamma Byrne (Saatchi Gallery)
 [[../img/conspirators.jpg]]
 
-- [ ] The =plot= function revisited
-- [ ] Decision tree models (=rpart=)
+- [X] The =plot= function revisited
+- [X] Decision tree models (=rpart=)
 - [ ] Optional parameters for base graphics (=par=)
 - [ ] Multiple plots and passing parameters
 - [ ] Adding =text= and =points= to highlight outliers
@@ -3041,12 +3041,8 @@ Let's work through the questions together.
 - [ ] Customizing axes
 - [ ] Practice lab
 
-<<<<<<< HEAD
 Download [[tinyurl.com/plot-codealong]] now and open it in Emacs.
 
-=======
-Download the code along file: [[https://tinyurl.com/plot-codealong ][tinyurl.com/plot-codealong]]
->>>>>>> bbd1ae3bf862c0f0ffc390834fa92a49643fa982
 * Week 12: Package =plotly= & Dashboard Design [Nov 4]
 
 * Week 13: Advanced Customization & Project review [Nov 11]
