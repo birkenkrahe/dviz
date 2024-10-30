@@ -361,3 +361,440 @@ line plot.
 
      #+end_src
 
+* Other parameters
+
+- ~adj~ specifies justification of the text (0=left,1=right, center=0.5)
+
+  #+begin_src R :session *R* :results graphics file :file ../img/4_adj.png :exports both
+    plot(rnorm(100), type="n")
+    text(x=40,y=0,labels="Right-justified text",adj=1,font=3)
+    text(x=40,y=-1,labels="Left-justified text",adj=0,font=3)
+    text(x=40,y=1.5,labels="Centered text",adj=0.5,font=3)
+  #+end_src
+
+  #+RESULTS:
+  [[file:../img/4_adj.png]]
+
+  #+attr_html: :width 300px
+  [[file:../img/adj.png]]
+
+- ~lty~ and ~lwd~ specify line type and line width.
+  #+name: linewidth
+  #+begin_src R :session *R* :results graphics file :file ../img/4_lty.png :exports both
+    plot(Nile, lty=2)
+  #+end_src
+
+  #+RESULTS: linewidth
+  [[file:../img/4_lwd.png]]
+
+  #+name: linewidth
+  #+begin_src R :session *R* :results graphics file :file ../img/4_lwd.png :exports both
+    plot(Nile, lwd=3)
+  #+end_src
+
+  #+RESULTS:
+  [[file:../img/lwd.png]]
+
+- [ ] How can you see current values of these parameters? Remember how
+  to do this with ~options()~? What type of R object is ~par()~?
+
+  #+begin_src R
+    class(par())
+    par()$lty
+    par()$adj
+  #+end_src
+
+  #+RESULTS:
+  : [1] "list"
+  : [1] "solid"
+  : [1] 0.5
+
+* Multiple plots and passing parameters
+
+- The ~ask~ parameter is a /logical/ flag (the default value is ~FALSE~)
+  that specifies whether the graphics system should wait for a user
+  response before displaying the next plot.
+
+- [ ] How can I confirm that ~ask~ is ~logical~, and see its value?
+
+  #+begin_src R
+    class(par()$ask)
+    par()$ask
+  #+end_src
+
+  #+RESULTS:
+  : [1] "logical"
+  : [1] FALSE
+
+- [ ] See e.g. ~example(Nile)~ in the R console (not in Org-mode -
+  because this involves OS shell commands which Emacs cannot render)
+
+- This option is not always set correctly after displaying multiple
+  plots - it must be set back by hand with ~par(ask = FALSE)~.
+
+- Some parameters cannot be set as passing parameters, e.g. ~las~ -
+  usually for different plot types (e.g. mosaic plots).
+* Adding points and lines to a scatterplot
+#+attr_html: :width 700px
+[[../img/4_details.png]]
+
+* Starting ~plot~ without bells and whistles
+
+- Starting point is calories vs. sugars from the ~UScereal~ data frame
+  #+name: cerealplot
+  #+begin_src R :results graphics file :file ../img/4_cereal.png :exports both
+    par(mfrow=c(1,1))
+    library(MASS)
+    x <- UScereal$sugars
+    y <- UScereal$calories
+    plot(x,y)
+  #+end_src
+
+  #+RESULTS:
+  [[file:../img/4_cereal.png]]
+
+- ~mfrow~ creates a persistent 1x1 array (single plot)
+- Variables ~x~, ~y~ are defined because we use them again
+- ~plot(x,y)~ is invoked to get a simple scatterplot
+
+* Adding axis labels ~xlab~, ~ylab~, and ~type~
+
+- The next block invokes ~plot~ again, but with three optional
+  arguments:
+
+  1) ~xlab~: a ~character~ string for the x-axis label
+  2) ~ylab~: a ~character~ string for the y-axis label
+  3) ~type = "n"~: specifies that the plot is constructed but /not
+     displayed/
+  #+name: cerealplot_nothing
+  #+begin_src R :results graphics file :file ../img/4_cereal1.png :exports both
+    plot(x,y,
+         xlab="Grams of sugar per serving",
+         ylab="Calories per serving",
+         type = "n")
+  #+end_src
+  
+  #+RESULTS:
+  [[file:../img/4_cereal1.png]]
+
+* Highlighting outliers with ~points~
+
+- ~points~ behaves much like ~plot~. It adds points to an existing plot.
+
+- [X] Is ~points~ a /generic/ R function?
+  #+begin_src R
+    methods(points)
+  #+end_src
+
+- The function takes the coordinate vectors of points to plot
+
+- We want to distinguish outliers and non-outliers. Our definition for
+  outliers: cereals with more than 300 calories per serving.
+
+- To extract the subvectors, we define an index vector - it contains
+  only the index value of the outliers.
+  #+begin_src R
+    index <- which(y > 300) # y is our calorie vector
+    index # vector of outlier value indices
+    x[index]  # UScereal$sugars[index] outliers
+    y[index]  # UScereal$calories[index] outliers
+    x[-index]  # UScereal$sugars[index] non-outliers
+    y[-index]  # UScereal$calories[index] non-outliers
+  #+end_src
+
+- We plot the non-outliers with one type of point (~pch=16~), the
+  outliers with another (~pch=18~) and twice as large (~cex=2~).
+
+- Now we're ready to enhance our basic plot.
+  #+name: cerealplot_outliers
+  #+begin_src R :results graphics file :file ../img/4_cereal2.png :exports both :noweb yes
+    <<cerealplot_nothing>>
+    index <- which(y > 300)
+    points(x[-index], y[-index], pch=16)
+    points(x[index], y[index], pch=18, cex=2)
+  #+end_src
+
+  #+RESULTS:
+  [[file:../img/4_cereal2.png]]
+
+* Add reference lines with ~abline~
+
+- The final four lines of code add two reference lines using linear
+  regression models.
+
+- Now we're ready to enhance our basic plot.
+  #+name: cerealplot_trends
+  #+begin_src R :results graphics file :file ../img/4_cereal3.png :exports both :noweb yes
+    <<cerealplot_outliers>>
+    olsModel <- lm(y ~ x) # linear regression on y = f(x)
+    abline(olsModel, lty=3)  # draw thin dotted line
+    library(robustbase)
+    robustModel <- lmrob(y ~ x)
+    abline(robustModel, lty=2, lwd=2)
+  #+end_src
+
+
+  [[file:../img/4_cereal3.png]]
+
+- ~lm~ is called to construct a linear regression model via the method
+  of [[https://www.r-bloggers.com/2017/07/ordinary-least-squares-ols-linear-regression-in-r/][ordinary least squares]] - this is the most popular linear model
+
+- ~abline~ is called to display the model prediction (based on intercept
+  and slope of the linear function generated). ~lty=3~ is a dotted line.
+
+- ~lmrob~ is a robust linear model from the ~robustbase~ package - it is
+  outlier-resistant. ~lty=2, ~lwd=2~ gives a thick dashed line
+
+- [ ] Do you think ~abline~ is a generic function?
+  #+begin_src R
+    methods(abline)
+  #+end_src
+
+* Customization with vectors
+
+- Consider the following code to plot ~whiteside~ variables
+  #+begin_src R :results graphics file :file ../img/4_pch.png :exports both
+    plot(
+      x = whiteside$Temp,
+      y = whiteside$Gas,
+      pch=c(6,16)[whiteside$Insul])
+  #+end_src
+
+  #+RESULTS:
+  [[file:../img/4_pch.png]]
+
+- ~c(6,16)~ defines a vector of the same length as ~Insul~ but uses ~pch=6~
+  when ~Insul = "Before"~, and ~pch=16~ when ~Insul="After"~:
+  #+begin_src R
+    c(6,16)[whiteside$Insul]
+  #+end_src
+
+- The ~pch~ parameter will accept a vector argument of the same length
+  as the ~x~- and ~y~-vectors used to create the scatterplot
+
+- Point sizes (~cex~) and colors (~col~) can also be specifed this way
+
+* Adding text to a plot
+
+- The ~text~ function works similarly to the other customizing functions
+
+- ~text~ specifies: x- and y-position of the text, and the text itself.
+
+- Left-right alignment is specified by ~adj~ whose default is centered
+  (~0.5~). To justify right, we need to set it to ~adj=1~
+
+- The code block is growing, so let's look at the ~text~ addition alone:
+  #+begin_example R
+    pointLabels <- paste(rownames(UScereal)[index], "-->")
+    text(
+      x=11,  # x-coordinate of text field, ca. x[which(y>300)]-0.5,
+      y=y[index], # y-coordinate of text field
+      labels=pointLabels,  # text for text field
+      adj=1,  # text is right justified
+      family="mono", # use mono spaced font family
+      font=1) # exact font depends on font family used
+  #+end_example
+
+  1) We define a text label. The ~paste~ function concatenates vectors
+     after converting to ~character~. Here, it concatenates a value of
+     the data frame and the character ~-->~
+     #+begin_src R
+       paste("Result: ", 100)
+       class(paste("Result: ", 100))
+     #+end_src
+
+  2) Let's take the expression ~rownames(UScereal)[index]~ apart[fn:2]:
+     You've seen this indexing structure before, in ~par()$lty~.
+
+     ~rownames~ extracts the names of rows of a data frame:
+     #+begin_src R
+       rownames(UScereal)  # all row names of data frame = all cereal types
+     #+end_src
+
+     ~index~ was defined earlier as a subset of ~UScereal$calories~ values
+     greater than the outlier cutoff value 300: ~index <- which(y > 300)~
+
+     Hence, ~rownames(UScereal)[index]~ extracts the cereal names
+     associated with the outlying values and puts them in the text box:
+     #+begin_src R
+       rownames(UScereal)[index]
+     #+end_src
+
+  3) Inside the ~text~ function, we have three sections:
+     - coordinates x and y for the text field[fn:3]
+     - labels, namely the text to be printed in the plot
+     - formatting parameters like text justification, font type etc.
+
+- The complete R code block for printout looks like this now:
+  #+name: cerealplot_text
+  #+begin_src R :results graphics file :file ../img/4_cereals4.png :exports both :noweb yes
+    <<cerealplot_trends>>
+    pointLabels <- paste(rownames(UScereal)[index], "-->")
+    text(
+      x=11,
+      y=y[index],
+      labels=pointLabels,
+      adj=1,
+      family="mono",
+      font=1)
+  #+end_src
+
+  #+RESULTS:
+  [[file:../img/4_cereals4.png]]
+
+* Adding a legend to a plot
+
+ -->> [[https://raw.githubusercontent.com/birkenkrahe/dviz/piHome/org/scatterplot.org][IF YOU MISSED THE LAST 1-2 SESSIONS DOWNLOAD THIS]]:
+      https://tinyurl.com/55p5yw6f <<--
+
+- The ~legend~ function adds a boxed explanatory text display
+
+- It can be used like the ~text~ function: box location and text
+
+- It has many more optional parameters (check out ~help(legend)~)
+  #+attr_html: :width 500px
+  [[../img/4_legend.png]]
+
+- Let's look at the code fragment for the legend only:
+  #+begin_example R
+    legend(
+    x = "topright",  # set location in plot
+    legend = c("OLS line", "robust line")) # print legend labels
+    lty = c(3,2),   # set line type for 2 legend items
+    lwd = c(1,2))  # set line width for 2 legend items
+  #+end_example
+
+  1) The first (~x~) argument sets the location in the plot
+  2) The ~legend~ parameter prints the legend labels (text)
+  3) The next parameters link the legend to the plot:
+     - ~lty=3~, ~lwd=1~ is the dotted thin upper line (OLS fit)
+     - ~lty=2~, ~lwd=2~ is the dashed thick lower line (robust fit)
+
+- Our final R code block:
+  #+begin_src R :results graphics file :file ../img/4_cereals5.png :exports both :noweb yes
+    <<cerealplot_text>>
+    legend(
+      x = "topright", 
+      lty = c(3,2),
+      lwd = c(1,2),
+      legend = c("OLS line", "robust line"))
+  #+end_src
+
+  #+RESULTS:
+  [[file:../img/4_cereals5.png]]
+
+* Customizing axes
+
+- You already know about labelling axes with ~xlab~ and ~ylab~
+
+- In addition, the limits of the axes can be set with ~xlim~ and ~ylim~
+
+- The ~par~ function offers additional parameters like ~las~ and ~side~
+
+- ~las~ specifies the orientation of the axis labels:
+  1) ~las=0~ : labels are displayed axis-parallel (default)
+  2) ~las=1~ : labels are always horizontal
+  3) ~las=2~ : labels are always perpendicular to the axis
+  4) ~las=3~ : labels are always vertical
+
+- To aid readability, you may also have to adjust ~cex.lab~
+
+- Example:
+  #+begin_src R :results graphics file :file ../img/4_las.png :exports both
+    par(las=0, mfrow=c(2,2))   # labels are axis parallel
+    plot(Nile, main="las=0")  
+    par(las=1)                 # labels horizontal
+    plot(Nile, main="las=1")
+    par(las=2)                 # labels axis perpendicular
+    plot(Nile, main="las=2")
+    par(las=3)                 # labels vertical
+    plot(Nile, main="las=3")
+  #+end_src
+
+  #+RESULTS:
+  [[file:../img/4_las.png]]
+
+* Specifying your own axes
+
+- You can specify your own axes in two steps:
+  1. execute the base graphics function with ~axes = FALSE~
+  2. Use the ~axis~ function to specify your own axes
+
+- The default axes are now suppressed and you need to set:
+  1) ~side = 1~ : creates (default) lower x-axis below the plot
+  2) ~side = 2~ : creates (default) y-axis left of the plot
+  3) ~side = 3~ : creates upper x-axis above the plot
+  4) ~side = 4~ : creates a y-axis right of the plot
+
+- Example: boxplot of the range of ~sugars~ values for each of the three
+  levels of ~shelf~ value in the ~UScereal~ dataframe:
+  1) ~shelf = 1~ is at the floor level
+  2) ~shelf = 2~ is the middle shelf (kid-eye-level)
+  3) ~shelf = 3~ is on the top shelf (adult-eye-level)
+
+- Box plot without axes: The ~varwidth~ parameter creates a boxplot of
+  variable width so that the width of each individual boxplot reflects
+  the number of different cereals on each shelf.
+  #+begin_src R :results graphics file :file ../img/4_axis1.png :exports both
+    boxplot(
+      sugars ~ shelf,
+      data = UScereal,
+      axes = FALSE,  # this removes the default axes
+      xlab = "Shelf",
+      ylab = "Grams of sugar per serving",
+      varwidth = TRUE)
+  #+end_src
+
+  #+RESULTS:
+  [[file:../img/4_axis1.png]]
+  
+- Box plot with axis specified using ~axis~: 
+  #+begin_src R :results graphics file :file ../img/4_axis2.png :exports both
+    boxplot(
+      sugars ~ shelf,
+      data = UScereal,
+      axes = FALSE,  # this removes the default axes
+      xlab = "Shelf",
+      ylab = "Grams of sugar per serving",
+      varwidth = TRUE)
+    axis(                # construct bottom axis (shelf value)
+      side = 1,          # lower axis below plot
+      at = c(1,2,3),     # tick marks
+      labels = c(1,2,3)) # number labels
+    yRange <- seq(0, max(UScereal$sugars), by=5)
+      axis(             # construct y-axis
+      side = 2,         # y axis left of plot
+      at = yRange,      # tick marks
+      labels = yRange)  # number labels
+    axis(               # construct top axis (shelf location)
+      side = 3,         # upper axis above plot
+      at = c(1,2,3),    # tick marks
+      labels = c("Floor", "Mid", "Top"))  # text labels
+  #+end_src
+
+  #+RESULTS:
+  [[file:../img/4_axis2.png]]
+  
+* Lab session: adding details to plots
+#+attr_html: :width 400px
+[[../img/4_gnome.jpg]]
+
+- Open the raw practice file in GitHub
+- Identify yourself as the author and pledge
+- Solve the problems using R code blocks
+- Submit the completed file to Canvas
+
+* Footnotes
+
+[fn:1] DEFINITION NOT FOUND.
+
+[fn:2] The need to deconstruct, as it were, complex functional
+expressions in R, is similar to getting a mathematical formula and
+having to take it apart using your knowledge of the laws of
+mathematics. If you don't enjoy this type of thing you probably won't
+study math (or you have to learn a lot more things by heart).
+
+[fn:3] It would be better not to have to look at the plot to determine
+the place of the text box, e.g. with the expression
+~x[which(y>300)]-0.5~ or ~(x[which(y>300)[2]]-x[which(y>300)[1]])~, which
+returns the x-position that belongs to the y-value outlier.

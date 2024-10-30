@@ -3041,7 +3041,11 @@ Let's work through the questions together.
 - [ ] Customizing axes
 - [ ] Practice lab
 
-Download [[tinyurl.com/plot-codealong]] now and open it in Emacs.
+Download [[https://tinyurl.com/plot-codealong]] now and open it in Emacs.
+
+* Review: =plot= function (part 1)
+
+
 
 * Week 12: Package =plotly= & Dashboard Design [Nov 4]
 
