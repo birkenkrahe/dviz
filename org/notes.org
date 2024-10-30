@@ -3041,7 +3041,7 @@ Let's work through the questions together.
 - [ ] Customizing axes
 - [ ] Practice lab
 
-Download [[tinyurl.com/plot-codealong]] (again) & open it in Emacs.
+Download [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]] (again) & open it in Emacs.
 
 * Review: =plot= function (part 1)
 
