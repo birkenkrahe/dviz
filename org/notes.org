@@ -3041,16 +3041,70 @@ Let's work through the questions together.
 - [ ] Customizing axes
 - [ ] Practice lab
 
-Download [[https://tinyurl.com/plot-codealong]] now and open it in Emacs.
+Download [[tinyurl.com/plot-codealong]] (again) & open it in Emacs.
 
 * Review: =plot= function (part 1)
 
+1. What does =plot= generate when you feed it with two =factor= variables?
+
+   Sample data and data preparation:
+   #+begin_src R
+
+   #+end_src
+   
+   Plot: attempt 1
+   #+begin_src R :file mosaic.png :session *R* :results file graphics output :exports both
+
+   #+end_src
+
+   Plot: attempt 2
+   #+begin_src R :file mosaic2.png :session *R* :results file graphics output :exports both
+
+   #+end_src
+
+   What's the line mean?
+   #+begin_src R
+
+   #+end_src
+
+2. When plotting a time series, what's the best way to visualize it?
+   #+begin_src R :file ts.png :session *R* :results file graphics output :exports both
+
+   #+end_src
+
+3. You've got two numeric distributions of related observations (for
+   example before and after applying medication. What's the best way
+   to visualize the difference statistically?
+   #+begin_src R :file boxplot.png :session *R* :results file graphics output :exports both
+     library(MASS)
+     data(whiteside)
+     plot(whiteside$Gas ~ whiteside$Insul)
+   #+end_src
+
+4. Is there anything that you cannot do with =plot=?
+   #+begin_quote
+   You cannot layer plot types on top of one another - e.g. for a recursive
+   partitioning tree model
+   #+end_quote
+   #+attr_html: :width 400px:
+   #+caption: Linear regression with Whiteside data using `partykit::lmtree`
+   [[../img/4_mob.png]]
+
+5. What's the greatest advantage of using base R methods?
+   #+begin_quote
+   Consistent nomenclature (syntax) for many different visualization
+   techniques - all functions draw on graphics parameters in =par=, just
+   like they draw on =colors= for coloring, and on =options= for display.
+   #+end_quote
 
 
 * Week 12: Package =plotly= & Dashboard Design [Nov 4]
 
+
 * Week 13: Advanced Customization & Project review [Nov 11]
 
+
 * Week 14: Power BI [Nov 25]
+
 
 * Week 15: Final presentations [Dec 2]
