@@ -3034,14 +3034,20 @@ Let's work through the questions together.
 
 - [X] The =plot= function revisited
 - [X] Decision tree models (=rpart=)
-- [ ] Optional parameters for base graphics (=par=)
-- [ ] Multiple plots and passing parameters
+- [X] Optional parameters for base graphics (=par=)
+- [X] Multiple plots and passing parameters
 - [ ] Adding =text= and =points= to highlight outliers
 - [ ] Customization with vectors
 - [ ] Customizing axes
 - [ ] Practice lab
 
-Download [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]] (again) & open it in Emacs.
+Download [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]] (again) & open it in Emacs:
+
+#+begin_example sh
+  wget -O plot.org tinyurl.com/plot-codealong
+  emacs --file plot.org
+#+end_example
+
 
 * Review: =plot= function (part 1)
 
@@ -3049,18 +3055,55 @@ Download [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]] (aga
 
    Sample data and data preparation:
    #+begin_src R
-
+     str(mtcars)
    #+end_src
-   
+
+   #+RESULTS:
+   #+begin_example
+   'data.frame':	32 obs. of  11 variables:
+    $ mpg : num  21 21 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 ...
+    $ cyl : num  6 6 4 6 8 6 8 4 4 6 ...
+    $ disp: num  160 160 108 258 360 ...
+    $ hp  : num  110 110 93 110 175 105 245 62 95 123 ...
+    $ drat: num  3.9 3.9 3.85 3.08 3.15 2.76 3.21 3.69 3.92 3.92 ...
+    $ wt  : num  2.62 2.88 2.32 3.21 3.44 ...
+    $ qsec: num  16.5 17 18.6 19.4 17 ...
+    $ vs  : num  0 0 1 1 0 1 0 1 1 1 ...
+    $ am  : num  1 1 1 0 0 0 0 0 0 0 ...
+    $ gear: num  4 4 4 3 3 3 3 4 4 4 ...
+    $ carb: num  4 4 1 1 2 1 4 2 2 4 ...
+   #+end_example
+
+   Define =factor= variables:
+   #+begin_src R 
+     mtcars$cyl -> cyl
+     mtcars$gear -> gear
+     table(cyl,gear) -> cyl_gear_table
+     cyl_gear_table  # contingency table
+   #+end_src
+
+   #+RESULTS:
+   :    gear
+   : cyl  3  4  5
+   :   4  1  8  2
+   :   6  2  4  1
+   :   8 12  0  2
+
    Plot: attempt 1
    #+begin_src R :file mosaic.png :session *R* :results file graphics output :exports both
-
+     plot(x=cyl, y=gear)
    #+end_src
+
+   #+RESULTS:
+   [[file:mosaic.png]]
 
    Plot: attempt 2
    #+begin_src R :file mosaic2.png :session *R* :results file graphics output :exports both
-
+     plot(cyl_gear_table)
    #+end_src
+
+   #+RESULTS:
+   [[file:mosaic2.png]]
 
    What's the line mean?
    #+begin_src R
@@ -3069,17 +3112,34 @@ Download [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]] (aga
 
 2. When plotting a time series, what's the best way to visualize it?
    #+begin_src R :file ts.png :session *R* :results file graphics output :exports both
-
+     plot(Nile, type="b") # bullets with lines
+     grid(lwd=4)
    #+end_src
 
+   #+RESULTS:
+   [[file:ts.png]]
+
 3. You've got two numeric distributions of related observations (for
-   example before and after applying medication. What's the best way
+   example before and after applying medication). What's the best way
    to visualize the difference statistically?
    #+begin_src R :file boxplot.png :session *R* :results file graphics output :exports both
      library(MASS)
      data(whiteside)
-     plot(whiteside$Gas ~ whiteside$Insul)
+     plot(whiteside$Gas ~ whiteside$Insul) # Gas as function of Insul
    #+end_src
+
+   #+RESULTS:
+   [[file:boxplot.png]]
+
+   #+begin_src R :session *R* :results output :exports both :noweb yes
+     str(whiteside)
+   #+end_src
+
+   #+RESULTS:
+   : 'data.frame':	56 obs. of  3 variables:
+   :  $ Insul: Factor w/ 2 levels "Before","After": 1 1 1 1 1 1 1 1 1 1 ...
+   :  $ Temp : num  -0.8 -0.7 0.4 2.5 2.9 3.2 3.6 3.9 4.2 4.3 ...
+   :  $ Gas  : num  7.2 6.9 6.4 6 5.8 5.8 5.6 4.7 5.8 5.2 ...
 
 4. Is there anything that you cannot do with =plot=?
    #+begin_quote

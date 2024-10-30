@@ -304,7 +304,7 @@ line plot.
    ~plot(lmod)~ in the R console - this will produce several plots at
    once (click on the graph to move to the next one).
 
-* NEXT Optional parameters for base graphics
+* Optional parameters for base graphics
 
 - There are 72 optional base graphics parameters set by the ~par~
   function
@@ -314,8 +314,10 @@ line plot.
 - ~par~ can also be called (like ~options~ and other system
   functions). Can you list all the parameters in =par=?
 
-  #+begin_src R
-
+  #+begin_src R :results none
+    attribtutes(par())   # par() is a list while `par` is a function
+    names(par())
+    str(par())
   #+end_src
 
 - As you can read in ~help(par)~, some of these parameters are read-only
@@ -326,19 +328,39 @@ line plot.
 
 - ~mfrow~ is a 2-dim vector that sets up an array of plots.
 
+- Normally, =mfrow= is limited to 6 plots per page but there are
+  exceptions, e.g. the pair plot:
+  #+begin_src R :file panel.png :session *R* :results output graphics file
+  plot(mtcars)
+  #+end_src
+
 - Make two plots with two panels, both line plots, to plot 100 and
   1000 random numbers: =rnorm(100)= generates 100 normally distributed
   pseudo-random numbers.
   #+name: mfrow
   #+begin_src R :session *R* :results graphics file :file 4_mfrow.png :exports both
-    
+    par(mfrow=c(2,1))
+    plot(rnorm(100),type="l")
+    title("100 random numbers")
+    plot(rnorm(1000),type="l")
+    title("1000 random numbers")
   #+end_src
+
+  #+RESULTS: mfrow
+  [[file:4_mfrow.png]]
 
 - Now put the scatterplot versions of these plots on one page, on top
   of one another.
   #+begin_src R :session *R* :results graphics file :file 4_mfrow1.png :exports both
-
+    par(mfrow=c(2,1))
+    plot(rnorm(100))  # scatterplot is the default
+    title("100 random numbers")
+    plot(rnorm(1000))
+    title("1000 random numbers")
   #+end_src
+
+  #+RESULTS:
+  [[file:4_mfrow1.png]]
 
 - Several parameters come in groups:
 
@@ -346,30 +368,67 @@ line plot.
      another, e.g. ~cex.main~ scales the main plot title relative to ~cex~
      #+name: cex
      #+begin_src R :session *R* :results graphics file :file 4_cex.png :exports both
- 
+       plot(rnorm(100),
+            main="Double the size",
+            cex=2,  # scale the points
+            cex.main=2,
+            pch=16)   # scale the title characters
      #+end_src
+
+     #+RESULTS: cex
+     [[file:4_cex.png]]
 
    2) The ~col~ family specifies colors for points, lines, text. To see
       the complete set of colors, enter ~colors()~.
 
+      #+begin_src R
+        length(colors())
+      #+end_src
+
+      #+RESULTS:
+      : [1] 657
+
      #+begin_src R :session *R* :results graphics file :file 4_col.png :exports both
- 
+       plot(rnorm(100),
+            main="Color me impressed",
+            col="purple",
+            pch=16,
+            cex=2, cex.main=2,
+            col.main="red",
+            col.axis="blue"
+            )
      #+end_src
+
+     #+RESULTS:
+     [[file:4_col.png]]
 
   3) The ~font~ family specifies font types (plain = 1, bold = 2, italic
      = 3, bold italic = 4).
      #+name: font
      #+begin_src R :session *R* :results graphics file :file ../img/4_font.png :exports both
-
+       plot(rnorm(100),
+            main="Fountain of font",
+            font.main=4,
+            cex.main=2,
+            font.lab=2)
      #+end_src
+
+     #+RESULTS: font
+     [[file:../img/4_font.png]]
 
 * Other parameters
 
 - ~adj~ specifies justification of the text (0=left,1=right, center=0.5)
 
   #+begin_src R :session *R* :results graphics file :file 4_adj.png :exports both
-
+    plot(rnorm(100), type="n")
+    text(x=40,y=0,labels="Right-justified text", adj=1, font=3)
+    text(x=40,y=-1,labels="Left-justified text", adj=0, font=3)
+    text(x=40,y=1.5,labels="Centered text", adj=0.5, font=3)        
   #+end_src
+
+  #+RESULTS:
+  [[file:4_adj.png]]
 
 - ~lty~ and ~lwd~ specify line type and line width.
   #+name: linewidth
