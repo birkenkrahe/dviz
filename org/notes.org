@@ -3158,6 +3158,10 @@ Download [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]] (aga
    #+end_quote
 
 
+* Review =plot= function (part 2)
+#+attr_html: :width 350px: 
+[[../img/halloween.jpg]]
+
 * Week 12: Package =plotly= & Dashboard Design [Nov 4]
 
 
