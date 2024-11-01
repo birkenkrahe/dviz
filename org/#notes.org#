@@ -3302,6 +3302,13 @@ Download [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]] (aga
 
 - Can you install and load the =car= package?
 
+  #+begin_src R
+    library(car)
+  #+end_src
+
+  #+RESULTS:
+  : Error in library(car) : there is no package called ‘car’
+
 
 * Week 12: Package =plotly= & Dashboard Design [Nov 4]
 

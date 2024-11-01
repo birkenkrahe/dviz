@@ -448,7 +448,7 @@ line plot.
 
   #+end_src
 
-* Multiple plots and passing parameters
+* NEXT Multiple plots and passing parameters
 
 - The ~ask~ parameter is a /logical/ flag (the default value is ~FALSE~)
   that specifies whether the graphics system should wait for a user
