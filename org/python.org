@@ -1,0 +1,194 @@
+#+startup: overview hideblocks indent entitiespretty: 
+* Problen
+Recreating a plot in Python:
+#+attr_html: :width 600px: 
+[[file:~/GitHub/dviz/img/4_details.png]]
+
+* Solution 1
+#+begin_src python :file cereals.png :python python3 :session *Python* :results output graphics file 
+  import matplotlib.pyplot as plt
+  import pandas as pd
+  import numpy as np
+
+  # Load the UScereal dataset from the R MASS package
+  # Data obtained from: https://vincentarelbundock.github.io/Rdatasets/csv/MASS/UScereal.csv
+  url = "https://vincentarelbundock.github.io/Rdatasets/csv/MASS/UScereal.csv"
+  cereal_data = pd.read_csv(url, index_col=0)
+
+  # Extract calories and sugars data
+  calories = cereal_data['calories']
+  sugars = cereal_data['sugars']
+
+  # Create the figure and axes for "Before" and "After"
+  fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(8, 4))
+
+  # Bare plot on the left (Before)
+  ax1.plot(sugars, calories, 'o')
+  ax1.set_title('Before')
+  ax1.set_ylabel('Calories')
+  ax1.set_xlabel('Sugars')
+
+  # Customized plot on the right (After)
+  ax2.plot(sugars, calories, 'o', color='orange')
+  ax2.set_title('After')
+  ax2.set_ylabel('Calories')
+  ax2.set_xlabel('Sugars')
+  ax2.grid(True)
+  ax2.spines['top'].set_visible(False)
+  ax2.spines['right'].set_visible(False)
+
+  # Adjust layout and display the plots
+  plt.tight_layout()
+  plt.savefig("cereals.png")
+#+end_src
+
+#+RESULTS:
+[[file:cereals.png]]
+
+* Solution 2
+
+#+begin_src python :python python3 :session *Python* :results output file graphics :file cereals2.png
+  import matplotlib.pyplot as plt
+  import pandas as pd
+  import numpy as np
+  import statsmodels.api as sm
+  from sklearn.linear_model import LinearRegression
+  from sklearn.linear_model import RANSACRegressor
+
+  # Load the UScereal dataset from the R MASS package
+  # Data obtained from: https://vincentarelbundock.github.io/Rdatasets/csv/MASS/UScereal.csv
+  url = "https://vincentarelbundock.github.io/Rdatasets/csv/MASS/UScereal.csv"
+  cereal_data = pd.read_csv(url, index_col=0)
+
+  # Extract sugars and calories data
+  sugars = cereal_data['sugars']
+  calories = cereal_data['calories']
+
+  # Create the figure and axes for "Before" and "After"
+  fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(8, 4))
+
+  # Bare plot on the left (Before)
+  ax1.plot(sugars, calories, 'o')
+  ax1.set_title('Before')
+  ax1.set_xlabel('Grams of sugar per serving')
+  ax1.set_ylabel('Calories per serving')
+
+  # Customized plot on the right (After)
+  ax2.plot(sugars, calories, 'o', color='orange')
+  ax2.set_title('After')
+  ax2.set_xlabel('Grams of sugar per serving')
+  ax2.set_ylabel('Calories per serving')
+  ax2.grid(True)
+  ax2.spines['top'].set_visible(False)
+  ax2.spines['right'].set_visible(False)
+
+  # Convert data to NumPy arrays for linear regression
+  X = sugars.values.reshape(-1, 1)
+  y = calories.values
+
+  # Add a regular trendline using Linear Regression
+  lin_reg = LinearRegression()
+  lin_reg.fit(X, y)
+  y_pred = lin_reg.predict(X)
+  ax2.plot(sugars, y_pred, color='blue', linestyle='-', linewidth=2, label='Regular Trendline')
+
+  # Add a robust trendline using RANSAC to ignore outliers
+  ransac = RANSACRegressor(LinearRegression(), min_samples=0.9)
+  ransac.fit(X, y)
+  y_ransac_pred = ransac.predict(X)
+  ax2.plot(sugars, y_ransac_pred, color='green', linestyle='-', linewidth=2, label='Robust Trendline')
+
+  # Identify and annotate outliers
+  outlier_indices = [8, 28]  # Grape Nuts and Great Grains Pecan
+  outlier_coords = [(sugars.iloc[8], calories.iloc[8]), (sugars.iloc[28], calories.iloc[28])]
+  outlier_labels = ["Grape Nuts", "Great Grains Pecan"]
+  for label, (x, y) in zip(outlier_labels, outlier_coords):
+      ax2.annotate(label, xy=(x, y), xytext=(x + 1, y + 15),
+                   arrowprops=dict(facecolor='black', arrowstyle='->'),
+                   fontsize=9, color='red')
+
+  # Add a legend for the trendlines
+  ax2.legend()
+
+  # Adjust layout and display the plots
+  plt.tight_layout()
+  plt.savefig("cereals2.png")
+#+end_src
+
+#+RESULTS:
+[[file:cereals2.png]]
+
+* Solution 3
+
+#+begin_src python :python python3 :session *Python* :results output file graphics :file cereals3.png
+  import matplotlib.pyplot as plt
+  import pandas as pd
+  import numpy as np
+  import statsmodels.api as sm
+  from sklearn.linear_model import LinearRegression
+  from sklearn.linear_model import RANSACRegressor
+
+  # Load the UScereal dataset from the R MASS package
+  # Data obtained from: https://vincentarelbundock.github.io/Rdatasets/csv/MASS/UScereal.csv
+  url = "https://vincentarelbundock.github.io/Rdatasets/csv/MASS/UScereal.csv"
+  cereal_data = pd.read_csv(url, index_col=0)
+
+  # Extract sugars and calories data
+  sugars = cereal_data['sugars']
+  calories = cereal_data['calories']
+
+  # Create the figure and axes for "Before" and "After"
+  fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(8, 4))
+
+  # Bare plot on the left (Before)
+  ax1.plot(sugars, calories, 'o')
+  ax1.set_title('Before')
+  ax1.set_xlabel('Grams of sugar per serving')
+  ax1.set_ylabel('Calories per serving')
+
+  # Customized plot on the right (After)
+  ax2.scatter(sugars, calories, color='orange', marker='o')
+  ax2.set_title('After')
+  ax2.set_xlabel('Grams of sugar per serving')
+  ax2.set_ylabel('Calories per serving')
+  ax2.grid(True)
+  ax2.spines['top'].set_visible(False)
+  ax2.spines['right'].set_visible(False)
+
+  # Convert data to NumPy arrays for linear regression
+  X = sugars.values.reshape(-1, 1)
+  y = calories.values
+
+  # Add a regular trendline using Linear Regression
+  lin_reg = LinearRegression()
+  lin_reg.fit(X, y)
+  y_pred = lin_reg.predict(X)
+  ax2.plot(sugars, y_pred, color='blue', linestyle='-', linewidth=2, label='Regular Trendline')
+
+  # Add a robust trendline using RANSAC to ignore outliers
+  ransac = RANSACRegressor(LinearRegression(), min_samples=0.9)
+  ransac.fit(X, y)
+  y_ransac_pred = ransac.predict(X)
+  ax2.plot(sugars, y_ransac_pred, color='green', linestyle='-', linewidth=2, label='Robust Trendline')
+
+  # Identify and annotate outliers
+  outlier_indices = [8, 28]  # Grape Nuts and Great Grains Pecan
+  outlier_coords = [(sugars.iloc[8], calories.iloc[8]), (sugars.iloc[28], calories.iloc[28])]
+  outlier_labels = ["Grape Nuts", "Great Grains Pecan"]
+  outlier_markers = ['s', 'D']  # Different shapes for the outliers
+  for i, (label, (x, y), marker) in enumerate(zip(outlier_labels, outlier_coords, outlier_markers)):
+      ax2.scatter(x, y, color='red', marker=marker, s=100, label=label if i == 0 else "")
+      ax2.annotate(label, xy=(x, y), xytext=(x + 1, y + 15),
+                   arrowprops=dict(facecolor='black', arrowstyle='->'),
+                   fontsize=9, color='red')
+
+  # Add a legend for the trendlines
+  ax2.legend()
+
+  # Adjust layout and display the plots
+  plt.tight_layout()
+  plt.savefig("cereals3.png")
+#+end_src
+
+#+RESULTS:
+[[file:cereals3.png]]

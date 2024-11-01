@@ -3026,8 +3026,7 @@ Open Emacs on =ggplot2.org= with
 
 Let's work through the questions together.
 
-
-* Week 11: Base R Plotting [Oct 28]
+* DONE Week 11: Base R Plotting [Oct 28]
 #+attr_html: :width 400px:
 #+caption: Conspirators plotting, by Suthamma Byrne (Saatchi Gallery)
 [[../img/conspirators.jpg]]
@@ -3036,7 +3035,7 @@ Let's work through the questions together.
 - [X] Decision tree models (=rpart=)
 - [X] Optional parameters for base graphics (=par=)
 - [X] Multiple plots and passing parameters
-- [ ] Adding =text= and =points= to highlight outliers
+- [X] Adding =text= and =points= to highlight outliers
 - [ ] Customization with vectors
 - [ ] Customizing axes
 - [ ] Practice lab
@@ -3049,7 +3048,7 @@ Download [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]] (aga
 #+end_example
 
 
-* Review: =plot= function (part 1)
+** Review: =plot= function (part 1)
 
 1. What does =plot= generate when you feed it with two =factor= variables?
 
@@ -3158,7 +3157,7 @@ Download [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]] (aga
    #+end_quote
 
 
-* Review =plot= function (part 2)
+** Review =plot= function (part 2)
 #+attr_html: :width 350px: 
 [[../img/halloween.jpg]]
 
@@ -3301,12 +3300,6 @@ Download [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]] (aga
    #+RESULTS:
    [[file:cex.png]]
 
-
-* Preparation for election (aka wedding) week
-
-- Can you install and load the =car= package?
-
-- Note to self: find installable =car= package!
 
 * Week 12: Package =plotly= & Dashboard Design [Nov 4]
 
