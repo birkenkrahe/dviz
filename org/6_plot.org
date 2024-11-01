@@ -425,9 +425,6 @@ line plot.
   #+RESULTS: cerealplot_nothing
   [[file:../img/4_cereal1.png]]
   
-  #+RESULTS:
-  [[file:../img/4_cereal1.png]]
-
 * Highlighting outliers with ~points~
 
 - ~points~ behaves much like ~plot~. It adds points to an existing plot.

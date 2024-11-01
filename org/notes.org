@@ -3164,24 +3164,25 @@ Download [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]] (aga
 
 1. Are the following claims (by AI) false or true?
    #+begin_quote
-   "I went to ask AI for some jokes on this and apparently there is a
-   bias against R it seems. Some examples - 
+   "I went to ask AI for some jokes on [R vs. Python] and apparently
+   there is a bias against R it seems. Some examples -
 
    *Community*
     - Python: It’s like a laid-back family dinner. Everyone’s welcome,
       and there’s always room for more code.
     - R: Picture an exclusive wine-tasting club, sampling only
-      chardonnay from ggplot2.
+      Chardonnay from =ggplot2=.
    *Packages*
-    - Python: Need a chart? Just install matplotlib and get going.
-    - R: Oh, you’ll need ggplot2, dplyr, tidyverse, plus a barista for
+    - Python: Need a chart? Just install =matplotlib= and get going.
+    - R: Oh, you’ll need =ggplot2=, =dplyr=, =tidyverse=, plus a barista for
       coffee and a life coach to guide you through the package jungle.
    *Errors*
     - Python: "Hey buddy, maybe try checking line 22?"
     - R: Brace yourself for a cryptic, paragraph-long poem that
       somehow leaves you questioning your existence.
    *IDE of Choice*
-    - Python: Enter Jupyter Notebooks, where data and code flow like poetry.
+    - Python: Enter Jupyter Notebooks, where data and code flow like
+      poetry.
     - R: Meet RStudio. Try introducing an R user to Jupyter, though,
       and it’s like asking your grandma to download TikTok."
    #+end_quote
@@ -3215,16 +3216,16 @@ Download [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]] (aga
     $ col.lab  : chr "black"
     $ col.main : chr "black"
     $ col.sub  : chr "black"
-    $ cra      : num [1:2] 14.4 19.2
+    $ cra      : num [1:2] 14.7 19.6
     $ crt      : num 0
     $ csi      : num 0.2
-    $ cxy      : num [1:2] 0.0261 0.0388
-    $ din      : num [1:2] 6.99 7
+    $ cxy      : num [1:2] 0.026 0.0388
+    $ din      : num [1:2] 7 6.99
     $ err      : int 0
     $ family   : chr ""
     $ fg       : chr "black"
     $ fig      : num [1:4] 0 1 0 1
-    $ fin      : num [1:2] 6.99 7
+    $ fin      : num [1:2] 7 6.99
     $ font     : int 1
     $ font.axis: int 1
     $ font.lab : int 1
@@ -3252,7 +3253,7 @@ Download [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]] (aga
     $ omi      : num [1:4] 0 0 0 0
     $ page     : logi TRUE
     $ pch      : int 1
-    $ pin      : num [1:2] 5.75 5.16
+    $ pin      : num [1:2] 5.76 5.15
     $ plt      : num [1:4] 0.117 0.94 0.146 0.883
     $ ps       : int 12
     $ pty      : chr "m"
@@ -3291,7 +3292,10 @@ Download [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]] (aga
 
 5. Which =plot= parameter family controls text and symbols colors?
    #+begin_src R :file cex.png :session *R* :results file graphics output :exports both
-     plot(rnorm(100),cex=5,col="red",col.axis="red")
+     plot(rnorm(100),
+          cex=5,
+          col="red",
+          col.axis="red")
    #+end_src
 
    #+RESULTS:
@@ -3302,6 +3306,7 @@ Download [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]] (aga
 
 - Can you install and load the =car= package?
 
+- Note to self: find installable =car= package!
 
 * Week 12: Package =plotly= & Dashboard Design [Nov 4]
 

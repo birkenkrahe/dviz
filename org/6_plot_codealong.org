@@ -448,7 +448,7 @@ line plot.
 
   #+end_src
 
-* NEXT Multiple plots and passing parameters
+* Multiple plots and passing parameters
 
 - The ~ask~ parameter is a /logical/ flag (the default value is ~FALSE~)
   that specifies whether the graphics system should wait for a user
@@ -457,7 +457,17 @@ line plot.
 - How can I confirm that ~ask~ is ~logical~, and see its value?
 
   #+begin_src R
-  
+    par()$ask
+    class(par()$ask)
+  #+end_src
+
+  #+RESULTS:
+  : [1] FALSE
+  : [1] "logical"
+
+  Set =ask= back manually:
+  #+begin_src R
+    par(ask=FALSE)
   #+end_src
 
 * Adding points and lines to a scatterplot
@@ -470,8 +480,15 @@ https:github.com/birkenkrahe/dviz/blob/main/img/4_details.png
 - Starting point is calories vs. sugars from the ~UScereal~ data frame
   #+name: cerealplot
   #+begin_src R :results graphics file :file 4_cereal.png :exports both
-
+    par(mfrow=c(1,1))  # reset to one plot per page
+    library(MASS)
+    UScereal$sugars -> x     # Cereal sugars
+    UScereal$calories -> y   # Cereal calories
+    plot(x,y)  # minimal plot without anything
   #+end_src
+
+  #+RESULTS: cerealplot
+  [[file:4_cereal.png]]
 
 * Adding axis labels ~xlab~, ~ylab~, and ~type~
 
@@ -484,8 +501,14 @@ https:github.com/birkenkrahe/dviz/blob/main/img/4_details.png
 
   #+name: cerealplot_nothing
   #+begin_src R :results graphics file :file 4_cereal1.png :exports both
-
+    plot(x,y,
+         xlab="Grams of sugar per serving",
+         ylab="Calories per serving",
+         type="n")  # nothing to see here
   #+end_src
+
+  #+RESULTS: cerealplot_nothing
+  [[file:4_cereal1.png]]
 
 * Highlighting outliers with ~points~
 
@@ -493,8 +516,12 @@ https:github.com/birkenkrahe/dviz/blob/main/img/4_details.png
 
 - Is ~points~ a /generic/ R function?
   #+begin_src R
-
+    methods(points)
   #+end_src
+
+  #+RESULTS:
+  : [1] points.default  points.formula* points.table*  
+  : see '?methods' for accessing help and source code
 
 - The function takes the coordinate vectors of points to plot
 
@@ -504,8 +531,35 @@ https:github.com/birkenkrahe/dviz/blob/main/img/4_details.png
 - To extract the subvectors, we define an index vector - it contains
   only the index value of the outliers.
   #+begin_src R
-
+    # y > 300 # logical vectorisation
+    which(y > 300) # which vector indices have values above 300
+    which(y > 300) -> idx  # logical flag or index vector
+    x[idx] # all the sugar outliers
+    y[idx] # all the calorie outliers
+    x[-idx] # all others
+    y[-idx] # all others    
   #+end_src
+
+  #+RESULTS:
+  #+begin_example
+  [1] 31 32
+  [1] 12.00000 12.12121
+  [1] 440.0000 363.6364
+   [1] 18.181818 15.151515  0.000000 13.333333 14.000000 10.666667  8.955224  7.462687 16.000000  0.800000
+  [11] 12.000000 14.000000 13.000000  3.000000  2.000000 12.000000 13.000000 14.000000  3.000000 13.333333
+  [21]  6.666667 13.000000 14.666667  8.750000 14.925373 17.910448 16.000000 17.045455 12.000000  5.681818
+  [31] 11.000000 13.333333  8.270677 12.000000  2.000000  8.955224 12.000000 19.402985  6.000000 13.432836
+  [41] 10.447761 20.000000 20.895522  3.000000  0.000000 12.000000 16.000000 16.000000 12.000000  1.769912
+  [51]  3.000000  0.000000  0.000000 20.000000  3.000000  3.000000 14.000000  3.000000  4.000000 12.000000
+  [61]  4.477612  3.000000 10.666667
+   [1] 212.12121 212.12121 100.00000 146.66667 110.00000 173.33333 134.32836 134.32836 160.00000  88.00000
+  [11] 160.00000 220.00000 110.00000 110.00000 100.00000 110.00000 110.00000 220.00000 110.00000 133.33333
+  [21] 133.33333 110.00000 146.66667 125.00000 179.10448 179.10448 146.66667 113.63636 146.66667 113.63636
+  [31] 120.00000 146.66667  82.70677 186.66667  73.33333 149.25373 110.00000 238.80597 100.00000 179.10448
+  [41] 208.95522 260.00000 179.10448 100.00000  50.00000 200.00000 160.00000 200.00000 180.00000  97.34513
+  [51] 110.00000 134.32836 134.32836 146.66667 110.00000 110.00000 140.00000 100.00000 146.66667 110.00000
+  [61] 149.25373 100.00000 146.66667
+  #+end_example
 
 - We plot the non-outliers with one type of point (~pch=16~), the
   outliers with another (~pch=18~) and twice as large (~cex=2~).
@@ -514,8 +568,13 @@ https:github.com/birkenkrahe/dviz/blob/main/img/4_details.png
   #+name: cerealplot_outliers
   #+begin_src R :results graphics file :file 4_cereal2.png :exports both :noweb yes
     <<cerealplot_nothing>>
-
+    idx <- which(y > 300)
+    points(x[-idx],y[-idx], pch=16)
+    points(x[idx],y[idx], pch=18, cex=2)
   #+end_src
+
+  #+RESULTS: cerealplot_outliers
+  [[file:4_cereal2.png]]
 
 * Add reference lines with ~abline~
 
