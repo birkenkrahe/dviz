@@ -1,5 +1,6 @@
 #+startup: overview hideblocks indent entitiespretty: 
-* Problen
+* Problem
+
 Recreating a plot in Python:
 #+attr_html: :width 600px: 
 [[file:~/GitHub/dviz/img/4_details.png]]
