@@ -425,7 +425,7 @@ line plot.
   #+RESULTS: cerealplot_nothing
   [[file:../img/4_cereal1.png]]
   
-* Highlighting outliers with ~points~
+* NEXT Highlighting outliers with ~points~
 
 - ~points~ behaves much like ~plot~. It adds points to an existing plot.
 

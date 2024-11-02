@@ -2784,7 +2784,7 @@ this way you'll learn Python and visualization with Python, for free!
 
    #+RESULTS:
    #+begin_example
-   /tmp/babel-6rBfHT/python-biKsad:1: DeprecationWarning: 
+   /tmp/babel-6rBfHT/python-biKsad:1: DeprecationWarning:
    Pyarrow will become a required dependency of pandas in the next major release of pandas (pandas 3.0),
    (to allow more performant data types, such as the Arrow string type, and better interoperability with other libraries)
    but was not found to be installed on your system.
@@ -2809,27 +2809,27 @@ this way you'll learn Python and visualization with Python, for free!
    #+end_example
 
 5. Save the first 12 rows of the data frame to =df2=
-    #+begin_src python :results output :session *Python* :python python3 :exports both
-      df2 = df.head(n=12)   # in R: head(df, n=12)
-      print(df2)
-    #+end_src
+   #+begin_src python :results output :session *Python* :python python3 :exports both
+     df2 = df.head(n=12)   # in R: head(df, n=12)
+     print(df2)
+   #+end_src
 
-    #+RESULTS:
-    #+begin_example
-              DATE  PRCP  TMAX  TMIN   RAIN
-    0   1948-01-01  0.47    51    42   True
-    1   1948-01-02  0.59    45    36   True
-    2   1948-01-03  0.42    45    35   True
-    3   1948-01-04  0.31    45    34   True
-    4   1948-01-05  0.17    45    32   True
-    5   1948-01-06  0.44    48    39   True
-    6   1948-01-07  0.41    50    40   True
-    7   1948-01-08  0.04    48    35   True
-    8   1948-01-09  0.12    50    31   True
-    9   1948-01-10  0.74    43    34   True
-    10  1948-01-11  0.01    42    32   True
-    11  1948-01-12  0.00    41    26  False
-    #+end_example
+   #+RESULTS:
+   #+begin_example
+             DATE  PRCP  TMAX  TMIN   RAIN
+   0   1948-01-01  0.47    51    42   True
+   1   1948-01-02  0.59    45    36   True
+   2   1948-01-03  0.42    45    35   True
+   3   1948-01-04  0.31    45    34   True
+   4   1948-01-05  0.17    45    32   True
+   5   1948-01-06  0.44    48    39   True
+   6   1948-01-07  0.41    50    40   True
+   7   1948-01-08  0.04    48    35   True
+   8   1948-01-09  0.12    50    31   True
+   9   1948-01-10  0.74    43    34   True
+   10  1948-01-11  0.01    42    32   True
+   11  1948-01-12  0.00    41    26  False
+   #+end_example
 
 6. Plot maximum temperature against the date:
    #+begin_src python :file seattle.png :results file graphics output :session *Python* :python python3 :exports both
@@ -2848,7 +2848,7 @@ this way you'll learn Python and visualization with Python, for free!
      ax.plot(df2["DATE"], df2["TMAX"])
      plt.xticks(rotation=45, ha='right')
      plt.tight_layout()
-     plt.savefig("seattle2.png")    
+     plt.savefig("seattle2.png")
    #+end_src
 
    #+RESULTS:
@@ -2856,14 +2856,14 @@ this way you'll learn Python and visualization with Python, for free!
 
 8. Add a second plot with the minimum temperatures:
    #+begin_src python :file seattle3.png :results file graphics output :session *Python* :python python3 :exports both
-     fig,ax=plt.subplots()  
+     fig,ax=plt.subplots()
 
      ax.plot(df2["DATE"], df2["TMAX"])
-     ax.plot(df2["DATE"], df2["TMIN"])     
+     ax.plot(df2["DATE"], df2["TMIN"])
 
      plt.xticks(rotation=45, ha='right')
      plt.tight_layout()
-     plt.savefig("seattle3.png")    
+     plt.savefig("seattle3.png")
    #+end_src
 
    #+RESULTS:
@@ -2872,7 +2872,7 @@ this way you'll learn Python and visualization with Python, for free!
 9. Add a suitable title, x- and y-labels, a legend, different markers
    and colors, a legend and a grid:
    #+begin_src python :file seattle4.png :results file graphics output :session *Python* :python python3 :exports both
-     fig,ax=plt.subplots()  
+     fig,ax=plt.subplots()
      ax.plot(df2["DATE"], df2["TMAX"],
              label='Max temp',
              color='b',
@@ -2882,13 +2882,13 @@ this way you'll learn Python and visualization with Python, for free!
              label='Min temp',
              color='r',
              marker='v',
-             linestyle='--')     
+             linestyle='--')
      plt.title("Seattle Weather Data 1948")
      plt.legend()
      plt.grid()
      plt.xticks(rotation=45, ha='right')
      plt.tight_layout()
-     plt.savefig("seattle4.png")    
+     plt.savefig("seattle4.png")
    #+end_src
 
    #+RESULTS:
@@ -2905,7 +2905,7 @@ this way you'll learn Python and visualization with Python, for free!
       ax[0].tick_params(axis='x',rotation=45)
 
       ax[1].plot(df2["DATE"],df2["TMIN"])
-      ax[1].set_title("Min Temp")      
+      ax[1].set_title("Min Temp")
       ax[1].grid(True)
       ax[1].tick_params(axis='x',rotation=45)
       plt.tight_layout()
@@ -2924,7 +2924,7 @@ this way you'll learn Python and visualization with Python, for free!
 
       # set y-axix limits to the same range
       min_temp = min(df2["TMIN"].min(),df2["TMAX"].max())
-      max_temp = max(df2["TMAX"].min(),df2["TMAX"].max())      
+      max_temp = max(df2["TMAX"].min(),df2["TMAX"].max())
 
       # first plot
       ax[0].plot(df2["DATE"],df2["TMAX"])
@@ -2935,8 +2935,8 @@ this way you'll learn Python and visualization with Python, for free!
 
       # second plot
       ax[1].plot(df2["DATE"],df2["TMIN"])
-      ax[1].set_title("Min Temp")      
-      ax[1].grid(True)      
+      ax[1].set_title("Min Temp")
+      ax[1].grid(True)
       ax[1].tick_params(axis='x',rotation=45)
       ax[1].set_ylim([min_temp,max_temp])
 
@@ -2946,9 +2946,9 @@ this way you'll learn Python and visualization with Python, for free!
 
     #+RESULTS:
     [[file:seattle6.png]]
-    
+
 * DONE Week 10 - Grammar of graphics plotting lab
-#+attr_html: :width 700px: 
+#+attr_html: :width 700px:
 [[../img/helgoland.jpg]]
 
 /Image: Morgenstern, "Küste von Helgoland/Coast of Helgoland" (1863)/
@@ -2972,7 +2972,7 @@ this way you'll learn Python and visualization with Python, for free!
 
 
 ** Project: 2nd sprint review with NotebookLM/podcasts
-#+attr_html: :width 600px: 
+#+attr_html: :width 600px:
 [[../img/litreview.png]]
 
 - Remember that there is no 2-for-1 (every team must submit).
@@ -2984,7 +2984,7 @@ prepared (prompted) podcast.
 
 *Others*: Fowler inspired the podcasters because of the topic and
 because of the information in his proposal (missed out scientific
-publication though). 
+publication though).
 
 *Interestingly*, almost all of the podcasts in this project round were
 shorter than the "introduction to data science" projects. The number
@@ -3047,7 +3047,6 @@ Download [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]] (aga
   emacs --file plot.org
 #+end_example
 
-
 ** Review: =plot= function (part 1)
 
 1. What does =plot= generate when you feed it with two =factor= variables?
@@ -3059,7 +3058,7 @@ Download [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]] (aga
 
    #+RESULTS:
    #+begin_example
-   'data.frame':	32 obs. of  11 variables:
+   'data.frame':        32 obs. of  11 variables:
     $ mpg : num  21 21 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 ...
     $ cyl : num  6 6 4 6 8 6 8 4 4 6 ...
     $ disp: num  160 160 108 258 360 ...
@@ -3074,7 +3073,7 @@ Download [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]] (aga
    #+end_example
 
    Define =factor= variables:
-   #+begin_src R 
+   #+begin_src R
      mtcars$cyl -> cyl
      mtcars$gear -> gear
      table(cyl,gear) -> cyl_gear_table
@@ -3108,7 +3107,7 @@ Download [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]] (aga
    #+begin_src R
 
    #+end_src
-   
+
 2. When plotting a time series, what's the best way to visualize it?
    #+begin_src R :file ts.png :session *R* :results file graphics output :exports both
      plot(Nile, type="b") # bullets with lines
@@ -3135,7 +3134,7 @@ Download [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]] (aga
    #+end_src
 
    #+RESULTS:
-   : 'data.frame':	56 obs. of  3 variables:
+   : 'data.frame':      56 obs. of  3 variables:
    :  $ Insul: Factor w/ 2 levels "Before","After": 1 1 1 1 1 1 1 1 1 1 ...
    :  $ Temp : num  -0.8 -0.7 0.4 2.5 2.9 3.2 3.6 3.9 4.2 4.3 ...
    :  $ Gas  : num  7.2 6.9 6.4 6 5.8 5.8 5.6 4.7 5.8 5.2 ...
@@ -3158,7 +3157,7 @@ Download [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]] (aga
 
 
 ** Review =plot= function (part 2)
-#+attr_html: :width 350px: 
+#+attr_html: :width 350px:
 [[../img/halloween.jpg]]
 
 1. Are the following claims (by AI) false or true?
@@ -3167,26 +3166,54 @@ Download [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]] (aga
    there is a bias against R it seems. Some examples -
 
    *Community*
-    - Python: It’s like a laid-back family dinner. Everyone’s welcome,
-      and there’s always room for more code.
-    - R: Picture an exclusive wine-tasting club, sampling only
-      Chardonnay from =ggplot2=.
+   - Python: It’s like a laid-back family dinner. Everyone’s welcome,
+     and there’s always room for more code.
+   - R: Picture an exclusive wine-tasting club, sampling only
+     Chardonnay from =ggplot2=.
    *Packages*
-    - Python: Need a chart? Just install =matplotlib= and get going.
-    - R: Oh, you’ll need =ggplot2=, =dplyr=, =tidyverse=, plus a barista for
-      coffee and a life coach to guide you through the package jungle.
+   - Python: Need a chart? Just install =matplotlib= and get going.
+   - R: Oh, you’ll need =ggplot2=, =dplyr=, =tidyverse=, plus a barista for
+     coffee and a life coach to guide you through the package jungle.
    *Errors*
-    - Python: "Hey buddy, maybe try checking line 22?"
-    - R: Brace yourself for a cryptic, paragraph-long poem that
-      somehow leaves you questioning your existence.
+   - Python: "Hey buddy, maybe try checking line 22?"
+   - R: Brace yourself for a cryptic, paragraph-long poem that
+     somehow leaves you questioning your existence.
    *IDE of Choice*
-    - Python: Enter Jupyter Notebooks, where data and code flow like
-      poetry.
-    - R: Meet RStudio. Try introducing an R user to Jupyter, though,
-      and it’s like asking your grandma to download TikTok."
+   - Python: Enter Jupyter Notebooks, where data and code flow like
+     poetry.
+   - R: Meet RStudio. Try introducing an R user to Jupyter, though,
+     and it’s like asking your grandma to download TikTok."
    #+end_quote
 
-   Source: [[https://chat.google.com/room/AAAA9Fjdv8Q/keN5uTVo5gE/keN5uTVo5gE?cls=10][See Timothy's research in the Google Chat.]]   
+   Source: [[https://chat.google.com/room/AAAA9Fjdv8Q/keN5uTVo5gE/keN5uTVo5gE?cls=10][See Timothy's research in the Google Chat.]]
+
+   My answers:
+   #+begin_quote
+   That's hilarious. I knew AI was hostile to humans but also to R? And
+   worse of all... completely false - the truth is reverse in every
+   single one except (half) the first.
+
+   - Community: R's community is definitely more academic but there's
+     zero need for ggplot2.
+   - Packages: The opposite is true - base R (built-in) packages get
+     you almost every where, especially when it comes to data
+     analytics.
+   - Errors: Python errors are absurd, except the last line (but the
+     errors are typified) while R's error messages are consistently
+     clearer.
+   - IDE: JuPyteR is for Julia, Python and R. Emacs + Org-mode for
+     all. Jupyter Lab isn't an IDE but only a notebook environment
+     RStudio is an IDE (though I don't like it, it's probably OK, just
+     like the "Tidyverse", for those who don't like to get their
+     fingers dirty...).
+
+   Anyway, I think the R community (especially the "tidy" people) are
+   their own greatest enemy - on the whole I do prefer Pythonistas, but
+   you don't code with people (or AI), you code with a programming
+   language (and Emacs).
+
+   What lies does AI have for SQL?
+   #+end_quote
 
 2. Which function controls graphics for R and how can you see its
    default settings?
@@ -3276,7 +3303,7 @@ Download [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]] (aga
      par(mfrow=c(2,2))
      for (i in 1:4)
        plot(0,type="n")
-   #+end_src   
+   #+end_src
 
    #+RESULTS:
    [[file:frame.png]]
@@ -3302,6 +3329,7 @@ Download [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]] (aga
 
 
 * Week 12: Package =plotly= & Dashboard Design [Nov 4]
+
 
 
 * Week 13: Advanced Customization & Project review [Nov 11]
