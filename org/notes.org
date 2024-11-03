@@ -3330,8 +3330,6 @@ Download [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]] (aga
 
 * Week 12: Package =plotly= & Dashboard Design [Nov 4]
 
-
-
 * Week 13: Advanced Customization & Project review [Nov 11]
 
 
