@@ -3330,7 +3330,7 @@ Download [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]] (aga
 
 * Week 12: Package =plotly= & Dashboard Design [Nov 4]
 #+attr_html: :width 600px:
-#+caption: McKinley/Roosevelt Campaign Poster (1900)
+#+caption: Colorful McKinley/Roosevelt Campaign Poster (1900)
 [[../img/campaign.jpg]]
 
 - [ ] Finish =plot= code along lecture: [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]] 
