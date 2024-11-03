@@ -3,3 +3,138 @@
 #+AUTHOR: [yourname] (pledged)
 #+STARTUP: overview hideblocks indent inlineimages
 #+PROPERTY: header-args:R :exports both :results output :session *R*
+* README
+
+- Practice for ~plot~ customization as discussed in the lecture
+- Submit Org-file on Canvas when you're done
+
+* TODO Identify yourself
+
+- Add your name and ~(pledged)~ at the top
+
+* TODO Getting the data
+
+1) Install the =NHANES= package, load it and look at the structure of
+   the =NHANES= data frame.
+   #+begin_src R
+
+   #+end_src
+
+2) On the R console, open the =help= for =NHANES= to find out more about
+   these data.
+
+* TODO Plotting the data
+
+1) Save the ~Weight~ vector as ~x~ and the ~Height~ vector as ~y~ for later.
+
+   #+begin_src R  :results none
+
+   #+end_src
+
+2) Find out how many missing values these vectors each have. Tip: you
+   can use the =is.na= function to identify missing values. The expected
+   answers: 78 missing values for x (weight) and 353 for y (height).
+   #+begin_src R
+
+   #+end_src
+
+3) Create a scatterplot of the weight on the ~x~ axis and the height on
+   the ~y~ axis. Save the plot as ~scatter.png~. Since there are so many
+   values, reduce the point character size, and change the point
+   character symbol until you can see individual points better.
+
+   #+begin_src R :results graphics file :file scatter.png
+
+   #+end_src
+
+4) You can try something else: Instead of =plot=, try =smoothScatter=.
+
+   #+begin_src R :file smoothScatter.png :session *R* :results file graphics output :exports both
+
+   #+end_src
+
+* TODO Customize the plot
+
+1) Customize the plot by using different point characters to identify
+   all people, who weigh more than 200 kg (approx. 440 lbs) resulting
+   plot as ~w200.png~.
+
+   - Define an appropriate ~index~ vector using the ~which~ function.
+   - Call ~plot~ as before but don't draw any points.
+   - Call ~points[index]~ for outliers ,and ~points[-index]~ for others.
+   - Inside the ~points~ function calls, use =pch=16= and =cex=2= for the
+     outliers, and make them blue.
+   - Use =pch=1=, =cex=0.2= for the other points, and color them
+     lightblue.
+
+   #+begin_src R :results graphics file :file w200.png
+
+   #+end_src
+
+2) Redo the plot, label the axes and give the plot a suitable
+   title. Save your final plot in ~final.png~.
+
+   #+name: finalPlot
+   #+begin_src R :results graphics file :file final.png
+
+   #+end_src
+
+* TODO Add a trendline
+
+In the last plot, we indexed all male participants taller than or
+equal than 180 cm (about 6'). Now we want to 1) add a trendline, 2)
+add a suitable legend.
+
+1) To add a trendline, define a model using the ~lm~ function on the two
+   coordinate vectors ~y~ and ~x~, and store it in ~trend~
+
+   #+begin_src R
+
+   #+end_src
+
+2) Use the model's intercept and slope values to draw a blue, dashed,
+   thick trend line. Store the resulting graph in ~trend.png~.
+
+   You need to recreated the calls to ~plot~ and ~points~ for this
+   graph. Draw this graph first, then add the trendline. The final
+   plot is already added here.
+
+   #+name: trendPlot
+   #+begin_src R :results graphics file :file trend.png :noweb yes
+     <<finalPlot>>
+
+   #+end_src
+
+* TODO Add text for outliers
+
+Add the text "Outlier" to the outlying points of the plot. You can use
+the following label: ~paste("Outlier -->")~. Left-align the text and
+make sure that the text does not obscure the data.
+
+The code block below uses the previous code block and stores the plot
+ in =trend.png=.
+
+#+name: textPlot
+#+begin_src R :results graphics file :file text.png :noweb yes
+  <<trendPlot>>
+  
+#+end_src
+
+* TODO Add a legend
+
+Add a legend for the trendline and for the two plot point types. Store
+the plot in the file ~legend.png~.
+
+Tip: specify vectors for ~pch~, ~lty~ and ~lwd~ and specify irrelevant
+values (e.g. point size for the trendline, or line type for the
+points) as ~NA~. Move the legend to a place where it can be read easily,
+and make it a little larger.
+
+#+begin_src R :results graphics file :file legend.png :noweb yes
+  <<textPlot>>
+
+#+end_src
+
+* Expected final result
+
+[[https://github.com/birkenkrahe/dviz/blob/main/img/NHANES.png][The final result should look like this.]]
