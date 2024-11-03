@@ -3329,8 +3329,18 @@ Download [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]] (aga
 
 
 * Week 12: Package =plotly= & Dashboard Design [Nov 4]
+#+attr_html: :width 600px:
+#+caption: Tableau accounting dashboard
+[[../img/Tableau-dashboard-screen-shot.png]]
 
-* Week 13: Advanced Customization & Project review [Nov 11]
+- [ ] Finish =plot= code along lecture: [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]] 
+- [ ] =plot= lab with NHANES data: [[https://tinyurl.com/plots-lab][tinyurl.com/plots-lab]]
+- [ ] New quiz (9) available until Nov 8 (=plotly= and =plot=)
+- [ ] Bonus exercise: redo the =NHANES= plot with =ggplot2=
+- [ ] Next DataCamp lesson: Dashboard Design
+
+
+* Week 13: Advanced Customization & Project sprint review [Nov 11]
 
 
 * Week 14: Power BI [Nov 25]
