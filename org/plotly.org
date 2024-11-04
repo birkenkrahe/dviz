@@ -1,0 +1,129 @@
+#+TITLE: PLOTLY - CODEALONG
+#+AUTHOR: [yourname] (pledged)
+#+SUBTITLE: DSC 302 Lyon College Fall 2024
+#+STARTUP: overview hideblocks indent entitiespretty:
+#+PROPERTY: header-args:R :session *R* :results output :exports both
+#+property: header-args:python :session *Python* :python python3 :results output :exports both: 
+* DataCamp Review: The Python =plotly= package for interactive plots
+
+Just watch or code along.
+
+1) What is =plotly= and which programming language does it support?
+   #+begin_quote
+
+   #+end_quote
+
+2) What does Plotly's /"instant interactivity"/ mean?
+   #+begin_quote
+
+   #+end_quote
+
+3) How is a =plotly= figure structured?
+   #+begin_quote
+
+   #+end_quote
+
+   #+begin_src python :file  ../img/p.png :results file graphics none :session *Python* :python python3
+     # load module and define alias
+
+
+     # define figure as dictionary with two keys, `data` and `layout`
+
+     ## create figure
+
+     ## send figure to graphics engine for display
+
+   #+end_src
+
+   #+begin_src python :results output :session *Python* :python python3 :exports both
+
+   #+end_src
+
+4) How does =plotly.express= work?
+   #+begin_quote
+
+   #+end_quote
+
+   #+begin_src python :results file graphics none :session *Python* :python python3 :file  ../img/p.png
+
+     weekly_temps = pd.DataFrame({
+         'day': ['Monday', 'Tuesday', 'Wednesday', 'Thursday',
+                 'Friday', 'Saturday', 'Sunday'],
+         'temp': [28, 27, 25, 31, 32, 35, 36]})
+
+   #+end_src
+
+   #+begin_src python :results output :session *Python* :python python3 :exports both
+
+   #+end_src
+
+5) Which /univariate/ plots do you know?
+   #+begin_quote
+
+   #+end_quote
+
+6) How would you make a quick histogram with =plotly=?
+   #+begin_src python :results output :session *Python* :python python3 :exports both
+     revenues = pd.DataFrame({
+         'Rank': range(1,6),
+         'Company': ['Walmart','Sinopec Group','State Grid',
+                     'China National Petroleum', 'Royal Dutch Shell'],
+         'Revenue': [523964.0,407009.0,383906.0,379130.0,352106.0]})
+   #+end_src
+
+   #+begin_src python :file  ../img/p.png :results file graphics none :session *Python* :python python3
+
+   #+end_src
+
+7) How could you used =color= in the bar chart for this data frame?
+   #+begin_src python :results output :session *Python* :python python3 :exports both
+     student_scores = pd.DataFrame({
+         'name': ['John','Julia','Xuan','Harry'],
+         'score': [80,97,90,85],
+         'city': ['Batesville','Little Rock','Melbourne','Conway']})
+     print(student_scores)
+   #+end_src
+
+   #+begin_src python :file  ../img/p.png :results file graphics none :session *Python* :python python3
+
+   #+end_src
+
+8) How can you find out which methods a module contains? E.g. when you
+   get a =TypeError= because a parameter (=color_continous_scale=) is not
+   recognized?
+
+   #+begin_example python
+
+   #+end_example
+
+   #+begin_src python
+
+   #+end_src
+
+   #+begin_src python :results output :session *Python* :python python3 :exports both
+
+   #+end_src
+
+9) How can you construct your own color range?
+   #+begin_quote
+
+   #+end_quote
+
+   #+begin_src python :file ../img/p.png :results file graphics none :session *Python* :python python3 :exports both
+     ## import libraries
+
+     ## create color scale: yellow through orange to red
+
+     ## create figure
+
+     ## show figure
+
+   #+end_src
+
+10) What you can do with =plotly= box plots?
+    #+begin_quote
+
+    #+end_quote
+
+
+
