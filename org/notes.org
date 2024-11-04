@@ -3333,11 +3333,192 @@ Download [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]] (aga
 #+caption: Colorful McKinley/Roosevelt Campaign Poster (1900)
 [[../img/campaign.jpg]]
 
-- [ ] Finish =plot= code along lecture: [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]] 
+- [ ] Finish =plot= code along lecture: [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]]
 - [ ] =plot= lab with NHANES data: [[https://tinyurl.com/plots-lab][tinyurl.com/plots-lab]]
 - [ ] New quiz (9) available until Nov 8 (=plotly= and =plot=)
 - [ ] Bonus exercise: redo the =NHANES= plot with =ggplot2=
 - [ ] Next DataCamp lesson: Dashboard Design
+
+** DataCamp Review: The Python =plotly= package for interactive plots
+
+1. What is =plotly= and which programming language does it support?
+   #+begin_quote
+   =plotly= is a =JavaScript= library, and you can use it with Python, R,
+   Julia, JavaScript, F#, MATLAB, in connection with =ggplot2=, and to
+   build Dash web applications on Kubernetes containers - see
+   [[https://plotly.com/graphing-libraries][plotly.com/graphing-libraries]] and [[https://dash.plotly.com/][dash.plotly.com/]].
+
+   #+attr_html: :width 600px:
+   [[../img/goscatter.png]]
+   #+end_quote
+
+2. What does Plotly's /"instant interactivity"/ mean?
+   #+begin_quote
+   - The figure cannot be shown in an online notebook but not in Emacs.
+     #+attr_html: :width 500px:
+     [[../img/colab.png]]
+
+   - You can hover over data points.
+   - There are interactive buttons (not always all present):
+
+   [[../img/plotly_buttons.png]]
+   #+end_quote
+
+3. How is a =plotly= figure structured?
+   #+begin_quote
+   A Plotly figure is a "dictionary of dictionaries", because it
+   organizes plot configuration and data in a hierarchical, nested
+   dictionary format that allows easy access and modification of plot
+   components. Each dictionary has keys and values (which can also be
+   dictionaries).
+   #+end_quote
+   #+begin_src python :file p.png :results file graphics none :session *Python* :python python3
+     # load module and define alias
+     import plotly.graph_objects as go
+
+     # define figure as dictionary with two keys, `data` and `layout`
+     figure_config = dict({
+         # trace = type + data dictionary (list)
+         'data': [
+             {'type': 'bar',
+              'x': ['Jan', 'Feb', 'Mar'],
+              'y': [450, 475, 400]}],
+         # layout settings = dictionary with 3 dictionaries
+         'layout': { 'title': {'text': 'Sales for Jan-Mar 2020'},
+                     'xaxis': {'title': 'Months'},
+                     'yaxis': {'title': 'Sales'}}})
+     ## create figure
+     fig = go.Figure(figure_config)
+     ## send figure to graphics engine for display
+     fig.show()
+   #+end_src
+
+   [[file:../img/sales.png]]
+
+   #+begin_src python :results output :session *Python* :python python3 :exports both
+     print(figure_config)
+   #+end_src
+
+   #+begin_example
+   : {'data': [{'x': ['Jan', 'Feb', 'Mar'],
+                'y': [450, 475, 400],
+                'type': 'bar'}],
+      'layout': {'title': {'text': 'Sales for Jan-Mar 2020'},
+                 'xaxis': {'title': 'Months'},
+                 'yaxis': {'title': 'Sales'}}}
+   #+end_example
+
+4. How does =plotly.express= work?
+   #+begin_quote
+   The =plotly.express= module specifies a =DataFrame= from the =pandas=
+   package and its columns as arguments.
+   #+end_quote
+
+   #+begin_src python :results file graphics none :session *Python* :python python3 :file p.png
+     import plotly.express as px
+     import pandas as pd
+
+     weekly_temps = pd.DataFrame({
+         'day': ['Monday', 'Tuesday', 'Wednesday', 'Thursday',
+                 'Friday', 'Saturday', 'Sunday'],
+         'temp': [28, 27, 25, 31, 32, 35, 36]})
+     fig = px.bar(data_frame=weekly_temps,x='day',y='temp')
+     fig.show()
+   #+end_src
+
+   [[file:../img/temp.png]]
+
+   #+begin_src python :results output :session *Python* :python python3 :exports both
+     print(weekly_temps)
+   #+end_src
+
+   #+RESULTS:
+   :          day  temp
+   : 0     Monday    28
+   : 1    Tuesday    27
+   : 2  Wednesday    25
+   : 3   Thursday    31
+   : 4     Friday    32
+   : 5   Saturday    35
+   : 6     Sunday    36
+
+5. Which /univariate/ plots do you know?
+   #+begin_quote
+   - Histogram
+   - Bar chart
+   - Box plot
+   #+end_quote
+
+6. How would you make a quick histogram with =plotly=?
+   #+begin_src python :results output :session *Python* :python python3 :exports both
+     ## Create a DataFrame
+     revenues = pd.DataFrame({
+         'Rank': range(1,6),
+         'Company': ['Walmart','Sinopec Group','State Grid',
+                     'China National Petroleum', 'Royal Dutch Shell'],
+         'Revenue': [523964.0,407009.0,383906.0,379130.0,352106.0]})
+     print(revenues)
+   #+end_src
+
+   #+RESULTS:
+   :    Rank                   Company   Revenue
+   : 0     1                   Walmart  523964.0
+   : 1     2             Sinopec Group  407009.0
+   : 2     3                State Grid  383906.0
+   : 3     4  China National Petroleum  379130.0
+   : 4     5         Royal Dutch Shell  352106.0
+
+  #+begin_src python :file p.png :results file graphics none :session *Python* :python python3 
+    import pandas as pd
+    import plotly.express as px
+    fig = px.histogram(
+        data_frame=revenues,
+        x='Revenue')
+    fig.show()
+  #+end_src
+
+  [[file:../img/revenue.png]]
+
+7. How could you used =color= in the bar chart for this data frame?
+   #+begin_src python :results output :session *Python* :python python3 :exports both
+     import pandas as pd
+     import plotly.express as px
+
+     student_scores = pd.DataFrame({
+         'name': ['John','Julia','Xuan','Harry'],
+         'score': [80,97,90,85],
+         'city': ['Batesville','Little Rock','Melbourne','Conway']})
+     print(student_scores)
+   #+end_src
+
+   #+RESULTS:
+   :     name  score         city
+   : 0   John     80   Batesville
+   : 1  Julia     97  Little Rock
+   : 2   Xuan     90    Melbourne
+   : 3  Harry     85       Conway
+
+   #+begin_src python :file p.png :results file graphics output :session *Python* :python python3
+     import plotly.express as px
+     fig=px.bar(
+         data_frame=student_scores,
+         x='name',
+         y='score',
+         color='city')
+     fig.show()
+   #+end_src
+
+   [[file:../img/student_scores.png]]
+
+8. color scales for continuous variables
+
+9. update the layout of an existing figure
+
+10. What you can do with =plotly= box plots?
+    #+begin_quote
+    - Specify =hover_data= as a list of column names
+    - Specify how to show outliers with =points=
+    #+end_quote
 
 * Week 13: Advanced Customization & Project sprint review [Nov 11]
 
