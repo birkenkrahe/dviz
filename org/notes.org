@@ -154,7 +154,7 @@ See =2_trendline.org= ([[https://github.com/birkenkrahe/dviz/blob/main/org/2_tre
    'help.start()' for an HTML browser interface to help.
    Type 'q()' to quit R.
 
-   > 
+   >
    #+end_example
 
 5. How can you get R? (In Linux or Windows)
@@ -246,19 +246,19 @@ different experience, use Google Colab at [[https://colab.research.google.com/][
 
    #+RESULTS:
    #+begin_example
-   x1             x2             x3             x4           y1        
-    Min.   : 4.0   Min.   : 4.0   Min.   : 4.0   Min.   : 8   Min.   : 4.260  
-    1st Qu.: 6.5   1st Qu.: 6.5   1st Qu.: 6.5   1st Qu.: 8   1st Qu.: 6.315  
-    Median : 9.0   Median : 9.0   Median : 9.0   Median : 8   Median : 7.580  
-    Mean   : 9.0   Mean   : 9.0   Mean   : 9.0   Mean   : 9   Mean   : 7.501  
-    3rd Qu.:11.5   3rd Qu.:11.5   3rd Qu.:11.5   3rd Qu.: 8   3rd Qu.: 8.570  
-    Max.   :14.0   Max.   :14.0   Max.   :14.0   Max.   :19   Max.   :10.840  
-          y2              y3              y4        
-    Min.   :3.100   Min.   : 5.39   Min.   : 5.250  
-    1st Qu.:6.695   1st Qu.: 6.25   1st Qu.: 6.170  
-    Median :8.140   Median : 7.11   Median : 7.040  
-    Mean   :7.501   Mean   : 7.50   Mean   : 7.501  
-    3rd Qu.:8.950   3rd Qu.: 7.98   3rd Qu.: 8.190  
+   x1             x2             x3             x4           y1
+    Min.   : 4.0   Min.   : 4.0   Min.   : 4.0   Min.   : 8   Min.   : 4.260
+    1st Qu.: 6.5   1st Qu.: 6.5   1st Qu.: 6.5   1st Qu.: 8   1st Qu.: 6.315
+    Median : 9.0   Median : 9.0   Median : 9.0   Median : 8   Median : 7.580
+    Mean   : 9.0   Mean   : 9.0   Mean   : 9.0   Mean   : 9   Mean   : 7.501
+    3rd Qu.:11.5   3rd Qu.:11.5   3rd Qu.:11.5   3rd Qu.: 8   3rd Qu.: 8.570
+    Max.   :14.0   Max.   :14.0   Max.   :14.0   Max.   :19   Max.   :10.840
+          y2              y3              y4
+    Min.   :3.100   Min.   : 5.39   Min.   : 5.250
+    1st Qu.:6.695   1st Qu.: 6.25   1st Qu.: 6.170
+    Median :8.140   Median : 7.11   Median : 7.040
+    Mean   :7.501   Mean   : 7.50   Mean   : 7.501
+    3rd Qu.:8.950   3rd Qu.: 7.98   3rd Qu.: 8.190
     Max.   :9.260   Max.   :12.74   Max.   :12.500
    #+end_example
 
@@ -286,7 +286,7 @@ different experience, use Google Colab at [[https://colab.research.google.com/][
    #+end_src
 
    #+RESULTS:
-   [[file:nile.png]]
+   [[file:../img/nile.png]]
 
 6. When should you use a boxplot (cat-and-whiskers)?
    #+begin_quote
@@ -305,7 +305,7 @@ different experience, use Google Colab at [[https://colab.research.google.com/][
    #+end_src
 
    #+RESULTS:
-   [[file:tg.png]]
+   [[file:../img/tg.png]]
 
 ** Linux server has arrived
 
@@ -431,7 +431,7 @@ different experience, use Google Colab at [[https://colab.research.google.com/][
    #+end_src
 
    #+RESULTS:
-   [[file:ts3.png]]
+   [[file:../img/ts3.png]]
 
 
 6. What's the relationship between time as the independent variable
@@ -516,11 +516,11 @@ different experience, use Google Colab at [[https://colab.research.google.com/][
    #+end_src
 
    #+RESULTS:
-   : 
-   : OJ VC 
+   :
+   : OJ VC
    : 30 30
-   : 
-   : OJ VC 
+   :
+   : OJ VC
    : 23 18
 
 9. What are the two versions of bar plots?
@@ -686,7 +686,7 @@ Test the new setup in a =.org= file with a graphics command:
    #+end_src
 
    #+RESULTS:
-   [[file:Nile.png]]
+   [[file:../img/Nile2.png]]
 
 5. If you don't see a file then your Org-mode buffer and the =*R*=
    session console are not in sync, and you need to change working
@@ -802,7 +802,7 @@ Code example:
 #+end_src
 
 #+RESULTS:
-[[file:3d_scatterplot.png]]
+[[file:../img/3d_scatterplot.png]]
 
 *** What are visual dimensions for scatter plots besides spatial dimensions?
 #+begin_quote
@@ -824,7 +824,7 @@ C-c C-c:
 #+end_src
 
 #+RESULTS:
-[[file:colorPlot.png]]
+[[file:../img/colorPlot.png]]
 
 **** Size
 #+begin_src R :file ../img/sizePlot.png :session *R* :results file graphics output :exports both
@@ -835,7 +835,7 @@ C-c C-c:
 #+end_src
 
 #+RESULTS:
-[[file:sizePlot.png]]
+[[file:../img/sizePlot.png]]
 
 **** Transparency
 #+begin_src R :file  ../img/transPlot.png :session *R* :results file graphics output :exports both
@@ -848,7 +848,7 @@ C-c C-c:
 #+end_src
 
 #+RESULTS:
-[[file:transPlot.png]]
+[[file:../img/transPlot.png]]
 
 **** Shape
 #+begin_src R :file  ../img/shapePlot2.png :session *R* :results file graphics output :exports both
@@ -858,7 +858,7 @@ C-c C-c:
 #+end_src
 
 #+RESULTS:
-[[file:shapePlot2.png]]
+[[file:../img/shapePlot2.png]]
 
 *** What are visual dimensions for line plots?
 #+begin_quote
@@ -875,7 +875,7 @@ C-c C-c:
 #+end_src
 
 #+RESULTS:
-[[file:lineColor.png]]
+[[file:../img/lineColor.png]]
 
 **** Thickness
 #+begin_src R :file  ../img/lineThick.png :session *R* :results file graphics output :exports both
@@ -884,7 +884,7 @@ C-c C-c:
 #+end_src
 
 #+RESULTS:
-[[file:lineThick.png]]
+[[file:../img/lineThick.png]]
 
 **** Transparency
 #+begin_src R :file  ../img/lineTrans.png :session *R* :results file graphics output :exports both
@@ -894,7 +894,7 @@ C-c C-c:
 #+end_src
 
 #+RESULTS:
-[[file:lineTrans.png]]
+[[file:../img/lineTrans.png]]
 
 **** Line type
 #+begin_src R :file  ../img/lineType.png :session *R* :results file graphics output :exports both
@@ -903,7 +903,7 @@ C-c C-c:
 #+end_src
 
 #+RESULTS:
-[[file:lineType.png]]
+[[file:../img/lineType.png]]
 
 
 *** What does this plot (from the DataCamp lesson) suggest? How would you critique it?
@@ -1089,19 +1089,19 @@ session:
 
    #+RESULTS:
    #+begin_example
-                  _                           
-   platform       x86_64-pc-linux-gnu         
-   arch           x86_64                      
-   os             linux-gnu                   
-   system         x86_64, linux-gnu           
-   status                                     
-   major          4                           
-   minor          1.2                         
-   year           2021                        
-   month          11                          
-   day            01                          
-   svn rev        81115                       
-   language       R                           
+                  _
+   platform       x86_64-pc-linux-gnu
+   arch           x86_64
+   os             linux-gnu
+   system         x86_64, linux-gnu
+   status
+   major          4
+   minor          1.2
+   year           2021
+   month          11
+   day            01
+   svn rev        81115
+   language       R
    version.string R version 4.1.2 (2021-11-01)
    nickname       Bird Hippie
    #+end_example
@@ -1114,47 +1114,47 @@ session:
 
    #+RESULTS:
    #+begin_example
-     [1] "abbey"             "accdeaths"         "addterm"           "Aids2"            
-     [5] "Animals"           "anorexia"          "area"              "as.fractions"     
-     [9] "bacteria"          "bandwidth.nrd"     "bcv"               "beav1"            
-    [13] "beav2"             "biopsy"            "birthwt"           "Boston"           
-    [17] "boxcox"            "cabbages"          "caith"             "Cars93"           
-    [21] "cats"              "cement"            "chem"              "con2tr"           
-    [25] "contr.sdif"        "coop"              "corresp"           "cov.mcd"          
-    [29] "cov.mve"           "cov.rob"           "cov.trob"          "cpus"             
-    [33] "crabs"             "Cushings"          "DDT"               "deaths"           
-    [37] "denumerate"        "dose.p"            "drivers"           "dropterm"         
-    [41] "eagles"            "enlist"            "epil"              "eqscplot"         
-    [45] "farms"             "fbeta"             "fgl"               "fitdistr"         
-    [49] "forbes"            "fractions"         "frequency.polygon" "GAGurine"         
-    [53] "galaxies"          "gamma.dispersion"  "gamma.shape"       "gehan"            
-    [57] "genotype"          "geyser"            "gilgais"           "ginv"             
-    [61] "glm.convert"       "glm.nb"            "glmmPQL"           "hills"            
-    [65] "hist.FD"           "hist.scott"        "housing"           "huber"            
-    [69] "hubers"            "immer"             "Insurance"         "is.fractions"     
-    [73] "isoMDS"            "kde2d"             "lda"               "ldahist"          
-    [77] "leuk"              "lm.gls"            "lm.ridge"          "lmsreg"           
-    [81] "lmwork"            "loglm"             "loglm1"            "logtrans"         
-    [85] "lqs"               "lqs.formula"       "ltsreg"            "mammals"          
-    [89] "mca"               "mcycle"            "Melanoma"          "menarche"         
-    [93] "michelson"         "minn38"            "motors"            "muscle"           
+     [1] "abbey"             "accdeaths"         "addterm"           "Aids2"
+     [5] "Animals"           "anorexia"          "area"              "as.fractions"
+     [9] "bacteria"          "bandwidth.nrd"     "bcv"               "beav1"
+    [13] "beav2"             "biopsy"            "birthwt"           "Boston"
+    [17] "boxcox"            "cabbages"          "caith"             "Cars93"
+    [21] "cats"              "cement"            "chem"              "con2tr"
+    [25] "contr.sdif"        "coop"              "corresp"           "cov.mcd"
+    [29] "cov.mve"           "cov.rob"           "cov.trob"          "cpus"
+    [33] "crabs"             "Cushings"          "DDT"               "deaths"
+    [37] "denumerate"        "dose.p"            "drivers"           "dropterm"
+    [41] "eagles"            "enlist"            "epil"              "eqscplot"
+    [45] "farms"             "fbeta"             "fgl"               "fitdistr"
+    [49] "forbes"            "fractions"         "frequency.polygon" "GAGurine"
+    [53] "galaxies"          "gamma.dispersion"  "gamma.shape"       "gehan"
+    [57] "genotype"          "geyser"            "gilgais"           "ginv"
+    [61] "glm.convert"       "glm.nb"            "glmmPQL"           "hills"
+    [65] "hist.FD"           "hist.scott"        "housing"           "huber"
+    [69] "hubers"            "immer"             "Insurance"         "is.fractions"
+    [73] "isoMDS"            "kde2d"             "lda"               "ldahist"
+    [77] "leuk"              "lm.gls"            "lm.ridge"          "lmsreg"
+    [81] "lmwork"            "loglm"             "loglm1"            "logtrans"
+    [85] "lqs"               "lqs.formula"       "ltsreg"            "mammals"
+    [89] "mca"               "mcycle"            "Melanoma"          "menarche"
+    [93] "michelson"         "minn38"            "motors"            "muscle"
     [97] "mvrnorm"           "nclass.freq"       "neg.bin"           "negative.binomial"
-   [101] "negexp.SSival"     "newcomb"           "nlschools"         "npk"              
-   [105] "npr1"              "Null"              "oats"              "OME"              
-   [109] "painters"          "parcoord"          "petrol"            "phones"           
-   [113] "Pima.te"           "Pima.tr"           "Pima.tr2"          "polr"             
-   [117] "psi.bisquare"      "psi.hampel"        "psi.huber"         "qda"              
-   [121] "quine"             "Rabbit"            "rational"          "renumerate"       
-   [125] "rlm"               "rms.curv"          "rnegbin"           "road"             
-   [129] "rotifer"           "Rubber"            "sammon"            "select"           
-   [133] "Shepard"           "ships"             "shoes"             "shrimp"           
-   [137] "shuttle"           "Sitka"             "Sitka89"           "Skye"             
-   [141] "snails"            "SP500"             "stdres"            "steam"            
-   [145] "stepAIC"           "stormer"           "studres"           "survey"           
-   [149] "synth.te"          "synth.tr"          "theta.md"          "theta.ml"         
-   [153] "theta.mm"          "topo"              "Traffic"           "truehist"         
-   [157] "ucv"               "UScereal"          "UScrime"           "VA"               
-   [161] "waders"            "whiteside"         "width.SJ"          "write.matrix"     
+   [101] "negexp.SSival"     "newcomb"           "nlschools"         "npk"
+   [105] "npr1"              "Null"              "oats"              "OME"
+   [109] "painters"          "parcoord"          "petrol"            "phones"
+   [113] "Pima.te"           "Pima.tr"           "Pima.tr2"          "polr"
+   [117] "psi.bisquare"      "psi.hampel"        "psi.huber"         "qda"
+   [121] "quine"             "Rabbit"            "rational"          "renumerate"
+   [125] "rlm"               "rms.curv"          "rnegbin"           "road"
+   [129] "rotifer"           "Rubber"            "sammon"            "select"
+   [133] "Shepard"           "ships"             "shoes"             "shrimp"
+   [137] "shuttle"           "Sitka"             "Sitka89"           "Skye"
+   [141] "snails"            "SP500"             "stdres"            "steam"
+   [145] "stepAIC"           "stormer"           "studres"           "survey"
+   [149] "synth.te"          "synth.tr"          "theta.md"          "theta.ml"
+   [153] "theta.mm"          "topo"              "Traffic"           "truehist"
+   [157] "ucv"               "UScereal"          "UScrime"           "VA"
+   [161] "waders"            "whiteside"         "width.SJ"          "write.matrix"
    [165] "wtloss"
    #+end_example
 
@@ -1201,16 +1201,16 @@ session:
 
    #+RESULTS:
    #+begin_example
-   [1] "anscombe"       "area"           "course"         "course2"        "cyl"           
-    [6] "cyl_gear_table" "d"              "d.0"            "d0"             "d00"           
-   [11] "dd"             "df"             "df_ex"          "df_fac"         "df_lin"        
-   [16] "df_nonlin"      "df2"            "dt"             "DT"             "fac"           
-   [21] "foo"            "gear"           "i"              "ID"             "items"         
-   [26] "L3"             "mtcars"         "mtcars_list"    "Pima.tr2"       "point_size"    
-   [31] "price"          "sex"            "sexf"           "small"          "store"         
-   [36] "supp"           "supp15"         "tg"             "ToothGrowth"    "transparency"  
+   [1] "anscombe"       "area"           "course"         "course2"        "cyl"
+    [6] "cyl_gear_table" "d"              "d.0"            "d0"             "d00"
+   [11] "dd"             "df"             "df_ex"          "df_fac"         "df_lin"
+   [16] "df_nonlin"      "df2"            "dt"             "DT"             "fac"
+   [21] "foo"            "gear"           "i"              "ID"             "items"
+   [26] "L3"             "mtcars"         "mtcars_list"    "Pima.tr2"       "point_size"
+   [31] "price"          "sex"            "sexf"           "small"          "store"
+   [36] "supp"           "supp15"         "tg"             "ToothGrowth"    "transparency"
    [41] "whiteside"      "x"              "x1"             "y"              "y1"
-   'data.frame':	300 obs. of  8 variables:
+   'data.frame':        300 obs. of  8 variables:
     $ npreg: int  5 7 5 0 0 5 3 1 3 2 ...
     $ glu  : int  86 195 77 165 107 97 83 193 142 128 ...
     $ bp   : int  68 70 82 76 60 76 58 50 80 78 ...
@@ -1235,7 +1235,7 @@ session:
    #+end_src
 
    #+RESULTS:
-   :    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+   :    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's
    :   38.00   64.00   72.00   72.32   80.00  114.00      13
 
 ** Review questions (Monday session)
@@ -1320,16 +1320,16 @@ session:
    #+RESULTS:
    #+begin_example
     [1] plot,ANY-method      plot,color-method    plot.acf*            plot.correspondence*
-    [5] plot.data.frame*     plot.decomposed.ts*  plot.default         plot.dendrogram*    
-    [9] plot.density*        plot.ecdf            plot.factor*         plot.formula*       
-   [13] plot.function        plot.ggplot*         plot.gtable*         plot.hcl_palettes*  
-   [17] plot.hclust*         plot.histogram*      plot.HoltWinters*    plot.isoreg*        
-   [21] plot.lda*            plot.lm*             plot.mca*            plot.medpolish*     
-   [25] plot.mlm*            plot.ppr*            plot.prcomp*         plot.princomp*      
-   [29] plot.profile*        plot.profile.nls*    plot.R6*             plot.raster*        
-   [33] plot.ridgelm*        plot.spec*           plot.stepfun         plot.stl*           
-   [37] plot.table*          plot.transform*      plot.ts              plot.tskernel*      
-   [41] plot.TukeyHSD*      
+    [5] plot.data.frame*     plot.decomposed.ts*  plot.default         plot.dendrogram*
+    [9] plot.density*        plot.ecdf            plot.factor*         plot.formula*
+   [13] plot.function        plot.ggplot*         plot.gtable*         plot.hcl_palettes*
+   [17] plot.hclust*         plot.histogram*      plot.HoltWinters*    plot.isoreg*
+   [21] plot.lda*            plot.lm*             plot.mca*            plot.medpolish*
+   [25] plot.mlm*            plot.ppr*            plot.prcomp*         plot.princomp*
+   [29] plot.profile*        plot.profile.nls*    plot.R6*             plot.raster*
+   [33] plot.ridgelm*        plot.spec*           plot.stepfun         plot.stl*
+   [37] plot.table*          plot.transform*      plot.ts              plot.tskernel*
+   [41] plot.TukeyHSD*
    see '?methods' for accessing help and source code
    #+end_example
 
@@ -1347,7 +1347,7 @@ session:
    #+end_src
 
    #+RESULTS:
-   [[file:pairplot.png]]
+   [[file:../img/pairplot.png]]
 
 
 3. How can you divide a plot into four different quadrants (facets)?
@@ -1367,7 +1367,7 @@ session:
    #+end_src
 
    #+RESULTS:
-   [[file:par.png]]
+   [[file:../img/par.png]]
 
 5. What's a specialty of R with regard to computer architecture?
    #+begin_quote
@@ -1454,7 +1454,7 @@ Running =M-x eww= without an argument brings you to your search engine.
    : 1 Before -0.8 7.2
    : Insul Temp Gas
    : 1 Before -0.8 7.2
-   : Error in checkHT(n, dx <- dim(x)) : 
+   : Error in checkHT(n, dx <- dim(x)) :
    :   invalid 'n' - must have length one when dim(x) is NULL, got 3
 
    #+begin_quote
@@ -1469,7 +1469,7 @@ Running =M-x eww= without an argument brings you to your search engine.
    #+end_src
 
    #+RESULTS:
-   : 'data.frame':	56 obs. of  3 variables:
+   : 'data.frame':      56 obs. of  3 variables:
    :  $ Insul: Factor w/ 2 levels "Before","After": 1 1 1 1 1 1 1 1 1 1 ...
    :  $ Temp : num  -0.8 -0.7 0.4 2.5 2.9 3.2 3.6 3.9 4.2 4.3 ...
    :  $ Gas  : num  7.2 6.9 6.4 6 5.8 5.8 5.6 4.7 5.8 5.2 ...
@@ -1480,7 +1480,7 @@ Running =M-x eww= without an argument brings you to your search engine.
    #+end_src
 
    #+RESULTS:
-   :    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   :    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.
    :       1       1       1       1       1       1
 
 4. What does =summary= return when applied to a =factor=?
@@ -1489,7 +1489,7 @@ Running =M-x eww= without an argument brings you to your search engine.
    #+end_src
 
    #+RESULTS:
-   : Before  After 
+   : Before  After
    :     26     30
 
 5. What does =summary= return when applied to a =character= vector?
@@ -1499,11 +1499,11 @@ Running =M-x eww= without an argument brings you to your search engine.
    #+end_src
 
    #+RESULTS:
-   :    Length     Class      Mode 
+   :    Length     Class      Mode
    :        50 character character
-   : AK AL AR AZ CA CO CT DE FL GA HI IA ID IL IN KS KY LA MA MD ME MI MN MO MS MT NC ND NE NH 
-   :  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1 
-   : NJ NM NV NY OH OK OR PA RI SC SD TN TX UT VA VT WA WI WV WY 
+   : AK AL AR AZ CA CO CT DE FL GA HI IA ID IL IN KS KY LA MA MD ME MI MN MO MS MT NC ND NE NH
+   :  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1
+   : NJ NM NV NY OH OK OR PA RI SC SD TN TX UT VA VT WA WI WV WY
    :  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1
 
 6. How would you check whether =whiteside$Insul= is a =factor=?
@@ -1588,18 +1588,18 @@ Running =M-x eww= without an argument brings you to your search engine.
     #+RESULTS:
     #+begin_example
     [1] "function"
-    [1] as.character.cli_no*         as.character.cli_noprint*    as.character.cli_sitrep*    
-     [4] as.character.condition       as.character.crayon*         as.character.Date           
-     [7] as.character.default         as.character.error           as.character.factor         
-    [10] as.character.fractions*      as.character.gList*          as.character.glue*          
-    [13] as.character.grob*           as.character.hexmode         as.character.ITime*         
-    [16] as.character.numeric_version as.character.octmode         as.character.path*          
-    [19] as.character.person*         as.character.POSIXt          as.character.quosure*       
-    [22] as.character.Rd*             as.character.rlang_error*    as.character.rlang_message* 
-    [25] as.character.rlang_warning*  as.character.rlib_bytes*     as.character.roman*         
-    [28] as.character.srcref          as.character.unit*           as.character.vctrs_list_of* 
-    [31] as.character.vctrs_sclr*     as.character.vctrs_vctr*     as.character.viewport*      
-    [34] as.character.vpList*         as.character.vpStack*        as.character.vpTree*        
+    [1] as.character.cli_no*         as.character.cli_noprint*    as.character.cli_sitrep*
+     [4] as.character.condition       as.character.crayon*         as.character.Date
+     [7] as.character.default         as.character.error           as.character.factor
+    [10] as.character.fractions*      as.character.gList*          as.character.glue*
+    [13] as.character.grob*           as.character.hexmode         as.character.ITime*
+    [16] as.character.numeric_version as.character.octmode         as.character.path*
+    [19] as.character.person*         as.character.POSIXt          as.character.quosure*
+    [22] as.character.Rd*             as.character.rlang_error*    as.character.rlang_message*
+    [25] as.character.rlang_warning*  as.character.rlib_bytes*     as.character.roman*
+    [28] as.character.srcref          as.character.unit*           as.character.vctrs_list_of*
+    [31] as.character.vctrs_sclr*     as.character.vctrs_vctr*     as.character.viewport*
+    [34] as.character.vpList*         as.character.vpStack*        as.character.vpTree*
     see '?methods' for accessing help and source code
     #+end_example
 
@@ -1631,7 +1631,7 @@ A box plot is a graphical representation of
    #+end_src
 
    #+RESULTS:
-   [[file:box.png]]
+   [[file:../img/box.png]]
 
    #+begin_src R :file  ../img/NileBox.png :session *R* :results file graphics output :exports both
      boxplot(Nile,horizontal=TRUE)
@@ -1639,7 +1639,7 @@ A box plot is a graphical representation of
    #+end_src
 
    #+RESULTS:
-   [[file:NileBox.png]]
+   [[file:../img/NileBox.png]]
 
    #+begin_src R :session *R* :results output :exports both :noweb yes
      str(ToothGrowth$supp)
@@ -1653,14 +1653,14 @@ A box plot is a graphical representation of
    #+end_src
 
    #+RESULTS:
-   [[file:suppBox.png]]
+   [[file:../img/suppBox.png]]
 
    #+begin_src R :session *R* :results output :exports both
      summary(ToothGrowth$supp)
    #+end_src
 
    #+RESULTS:
-   : OJ VC 
+   : OJ VC
    : 30 30
 
    #+begin_src R :file  ../img/factorBox.png :session *R* :results file graphics output :exports both
@@ -1669,14 +1669,14 @@ A box plot is a graphical representation of
    #+end_src
 
    #+RESULTS:
-   [[file:factorBox.png]]
+   [[file:../img/factorBox.png]]
 
    #+begin_src R :session *R* :results output :exports both
      summary(foo)
    #+end_src
 
    #+RESULTS:
-   : female   male 
+   : female   male
    :      1      3
 
 3. What does the 'ab' in =abline= refer to, and how can you draw a
@@ -1692,7 +1692,7 @@ A box plot is a graphical representation of
    #+end_src
 
    #+RESULTS:
-   [[file:abline.png]]
+   [[file:../img/abline.png]]
 
 ** EDA Lab
 #+attr_html: :width 400px:
@@ -1845,224 +1845,224 @@ do this is down to you (I'm happy to help). Others did it before you!
 
    #+RESULTS:
    #+begin_example
-     [1] "white"                "aliceblue"            "antiquewhite"        
-     [4] "antiquewhite1"        "antiquewhite2"        "antiquewhite3"       
-     [7] "antiquewhite4"        "aquamarine"           "aquamarine1"         
-    [10] "aquamarine2"          "aquamarine3"          "aquamarine4"         
-    [13] "azure"                "azure1"               "azure2"              
-    [16] "azure3"               "azure4"               "beige"               
-    [19] "bisque"               "bisque1"              "bisque2"             
-    [22] "bisque3"              "bisque4"              "black"               
-    [25] "blanchedalmond"       "blue"                 "blue1"               
-    [28] "blue2"                "blue3"                "blue4"               
-    [31] "blueviolet"           "brown"                "brown1"              
-    [34] "brown2"               "brown3"               "brown4"              
-    [37] "burlywood"            "burlywood1"           "burlywood2"          
-    [40] "burlywood3"           "burlywood4"           "cadetblue"           
-    [43] "cadetblue1"           "cadetblue2"           "cadetblue3"          
-    [46] "cadetblue4"           "chartreuse"           "chartreuse1"         
-    [49] "chartreuse2"          "chartreuse3"          "chartreuse4"         
-    [52] "chocolate"            "chocolate1"           "chocolate2"          
-    [55] "chocolate3"           "chocolate4"           "coral"               
-    [58] "coral1"               "coral2"               "coral3"              
-    [61] "coral4"               "cornflowerblue"       "cornsilk"            
-    [64] "cornsilk1"            "cornsilk2"            "cornsilk3"           
-    [67] "cornsilk4"            "cyan"                 "cyan1"               
-    [70] "cyan2"                "cyan3"                "cyan4"               
-    [73] "darkblue"             "darkcyan"             "darkgoldenrod"       
-    [76] "darkgoldenrod1"       "darkgoldenrod2"       "darkgoldenrod3"      
-    [79] "darkgoldenrod4"       "darkgray"             "darkgreen"           
-    [82] "darkgrey"             "darkkhaki"            "darkmagenta"         
-    [85] "darkolivegreen"       "darkolivegreen1"      "darkolivegreen2"     
-    [88] "darkolivegreen3"      "darkolivegreen4"      "darkorange"          
-    [91] "darkorange1"          "darkorange2"          "darkorange3"         
-    [94] "darkorange4"          "darkorchid"           "darkorchid1"         
-    [97] "darkorchid2"          "darkorchid3"          "darkorchid4"         
-   [100] "darkred"              "darksalmon"           "darkseagreen"        
-   [103] "darkseagreen1"        "darkseagreen2"        "darkseagreen3"       
-   [106] "darkseagreen4"        "darkslateblue"        "darkslategray"       
-   [109] "darkslategray1"       "darkslategray2"       "darkslategray3"      
-   [112] "darkslategray4"       "darkslategrey"        "darkturquoise"       
-   [115] "darkviolet"           "deeppink"             "deeppink1"           
-   [118] "deeppink2"            "deeppink3"            "deeppink4"           
-   [121] "deepskyblue"          "deepskyblue1"         "deepskyblue2"        
-   [124] "deepskyblue3"         "deepskyblue4"         "dimgray"             
-   [127] "dimgrey"              "dodgerblue"           "dodgerblue1"         
-   [130] "dodgerblue2"          "dodgerblue3"          "dodgerblue4"         
-   [133] "firebrick"            "firebrick1"           "firebrick2"          
-   [136] "firebrick3"           "firebrick4"           "floralwhite"         
-   [139] "forestgreen"          "gainsboro"            "ghostwhite"          
-   [142] "gold"                 "gold1"                "gold2"               
-   [145] "gold3"                "gold4"                "goldenrod"           
-   [148] "goldenrod1"           "goldenrod2"           "goldenrod3"          
-   [151] "goldenrod4"           "gray"                 "gray0"               
-   [154] "gray1"                "gray2"                "gray3"               
-   [157] "gray4"                "gray5"                "gray6"               
-   [160] "gray7"                "gray8"                "gray9"               
-   [163] "gray10"               "gray11"               "gray12"              
-   [166] "gray13"               "gray14"               "gray15"              
-   [169] "gray16"               "gray17"               "gray18"              
-   [172] "gray19"               "gray20"               "gray21"              
-   [175] "gray22"               "gray23"               "gray24"              
-   [178] "gray25"               "gray26"               "gray27"              
-   [181] "gray28"               "gray29"               "gray30"              
-   [184] "gray31"               "gray32"               "gray33"              
-   [187] "gray34"               "gray35"               "gray36"              
-   [190] "gray37"               "gray38"               "gray39"              
-   [193] "gray40"               "gray41"               "gray42"              
-   [196] "gray43"               "gray44"               "gray45"              
-   [199] "gray46"               "gray47"               "gray48"              
-   [202] "gray49"               "gray50"               "gray51"              
-   [205] "gray52"               "gray53"               "gray54"              
-   [208] "gray55"               "gray56"               "gray57"              
-   [211] "gray58"               "gray59"               "gray60"              
-   [214] "gray61"               "gray62"               "gray63"              
-   [217] "gray64"               "gray65"               "gray66"              
-   [220] "gray67"               "gray68"               "gray69"              
-   [223] "gray70"               "gray71"               "gray72"              
-   [226] "gray73"               "gray74"               "gray75"              
-   [229] "gray76"               "gray77"               "gray78"              
-   [232] "gray79"               "gray80"               "gray81"              
-   [235] "gray82"               "gray83"               "gray84"              
-   [238] "gray85"               "gray86"               "gray87"              
-   [241] "gray88"               "gray89"               "gray90"              
-   [244] "gray91"               "gray92"               "gray93"              
-   [247] "gray94"               "gray95"               "gray96"              
-   [250] "gray97"               "gray98"               "gray99"              
-   [253] "gray100"              "green"                "green1"              
-   [256] "green2"               "green3"               "green4"              
-   [259] "greenyellow"          "grey"                 "grey0"               
-   [262] "grey1"                "grey2"                "grey3"               
-   [265] "grey4"                "grey5"                "grey6"               
-   [268] "grey7"                "grey8"                "grey9"               
-   [271] "grey10"               "grey11"               "grey12"              
-   [274] "grey13"               "grey14"               "grey15"              
-   [277] "grey16"               "grey17"               "grey18"              
-   [280] "grey19"               "grey20"               "grey21"              
-   [283] "grey22"               "grey23"               "grey24"              
-   [286] "grey25"               "grey26"               "grey27"              
-   [289] "grey28"               "grey29"               "grey30"              
-   [292] "grey31"               "grey32"               "grey33"              
-   [295] "grey34"               "grey35"               "grey36"              
-   [298] "grey37"               "grey38"               "grey39"              
-   [301] "grey40"               "grey41"               "grey42"              
-   [304] "grey43"               "grey44"               "grey45"              
-   [307] "grey46"               "grey47"               "grey48"              
-   [310] "grey49"               "grey50"               "grey51"              
-   [313] "grey52"               "grey53"               "grey54"              
-   [316] "grey55"               "grey56"               "grey57"              
-   [319] "grey58"               "grey59"               "grey60"              
-   [322] "grey61"               "grey62"               "grey63"              
-   [325] "grey64"               "grey65"               "grey66"              
-   [328] "grey67"               "grey68"               "grey69"              
-   [331] "grey70"               "grey71"               "grey72"              
-   [334] "grey73"               "grey74"               "grey75"              
-   [337] "grey76"               "grey77"               "grey78"              
-   [340] "grey79"               "grey80"               "grey81"              
-   [343] "grey82"               "grey83"               "grey84"              
-   [346] "grey85"               "grey86"               "grey87"              
-   [349] "grey88"               "grey89"               "grey90"              
-   [352] "grey91"               "grey92"               "grey93"              
-   [355] "grey94"               "grey95"               "grey96"              
-   [358] "grey97"               "grey98"               "grey99"              
-   [361] "grey100"              "honeydew"             "honeydew1"           
-   [364] "honeydew2"            "honeydew3"            "honeydew4"           
-   [367] "hotpink"              "hotpink1"             "hotpink2"            
-   [370] "hotpink3"             "hotpink4"             "indianred"           
-   [373] "indianred1"           "indianred2"           "indianred3"          
-   [376] "indianred4"           "ivory"                "ivory1"              
-   [379] "ivory2"               "ivory3"               "ivory4"              
-   [382] "khaki"                "khaki1"               "khaki2"              
-   [385] "khaki3"               "khaki4"               "lavender"            
-   [388] "lavenderblush"        "lavenderblush1"       "lavenderblush2"      
-   [391] "lavenderblush3"       "lavenderblush4"       "lawngreen"           
-   [394] "lemonchiffon"         "lemonchiffon1"        "lemonchiffon2"       
-   [397] "lemonchiffon3"        "lemonchiffon4"        "lightblue"           
-   [400] "lightblue1"           "lightblue2"           "lightblue3"          
-   [403] "lightblue4"           "lightcoral"           "lightcyan"           
-   [406] "lightcyan1"           "lightcyan2"           "lightcyan3"          
-   [409] "lightcyan4"           "lightgoldenrod"       "lightgoldenrod1"     
-   [412] "lightgoldenrod2"      "lightgoldenrod3"      "lightgoldenrod4"     
-   [415] "lightgoldenrodyellow" "lightgray"            "lightgreen"          
-   [418] "lightgrey"            "lightpink"            "lightpink1"          
-   [421] "lightpink2"           "lightpink3"           "lightpink4"          
-   [424] "lightsalmon"          "lightsalmon1"         "lightsalmon2"        
-   [427] "lightsalmon3"         "lightsalmon4"         "lightseagreen"       
-   [430] "lightskyblue"         "lightskyblue1"        "lightskyblue2"       
-   [433] "lightskyblue3"        "lightskyblue4"        "lightslateblue"      
-   [436] "lightslategray"       "lightslategrey"       "lightsteelblue"      
-   [439] "lightsteelblue1"      "lightsteelblue2"      "lightsteelblue3"     
-   [442] "lightsteelblue4"      "lightyellow"          "lightyellow1"        
-   [445] "lightyellow2"         "lightyellow3"         "lightyellow4"        
-   [448] "limegreen"            "linen"                "magenta"             
-   [451] "magenta1"             "magenta2"             "magenta3"            
-   [454] "magenta4"             "maroon"               "maroon1"             
-   [457] "maroon2"              "maroon3"              "maroon4"             
-   [460] "mediumaquamarine"     "mediumblue"           "mediumorchid"        
-   [463] "mediumorchid1"        "mediumorchid2"        "mediumorchid3"       
-   [466] "mediumorchid4"        "mediumpurple"         "mediumpurple1"       
-   [469] "mediumpurple2"        "mediumpurple3"        "mediumpurple4"       
-   [472] "mediumseagreen"       "mediumslateblue"      "mediumspringgreen"   
-   [475] "mediumturquoise"      "mediumvioletred"      "midnightblue"        
-   [478] "mintcream"            "mistyrose"            "mistyrose1"          
-   [481] "mistyrose2"           "mistyrose3"           "mistyrose4"          
-   [484] "moccasin"             "navajowhite"          "navajowhite1"        
-   [487] "navajowhite2"         "navajowhite3"         "navajowhite4"        
-   [490] "navy"                 "navyblue"             "oldlace"             
-   [493] "olivedrab"            "olivedrab1"           "olivedrab2"          
-   [496] "olivedrab3"           "olivedrab4"           "orange"              
-   [499] "orange1"              "orange2"              "orange3"             
-   [502] "orange4"              "orangered"            "orangered1"          
-   [505] "orangered2"           "orangered3"           "orangered4"          
-   [508] "orchid"               "orchid1"              "orchid2"             
-   [511] "orchid3"              "orchid4"              "palegoldenrod"       
-   [514] "palegreen"            "palegreen1"           "palegreen2"          
-   [517] "palegreen3"           "palegreen4"           "paleturquoise"       
-   [520] "paleturquoise1"       "paleturquoise2"       "paleturquoise3"      
-   [523] "paleturquoise4"       "palevioletred"        "palevioletred1"      
-   [526] "palevioletred2"       "palevioletred3"       "palevioletred4"      
-   [529] "papayawhip"           "peachpuff"            "peachpuff1"          
-   [532] "peachpuff2"           "peachpuff3"           "peachpuff4"          
-   [535] "peru"                 "pink"                 "pink1"               
-   [538] "pink2"                "pink3"                "pink4"               
-   [541] "plum"                 "plum1"                "plum2"               
-   [544] "plum3"                "plum4"                "powderblue"          
-   [547] "purple"               "purple1"              "purple2"             
-   [550] "purple3"              "purple4"              "red"                 
-   [553] "red1"                 "red2"                 "red3"                
-   [556] "red4"                 "rosybrown"            "rosybrown1"          
-   [559] "rosybrown2"           "rosybrown3"           "rosybrown4"          
-   [562] "royalblue"            "royalblue1"           "royalblue2"          
-   [565] "royalblue3"           "royalblue4"           "saddlebrown"         
-   [568] "salmon"               "salmon1"              "salmon2"             
-   [571] "salmon3"              "salmon4"              "sandybrown"          
-   [574] "seagreen"             "seagreen1"            "seagreen2"           
-   [577] "seagreen3"            "seagreen4"            "seashell"            
-   [580] "seashell1"            "seashell2"            "seashell3"           
-   [583] "seashell4"            "sienna"               "sienna1"             
-   [586] "sienna2"              "sienna3"              "sienna4"             
-   [589] "skyblue"              "skyblue1"             "skyblue2"            
-   [592] "skyblue3"             "skyblue4"             "slateblue"           
-   [595] "slateblue1"           "slateblue2"           "slateblue3"          
-   [598] "slateblue4"           "slategray"            "slategray1"          
-   [601] "slategray2"           "slategray3"           "slategray4"          
-   [604] "slategrey"            "snow"                 "snow1"               
-   [607] "snow2"                "snow3"                "snow4"               
-   [610] "springgreen"          "springgreen1"         "springgreen2"        
-   [613] "springgreen3"         "springgreen4"         "steelblue"           
-   [616] "steelblue1"           "steelblue2"           "steelblue3"          
-   [619] "steelblue4"           "tan"                  "tan1"                
-   [622] "tan2"                 "tan3"                 "tan4"                
-   [625] "thistle"              "thistle1"             "thistle2"            
-   [628] "thistle3"             "thistle4"             "tomato"              
-   [631] "tomato1"              "tomato2"              "tomato3"             
-   [634] "tomato4"              "turquoise"            "turquoise1"          
-   [637] "turquoise2"           "turquoise3"           "turquoise4"          
-   [640] "violet"               "violetred"            "violetred1"          
-   [643] "violetred2"           "violetred3"           "violetred4"          
-   [646] "wheat"                "wheat1"               "wheat2"              
-   [649] "wheat3"               "wheat4"               "whitesmoke"          
-   [652] "yellow"               "yellow1"              "yellow2"             
+     [1] "white"                "aliceblue"            "antiquewhite"
+     [4] "antiquewhite1"        "antiquewhite2"        "antiquewhite3"
+     [7] "antiquewhite4"        "aquamarine"           "aquamarine1"
+    [10] "aquamarine2"          "aquamarine3"          "aquamarine4"
+    [13] "azure"                "azure1"               "azure2"
+    [16] "azure3"               "azure4"               "beige"
+    [19] "bisque"               "bisque1"              "bisque2"
+    [22] "bisque3"              "bisque4"              "black"
+    [25] "blanchedalmond"       "blue"                 "blue1"
+    [28] "blue2"                "blue3"                "blue4"
+    [31] "blueviolet"           "brown"                "brown1"
+    [34] "brown2"               "brown3"               "brown4"
+    [37] "burlywood"            "burlywood1"           "burlywood2"
+    [40] "burlywood3"           "burlywood4"           "cadetblue"
+    [43] "cadetblue1"           "cadetblue2"           "cadetblue3"
+    [46] "cadetblue4"           "chartreuse"           "chartreuse1"
+    [49] "chartreuse2"          "chartreuse3"          "chartreuse4"
+    [52] "chocolate"            "chocolate1"           "chocolate2"
+    [55] "chocolate3"           "chocolate4"           "coral"
+    [58] "coral1"               "coral2"               "coral3"
+    [61] "coral4"               "cornflowerblue"       "cornsilk"
+    [64] "cornsilk1"            "cornsilk2"            "cornsilk3"
+    [67] "cornsilk4"            "cyan"                 "cyan1"
+    [70] "cyan2"                "cyan3"                "cyan4"
+    [73] "darkblue"             "darkcyan"             "darkgoldenrod"
+    [76] "darkgoldenrod1"       "darkgoldenrod2"       "darkgoldenrod3"
+    [79] "darkgoldenrod4"       "darkgray"             "darkgreen"
+    [82] "darkgrey"             "darkkhaki"            "darkmagenta"
+    [85] "darkolivegreen"       "darkolivegreen1"      "darkolivegreen2"
+    [88] "darkolivegreen3"      "darkolivegreen4"      "darkorange"
+    [91] "darkorange1"          "darkorange2"          "darkorange3"
+    [94] "darkorange4"          "darkorchid"           "darkorchid1"
+    [97] "darkorchid2"          "darkorchid3"          "darkorchid4"
+   [100] "darkred"              "darksalmon"           "darkseagreen"
+   [103] "darkseagreen1"        "darkseagreen2"        "darkseagreen3"
+   [106] "darkseagreen4"        "darkslateblue"        "darkslategray"
+   [109] "darkslategray1"       "darkslategray2"       "darkslategray3"
+   [112] "darkslategray4"       "darkslategrey"        "darkturquoise"
+   [115] "darkviolet"           "deeppink"             "deeppink1"
+   [118] "deeppink2"            "deeppink3"            "deeppink4"
+   [121] "deepskyblue"          "deepskyblue1"         "deepskyblue2"
+   [124] "deepskyblue3"         "deepskyblue4"         "dimgray"
+   [127] "dimgrey"              "dodgerblue"           "dodgerblue1"
+   [130] "dodgerblue2"          "dodgerblue3"          "dodgerblue4"
+   [133] "firebrick"            "firebrick1"           "firebrick2"
+   [136] "firebrick3"           "firebrick4"           "floralwhite"
+   [139] "forestgreen"          "gainsboro"            "ghostwhite"
+   [142] "gold"                 "gold1"                "gold2"
+   [145] "gold3"                "gold4"                "goldenrod"
+   [148] "goldenrod1"           "goldenrod2"           "goldenrod3"
+   [151] "goldenrod4"           "gray"                 "gray0"
+   [154] "gray1"                "gray2"                "gray3"
+   [157] "gray4"                "gray5"                "gray6"
+   [160] "gray7"                "gray8"                "gray9"
+   [163] "gray10"               "gray11"               "gray12"
+   [166] "gray13"               "gray14"               "gray15"
+   [169] "gray16"               "gray17"               "gray18"
+   [172] "gray19"               "gray20"               "gray21"
+   [175] "gray22"               "gray23"               "gray24"
+   [178] "gray25"               "gray26"               "gray27"
+   [181] "gray28"               "gray29"               "gray30"
+   [184] "gray31"               "gray32"               "gray33"
+   [187] "gray34"               "gray35"               "gray36"
+   [190] "gray37"               "gray38"               "gray39"
+   [193] "gray40"               "gray41"               "gray42"
+   [196] "gray43"               "gray44"               "gray45"
+   [199] "gray46"               "gray47"               "gray48"
+   [202] "gray49"               "gray50"               "gray51"
+   [205] "gray52"               "gray53"               "gray54"
+   [208] "gray55"               "gray56"               "gray57"
+   [211] "gray58"               "gray59"               "gray60"
+   [214] "gray61"               "gray62"               "gray63"
+   [217] "gray64"               "gray65"               "gray66"
+   [220] "gray67"               "gray68"               "gray69"
+   [223] "gray70"               "gray71"               "gray72"
+   [226] "gray73"               "gray74"               "gray75"
+   [229] "gray76"               "gray77"               "gray78"
+   [232] "gray79"               "gray80"               "gray81"
+   [235] "gray82"               "gray83"               "gray84"
+   [238] "gray85"               "gray86"               "gray87"
+   [241] "gray88"               "gray89"               "gray90"
+   [244] "gray91"               "gray92"               "gray93"
+   [247] "gray94"               "gray95"               "gray96"
+   [250] "gray97"               "gray98"               "gray99"
+   [253] "gray100"              "green"                "green1"
+   [256] "green2"               "green3"               "green4"
+   [259] "greenyellow"          "grey"                 "grey0"
+   [262] "grey1"                "grey2"                "grey3"
+   [265] "grey4"                "grey5"                "grey6"
+   [268] "grey7"                "grey8"                "grey9"
+   [271] "grey10"               "grey11"               "grey12"
+   [274] "grey13"               "grey14"               "grey15"
+   [277] "grey16"               "grey17"               "grey18"
+   [280] "grey19"               "grey20"               "grey21"
+   [283] "grey22"               "grey23"               "grey24"
+   [286] "grey25"               "grey26"               "grey27"
+   [289] "grey28"               "grey29"               "grey30"
+   [292] "grey31"               "grey32"               "grey33"
+   [295] "grey34"               "grey35"               "grey36"
+   [298] "grey37"               "grey38"               "grey39"
+   [301] "grey40"               "grey41"               "grey42"
+   [304] "grey43"               "grey44"               "grey45"
+   [307] "grey46"               "grey47"               "grey48"
+   [310] "grey49"               "grey50"               "grey51"
+   [313] "grey52"               "grey53"               "grey54"
+   [316] "grey55"               "grey56"               "grey57"
+   [319] "grey58"               "grey59"               "grey60"
+   [322] "grey61"               "grey62"               "grey63"
+   [325] "grey64"               "grey65"               "grey66"
+   [328] "grey67"               "grey68"               "grey69"
+   [331] "grey70"               "grey71"               "grey72"
+   [334] "grey73"               "grey74"               "grey75"
+   [337] "grey76"               "grey77"               "grey78"
+   [340] "grey79"               "grey80"               "grey81"
+   [343] "grey82"               "grey83"               "grey84"
+   [346] "grey85"               "grey86"               "grey87"
+   [349] "grey88"               "grey89"               "grey90"
+   [352] "grey91"               "grey92"               "grey93"
+   [355] "grey94"               "grey95"               "grey96"
+   [358] "grey97"               "grey98"               "grey99"
+   [361] "grey100"              "honeydew"             "honeydew1"
+   [364] "honeydew2"            "honeydew3"            "honeydew4"
+   [367] "hotpink"              "hotpink1"             "hotpink2"
+   [370] "hotpink3"             "hotpink4"             "indianred"
+   [373] "indianred1"           "indianred2"           "indianred3"
+   [376] "indianred4"           "ivory"                "ivory1"
+   [379] "ivory2"               "ivory3"               "ivory4"
+   [382] "khaki"                "khaki1"               "khaki2"
+   [385] "khaki3"               "khaki4"               "lavender"
+   [388] "lavenderblush"        "lavenderblush1"       "lavenderblush2"
+   [391] "lavenderblush3"       "lavenderblush4"       "lawngreen"
+   [394] "lemonchiffon"         "lemonchiffon1"        "lemonchiffon2"
+   [397] "lemonchiffon3"        "lemonchiffon4"        "lightblue"
+   [400] "lightblue1"           "lightblue2"           "lightblue3"
+   [403] "lightblue4"           "lightcoral"           "lightcyan"
+   [406] "lightcyan1"           "lightcyan2"           "lightcyan3"
+   [409] "lightcyan4"           "lightgoldenrod"       "lightgoldenrod1"
+   [412] "lightgoldenrod2"      "lightgoldenrod3"      "lightgoldenrod4"
+   [415] "lightgoldenrodyellow" "lightgray"            "lightgreen"
+   [418] "lightgrey"            "lightpink"            "lightpink1"
+   [421] "lightpink2"           "lightpink3"           "lightpink4"
+   [424] "lightsalmon"          "lightsalmon1"         "lightsalmon2"
+   [427] "lightsalmon3"         "lightsalmon4"         "lightseagreen"
+   [430] "lightskyblue"         "lightskyblue1"        "lightskyblue2"
+   [433] "lightskyblue3"        "lightskyblue4"        "lightslateblue"
+   [436] "lightslategray"       "lightslategrey"       "lightsteelblue"
+   [439] "lightsteelblue1"      "lightsteelblue2"      "lightsteelblue3"
+   [442] "lightsteelblue4"      "lightyellow"          "lightyellow1"
+   [445] "lightyellow2"         "lightyellow3"         "lightyellow4"
+   [448] "limegreen"            "linen"                "magenta"
+   [451] "magenta1"             "magenta2"             "magenta3"
+   [454] "magenta4"             "maroon"               "maroon1"
+   [457] "maroon2"              "maroon3"              "maroon4"
+   [460] "mediumaquamarine"     "mediumblue"           "mediumorchid"
+   [463] "mediumorchid1"        "mediumorchid2"        "mediumorchid3"
+   [466] "mediumorchid4"        "mediumpurple"         "mediumpurple1"
+   [469] "mediumpurple2"        "mediumpurple3"        "mediumpurple4"
+   [472] "mediumseagreen"       "mediumslateblue"      "mediumspringgreen"
+   [475] "mediumturquoise"      "mediumvioletred"      "midnightblue"
+   [478] "mintcream"            "mistyrose"            "mistyrose1"
+   [481] "mistyrose2"           "mistyrose3"           "mistyrose4"
+   [484] "moccasin"             "navajowhite"          "navajowhite1"
+   [487] "navajowhite2"         "navajowhite3"         "navajowhite4"
+   [490] "navy"                 "navyblue"             "oldlace"
+   [493] "olivedrab"            "olivedrab1"           "olivedrab2"
+   [496] "olivedrab3"           "olivedrab4"           "orange"
+   [499] "orange1"              "orange2"              "orange3"
+   [502] "orange4"              "orangered"            "orangered1"
+   [505] "orangered2"           "orangered3"           "orangered4"
+   [508] "orchid"               "orchid1"              "orchid2"
+   [511] "orchid3"              "orchid4"              "palegoldenrod"
+   [514] "palegreen"            "palegreen1"           "palegreen2"
+   [517] "palegreen3"           "palegreen4"           "paleturquoise"
+   [520] "paleturquoise1"       "paleturquoise2"       "paleturquoise3"
+   [523] "paleturquoise4"       "palevioletred"        "palevioletred1"
+   [526] "palevioletred2"       "palevioletred3"       "palevioletred4"
+   [529] "papayawhip"           "peachpuff"            "peachpuff1"
+   [532] "peachpuff2"           "peachpuff3"           "peachpuff4"
+   [535] "peru"                 "pink"                 "pink1"
+   [538] "pink2"                "pink3"                "pink4"
+   [541] "plum"                 "plum1"                "plum2"
+   [544] "plum3"                "plum4"                "powderblue"
+   [547] "purple"               "purple1"              "purple2"
+   [550] "purple3"              "purple4"              "red"
+   [553] "red1"                 "red2"                 "red3"
+   [556] "red4"                 "rosybrown"            "rosybrown1"
+   [559] "rosybrown2"           "rosybrown3"           "rosybrown4"
+   [562] "royalblue"            "royalblue1"           "royalblue2"
+   [565] "royalblue3"           "royalblue4"           "saddlebrown"
+   [568] "salmon"               "salmon1"              "salmon2"
+   [571] "salmon3"              "salmon4"              "sandybrown"
+   [574] "seagreen"             "seagreen1"            "seagreen2"
+   [577] "seagreen3"            "seagreen4"            "seashell"
+   [580] "seashell1"            "seashell2"            "seashell3"
+   [583] "seashell4"            "sienna"               "sienna1"
+   [586] "sienna2"              "sienna3"              "sienna4"
+   [589] "skyblue"              "skyblue1"             "skyblue2"
+   [592] "skyblue3"             "skyblue4"             "slateblue"
+   [595] "slateblue1"           "slateblue2"           "slateblue3"
+   [598] "slateblue4"           "slategray"            "slategray1"
+   [601] "slategray2"           "slategray3"           "slategray4"
+   [604] "slategrey"            "snow"                 "snow1"
+   [607] "snow2"                "snow3"                "snow4"
+   [610] "springgreen"          "springgreen1"         "springgreen2"
+   [613] "springgreen3"         "springgreen4"         "steelblue"
+   [616] "steelblue1"           "steelblue2"           "steelblue3"
+   [619] "steelblue4"           "tan"                  "tan1"
+   [622] "tan2"                 "tan3"                 "tan4"
+   [625] "thistle"              "thistle1"             "thistle2"
+   [628] "thistle3"             "thistle4"             "tomato"
+   [631] "tomato1"              "tomato2"              "tomato3"
+   [634] "tomato4"              "turquoise"            "turquoise1"
+   [637] "turquoise2"           "turquoise3"           "turquoise4"
+   [640] "violet"               "violetred"            "violetred1"
+   [643] "violetred2"           "violetred3"           "violetred4"
+   [646] "wheat"                "wheat1"               "wheat2"
+   [649] "wheat3"               "wheat4"               "whitesmoke"
+   [652] "yellow"               "yellow1"              "yellow2"
    [655] "yellow3"              "yellow4"              "yellowgreen"
    #+end_example
 
@@ -2138,7 +2138,7 @@ do this is down to you (I'm happy to help). Others did it before you!
    #+end_src
 
    #+RESULTS:
-   [[file:linear.png]]
+   [[file:../img/linear.png]]
 
    Another possibility:
    #+begin_src R :file  ../img/linear2.png :session *R* :results file graphics output
@@ -2148,7 +2148,7 @@ do this is down to you (I'm happy to help). Others did it before you!
    #+end_src
 
    #+RESULTS:
-   [[file:linear2.png]]
+   [[file:../img/linear2.png]]
 
 2. Plot f(x) = (1-x)^2 for x in [0,10].
    #+begin_src R :file  ../img/nonlinear.png :session *R* :results file graphics output
@@ -2158,7 +2158,7 @@ do this is down to you (I'm happy to help). Others did it before you!
    #+end_src
 
    #+RESULTS:
-   [[file:nonlinear.png]]
+   [[file:../img/nonlinear.png]]
 
    To create a sequence of equally spaced values, use =seq=:
    #+begin_src R
@@ -2183,7 +2183,7 @@ do this is down to you (I'm happy to help). Others did it before you!
    #+end_src
 
    #+RESULTS:
-   [[file:insulplot.png]]
+   [[file:../img/insulplot.png]]
 
 4. Make a pair plot of the variables of the built-in =iris= dataset.
    #+begin_src R :file  ../img/iris.png :session *R* :results file graphics output
@@ -2191,7 +2191,7 @@ do this is down to you (I'm happy to help). Others did it before you!
    #+end_src
 
    #+RESULTS:
-   [[file:iris.png]]
+   [[file:../img/iris.png]]
 
    Information about =iris=:
    #+begin_src R :session *R* :results output :exports both :noweb yes
@@ -2199,7 +2199,7 @@ do this is down to you (I'm happy to help). Others did it before you!
    #+end_src
 
    #+RESULTS:
-   : 'data.frame':	150 obs. of  5 variables:
+   : 'data.frame':      150 obs. of  5 variables:
    :  $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
    :  $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...
    :  $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
@@ -2217,7 +2217,7 @@ do this is down to you (I'm happy to help). Others did it before you!
    #+end_src
 
    #+RESULTS:
-   [[file:AirPassengers.png]]
+   [[file:../img/AirPassengers.png]]
 
 6. In base R, make a histogram of the =AirPassengers= time series, and
    change the default y-axis label to "Count of Int. air passengers".
@@ -2227,7 +2227,7 @@ do this is down to you (I'm happy to help). Others did it before you!
    #+end_src
 
    #+RESULTS:
-   [[file:AirPassengers2.png]]
+   [[file:../img/AirPassengers2.png]]
 
 7. Plot the statistical =summary= values including the =mean= for the
    =AirPassengers= dataset.
@@ -2237,14 +2237,14 @@ do this is down to you (I'm happy to help). Others did it before you!
    #+end_src
 
    #+RESULTS:
-   [[file:airbox.png]]
+   [[file:../img/airbox.png]]
 
    #+begin_src R
      AirPassengers |> summary()
    #+end_src
 
    #+RESULTS:
-   :    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   :    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.
    :   104.0   180.0   265.5   280.3   360.5   622.0
 
 8. Using =ggplot2=, make a histogram of the time series data set
@@ -2266,7 +2266,7 @@ do this is down to you (I'm happy to help). Others did it before you!
    #+end_src
 
    #+RESULTS:
-   : 'data.frame':	144 obs. of  1 variable:
+   : 'data.frame':      144 obs. of  1 variable:
    :  $ Passengers: num  112 118 132 129 121 135 148 148 136 119 ...
 
    #+begin_src R :file  ../img/airHistggplot2.png :session *R* :results file graphics output
@@ -2279,7 +2279,7 @@ do this is down to you (I'm happy to help). Others did it before you!
    #+end_src
 
    #+RESULTS:
-   [[file:airHistggplot2.png]]
+   [[file:../img/airHistggplot2.png]]
 
 9. Using =ggplot2=, plot f(x) = 5x-3  for x in [0,10].
 
@@ -2292,7 +2292,7 @@ do this is down to you (I'm happy to help). Others did it before you!
    #+end_src
 
    #+RESULTS:
-   : 'data.frame':	2 obs. of  2 variables:
+   : 'data.frame':      2 obs. of  2 variables:
    :  $ x: num  0 10
    :  $ y: num  -3 47
 
@@ -2303,7 +2303,7 @@ do this is down to you (I'm happy to help). Others did it before you!
    #+end_src
 
    #+RESULTS:
-   [[file:linGG.png]]
+   [[file:../img/linGG.png]]
 
    - To see that =ggplot2= was actually loaded:
      #+begin_src R
@@ -2312,9 +2312,9 @@ do this is down to you (I'm happy to help). Others did it before you!
 
      #+RESULTS:
      :  [1] ".GlobalEnv"            "package:MASS"          "package:scatterplot3d"
-     :  [4] "package:dplyr"         "package:data.table"    "package:ggplot2"      
-     :  [7] "ESSR"                  "package:stats"         "package:graphics"     
-     : [10] "package:grDevices"     "package:utils"         "package:datasets"     
+     :  [4] "package:dplyr"         "package:data.table"    "package:ggplot2"
+     :  [7] "ESSR"                  "package:stats"         "package:graphics"
+     : [10] "package:grDevices"     "package:utils"         "package:datasets"
      : [13] "package:methods"       "Autoloads"             "package:base"
 
 10. Using =ggplot2=, plot f(x) = (1-x)^2 for x in [0,10].
@@ -2328,7 +2328,7 @@ do this is down to you (I'm happy to help). Others did it before you!
     #+end_src
 
     #+RESULTS:
-    : 'data.frame':	101 obs. of  2 variables:
+    : 'data.frame':     101 obs. of  2 variables:
     :  $ x1: num  0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 ...
     :  $ y1: num  1 0.81 0.64 0.49 0.36 0.25 0.16 0.09 0.04 0.01 ...
 
@@ -2339,7 +2339,7 @@ do this is down to you (I'm happy to help). Others did it before you!
     #+end_src
 
     #+RESULTS:
-    [[file:nonlinGG.png]]
+    [[file:../img/nonlinGG.png]]
 
 
 ** Project update - first podcasts & literature reviews
@@ -2450,7 +2450,7 @@ Q&A:
      #+end_src
 
      #+RESULTS:
-     [[file:xplot.png]]
+     [[file:../img/xplot.png]]
 
      #+begin_src python :results output :session *Python* :python python3 :exports both
        x = range(10) # define vector (range object)
@@ -2483,7 +2483,7 @@ Q&A:
      #+end_src
 
      #+RESULTS:
-     [[file:vector.png]]
+     [[file:../img/vector.png]]
 
 - How about rebuilding the =mtcars= plot that we always do?
 
@@ -2496,7 +2496,7 @@ Q&A:
      #+end_src
 
      #+RESULTS:
-     : -rw-rw-r-- 1 aletheia aletheia 1700 Nov  4 08:55 mtcars.csv
+     : -rw-rw-r-- 1 aletheia aletheia 1700 Nov  4 09:06 mtcars.csv
      : model,mpg,cyl,disp,hp,drat,wt,qsec,vs,am,gear,carb
      : Mazda RX4,21,6,160,110,3.9,2.62,16.46,0,1,4,4
 
@@ -2531,7 +2531,7 @@ Q&A:
      #+end_src
 
      #+RESULTS:
-     [[file:mtcars.png]]
+     [[file:../img/mtcars.png]]
 
 - How does this compare to the ~mtcars~ plot in R that you already know?
   Try to reproduce the R plot from memory so that it looks like this.
@@ -2548,7 +2548,7 @@ Q&A:
 
 #+RESULTS:
 #+begin_example
-'data.frame':	32 obs. of  11 variables:
+'data.frame':   32 obs. of  11 variables:
  $ mpg : num  21 21 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 ...
  $ cyl : num  6 6 4 6 8 6 8 4 4 6 ...
  $ disp: num  160 160 108 258 360 ...
@@ -2577,7 +2577,7 @@ Now the plot
 #+end_src
 
 #+RESULTS:
-[[file:mtcars2.png]]
+[[file:../img/mtcars2.png]]
 
 
 - Would you know how to put these three improvements into one plot?
@@ -2598,7 +2598,7 @@ Now the plot
   #+end_src
 
   #+RESULTS:
-  [[file:mtcarsR.png]]
+  [[file:../img/mtcarsR.png]]
 
 - Linux/Infrastructure question: if you check your current directory,
   how about all those PNG files. Could you delete them (and how)?
@@ -2616,6 +2616,10 @@ Now the plot
   airHistggplot2.png
   AirPassengers2.png
   AirPassengers.png
+  axes2.png
+  axes3.png
+  axes4.png
+  axes.png
   boxplot.png
   box.png
   cex.png
@@ -2641,12 +2645,21 @@ Now the plot
   Nile.png
   nonlinear.png
   nonlinGG.png
+  overplot2.png
+  overplot.png
   pairplot.png
   par.png
   plot.png
   p.png
+  seattle2.png
+  seattle3.png
+  seattle4.png
+  seattle5.png
+  seattle6.png
   shapePlot2.png
   sizePlot.png
+  subplot.png
+  subplots.png
   suppBox.png
   tg.png
   transPlot.png
@@ -2680,6 +2693,10 @@ Now the plot
   airHistggplot2.png
   AirPassengers2.png
   AirPassengers.png
+  axes2.png
+  axes3.png
+  axes4.png
+  axes.png
   boxplot.png
   box.png
   cex.png
@@ -2711,6 +2728,8 @@ Now the plot
   nonlinear.png
   nonlinGG.png
   notes.org
+  overplot2.png
+  overplot.png
   pairplot.png
   par.png
   plot.png
@@ -2719,8 +2738,15 @@ Now the plot
   practice
   projects
   pythonTest.org
+  seattle2.png
+  seattle3.png
+  seattle4.png
+  seattle5.png
+  seattle6.png
   shapePlot2.png
   sizePlot.png
+  subplot.png
+  subplots.png
   suppBox.png
   syllabus.org
   syllabus_pdf.org
@@ -2775,7 +2801,7 @@ Now the plot
    #+end_src
 
    #+RESULTS:
-   [[file:subplot.png]]
+   [[file:../img/subplot.png]]
 
    #+begin_quote
    The command creates a frame in the form of an object with a figure
@@ -2802,13 +2828,13 @@ Now the plot
    <class 'pandas.core.frame.DataFrame'>
    RangeIndex: 25551 entries, 0 to 25550
    Data columns (total 5 columns):
-    #   Column  Non-Null Count  Dtype  
-   ---  ------  --------------  -----  
-    0   DATE    25551 non-null  object 
+    #   Column  Non-Null Count  Dtype
+   ---  ------  --------------  -----
+    0   DATE    25551 non-null  object
     1   PRCP    25548 non-null  float64
-    2   TMAX    25551 non-null  int64  
-    3   TMIN    25551 non-null  int64  
-    4   RAIN    25548 non-null  object 
+    2   TMAX    25551 non-null  int64
+    3   TMIN    25551 non-null  int64
+    4   RAIN    25548 non-null  object
    dtypes: float64(1), int64(2), object(2)
    memory usage: 998.2+ KB
    None
@@ -2852,7 +2878,7 @@ Now the plot
    #+end_src
 
    #+RESULTS:
-   [[file:axes.png]]
+   [[file:../img/axes.png]]
 
 
 ** WE MEET ON FRIDAY BUT THERE WILL BE NO CLASS ON MONDAY
@@ -2897,7 +2923,7 @@ this way you'll learn Python and visualization with Python, for free!
    #+end_src
 
    #+RESULTS:
-   [[file:axes.png]]
+   [[file:../img/axes2.png]]
 
 2. How do you customize a default =plot= with point characters, line
    type, and color?
@@ -2912,7 +2938,7 @@ this way you'll learn Python and visualization with Python, for free!
    #+end_src
 
    #+RESULTS:
-   [[file:axes2.png]]
+   [[file:../img/axes2a.png]]
 
 3. How do you customize a default =plot= with title and axis labels?
    #+begin_src python :file  ../img/axes3.png :results file graphics output :session *Python* :python python3 :exports both
@@ -2930,7 +2956,7 @@ this way you'll learn Python and visualization with Python, for free!
    #+end_src
 
    #+RESULTS:
-   [[file:axes3.png]]
+   [[file:../img/axes3.png]]
 
    #+begin_src python :file  ../img/axes4.png :results file graphics output :session *Python* :python python3 :exports both
      # setup
@@ -2947,7 +2973,7 @@ this way you'll learn Python and visualization with Python, for free!
    #+end_src
 
    #+RESULTS:
-   [[file:axes4.png]]
+   [[file:../img/axes4.png]]
 
 4. How do you plot two graphs on top of one another?
    #+begin_src python :file  ../img/overplot.png :results file graphics output :session *Python* :python python3 :exports both
@@ -2963,7 +2989,7 @@ this way you'll learn Python and visualization with Python, for free!
    #+end_src
 
    #+RESULTS:
-   [[file:overplot.png]]
+   [[file:../img/overplot.png]]
 
    #+begin_src python :file  ../img/overplot2.png :results file graphics output :session *Python* :python python3 :exports both
      fig,ax=plt.subplots()
@@ -2982,7 +3008,7 @@ this way you'll learn Python and visualization with Python, for free!
    #+end_src
 
    #+RESULTS:
-   [[file:overplot2.png]]
+   [[file:../img/overplot2.png]]
 
 5. How do you make multiple small plots on one page?
    #+begin_src python :file  ../img/subplots.png :results file graphics output :session *Python* :python python3 :exports both
@@ -2993,7 +3019,7 @@ this way you'll learn Python and visualization with Python, for free!
    #+end_src
 
    #+RESULTS:
-   [[file:subplots.png]]
+   [[file:../img/subplots.png]]
 
 
 ** Exercise: Plotting in Python
@@ -3010,7 +3036,7 @@ this way you'll learn Python and visualization with Python, for free!
    #+end_src
 
    #+RESULTS:
-   : -rw-rw-r-- 1 aletheia aletheia 761976 Nov  4 08:55 weather.csv
+   : -rw-rw-r-- 1 aletheia aletheia 761976 Nov  4 09:07 weather.csv
 
 3. Using =head= on the shell, look at the first couple of lines of the
    file to ascertain that the data have a header:
@@ -3080,7 +3106,7 @@ this way you'll learn Python and visualization with Python, for free!
    #+end_src
 
    #+RESULTS:
-   [[file:seattle.png]]
+   [[file:../img/seattle.png]]
 
 7. Hard to read! Turn the x-axis labels, tighten the layout:
    #+begin_src python :file  ../img/seattle2.png :results file graphics output :session *Python* :python python3 :exports both
@@ -3092,7 +3118,7 @@ this way you'll learn Python and visualization with Python, for free!
    #+end_src
 
    #+RESULTS:
-   [[file:seattle2.png]]
+   [[file:../img/seattle2.png]]
 
 8. Add a second plot with the minimum temperatures:
    #+begin_src python :file  ../img/seattle3.png :results file graphics output :session *Python* :python python3 :exports both
@@ -3107,7 +3133,7 @@ this way you'll learn Python and visualization with Python, for free!
    #+end_src
 
    #+RESULTS:
-   [[file:seattle3.png]]
+   [[file:../img/seattle3.png]]
 
 9. Add a suitable title, x- and y-labels, a legend, different markers
    and colors, a legend and a grid:
@@ -3132,7 +3158,7 @@ this way you'll learn Python and visualization with Python, for free!
    #+end_src
 
    #+RESULTS:
-   [[file:seattle4.png]]
+   [[file:../img/seattle4.png]]
 
 10. Put the two plots next to one another instead of on top of one
     another:
@@ -3153,7 +3179,7 @@ this way you'll learn Python and visualization with Python, for free!
     #+end_src
 
     #+RESULTS:
-    [[file:seattle5.png]]
+    [[file:../img/seattle5.png]]
 
 11. You notice that the y-axes of these plots have different
     ranges. In R, you set =ylim= to run from the smallest (min) to the
@@ -3185,7 +3211,7 @@ this way you'll learn Python and visualization with Python, for free!
     #+end_src
 
     #+RESULTS:
-    [[file:seattle6.png]]
+    [[file:../img/seattle6.png]]
 
 * DONE Week 10 - Grammar of graphics plotting lab
 #+attr_html: :width 700px:
@@ -3250,14 +3276,14 @@ Download [[https://tinyurl.com/ggplot2-review-org][tinyurl.com/ggplot2-review-or
 #+end_src
 
 #+RESULTS:
-: -rw-rw-r-- 1 aletheia aletheia 4597 Nov  4 08:55 ggplot2.org
+: -rw-rw-r-- 1 aletheia aletheia 4597 Nov  4 09:07 ggplot2.org
 
 #+begin_src R
   system("ls -l ggplot2.org")
 #+end_src
 
 #+RESULTS:
-: -rw-rw-r-- 1 aletheia aletheia 4597 Nov  4 08:55 ggplot2.org
+: -rw-rw-r-- 1 aletheia aletheia 4597 Nov  4 09:07 ggplot2.org
 
 Open Emacs on =ggplot2.org= with
 #+begin_example sh
@@ -3298,7 +3324,7 @@ Download [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]] (aga
 
    #+RESULTS:
    #+begin_example
-   'data.frame':	32 obs. of  11 variables:
+   'data.frame':        32 obs. of  11 variables:
     $ mpg : num  21 21 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 ...
     $ cyl : num  6 6 4 6 8 6 8 4 4 6 ...
     $ disp: num  160 160 108 258 360 ...
@@ -3333,7 +3359,7 @@ Download [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]] (aga
    #+end_src
 
    #+RESULTS:
-   [[file:mosaic.png]]
+   [[file:../img/mosaic.png]]
 
    Plot: attempt 2
    #+begin_src R :file  ../img/mosaic2.png :session *R* :results file graphics output :exports both
@@ -3341,7 +3367,7 @@ Download [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]] (aga
    #+end_src
 
    #+RESULTS:
-   [[file:mosaic2.png]]
+   [[file:../img/mosaic2.png]]
 
    What's the line mean?
    #+begin_src R
@@ -3357,7 +3383,7 @@ Download [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]] (aga
    #+end_src
 
    #+RESULTS:
-   [[file:ts.png]]
+   [[file:../img/ts.png]]
 
 3. You've got two numeric distributions of related observations (for
    example before and after applying medication). What's the best way
@@ -3369,14 +3395,14 @@ Download [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]] (aga
    #+end_src
 
    #+RESULTS:
-   [[file:boxplot.png]]
+   [[file:../img/boxplot.png]]
 
    #+begin_src R :session *R* :results output :exports both :noweb yes
      str(whiteside)
    #+end_src
 
    #+RESULTS:
-   : 'data.frame':	56 obs. of  3 variables:
+   : 'data.frame':      56 obs. of  3 variables:
    :  $ Insul: Factor w/ 2 levels "Before","After": 1 1 1 1 1 1 1 1 1 1 ...
    :  $ Temp : num  -0.8 -0.7 0.4 2.5 2.9 3.2 3.6 3.9 4.2 4.3 ...
    :  $ Gas  : num  7.2 6.9 6.4 6 5.8 5.8 5.6 4.7 5.8 5.2 ...
@@ -3548,7 +3574,7 @@ Download [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]] (aga
    #+end_src
 
    #+RESULTS:
-   [[file:frame.png]]
+   [[file:../img/frame.png]]
 
 4. Which =plot= parameter family controls text and symbols scales?
    #+begin_src R :file  ../img/cex.png :session *R* :results file graphics output :exports both
@@ -3556,7 +3582,7 @@ Download [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]] (aga
    #+end_src
 
    #+RESULTS:
-   [[file:cex.png]]
+   [[file:../img/cex.png]]
 
 5. Which =plot= parameter family controls text and symbols colors?
    #+begin_src R :file  ../img/cex2.png :session *R* :results file graphics output :exports both
@@ -3567,23 +3593,27 @@ Download [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]] (aga
    #+end_src
 
    #+RESULTS:
-   [[file:cex.png]]
-
+   [[file:../img/cex2.png]]
 
 * Week 12: Package =plotly= & Dashboard Design [Nov 4]
 #+attr_html: :width 600px:
 #+caption: Colorful McKinley/Roosevelt Campaign Poster (1900)
 [[../img/campaign.jpg]]
 
-- [ ] Finish =plot= code along lecture: [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]]
-- [ ] =plot= lab with NHANES data: [[https://tinyurl.com/plots-lab][tinyurl.com/plots-lab]]
-- [ ] New quiz (9) available until Nov 8 (=plotly= and =plot=)
-- [ ] Bonus exercise: redo the =NHANES= plot with =ggplot2=
-- [ ] Next DataCamp lesson: Dashboard Design
+*REMEMBER: NO CLASS MEETING THIS WEEK ON FRIDAY*
+
+- [ ] *Finish* =plot= code along lecture: [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]].
+- [ ] *Review* DataCamp lesson on =plotly=.
+- [ ] *Complete* =plot= lab with NHANES data: [[https://tinyurl.com/plots-lab][tinyurl.com/plots-lab]].
+- [ ] *Complete* new quiz (9) by Nov 8 (=plotly= and =plot=).
+- [ ] *Redo* the =NHANES= plot with =ggplot2= (bonus exercise).
+- [ ] *Complete* next DataCamp lessons: Dashboard Design and /Power BI/.
 
 ** DataCamp Review: The Python =plotly= package for interactive plots
 
-1. What is =plotly= and which programming language does it support?
+Just watch or code along.
+
+1) What is =plotly= and which programming language does it support?
    #+begin_quote
    =plotly= is a =JavaScript= library, and you can use it with Python, R,
    Julia, JavaScript, F#, MATLAB, in connection with =ggplot2=, and to
@@ -3594,7 +3624,7 @@ Download [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]] (aga
    [[../img/goscatter.png]]
    #+end_quote
 
-2. What does Plotly's /"instant interactivity"/ mean?
+2) What does Plotly's /"instant interactivity"/ mean?
    #+begin_quote
    - The figure cannot be shown in an online notebook but not in Emacs.
      #+attr_html: :width 500px:
@@ -3606,7 +3636,7 @@ Download [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]] (aga
    [[../img/plotly_buttons.png]]
    #+end_quote
 
-3. How is a =plotly= figure structured?
+3) How is a =plotly= figure structured?
    #+begin_quote
    A Plotly figure is a "dictionary of dictionaries", because it
    organizes plot configuration and data in a hierarchical, nested
@@ -3653,7 +3683,7 @@ Download [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]] (aga
                  'yaxis': {'title': 'Sales'}}}
    #+end_example
 
-4. How does =plotly.express= work?
+4) How does =plotly.express= work?
    #+begin_quote
    The =plotly.express= module specifies a =DataFrame= from the =pandas=
    package and its columns as arguments.
@@ -3667,7 +3697,10 @@ Download [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]] (aga
          'day': ['Monday', 'Tuesday', 'Wednesday', 'Thursday',
                  'Friday', 'Saturday', 'Sunday'],
          'temp': [28, 27, 25, 31, 32, 35, 36]})
-     fig = px.bar(data_frame=weekly_temps,x='day',y='temp')
+     fig = px.bar(
+         data_frame=weekly_temps,
+         x='day',
+         y='temp')
      fig.show()
    #+end_src
 
@@ -3687,14 +3720,14 @@ Download [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]] (aga
    : 5   Saturday    35
    : 6     Sunday    36
 
-5. Which /univariate/ plots do you know?
+5) Which /univariate/ plots do you know?
    #+begin_quote
    - Histogram
    - Bar chart
    - Box plot
    #+end_quote
 
-6. How would you make a quick histogram with =plotly=?
+6) How would you make a quick histogram with =plotly=?
    #+begin_src python :results output :session *Python* :python python3 :exports both
      ## Create a DataFrame
      revenues = pd.DataFrame({
@@ -3713,18 +3746,18 @@ Download [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]] (aga
    : 3     4  China National Petroleum  379130.0
    : 4     5         Royal Dutch Shell  352106.0
 
-  #+begin_src python :file  ../img/p.png :results file graphics none :session *Python* :python python3 
-    import pandas as pd
-    import plotly.express as px
-    fig = px.histogram(
-        data_frame=revenues,
-        x='Revenue')
-    fig.show()
-  #+end_src
+   #+begin_src python :file  ../img/p.png :results file graphics none :session *Python* :python python3
+     import pandas as pd
+     import plotly.express as px
+     fig = px.histogram(
+         data_frame=revenues,
+         x='Revenue')
+     fig.show()
+   #+end_src
 
-  [[file:../img/revenue.png]]
+   [[file:../img/revenue.png]]
 
-7. How could you used =color= in the bar chart for this data frame?
+7) How could you used =color= in the bar chart for this data frame?
    #+begin_src python :results output :session *Python* :python python3 :exports both
      import pandas as pd
      import plotly.express as px
@@ -3743,7 +3776,7 @@ Download [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]] (aga
    : 2   Xuan     90    Melbourne
    : 3  Harry     85       Conway
 
-   #+begin_src python :file  ../img/p.png :results file graphics output :session *Python* :python python3
+   #+begin_src python :file  ../img/p.png :results file graphics none :session *Python* :python python3
      import plotly.express as px
      fig=px.bar(
          data_frame=student_scores,
@@ -3753,15 +3786,12 @@ Download [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]] (aga
      fig.show()
    #+end_src
 
-   #+RESULTS:
-   [[file:p.png]]
-
    [[file:../img/student_scores.png]]
 
-8. How can you find out which methods a module contains? E.g. when you
+8) How can you find out which methods a module contains? E.g. when you
    get a =TypeError= because a parameter (=color_continous_scale=) is not
    recognized?
-   
+
    #+begin_example python
      dir(px) # lists methods in plotly.express
      help(px.bar) # lists definition and parameters in `bar`
@@ -3947,7 +3977,7 @@ Download [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]] (aga
            `color_continuous_scale`.
        opacity: float
            Value between 0 and 1. Sets the opacity for markers.
-       orientation: str, one of `'h'` for horizontal or `'v'` for vertical. 
+       orientation: str, one of `'h'` for horizontal or `'v'` for vertical.
            (default `'v'` if `x` and `y` are provided and both continous or both
            categorical,  otherwise `'v'`(`'h'`) if `x`(`y`) is categorical and
            `y`(`x`) is continuous,  otherwise `'v'`(`'h'`) if only `x`(`y`) is
@@ -3986,20 +4016,61 @@ Download [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]] (aga
            plotly.graph_objects.Figure
    #+end_example
 
-9. How can you construct your own color range?
+9) How can you construct your own color range?
    #+begin_quote
    - Construct the scale as a list of =rgb= codes
    - Use it with =color_continuous_scale=
    #+end_quote
 
+   #+begin_src python :file ../img/p.png :results file graphics none :session *Python* :python python3 :exports both
+     ## import libraries
+     import plotly.express as px
+     import pandas as pd
 
-10. **update the layout of an existing figure
+     ## create sample data frame
+     weekly_temps = pd.DataFrame({
+         'day': ['Monday', 'Tuesday', 'Wednesday', 'Thursday',
+                 'Friday', 'Saturday', 'Sunday'],
+         'temp': [28, 27, 25, 31, 32, 35, 36]})
 
-11. What you can do with =plotly= box plots?
+     ## create color scale: yellow through orange to red
+     my_scale=[('rgb(242,238,10)'),
+               ('rgb(242,95,10)'),
+               ('rgb(255,0,0)')]
+
+     ## create figure
+     fig=px.bar(
+         data_frame=weekly_temps,
+         x='day', # categorical
+         y='temp', # numerical
+         color_continuous_scale=my_scale,
+         color='temp')
+     ## show figure
+     fig.show()
+   #+end_src
+
+10) What you can do with =plotly= box plots?
     #+begin_quote
     - Specify =hover_data= as a list of column names
     - Specify how to show outliers with =points=
     #+end_quote
+
+The lessons of the =plotly= course follow this (classical) path:
+1) Univariate plots (one dependent variable)
+2) Bivariate plots (plot and compare two variables)
+3) Advanced customization (presentation mode)
+4) Advanced interactivity (web application mode)
+
+
+** Trophy!
+#+attr_html: :width 700px:
+[[../img/trophy2.png]]
+
+*Milestone (and Emacs tip):* I counted this morning (=M-x occur=) - in
+this notebook alone (for review) we've created *200* plots alone. We're
+probably way above *1,000* created plots in the whole course. *10,000*
+plots make you a data visualization master!
+
 
 * Week 13: Advanced Customization & Project sprint review [Nov 11]
 
