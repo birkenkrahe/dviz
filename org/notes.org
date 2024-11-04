@@ -3729,7 +3729,7 @@ Just watch or code along.
 
 6) How would you make a quick histogram with =plotly=?
    #+begin_src python :results output :session *Python* :python python3 :exports both
-     ## Create a DataFrame
+
      revenues = pd.DataFrame({
          'Rank': range(1,6),
          'Company': ['Walmart','Sinopec Group','State Grid',
