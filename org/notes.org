@@ -3602,12 +3602,12 @@ Download [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]] (aga
 
 *REMEMBER: NO CLASS MEETING THIS WEEK ON FRIDAY*
 
+- [X] *Complete* next DataCamp lessons: Dashboard Design and /Power BI/.
+- [X] *Complete* new quiz (9) by Nov 8 (=plotly= and =plot=).
 - [ ] *Finish* =plot= code along lecture: [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]].
 - [ ] *Review* DataCamp lesson on =plotly= (code along)
 - [ ] *Complete* =plot= lab with NHANES data: [[https://tinyurl.com/plots-lab][tinyurl.com/plots-lab]].
-- [ ] *Complete* new quiz (9) by Nov 8 (=plotly= and =plot=).
 - [ ] *Redo* the =NHANES= plot with =ggplot2= (bonus exercise).
-- [ ] *Complete* next DataCamp lessons: Dashboard Design and /Power BI/.
 
 ** DataCamp Review: The Python =plotly= package for interactive plots
 
