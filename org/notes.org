@@ -3611,7 +3611,7 @@ Download [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]] (aga
 
 ** DataCamp Review: The Python =plotly= package for interactive plots
 
-Just watch or code along.
+Just watch or code along: https://tinyurl.com/plotly-org
 
 1) What is =plotly= and which programming language does it support?
    #+begin_quote
@@ -4060,7 +4060,6 @@ The lessons of the =plotly= course follow this (classical) path:
 2) Bivariate plots (plot and compare two variables)
 3) Advanced customization (presentation mode)
 4) Advanced interactivity (web application mode)
-
 
 ** Trophy!
 #+attr_html: :width 700px:
