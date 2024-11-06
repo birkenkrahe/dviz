@@ -10,29 +10,44 @@ Just watch or code along.
 
 1) What is =plotly= and which programming language does it support?
    #+begin_quote
-
+   =plotly= is a JavaScript library - Usable with Python, R, Julia,
+   JavaScript, F#, Matlab, with =ggplot2=, and to build "Dash" web
+   application, on Kubernetes containers. (dash.plotly.com)
    #+end_quote
 
 2) What does Plotly's /"instant interactivity"/ mean?
    #+begin_quote
-
+   - Figure cannot be shown in Emacs
+   - You can hover over data points
+   - There are buttons! To press!
    #+end_quote
 
 3) How is a =plotly= figure structured?
    #+begin_quote
-
+   - A plotly figures is a "dictionary of dictionaries"
+   - Plot configuration is organized hierarchically
+   - Allows you to acces and modify plot components
    #+end_quote
 
-   #+begin_src python :file  ../img/p.png :results file graphics none :session *Python* :python python3
+   #+begin_src python :file  p.png :results file graphics none :session *Python* :python python3
      # load module and define alias
-
+     import plotly.graph_objects as go
 
      # define figure as dictionary with two keys, `data` and `layout`
-
+     figure_config = dict({
+         # trace = type + data dictionary (list)
+         'data': [
+             {'type': 'bar',
+              'x': ['Jan', 'Feb', 'Mar'],
+              'y': [450, 475, 400]}],
+         # layout settings = dictionary with 3 dictionaries
+         'layout': { 'title': {'text': 'Sales for Jan-Mar 2020'},
+                     'xaxis': {'title': 'Months'},
+                     'yaxis': {'title': 'Sales'}}}) 
      ## create figure
-
+     fig = go.Figure(figure_config)
      ## send figure to graphics engine for display
-
+     fig.show()
    #+end_src
 
    #+begin_src python :results output :session *Python* :python python3 :exports both

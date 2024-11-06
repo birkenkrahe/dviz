@@ -3595,7 +3595,7 @@ Download [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]] (aga
    #+RESULTS:
    [[file:../img/cex2.png]]
 
-* Week 12: Package =plotly= & Dashboard Design [Nov 4]
+`* Week 12: Package =plotly= & Dashboard Design [Nov 4]
 #+attr_html: :width 600px:
 #+caption: Colorful McKinley/Roosevelt Campaign Poster (1900)
 [[../img/campaign.jpg]]
