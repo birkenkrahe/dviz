@@ -3604,10 +3604,21 @@ Download [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]] (aga
 
 - [X] *Complete* next DataCamp lessons: Dashboard Design and /Power BI/.
 - [X] *Complete* new quiz (9) by Nov 8 (=plotly= and =plot=).
-- [ ] *Finish* =plot= code along lecture: [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]].
+- [X] *Finish* =plot= code along lecture: [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]].
 - [ ] *Review* DataCamp lesson on =plotly= (code along)
 - [ ] *Complete* =plot= lab with NHANES data: [[https://tinyurl.com/plots-lab][tinyurl.com/plots-lab]].
 - [ ] *Redo* the =NHANES= plot with =ggplot2= (bonus exercise).
+
+** DONE Trophy!
+
+#+attr_html: :width 700px:
+[[../img/trophy2.png]]
+
+*Milestone (and Emacs tip):* I counted this morning (=M-x occur=) - in
+this notebook alone (for review) we've created *200* plots alone. We're
+probably way above *1,000* created plots in the whole course. *10,000*
+plots make you a data visualization master!
+
 
 ** DataCamp Review: The Python =plotly= package for interactive plots
 
@@ -4061,15 +4072,6 @@ The lessons of the =plotly= course follow this (classical) path:
 2) Bivariate plots (plot and compare two variables)
 3) Advanced customization (presentation mode)
 4) Advanced interactivity (web application mode)
-
-** Trophy!
-#+attr_html: :width 700px:
-[[../img/trophy2.png]]
-
-*Milestone (and Emacs tip):* I counted this morning (=M-x occur=) - in
-this notebook alone (for review) we've created *200* plots alone. We're
-probably way above *1,000* created plots in the whole course. *10,000*
-plots make you a data visualization master!
 
 
 * Week 13: Advanced Customization & Project sprint review [Nov 11]
