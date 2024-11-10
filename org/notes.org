@@ -3313,6 +3313,17 @@ Download [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]] (aga
   emacs --file plot.org
 #+end_example
 
+** Trophy!
+
+#+attr_html: :width 700px:
+[[../img/trophy2.png]]
+
+*Milestone (and Emacs tip):* I counted this morning (=M-x occur=) - in
+this notebook alone (for review) we've created *200* plots alone. We're
+probably way above *1,000* created plots in the whole course. *10,000*
+plots make you a data visualization master!
+
+
 ** Review: =plot= function (part 1)
 
 1. What does =plot= generate when you feed it with two =factor= variables?
@@ -3609,18 +3620,10 @@ Download [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]] (aga
 - [ ] *Complete* =plot= lab with NHANES data: [[https://tinyurl.com/plots-lab][tinyurl.com/plots-lab]].
 - [ ] *Redo* the =NHANES= plot with =ggplot2= (bonus exercise).
 
-** DONE Trophy!
+   
+* Week 13: Advanced Customization & Project sprint review [Nov 11]
 
-#+attr_html: :width 700px:
-[[../img/trophy2.png]]
-
-*Milestone (and Emacs tip):* I counted this morning (=M-x occur=) - in
-this notebook alone (for review) we've created *200* plots alone. We're
-probably way above *1,000* created plots in the whole course. *10,000*
-plots make you a data visualization master!
-
-
-** DataCamp Review: The Python =plotly= package for interactive plots
+** IN PROGRESS DataCamp Review: The Python =plotly= package for interactive plots
 
 - Just watch or code along: https://tinyurl.com/plotly-org
 - To work through this lesson took me 2 hours ([[https://github.com/birkenkrahe/dviz/blob/main/pdf/plotly.pdf][notebook in GitHub]])
@@ -3741,7 +3744,6 @@ plots make you a data visualization master!
 
 6) How would you make a quick histogram with =plotly=?
    #+begin_src python :results output :session *Python* :python python3 :exports both
-
      revenues = pd.DataFrame({
          'Rank': range(1,6),
          'Company': ['Walmart','Sinopec Group','State Grid',
@@ -4074,8 +4076,7 @@ The lessons of the =plotly= course follow this (classical) path:
 4) Advanced interactivity (web application mode)
 
 
-* Week 13: Advanced Customization & Project sprint review [Nov 11]
-
+** TODO DataCamp review: Dashboard Design Concepts
 
 * Week 14: Power BI [Nov 25]
 
