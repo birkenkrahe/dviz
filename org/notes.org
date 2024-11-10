@@ -3606,7 +3606,7 @@ plots make you a data visualization master!
    #+RESULTS:
    [[file:../img/cex2.png]]
 
-`* Week 12: Package =plotly= & Dashboard Design [Nov 4]
+* DONE Week 12: Package =plotly= & Dashboard Design [Nov 4]
 #+attr_html: :width 600px:
 #+caption: Colorful McKinley/Roosevelt Campaign Poster (1900)
 [[../img/campaign.jpg]]
@@ -3619,9 +3619,12 @@ plots make you a data visualization master!
 - [ ] *Review* DataCamp lesson on =plotly= (code along)
 - [ ] *Complete* =plot= lab with NHANES data: [[https://tinyurl.com/plots-lab][tinyurl.com/plots-lab]].
 - [ ] *Redo* the =NHANES= plot with =ggplot2= (bonus exercise).
-
    
 * Week 13: Advanced Customization & Project sprint review [Nov 11]
+
+- [ ] *Review* DataCamp lesson on =plotly= (code along)
+- [ ] *Complete* =plot= lab with NHANES data: [[https://tinyurl.com/plots-lab][tinyurl.com/plots-lab]].
+- [ ] *Redo* the =NHANES= plot with =ggplot2= (bonus exercise).
 
 ** IN PROGRESS DataCamp Review: The Python =plotly= package for interactive plots
 
@@ -4076,7 +4079,10 @@ The lessons of the =plotly= course follow this (classical) path:
 4) Advanced interactivity (web application mode)
 
 
+** Base R =plot= lab
+
 ** TODO DataCamp review: Dashboard Design Concepts
+
 
 * Week 14: Power BI [Nov 25]
 
