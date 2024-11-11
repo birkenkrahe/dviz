@@ -3629,6 +3629,7 @@ plots make you a data visualization master!
 ** IN PROGRESS DataCamp Review: The Python =plotly= package for interactive plots
 
 - Just watch or code along: https://tinyurl.com/plotly-org
+
 - To work through this lesson took me 2 hours ([[https://github.com/birkenkrahe/dviz/blob/main/pdf/plotly.pdf][notebook in GitHub]])
 
 1) What is =plotly= and which programming language does it support?
@@ -4081,8 +4082,8 @@ The lessons of the =plotly= course follow this (classical) path:
 
 ** Base R =plot= lab
 
-** TODO DataCamp review: Dashboard Design Concepts
 
+** TODO DataCamp review: Dashboard Design Concepts
 
 * Week 14: Power BI [Nov 25]
 
