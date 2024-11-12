@@ -3620,7 +3620,10 @@ plots make you a data visualization master!
 - [ ] *Complete* =plot= lab with NHANES data: [[https://tinyurl.com/plots-lab][tinyurl.com/plots-lab]].
 - [ ] *Redo* the =NHANES= plot with =ggplot2= (bonus exercise).
    
+
 * Week 13: Advanced Customization & Project sprint review [Nov 11]
+#+attr_html: :width 600px:
+[[../img/marriage-at-cana.jpg]]
 
 - [ ] *Review* DataCamp lesson on =plotly= (code along)
 - [ ] *Complete* =plot= lab with NHANES data: [[https://tinyurl.com/plots-lab][tinyurl.com/plots-lab]].
