@@ -24,7 +24,7 @@ Just watch or code along.
 
 3) How is a =plotly= figure structured?
    #+begin_quote
-   - A plotly figures is a "dictionary of dictionaries"
+   - A plotly figure is a "dictionary of dictionaries"
    - Plot configuration is organized hierarchically
    - Allows you to acces and modify plot components
    #+end_quote
@@ -50,31 +50,45 @@ Just watch or code along.
      fig.show()
    #+end_src
 
-   #+begin_src python :results output :session *Python* :python python3 :exports both
-
-   #+end_src
-
 4) How does =plotly.express= work?
    #+begin_quote
-
+   =plotly.express= is a =plotly= module that specifies a =DataFrame= from the =pandas=
+   package and its columns as arguments.
    #+end_quote
 
    #+begin_src python :results file graphics none :session *Python* :python python3 :file  ../img/p.png
-
+     import plotly.express as px
+     import pandas as pd
      weekly_temps = pd.DataFrame({
          'day': ['Monday', 'Tuesday', 'Wednesday', 'Thursday',
                  'Friday', 'Saturday', 'Sunday'],
          'temp': [28, 27, 25, 31, 32, 35, 36]})
-
+     fig = px.bar(
+         data_frame=weekly_temps,
+         x='day',
+         y='temp')
+     fig.show()
    #+end_src
 
    #+begin_src python :results output :session *Python* :python python3 :exports both
-
+     print(weekly_temps)
    #+end_src
+
+   #+RESULTS:
+   :          day  temp
+   : 0     Monday    28
+   : 1    Tuesday    27
+   : 2  Wednesday    25
+   : 3   Thursday    31
+   : 4     Friday    32
+   : 5   Saturday    35
+   : 6     Sunday    36
 
 5) Which /univariate/ plots do you know?
    #+begin_quote
-
+   - Bar chart
+   - Box plot
+   - Histogram
    #+end_quote
 
 6) How would you make a quick histogram with =plotly=?
@@ -84,10 +98,22 @@ Just watch or code along.
          'Company': ['Walmart','Sinopec Group','State Grid',
                      'China National Petroleum', 'Royal Dutch Shell'],
          'Revenue': [523964.0,407009.0,383906.0,379130.0,352106.0]})
+     print(revenues)
    #+end_src
 
-   #+begin_src python :file  ../img/p.png :results file graphics none :session *Python* :python python3
+   #+RESULTS:
+   :    Rank                   Company   Revenue
+   : 0     1                   Walmart  523964.0
+   : 1     2             Sinopec Group  407009.0
+   : 2     3                State Grid  383906.0
+   : 3     4  China National Petroleum  379130.0
+   : 4     5         Royal Dutch Shell  352106.0
 
+   #+begin_src python :file  ../img/p.png :results file graphics none :session *Python* :python python3
+     fig = px.histogram(
+         data_frame=revenues,
+         x='Revenue')
+     fig.show()
    #+end_src
 
 7) How could you used =color= in the bar chart for this data frame?
@@ -99,8 +125,20 @@ Just watch or code along.
      print(student_scores)
    #+end_src
 
-   #+begin_src python :file  ../img/p.png :results file graphics none :session *Python* :python python3
+   #+RESULTS:
+   :     name  score         city
+   : 0   John     80   Batesville
+   : 1  Julia     97  Little Rock
+   : 2   Xuan     90    Melbourne
+   : 3  Harry     85       Conway
 
+   #+begin_src python :file  ../img/p.png :results file graphics none :session *Python* :python python3
+     fig=px.bar(
+         data_frame=student_scores,
+         x='name',
+         y='score',
+         color='city')
+     fig.show()
    #+end_src
 
 8) How can you find out which methods a module contains? E.g. when you
@@ -108,36 +146,330 @@ Just watch or code along.
    recognized?
 
    #+begin_example python
-
+   dir(px)  # lists methods in px (plotly.express)
+   help(px.bar) # list definition and parameters in `bar`
    #+end_example
 
    #+begin_src python
-
+     [print(_) for _ in dir(px)]  # list comprehension
    #+end_src
+
+   #+RESULTS:
+   #+begin_example
+   Constant
+   IdentityMap
+   NO_COLOR
+   Range
+   __all__
+   __builtins__
+   __cached__
+   __doc__
+   __file__
+   __loader__
+   __name__
+   __package__
+   __path__
+   __spec__
+   _chart_types
+   _core
+   _doc
+   _imshow
+   _special_inputs
+   area
+   bar
+   bar_polar
+   box
+   choropleth
+   choropleth_map
+   choropleth_mapbox
+   colors
+   data
+   defaults
+   density_contour
+   density_heatmap
+   density_map
+   density_mapbox
+   ecdf
+   funnel
+   funnel_area
+   get_trendline_results
+   histogram
+   icicle
+   imshow
+   imshow_utils
+   line
+   line_3d
+   line_geo
+   line_map
+   line_mapbox
+   line_polar
+   line_ternary
+   optional_imports
+   parallel_categories
+   parallel_coordinates
+   pd
+   pie
+   scatter
+   scatter_3d
+   scatter_geo
+   scatter_map
+   scatter_mapbox
+   scatter_matrix
+   scatter_polar
+   scatter_ternary
+   set_mapbox_access_token
+   strip
+   sunburst
+   timeline
+   treemap
+   trendline_functions
+   violin
+   #+end_example
 
    #+begin_src python :results output :session *Python* :python python3 :exports both
-
+     help(px.bar)
    #+end_src
+
+   #+RESULTS:
+   #+begin_example
+   Help on function bar in module plotly.express._chart_types:
+
+   bar(data_frame=None, x=None, y=None, color=None, pattern_shape=None, facet_row=None, facet_col=None, facet_col_wrap=0, facet_row_spacing=None, facet_col_spacing=None, hover_name=None, hover_data=None, custom_data=None, text=None, base=None, error_x=None, error_x_minus=None, error_y=None, error_y_minus=None, animation_frame=None, animation_group=None, category_orders=None, labels=None, color_discrete_sequence=None, color_discrete_map=None, color_continuous_scale=None, pattern_shape_sequence=None, pattern_shape_map=None, range_color=None, color_continuous_midpoint=None, opacity=None, orientation=None, barmode='relative', log_x=False, log_y=False, range_x=None, range_y=None, text_auto=False, title=None, template=None, width=None, height=None) -> plotly.graph_objs._figure.Figure
+           In a bar plot, each row of `data_frame` is represented as a rectangular
+           mark.
+
+       Parameters
+       ----------
+       data_frame: DataFrame or array-like or dict
+           This argument needs to be passed for column names (and not keyword
+           names) to be used. Array-like and dict are transformed internally to a
+           pandas DataFrame. Optional: if missing, a DataFrame gets constructed
+           under the hood using the other arguments.
+       x: str or int or Series or array-like
+           Either a name of a column in `data_frame`, or a pandas Series or
+           array_like object. Values from this column or array_like are used to
+           position marks along the x axis in cartesian coordinates. Either `x` or
+           `y` can optionally be a list of column references or array_likes,  in
+           which case the data will be treated as if it were 'wide' rather than
+           'long'.
+       y: str or int or Series or array-like
+           Either a name of a column in `data_frame`, or a pandas Series or
+           array_like object. Values from this column or array_like are used to
+           position marks along the y axis in cartesian coordinates. Either `x` or
+           `y` can optionally be a list of column references or array_likes,  in
+           which case the data will be treated as if it were 'wide' rather than
+           'long'.
+       color: str or int or Series or array-like
+           Either a name of a column in `data_frame`, or a pandas Series or
+           array_like object. Values from this column or array_like are used to
+           assign color to marks.
+       pattern_shape: str or int or Series or array-like
+           Either a name of a column in `data_frame`, or a pandas Series or
+           array_like object. Values from this column or array_like are used to
+           assign pattern shapes to marks.
+       facet_row: str or int or Series or array-like
+           Either a name of a column in `data_frame`, or a pandas Series or
+           array_like object. Values from this column or array_like are used to
+           assign marks to facetted subplots in the vertical direction.
+       facet_col: str or int or Series or array-like
+           Either a name of a column in `data_frame`, or a pandas Series or
+           array_like object. Values from this column or array_like are used to
+           assign marks to facetted subplots in the horizontal direction.
+       facet_col_wrap: int
+           Maximum number of facet columns. Wraps the column variable at this
+           width, so that the column facets span multiple rows. Ignored if 0, and
+           forced to 0 if `facet_row` or a `marginal` is set.
+       facet_row_spacing: float between 0 and 1
+           Spacing between facet rows, in paper units. Default is 0.03 or 0.07
+           when facet_col_wrap is used.
+       facet_col_spacing: float between 0 and 1
+           Spacing between facet columns, in paper units Default is 0.02.
+       hover_name: str or int or Series or array-like
+           Either a name of a column in `data_frame`, or a pandas Series or
+           array_like object. Values from this column or array_like appear in bold
+           in the hover tooltip.
+       hover_data: str, or list of str or int, or Series or array-like, or dict
+           Either a name or list of names of columns in `data_frame`, or pandas
+           Series, or array_like objects or a dict with column names as keys, with
+           values True (for default formatting) False (in order to remove this
+           column from hover information), or a formatting string, for example
+           ':.3f' or '|%a' or list-like data to appear in the hover tooltip or
+           tuples with a bool or formatting string as first element, and list-like
+           data to appear in hover as second element Values from these columns
+           appear as extra data in the hover tooltip.
+       custom_data: str, or list of str or int, or Series or array-like
+           Either name or list of names of columns in `data_frame`, or pandas
+           Series, or array_like objects Values from these columns are extra data,
+           to be used in widgets or Dash callbacks for example. This data is not
+           user-visible but is included in events emitted by the figure (lasso
+           selection etc.)
+       text: str or int or Series or array-like
+           Either a name of a column in `data_frame`, or a pandas Series or
+           array_like object. Values from this column or array_like appear in the
+           figure as text labels.
+       base: str or int or Series or array-like
+           Either a name of a column in `data_frame`, or a pandas Series or
+           array_like object. Values from this column or array_like are used to
+           position the base of the bar.
+       error_x: str or int or Series or array-like
+           Either a name of a column in `data_frame`, or a pandas Series or
+           array_like object. Values from this column or array_like are used to
+           size x-axis error bars. If `error_x_minus` is `None`, error bars will
+           be symmetrical, otherwise `error_x` is used for the positive direction
+           only.
+       error_x_minus: str or int or Series or array-like
+           Either a name of a column in `data_frame`, or a pandas Series or
+           array_like object. Values from this column or array_like are used to
+           size x-axis error bars in the negative direction. Ignored if `error_x`
+           is `None`.
+       error_y: str or int or Series or array-like
+           Either a name of a column in `data_frame`, or a pandas Series or
+           array_like object. Values from this column or array_like are used to
+           size y-axis error bars. If `error_y_minus` is `None`, error bars will
+           be symmetrical, otherwise `error_y` is used for the positive direction
+           only.
+       error_y_minus: str or int or Series or array-like
+           Either a name of a column in `data_frame`, or a pandas Series or
+           array_like object. Values from this column or array_like are used to
+           size y-axis error bars in the negative direction. Ignored if `error_y`
+           is `None`.
+       animation_frame: str or int or Series or array-like
+           Either a name of a column in `data_frame`, or a pandas Series or
+           array_like object. Values from this column or array_like are used to
+           assign marks to animation frames.
+       animation_group: str or int or Series or array-like
+           Either a name of a column in `data_frame`, or a pandas Series or
+           array_like object. Values from this column or array_like are used to
+           provide object-constancy across animation frames: rows with matching
+           `animation_group`s will be treated as if they describe the same object
+           in each frame.
+       category_orders: dict with str keys and list of str values (default `{}`)
+           By default, in Python 3.6+, the order of categorical values in axes,
+           legends and facets depends on the order in which these values are first
+           encountered in `data_frame` (and no order is guaranteed by default in
+           Python below 3.6). This parameter is used to force a specific ordering
+           of values per column. The keys of this dict should correspond to column
+           names, and the values should be lists of strings corresponding to the
+           specific display order desired.
+       labels: dict with str keys and str values (default `{}`)
+           By default, column names are used in the figure for axis titles, legend
+           entries and hovers. This parameter allows this to be overridden. The
+           keys of this dict should correspond to column names, and the values
+           should correspond to the desired label to be displayed.
+       color_discrete_sequence: list of str
+           Strings should define valid CSS-colors. When `color` is set and the
+           values in the corresponding column are not numeric, values in that
+           column are assigned colors by cycling through `color_discrete_sequence`
+           in the order described in `category_orders`, unless the value of
+           `color` is a key in `color_discrete_map`. Various useful color
+           sequences are available in the `plotly.express.colors` submodules,
+           specifically `plotly.express.colors.qualitative`.
+       color_discrete_map: dict with str keys and str values (default `{}`)
+           String values should define valid CSS-colors Used to override
+           `color_discrete_sequence` to assign a specific colors to marks
+           corresponding with specific values. Keys in `color_discrete_map` should
+           be values in the column denoted by `color`. Alternatively, if the
+           values of `color` are valid colors, the string `'identity'` may be
+           passed to cause them to be used directly.
+       color_continuous_scale: list of str
+           Strings should define valid CSS-colors This list is used to build a
+           continuous color scale when the column denoted by `color` contains
+           numeric data. Various useful color scales are available in the
+           `plotly.express.colors` submodules, specifically
+           `plotly.express.colors.sequential`, `plotly.express.colors.diverging`
+           and `plotly.express.colors.cyclical`.
+       pattern_shape_sequence: list of str
+           Strings should define valid plotly.js patterns-shapes. When
+           `pattern_shape` is set, values in that column are assigned patterns-
+           shapes by cycling through `pattern_shape_sequence` in the order
+           described in `category_orders`, unless the value of `pattern_shape` is
+           a key in `pattern_shape_map`.
+       pattern_shape_map: dict with str keys and str values (default `{}`)
+           Strings values define plotly.js patterns-shapes. Used to override
+           `pattern_shape_sequences` to assign a specific patterns-shapes to lines
+           corresponding with specific values. Keys in `pattern_shape_map` should
+           be values in the column denoted by `pattern_shape`. Alternatively, if
+           the values of `pattern_shape` are valid patterns-shapes names, the
+           string `'identity'` may be passed to cause them to be used directly.
+       range_color: list of two numbers
+           If provided, overrides auto-scaling on the continuous color scale.
+       color_continuous_midpoint: number (default `None`)
+           If set, computes the bounds of the continuous color scale to have the
+           desired midpoint. Setting this value is recommended when using
+           `plotly.express.colors.diverging` color scales as the inputs to
+           `color_continuous_scale`.
+       opacity: float
+           Value between 0 and 1. Sets the opacity for markers.
+       orientation: str, one of `'h'` for horizontal or `'v'` for vertical. 
+           (default `'v'` if `x` and `y` are provided and both continous or both
+           categorical,  otherwise `'v'`(`'h'`) if `x`(`y`) is categorical and
+           `y`(`x`) is continuous,  otherwise `'v'`(`'h'`) if only `x`(`y`) is
+           provided)
+       barmode: str (default `'relative'`)
+           One of `'group'`, `'overlay'` or `'relative'` In `'relative'` mode,
+           bars are stacked above zero for positive values and below zero for
+           negative values. In `'overlay'` mode, bars are drawn on top of one
+           another. In `'group'` mode, bars are placed beside each other.
+       log_x: boolean (default `False`)
+           If `True`, the x-axis is log-scaled in cartesian coordinates.
+       log_y: boolean (default `False`)
+           If `True`, the y-axis is log-scaled in cartesian coordinates.
+       range_x: list of two numbers
+           If provided, overrides auto-scaling on the x-axis in cartesian
+           coordinates.
+       range_y: list of two numbers
+           If provided, overrides auto-scaling on the y-axis in cartesian
+           coordinates.
+       text_auto: bool or string (default `False`)
+           If `True` or a string, the x or y or z values will be displayed as
+           text, depending on the orientation A string like `'.2f'` will be
+           interpreted as a `texttemplate` numeric formatting directive.
+       title: str
+           The figure title.
+       template: str or dict or plotly.graph_objects.layout.Template instance
+           The figure template name (must be a key in plotly.io.templates) or
+           definition.
+       width: int (default `None`)
+           The figure width in pixels.
+       height: int (default `None`)
+           The figure height in pixels.
+
+       Returns
+       -------
+           plotly.graph_objects.Figure
+   #+end_example
 
 9) How can you construct your own color range?
    #+begin_quote
-
+   - Construct the scale as a list of =rgb= codes
+   - Use it with =color_continuous_scale=
    #+end_quote
 
    #+begin_src python :file ../img/p.png :results file graphics none :session *Python* :python python3 :exports both
      ## import libraries
+     import plotly.express as px  # graphics
+     import pandas as pd # DataFrame
 
      ## create color scale: yellow through orange to red
+     my_scale= ['rgb(242,238,10)',
+                'rgb(242,95,10)',
+                'rgb(255,0,0)']
 
      ## create figure
-
+     fig=px.bar(
+         data_frame=weekly_temps,
+         x='day',
+         y='temp',
+         color_continuous_scale=my_scale,  # use our list for colors
+         color='temp')
      ## show figure
-
+     fig.show()
    #+end_src
 
 10) What you can do with =plotly= box plots?
     #+begin_quote
-
+    - Specify =hover_data= as a list of column names
+    - Specify how to show outliers with =points=
     #+end_quote
 
 
