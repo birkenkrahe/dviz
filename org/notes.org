@@ -3,7 +3,8 @@
 #+SUBTITLE: DSC 302 Lyon College Fall 2024
 #+STARTUP: overview hideblocks indent entitiespretty:
 #+PROPERTY: header-args:R :session *R* :results output :exports both
-* DONE Week 0 - Orientation & Examples
+* DONE Part I: Introduction to data visualization
+** Week 0 - Orientation & Examples
 
 #+attr_html: :width 200px:
 [[../img/Ways-to-Search-Google.jpg]]
@@ -11,16 +12,16 @@
 What we achieved in our first session: Course orientation, and
 critical discussion of a few visualization examples.
 
-* DONE Week 1 - What is Data Visualization & =mtcars= Demo
+** Week 1 - What is Data Visualization & =mtcars= Demo
 #+attr_html: :width 600px:
 #+caption: Napoleon's Retreat from Moscow - Adolph Northen (1851)
 [[../img/napoleon.jpg]]
 
 This file, =notes.org= ([[https://github.com/birkenkrahe/dviz/blob/main/org/notes.org][GitHub]]) contains a log of class activities.
 
-** Project: published [[https://lyon.instructure.com/courses/2629/assignments/32827][1st sprint review instructions]] - get cracking!
+*** TODO Project: published [[https://lyon.instructure.com/courses/2629/assignments/32827][1st sprint review instructions]] - get cracking!
 
-** Review questions:
+*** TODO Review questions:
 
 1. What is data science mainly concerned with?
    #+begin_quote
@@ -87,11 +88,11 @@ This file, =notes.org= ([[https://github.com/birkenkrahe/dviz/blob/main/org/note
    sample data, especially in its features and records.
    #+end_quote
 
-** Codealong: A simple trendline example using =mtcars= data
+*** TODO Codealong: A simple trendline example using =mtcars= data
 
 See =2_trendline.org= ([[https://github.com/birkenkrahe/dviz/blob/main/org/2_trendline.org][GitHub]])
 
-** Review questions - Shell
+*** TODO Review questions - Shell
 
 1. Login Google Cloud Shell
    #+begin_quote
@@ -196,7 +197,7 @@ See =2_trendline.org= ([[https://github.com/birkenkrahe/dviz/blob/main/org/2_tre
     4) A way to draw the trendline (=abline=)
     #+end_quote
 
-* DONE Week 2 - Linux Party & Introduction to Visualization
+** Week 2 - Linux Party & Introduction to Visualization
 #+attr_html: :width 400px:
 [[../img/mtcars_lm.png]]
 
@@ -206,7 +207,7 @@ See =2_trendline.org= ([[https://github.com/birkenkrahe/dviz/blob/main/org/2_tre
 - [ ] Exploratory Data Analysis with R
 - [X] Review: Second DataCamp lesson
 
-** Review: DataCamp's "Visualizing distributions"
+*** TODO Review: DataCamp's "Visualizing distributions"
 
 *Note:* For the test, you need to know all the concepts mentioned in the
 DataCamp lesson, not only the ones that we're reviewing here.
@@ -307,7 +308,7 @@ different experience, use Google Colab at [[https://colab.research.google.com/][
    #+RESULTS:
    [[file:../img/tg.png]]
 
-** Linux server has arrived
+*** TODO Linux server has arrived
 
 - You should have received your VM server address and password
 
@@ -334,7 +335,7 @@ different experience, use Google Colab at [[https://colab.research.google.com/][
     #+end_src
   #+end_example
 
-** Review questions "Visualizing two variables" (DataCamp)
+*** TODO Review questions "Visualizing two variables" (DataCamp)
 
 1. What is a scatter plot?
    #+begin_quote
@@ -564,7 +565,7 @@ different experience, use Google Colab at [[https://colab.research.google.com/][
     #+RESULTS:
     [[file:../img/lendot.png]]
 
-** Exploratory Data Analysis (EDA) with R (Lecture & practice)
+*** TODO Exploratory Data Analysis (EDA) with R (Lecture & practice)
 #+attr_html: :width 250px:
 [[../img/1_textbook.jpg]]
 
@@ -589,7 +590,7 @@ different experience, use Google Colab at [[https://colab.research.google.com/][
   champion. His book "The Art of R Programming" is a jewel, too.
   #+end_quote
 
-* DONE Week 3 - Emacs + R + Linux
+** Week 3 - Emacs + R + Linux
 #+attr_html: :width 400px:
 [[../img/R_Emacs_Linux.png]]
 
@@ -601,7 +602,7 @@ different experience, use Google Colab at [[https://colab.research.google.com/][
 - [X] Practice: finish the 'dot plot' example from the DataCamp review
 - [X] Review DataCamp lesson "The Color and the Shape"
 
-** Warm-up: The Dark Matter Mystery
+*** TODO Warm-up: The Dark Matter Mystery
 
 What's wrong with this from a data visualization point of view?
 
@@ -613,7 +614,7 @@ review of everything we don't know about Dark Matter (06/2024) by
 Cirelli, Strumia and Zupan (arxiv.org preprint - 515 pages).
 
 
-** Emacs - Add automatic code block headers (a CSC 302 bonus)
+*** TODO Emacs - Add automatic code block headers (a CSC 302 bonus)
 
 Open Zoom + a GUI Emacs (not =emacs -nw=)
 
@@ -667,7 +668,7 @@ Open Zoom + a GUI Emacs (not =emacs -nw=)
     be active when you open Emacs next.
 
 
-** Test block header and learn more about the shells
+*** TODO Test block header and learn more about the shells
 
 Test the new setup in a =.org= file with a graphics command:
 
@@ -734,7 +735,7 @@ Test the new setup in a =.org= file with a graphics command:
    : /home/aletheia/GitHub/dviz/org
 
 
-** Chart and Shell Exercise
+*** TODO Chart and Shell Exercise
 
 1. Close your R console. (=C-x k=)
 
@@ -782,11 +783,11 @@ Test the new setup in a =.org= file with a graphics command:
     your own examples!
 
 
-** Review: DataCamp lesson "The Color and the Shape"
+*** TODO Review: DataCamp lesson "The Color and the Shape"
 
 /Emacs tip: to move up / down through a list, use =C-c C-p= / =C-c C-n=./
 
-*** What's the problem with 3D scatter plots?
+**** TODO What's the problem with 3D scatter plots?
 #+begin_quote
 A three-dimensional object on a two-dimensional screen is hard to
 interpret because you lose the sense of perspective or depth
@@ -804,15 +805,15 @@ Code example:
 #+RESULTS:
 [[file:../img/3d_scatterplot.png]]
 
-*** What are visual dimensions for scatter plots besides spatial dimensions?
+**** TODO What are visual dimensions for scatter plots besides spatial dimensions?
 #+begin_quote
 - Color
 - Size
 - Transparency
 - Shape
 #+end_quote
-*** Code examples
-**** Color
+**** TODO Code examples
+***** TODO Color
 
 Create graphics code block with =<rg TAB= then enter code and run with
 C-c C-c:
@@ -826,7 +827,7 @@ C-c C-c:
 #+RESULTS:
 [[file:../img/colorPlot.png]]
 
-**** Size
+***** TODO Size
 #+begin_src R :file ../img/sizePlot.png :session *R* :results file graphics output :exports both
   point_size = mtcars$cyl / max(mtcars$cyl) * 3
 
@@ -837,7 +838,7 @@ C-c C-c:
 #+RESULTS:
 [[file:../img/sizePlot.png]]
 
-**** Transparency
+***** TODO Transparency
 #+begin_src R :file  ../img/transPlot.png :session *R* :results file graphics output :exports both
   transparency <- mtcars$cyl / max(mtcars$cyl)
 
@@ -850,7 +851,7 @@ C-c C-c:
 #+RESULTS:
 [[file:../img/transPlot.png]]
 
-**** Shape
+***** TODO Shape
 #+begin_src R :file  ../img/shapePlot2.png :session *R* :results file graphics output :exports both
   ## Create scatter plot with shapes based on mtcars$cyl
   plot(mtcars$wt, mtcars$mpg,
@@ -860,15 +861,15 @@ C-c C-c:
 #+RESULTS:
 [[file:../img/shapePlot2.png]]
 
-*** What are visual dimensions for line plots?
+**** TODO What are visual dimensions for line plots?
 #+begin_quote
 - Color
 - Thickness
 - Transparency
 - Line type (solid, dashes, dots)
 #+end_quote
-*** Code examples
-**** Color
+**** TODO Code examples
+***** TODO Color
 #+begin_src R :file  ../img/lineColor.png :session *R* :results file graphics output :exports both
   plot(Nile,
        col="blue")
@@ -877,7 +878,7 @@ C-c C-c:
 #+RESULTS:
 [[file:../img/lineColor.png]]
 
-**** Thickness
+***** TODO Thickness
 #+begin_src R :file  ../img/lineThick.png :session *R* :results file graphics output :exports both
   plot(Nile,
        lwd=10)
@@ -886,7 +887,7 @@ C-c C-c:
 #+RESULTS:
 [[file:../img/lineThick.png]]
 
-**** Transparency
+***** TODO Transparency
 #+begin_src R :file  ../img/lineTrans.png :session *R* :results file graphics output :exports both
   plot(Nile,
        lwd=3,
@@ -896,7 +897,7 @@ C-c C-c:
 #+RESULTS:
 [[file:../img/lineTrans.png]]
 
-**** Line type
+***** TODO Line type
 #+begin_src R :file  ../img/lineType.png :session *R* :results file graphics output :exports both
   plot(Nile,
        lty=3)
@@ -906,7 +907,7 @@ C-c C-c:
 [[file:../img/lineType.png]]
 
 
-*** What does this plot (from the DataCamp lesson) suggest? How would you critique it?
+**** TODO What does this plot (from the DataCamp lesson) suggest? How would you critique it?
 #+attr_html: :width 400px:
 [[../img/color2.png]]
 
@@ -928,7 +929,8 @@ an audience (the more so if the audience is likely to care about it):
 - They want to live in wealthier countries (should they?)
 #+end_quote
 
-* DONE Week 4 - Exploratory Data Analysis (EDA)
+* DONE Part II: Exploratory Data Analysis
+** Week 4 - Exploratory Data Analysis (EDA)
 #+attr_html: :width 600px:
 [[../img/Christ-Rescuing-Peter-from-Drowning-1370_.jpg]]
 
@@ -949,7 +951,7 @@ Content:
 - [ ] Review: debugging R graphics
 - [ ] Review: meta data
 
-** Review: Debugging R graphics in Emacs Org-mode
+*** TODO Review: Debugging R graphics in Emacs Org-mode
 
 - You have an error in your code block header (all data after the
   error are ignored)
@@ -960,7 +962,7 @@ Content:
 - Your R session looks at the wrong directory (not where your .org
   file is - check with =getwd()= where you are and change with =setwd=)
 
-** Review: package installation
+*** TODO Review: package installation
 #+attr_html: :width 400px:
 [[../img/R_Emacs_Linux2.png]]
 
@@ -994,7 +996,7 @@ session:
    and loaded into the session with =library(scatterplot3d)= so that the
    functions in the package were available to produce the plot!
 
-** Review: meta data
+*** TODO Review: meta data
 
 1. Would "talking about this lecture" be considered meta data?
 
@@ -1033,7 +1035,7 @@ session:
 
    #+end_quote
 
-** Exploratory Data Analysis (EDA) with R (Lecture & practice)
+*** TODO Exploratory Data Analysis (EDA) with R (Lecture & practice)
 #+attr_html: :width 600px:
 [[../img/jules_verne.jpg]]
 
@@ -1051,13 +1053,13 @@ session:
 - [ ] Questions to ask from data
 - [ ] *Practice:* A representative R session
 
-* DONE Week 5 - EDA: "Ceci n'est pas une pipe"
+** Week 5 - EDA: "Ceci n'est pas une pipe"
 #+attr_html: :width 600px:
 [[../img/MagrittePipe.jpg]]
 
 /Image: Rene Margritte, Ceci n'est pas une pipe./
 
-** Review questions (last week)
+*** TODO Review questions (last week)
 
 1. What do you remember from the last session? Run one command that
    you remember!
@@ -1238,7 +1240,7 @@ session:
    :    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's
    :   38.00   64.00   72.00   72.32   80.00  114.00      13
 
-** Review questions (Monday session)
+*** TODO Review questions (Monday session)
 
 1. What is a =level= in R? Example?
    #+begin_quote
@@ -1306,7 +1308,7 @@ session:
    #+RESULTS:
    :  Factor w/ 2 levels "OJ","VC": 2 2 2 2 2 2 2 2 2 2 ...
 
-** Review questions (Wednesday session)
+*** TODO Review questions (Wednesday session)
 
 1. What's special about some R functions like =plot=, =summary=?
    #+begin_quote
@@ -1380,11 +1382,11 @@ session:
      can perform out-of-core algorithms like C++ or SQL.
    #+end_quote
 
-** Recommended: Feynman on the scientific method
+*** TODO Recommended: Feynman on the scientific method
 
 [[https://t.co/jnwRMsj3XO][I shared the video (10 min) in the Google chat.]]
 
-** EDA lecture & practice
+*** TODO EDA lecture & practice
 
 - [X] *Practice:* meta data
 - [X] Missing values (=NA=)
@@ -1398,7 +1400,7 @@ session:
 - [X] Questions to ask from data
 - [X] *Practice:* A representative R session
 
-* DONE Week 6 - EDA Lab with =MASS::whiteside=
+** Week 6 - EDA Lab with =MASS::whiteside=
 #+attr_html: :width 600px:
 #+caption:Photo Credit: © CORBIS/Corbis via Getty Images
 [[../img/neptune.png]]
@@ -1416,7 +1418,7 @@ planet Neptune at the Berlin Observatory. See also: AWS Neptune.
   - [X] Barplots
   - [X] Customization
 
-** Emacs tip: browse with =eww=
+*** TODO Emacs tip: browse with =eww=
 
 To open any URL in Emacs, add this line to your ~.emacs~ file and then
 #+begin_example
@@ -1431,7 +1433,7 @@ Now you can for example open the Solar system mass tree map in an
 
 Running =M-x eww= without an argument brings you to your search engine.
 
-** Review questions (Monday session)
+*** TODO Review questions (Monday session)
 
 1. Provided =whiteside= is loaded, which of these commands will not work?
    #+begin_src R :session *R* :results output :exports both
@@ -1603,7 +1605,7 @@ Running =M-x eww= without an argument brings you to your search engine.
     see '?methods' for accessing help and source code
     #+end_example
 
-** Review questions (Wednesday session)
+*** TODO Review questions (Wednesday session)
 #+attr_html: :width 400px:
 [[../img/boxplot.png]]
 
@@ -1694,7 +1696,7 @@ A box plot is a graphical representation of
    #+RESULTS:
    [[file:../img/abline.png]]
 
-** EDA Lab
+*** TODO EDA Lab
 #+attr_html: :width 400px:
 [[../img/lab2.jpg]]
 
@@ -1706,7 +1708,7 @@ A box plot is a graphical representation of
 - [ ] Plotting: scatterplots
 - [ ] Plotting: barplots
 
-** Next week:
+*** TODO Next week:
 #+attr_html: :width 600px:
 [[../img/mammals.jpg]]
 
@@ -1714,7 +1716,7 @@ A box plot is a graphical representation of
 - We will also review =ggplot2= commands and theory
 - I will give you a lecture (with practice) on "graphics"
 
-* DONE Week 7 - Project update & EDA Lab II
+** Week 7 - Project update & EDA Lab II
 #+attr_html: :width 400px:
 [[../img/career.jpeg]]
 
@@ -1722,7 +1724,7 @@ A box plot is a graphical representation of
 - Introduction to R graphics
 - Lab exercises with =MASS::mammals= and graphics
 
-** Go to the Lyon Career Fair (Oct 1)
+*** TODO Go to the Lyon Career Fair (Oct 1)
 #+attr_html: :width 200px:
 [[../img/careerfair.png]]
 
@@ -1771,7 +1773,7 @@ From the discussion in DSC 105:
 - You can send me your resume for my opinion.
 
 
-** Projects Update (2nd sprint: Oct 11)
+*** TODO Projects Update (2nd sprint: Oct 11)
 #+attr_html: :width 400px:
 [[../img/projects.png]]
 
@@ -1793,7 +1795,7 @@ do this is down to you (I'm happy to help). Others did it before you!
 - Contact me or arrange a visit to discuss details of your project!
 
 
-** Review (last session):
+*** TODO Review (last session):
 
 1. What is this type of plot good for, and how is it generated?
    #+attr_html: :width4600px:
@@ -2102,7 +2104,7 @@ do this is down to you (I'm happy to help). Others did it before you!
    [[file:../img/custom3.png]]
 
 
-** Set theory: =MASS::mammals= & =robustbase::Animals2=
+*** TODO Set theory: =MASS::mammals= & =robustbase::Animals2=
 #+attr_html: :width 600px:
 [[../img/mammals.jpg]]
 
@@ -2119,7 +2121,8 @@ do this is down to you (I'm happy to help). Others did it before you!
 
 - Complete the practice file and upload it to Canvas.
 
-* DONE Week 8 - Python =matplotlib= & =ggplot2= plotting
+* DONE Part III: Graphics packages
+** Week 8 - Python =matplotlib= & =ggplot2= plotting
 #+attr_html: :width 400px:
 #+caption: Henri Matisse, The Snail (French: L'escargot) 1953
 [[../img/3_matisse.png]]
@@ -2129,7 +2132,7 @@ do this is down to you (I'm happy to help). Others did it before you!
 - [ ] How to plot ~mtcars~ with Python in Emacs + Org-mode
 - [ ] Graphics lecture & code along
 
-** Base R EDA and =ggplot2= popquiz
+*** TODO Base R EDA and =ggplot2= popquiz
 
 1. Plot f(x) = 5x-3  for x in [0,10].
    #+begin_src R :file  ../img/linear.png :session *R* :results file graphics output
@@ -2342,7 +2345,7 @@ do this is down to you (I'm happy to help). Others did it before you!
     [[file:../img/nonlinGG.png]]
 
 
-** Project update - first podcasts & literature reviews
+*** TODO Project update - first podcasts & literature reviews
 #+attr_html: :width 400px:
 [[../img/notebooklm_example2.png]]
 
@@ -2379,7 +2382,7 @@ Q&A:
 - [X] Do we each have to upload a submission?
 
 
-** Data visualization with =matplotlib= in Emacs
+*** TODO Data visualization with =matplotlib= in Emacs
 
 - Create a new template for regular and for graphics plots, via =C-h v
   org-structure-template-alist=:
@@ -2762,7 +2765,7 @@ Now the plot
   xplot.png
   #+end_example
 
-* DONE Week 9 - Alternative R graphics packages / Python plotting with =subplots=
+** Week 9 - Alternative R graphics packages / Python plotting with =subplots=
 #+attr_html: :width 600px:
 [[../img/leonardo.jpg]]
 
@@ -2774,7 +2777,7 @@ Now the plot
 - [ ] The Grammar of Graphics (gg).
 - [ ] Working with R and Python in parallel.
 
-** Review: Plotting with =matplotlib.pyplot=
+*** TODO Review: Plotting with =matplotlib.pyplot=
 
 1. Why are we using the =pyplot= submodule?
    #+begin_quote
@@ -2881,7 +2884,7 @@ Now the plot
    [[file:../img/axes.png]]
 
 
-** WE MEET ON FRIDAY BUT THERE WILL BE NO CLASS ON MONDAY
+*** TODO WE MEET ON FRIDAY BUT THERE WILL BE NO CLASS ON MONDAY
 #+attr_html: :width 600px:
 [[../img/zwei_maenner.jpeg]]
 
@@ -2897,7 +2900,7 @@ tinyurl.com/graphics-practice-org - don't forget your R skills!
 Next week: Python plotting lab with practice file.
 
 
-** Graphics: Alternative Packages
+*** TODO Graphics: Alternative Packages
 #+attr_html: :width 700px:
 [[../img/execution_of_robespierre.jpg]]
 
@@ -2905,7 +2908,7 @@ Next week: Python plotting lab with practice file.
 live the National Convention, which through its energy and vigilance
 has delivered the Republic from its tyrants."
 
-** Review: Plotting with =subplots=
+*** TODO Review: Plotting with =subplots=
 
 /Tip: Don't wait with the DataCamp lessons to the last moment./ To learn
 anything from them, you must work through the examples on your own. In
@@ -3022,7 +3025,7 @@ this way you'll learn Python and visualization with Python, for free!
    [[file:../img/subplots.png]]
 
 
-** Exercise: Plotting in Python
+*** TODO Exercise: Plotting in Python
 
 1. Using =wget= on the shell, download Seattle weather data:
    [[https://tinyurl.com/seattle-weather-csv][tinyurl.com/seattle-weather-csv]].
@@ -3213,7 +3216,7 @@ this way you'll learn Python and visualization with Python, for free!
     #+RESULTS:
     [[file:../img/seattle6.png]]
 
-* DONE Week 10 - Grammar of graphics plotting lab
+** Week 10 - Grammar of graphics plotting lab
 #+attr_html: :width 700px:
 [[../img/helgoland.jpg]]
 
@@ -3226,7 +3229,7 @@ this way you'll learn Python and visualization with Python, for free!
 - [X] Next DataCamp lesson due: Stats with =matplotlib=
 - [X] Next week: The =plotly= package & quiz 8 (DataCamp and ggplot2)
 
-** Graphics practice (failed? Again? Also?)
+*** TODO Graphics practice (failed? Again? Also?)
 #+attr_html: :width 400px:
 [[../img/plotting_practice.png]]
 
@@ -3237,7 +3240,7 @@ this way you'll learn Python and visualization with Python, for free!
 - Remember to keep up your DataCamp practice!
 
 
-** Project: 2nd sprint review with NotebookLM/podcasts
+*** TODO Project: 2nd sprint review with NotebookLM/podcasts
 #+attr_html: :width 600px:
 [[../img/litreview.png]]
 
@@ -3261,7 +3264,7 @@ Keidrick/Austin/Clifford's podcast). The review was oddly detailed and
 the podcasters were oddly giddy...
 
 
-** DataCamp review: Grammar of Graphics lab
+*** TODO DataCamp review: Grammar of Graphics lab
 
 - [X] Conceptual comparison =ggplot2= vs. base R
 - [ ] Creating simple scatterplots
@@ -3292,7 +3295,7 @@ Open Emacs on =ggplot2.org= with
 
 Let's work through the questions together.
 
-* DONE Week 11: Base R Plotting [Oct 28]
+** Week 11: Base R Plotting [Oct 28]
 #+attr_html: :width 400px:
 #+caption: Conspirators plotting, by Suthamma Byrne (Saatchi Gallery)
 [[../img/conspirators.jpg]]
@@ -3313,7 +3316,7 @@ Download [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]] (aga
   emacs --file plot.org
 #+end_example
 
-** Trophy!
+*** TODO Trophy!
 
 #+attr_html: :width 700px:
 [[../img/trophy2.png]]
@@ -3324,7 +3327,7 @@ probably way above *1,000* created plots in the whole course. *10,000*
 plots make you a data visualization master!
 
 
-** Review: =plot= function (part 1)
+*** TODO Review: =plot= function (part 1)
 
 1. What does =plot= generate when you feed it with two =factor= variables?
 
@@ -3435,7 +3438,7 @@ plots make you a data visualization master!
    #+end_quote
 
 
-** Review =plot= function (part 2)
+*** TODO Review =plot= function (part 2)
 #+attr_html: :width 350px:
 [[../img/halloween.jpg]]
 
@@ -3606,7 +3609,8 @@ plots make you a data visualization master!
    #+RESULTS:
    [[file:../img/cex2.png]]
 
-* DONE Week 12: Package =plotly= & Dashboard Design [Nov 4]
+* IN PROGRESS Part IV: Dashboards and applications
+** DONE Week 12: Package =plotly= & Dashboard Design [Nov 4]
 #+attr_html: :width 600px:
 #+caption: Colorful McKinley/Roosevelt Campaign Poster (1900)
 [[../img/campaign.jpg]]
@@ -3620,8 +3624,7 @@ plots make you a data visualization master!
 - [ ] *Complete* =plot= lab with NHANES data: [[https://tinyurl.com/plots-lab][tinyurl.com/plots-lab]].
 - [ ] *Redo* the =NHANES= plot with =ggplot2= (bonus exercise).
    
-
-* Week 13: Advanced Customization & Project sprint review [Nov 11]
+** Week 13: Advanced Customization & Project sprint review [Nov 11]
 #+attr_html: :width 600px:
 [[../img/marriage-at-cana.jpg]]
 
@@ -3629,7 +3632,7 @@ plots make you a data visualization master!
 - [ ] *Complete* =plot= lab with NHANES data: [[https://tinyurl.com/plots-lab][tinyurl.com/plots-lab]].
 - [ ] *Redo* the =NHANES= plot with =ggplot2= (bonus exercise).
 
-** IN PROGRESS DataCamp Review: The Python =plotly= package for interactive plots
+*** DONE DataCamp Review: The Python =plotly= package for interactive plots
 
 - Just watch or code along: https://tinyurl.com/plotly-org
 
@@ -4083,12 +4086,17 @@ The lessons of the =plotly= course follow this (classical) path:
 4) Advanced interactivity (web application mode)
 
 
-** Base R =plot= lab
+*** TODO Base R =plot= lab
 
+*** TODO DataCamp review: Dashboard Design Concepts
 
-** TODO DataCamp review: Dashboard Design Concepts
+** Week 14: Power BI [Nov 25]
 
-* Week 14: Power BI [Nov 25]
+** Week 15: Final presentations [Dec 2]
+#+attr_html: :width 400px
+[[../img/checklist.png]]
 
+** Week 16: Final exam (optional) [Dec 9]
 
-* Week 15: Final presentations [Dec 2]
+According to the [[https://assets.speakcdn.com/assets/2433/fa24_final_exam_schedule.pdf][published exam schedule]], the final exam will take
+place on Monday, December 9, at 3.30 pm - 5:30 pm.
