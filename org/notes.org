@@ -4085,7 +4085,6 @@ The lessons of the =plotly= course follow this (classical) path:
 3) Advanced customization (presentation mode)
 4) Advanced interactivity (web application mode)
 
-
 *** TODO Base R =plot= lab
 
 You're going to recreate this plot using base R =plot= skills:
@@ -4094,8 +4093,8 @@ You're going to recreate this plot using base R =plot= skills:
 
 Download the file to work in from: [[https://tinyurl.com/plots-lab][tinyurl.com/plots-lab]].
 
-You learnt all about this in the last lecture: check out the [[https://github.com/birkenkrahe/dviz/blob/main/org/6_plot_codealong.org#adding-points-and-lines-to-a-scatterplot][last
-lecture on =plot= (6_plot_codealong.org)]] in GitHub.
+You learnt all about this in the last lecture: see [[https://github.com/birkenkrahe/dviz/blob/main/org/6_plot_codealong.org#adding-points-and-lines-to-a-scatterplot][last lecture on
+plot]] in GitHub (file name: 6_plot_lab.org).
 
 *** TODO DataCamp review: Dashboard Design Concepts
 
@@ -4241,7 +4240,6 @@ Review questions with domain knowledge examples:
     #+end_quote
 
 ** Week 14: Power BI [Nov 25]
-
 
 ** Week 15: Final presentations [Dec 2]
 #+attr_html: :width 600px
