@@ -3623,12 +3623,12 @@ plots make you a data visualization master!
 - [ ] *Review* DataCamp lesson on =plotly= (code along)
 - [ ] *Complete* =plot= lab with NHANES data: [[https://tinyurl.com/plots-lab][tinyurl.com/plots-lab]].
 - [ ] *Redo* the =NHANES= plot with =ggplot2= (bonus exercise).
-   
+
 ** Week 13: Advanced Customization & Project sprint review [Nov 11]
 #+attr_html: :width 600px:
 [[../img/marriage-at-cana.jpg]]
 
-- [ ] *Review* DataCamp lesson on =plotly= (code along)
+- [X] *Review* DataCamp lesson on =plotly= (code along)
 - [ ] *Complete* =plot= lab with NHANES data: [[https://tinyurl.com/plots-lab][tinyurl.com/plots-lab]].
 - [ ] *Redo* the =NHANES= plot with =ggplot2= (bonus exercise).
 
@@ -4085,18 +4085,111 @@ The lessons of the =plotly= course follow this (classical) path:
 3) Advanced customization (presentation mode)
 4) Advanced interactivity (web application mode)
 
-
 *** TODO Base R =plot= lab
+
+You're going to recreate this plot using base R =plot= skills:
+#+attr_html: :width 400px:
+[[../img/NHANES.png]]
+
+
+
+You learnt all about it in the last lecture: check out
+[[https://github.com/birkenkrahe/dviz/blob/main/org/6_plot_codealong.org#adding-points-and-lines-to-a-scatterplot][last lecture (6_plot_codealong.org)]] in GitHub.
 
 *** TODO DataCamp review: Dashboard Design Concepts
 
-** Week 14: Power BI [Nov 25]
+1. What is the main purpose of a dashboard? Give an example for:
+   "Sales".
+   #+begin_quote
+   To visually display important information for monitoring objectives
+   at a glance.
+   #+end_quote
+   #+begin_quote
+   Example: A sales dashboard that shows monthly revenue, key sales
+   targets, and current progress towards quarterly goals allows
+   managers to quickly assess performance.
+   #+end_quote
 
-** Week 15: Final presentations [Dec 2]
-#+attr_html: :width 400px
-[[../img/checklist.png]]
+2. How does a dashboard differ from a report? For example in:
+   "Marketing".
+   #+begin_quote
+   A dashboard offers dynamic, single-page, interactive views, while a
+   report provides a static, multi-page snapshot.
+   #+end_quote
+   #+begin_quote
+   Example: A marketing dashboard with real-time campaign metrics is
+   updated automatically, while a monthly marketing report provides a
+   static summary of last month’s performance.
+   #+end_quote
 
-** Week 16: Final exam (optional) [Dec 9]
+3. What is the goal of transforming data into actionable insights? For
+   example: "Customer service dashboard".
+   #+begin_quote
+   To convert raw data into information that guides decision-making.
+   #+end_quote
+   #+begin_quote
+   Example: A customer service dashboard converts support ticket data
+   into metrics, such as average response time and customer
+   satisfaction scores, enabling managers to improve response
+   efficiency.
+   #+end_quote
 
-According to the [[https://assets.speakcdn.com/assets/2433/fa24_final_exam_schedule.pdf][published exam schedule]], the final exam will take
-place on Monday, December 9, at 3.30 pm - 5:30 pm.
+4. What does the MAD framework stand for? Example: "Quality control".
+   #+begin_quote
+   Monitor, Analyze, Detail.
+   #+end_quote
+   #+begin_quote
+   Example: In a quality control dashboard, "Monitor" tracks defects,
+   "Analyze" identifies trends over time, and "Detail" breaks down
+   issues by cause to guide quality improvements.
+   #+end_quote
+
+5. How are actionable dashboards useful for businesses?
+   #+begin_quote
+   They inform business decisions by providing timely insights.
+   #+end_quote
+   #+begin_quote
+   Example: A finance dashboard helps executives monitor expenses,
+   identify overspending areas, and decide on cost-cutting measures if
+   needed.
+   #+end_quote
+
+6. What are Key Performance Indicators (KPIs) used for?
+   #+begin_quote
+   To track progress, inform decisions, and highlight areas needing attention.
+   #+end_quote
+   #+begin_quote
+   Example: A KPI for a manufacturing dashboard could track "units produced per hour" to assess factory efficiency and detect any slowdown.
+   #+end_quote
+
+7. What’s the difference between leading and lagging indicators in KPIs?
+   #+begin_quote
+   Leading indicators provide early feedback on progress, while lagging indicators measure past outcomes.
+   #+end_quote
+   #+begin_quote
+   Example: In sales, a leading indicator could be the number of new leads generated, while a lagging indicator would be the total sales revenue at the end of the quarter.
+   #+end_quote
+
+8. Who are considered internal stakeholders?
+   #+begin_quote
+   Individuals directly related to the organization, such as employees and owners.
+   #+end_quote
+   #+begin_quote
+   Example: A product development dashboard might be tailored for internal stakeholders like product managers and engineers to track development milestones.
+   #+end_quote
+
+9. What does the S.M.A.R.T. criteria in goal setting stand for?
+   #+begin_quote
+   Specific, Measurable, Achievable, Relevant, Time-bound.
+   #+end_quote
+   #+begin_quote
+   Example: A S.M.A.R.T. goal for a sales team could be "Increase sales by 10% over the next three months," providing a clear, measurable target within a set timeframe.
+   #+end_quote
+
+10. What is a key consideration when designing a dashboard for stakeholders?
+    #+begin_quote
+    Understanding the diverse roles, goals, and insights needed by different stakeholders.
+    #+end_quote
+    #+begin_quote
+    Example: For a business dashboard, executives may need high-level summaries, while operational teams need detailed metrics to guide daily tasks.
+    #+end_quote
