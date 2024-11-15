@@ -3625,11 +3625,11 @@ plots make you a data visualization master!
 - [ ] *Redo* the =NHANES= plot with =ggplot2= (bonus exercise).
 
 ** Week 13: Advanced Customization & Project sprint review [Nov 11]
-#+attr_html: :width 600px:
+#+attr_html: :width 500px:
 [[../img/marriage-at-cana.jpg]]
 
 - [X] *Review* DataCamp lesson on =plotly= (code along)
-- [ ] *Complete* =plot= lab with NHANES data: [[https://tinyurl.com/plots-lab][tinyurl.com/plots-lab]].
+- [X] *Complete* =plot= lab with NHANES data: [[https://tinyurl.com/plots-lab][tinyurl.com/plots-lab]].
 - [ ] *Redo* the =NHANES= plot with =ggplot2= (bonus exercise).
 
 *** DONE DataCamp Review: The Python =plotly= package for interactive plots
@@ -4085,7 +4085,7 @@ The lessons of the =plotly= course follow this (classical) path:
 3) Advanced customization (presentation mode)
 4) Advanced interactivity (web application mode)
 
-*** TODO Base R =plot= lab
+*** DONE Base R =plot= lab
 
 You're going to recreate this plot using base R =plot= skills:
 #+attr_html: :width 400px:
@@ -4238,6 +4238,7 @@ Review questions with domain knowledge examples:
     high-level summaries, while operational teams need detailed
     metrics (measurable, numeric quantities) to guide daily tasks.
     #+end_quote
+
 
 ** Week 14: Power BI [Nov 25]
 
