@@ -1,4 +1,4 @@
-#+TITLE: NOTEBOOK - DATA VISUALIZATION
+mm#+TITLE: NOTEBOOK - DATA VISUALIZATION
 #+AUTHOR: Marcus Birkenkrahe
 #+SUBTITLE: DSC 302 Lyon College Fall 2024
 #+STARTUP: overview hideblocks indent entitiespretty:
@@ -4185,8 +4185,6 @@ Question of the decade: *How much of this can be outsourced to AI?*
   mention only a few things. Projects are often determined by
   everything but SMART[ER] factors (+ Evaluate & Revise).
   #+end_quote
-
-  
 
 **** Review questions with domain knowledge examples:
 
