@@ -4098,7 +4098,7 @@ plot]] in GitHub (file name: 6_plot_lab.org).
 
 *** TODO DataCamp review: Dashboard Design Concepts
 
-The ugly truth:
+**** The ugly truth:
 #+begin_quote
 To *use* dashboards, you need to understand the data they're modeling,
 and to understand the data, you need to have domain knowledge. To
@@ -4110,7 +4110,85 @@ requires practical *skills* in: SQL, JavaScript/HTML/PHP, Python/R, and
 
 Question of the decade: *How much of this can be outsourced to AI?*
 
-Review questions with domain knowledge examples:
+
+**** Introduction to dashboards
+
+- "My name is Olga... [and I am a Russian spy]."
+
+- Earth: 2.5 mio TB data per day (where does this estimate come from?)
+  #+begin_quote
+  From a marketing article by IBM (an IT firm with a large cloud
+  business) in 2017. Updated to 463 mio TB daily by IDC (a data
+  analytics firm).
+  #+end_quote
+
+  #+attr_html: :width 700px: 
+  [[../img/statista.png]]
+  
+- What are "dark data" sources (likely not being counted)?
+  #+begin_quote
+  - Internet of Things (IoT) logs: smart homes, vehicles, wearables
+  - Social media usage (high volume, low speed, low variety)
+  - Financial data (high volume, high speed, low variety)
+  - Generative AI data (high volume, low speed, high variety)
+  #+end_quote
+
+- Only about 12% of enterprise data is processed (how do they know?)
+  #+begin_quote
+  They don't, and they're likely lying. Also, there is no standard
+  definition of "processed". Storing involves processing, too. In the
+  future, much more stored data are going to be analyzed by AI.
+  #+end_quote
+
+- Which factor influences the digital age above all? ([[https://ourworldindata.org/energy-production-consumption][See here.]])
+  
+- Is this a good visualization of "Visual analytics technologies?"
+  #+attr_html: :width 700px:
+  [[.,/img/visual_analytics.png]]
+
+  #+begin_quote
+  - Likert-scale probably from a survey among enterprise users (OK)
+  - Top two technologies are technologies
+  - Three bottom "technologies" are approaches or techniques
+  - A technique or approach needs to be turned into a product first
+  - Check (permanent) enterprise job titles to see what's real
+  #+end_quote
+
+- *This are the notes after 2 minutes of the first video!*
+
+- Why "2-4 KPIs per goal?" Why not 20-40?
+  #+begin_quote
+  - Psychology: Overwhelming and harder to define separate KPIs
+  - Analytics: Not a problem when using automation/AI
+  - Metrics: Many KPIs are coupled, but which are independent?
+  #+end_quote
+
+- What's the different between "operational" and "strategic"? Give an
+  example from your life.
+  #+begin_quote
+  - Operational: Should I get to class on time? (KPI = Punctuality)
+  - Strategic: Does punctuality help me to reach my goals?
+  #+end_quote
+
+- Are the term projects "S.M.A.R.T."?
+  #+begin_quote
+  - Specific: Specific deliverable
+  - Measurable: You identified "metrics" early on
+  - Achievable: I gave you feedback on this
+  - Relevant: Definitely to you, and you also identified stakeholders
+  - Time-bound: Projects always are (start/stop)
+  #+end_quote
+
+- Is S.M.A.R.T. enough or is something missing for a successful project?
+  #+begin_quote
+  Social skills, customer/client monitoring/control and reporting, to
+  mention only a few things. Projects are often determined by
+  everything but SMART[ER] factors (+ Evaluate & Revise).
+  #+end_quote
+
+  
+
+**** Review questions with domain knowledge examples:
 
 1. What is the main purpose of a dashboard? Give an example for:
    #+begin_quote
