@@ -3273,6 +3273,7 @@ the podcasters were oddly giddy...
 - [ ] Map aesthetics to variables
 
 Download [[https://tinyurl.com/ggplot2-review-org][tinyurl.com/ggplot2-review-org]] as =ggplot2.org=
+
 #+begin_src bash :results output :exports both
   wget -O ggplot2.org tinyurl.com/ggplot2-review-org
   ls -l ggplot2.org
@@ -3316,7 +3317,7 @@ Download [[https://tinyurl.com/plot-codealong][tinyurl.com/plot-codealong]] (aga
   emacs --file plot.org
 #+end_example
 
-*** TODO Trophy!
+*** Trophy!
 
 #+attr_html: :width 700px:
 [[../img/trophy2.png]]
@@ -3327,7 +3328,7 @@ probably way above *1,000* created plots in the whole course. *10,000*
 plots make you a data visualization master!
 
 
-*** TODO Review: =plot= function (part 1)
+*** Review: =plot= function (part 1)
 
 1. What does =plot= generate when you feed it with two =factor= variables?
 
@@ -3438,7 +3439,7 @@ plots make you a data visualization master!
    #+end_quote
 
 
-*** TODO Review =plot= function (part 2)
+*** Review =plot= function (part 2)
 #+attr_html: :width 350px:
 [[../img/halloween.jpg]]
 
@@ -4109,7 +4110,6 @@ requires practical *skills* in: SQL, JavaScript/HTML/PHP, Python/R, and
 #+end_quote
 
 Question of the decade: *How much of this can be outsourced to AI?*
-
 
 **** Introduction to dashboards
 
