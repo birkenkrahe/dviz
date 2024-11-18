@@ -3625,7 +3625,7 @@ plots make you a data visualization master!
 - [ ] *Complete* =plot= lab with NHANES data: [[https://tinyurl.com/plots-lab][tinyurl.com/plots-lab]].
 - [ ] *Redo* the =NHANES= plot with =ggplot2= (bonus exercise).
 
-** Week 13: Advanced Customization & Project sprint review [Nov 11]
+** DONE Week 13: Advanced Customization & Project sprint review [Nov 11]
 #+attr_html: :width 500px:
 [[../img/marriage-at-cana.jpg]]
 
@@ -4317,6 +4317,8 @@ Question of the decade: *How much of this can be outsourced to AI?*
 
 
 ** Week 14: Power BI [Nov 25]
+
+*** DataCamp Review: Introduction to Power BI
 
 ** Week 15: Final presentations [Dec 2]
 #+attr_html: :width 600px
