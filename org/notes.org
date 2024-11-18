@@ -4186,7 +4186,19 @@ Question of the decade: *How much of this can be outsourced to AI?*
   everything but SMART[ER] factors (+ Evaluate & Revise).
   #+end_quote
 
-**** Review questions with domain knowledge examples:
+** Week 14: Power BI [Nov 25]
+#+attr_html: :width 400px: 
+[[../img/powerbicancer.png]]
+
+/Imxdage: PowerBI Cancer Analytics Dashboard. (2017)/
+
+- [ ] You will get feedback on your GDrive submissions
+- [ ] I will specify presentation requirements
+- [ ] The last quiz (10) is live
+- [ ] The last 2 DataCamp lessons are due Nov 22/Dec 6
+- [ ] In 2022, I covered 4 more topics! Why?
+
+*** Review questions with domain knowledge examples:
 
 1. What is the main purpose of a dashboard? Give an example for:
    #+begin_quote
@@ -4316,9 +4328,122 @@ Question of the decade: *How much of this can be outsourced to AI?*
     #+end_quote
 
 
-** Week 14: Power BI [Nov 25]
-
 *** DataCamp Review: Introduction to Power BI
+
+- What does a "spreadsheet" have that a barplot does not?
+  #+begin_quote
+  1. Ability to perform calculations on its numeric fields
+  2. Hide and show data columns (unless the plot is interactive)
+  3. It's text and therefore probably smaller (unless it's Excel)
+  4. Less potential for fraud because all the data are right there.
+  #+end_quote
+  
+- What does a data frame have that a spreadsheet does not?
+  #+begin_quote
+  1. Special values like NA and many more available stats functions.
+  2. Data structure in a high level language like R or Python.
+  3. The data frame is likely even smaller than the spreadsheet
+  4. Ability to store a lot more data
+  #+end_quote
+
+- What is a Fortune 500 company? Can you give examples?
+  #+begin_quote
+  A "Fortune 500" company is one of the 500 largest corporations in
+  the US ranked annually by Fortune magazine based on their total
+  revenue for the preceding fiscal year - a KPI of economic
+  performance and market dominance.
+
+  | Rank | Company            | Revenue (bn USD) |
+  |------+--------------------+------------------|
+  |    1 | Walmart            |            611.3 |
+  |    2 | Amazon             |            513.9 |
+  |    3 | Apple              |            394.3 |
+  |    4 | UnitedHealth Group |            324.2 |
+  |    5 | Berkshire Hathaway |            302.1 |
+  |    6 | CVS Health         |            322.5 |
+  |    7 | Exxon Mobil        |            413.7 |
+  |    8 | Alphabet           |            282.8 |
+  |    9 | McKesson           |            263.9 |
+  |   10 | Cencora            |            238.6 |
+
+  4/10 are pharmaceutical/healthcare companies.
+  
+  #+end_quote
+
+- What do you think this list looked like 20 years ago?
+  #+begin_quote
+  | Rank | Company                            | Revenue (bn USD) |
+  |------+------------------------------------+------------------|
+  |    1 | Wal-Mart Stores                    |            256.3 |
+  |    2 | Exxon Mobil                        |            213.2 |
+  |    3 | General Motors                     |            195.6 |
+  |    4 | Ford Motor                         |            164.2 |
+  |    5 | General Electric                   |            134.2 |
+  |    6 | ChevronTexaco                      |            113.0 |
+  |    7 | ConocoPhillips                     |             99.5 |
+  |    8 | Citigroup                          |             94.7 |
+  |    9 | IBM                                |             89.1 |
+  |   10 | American International Group (AIG) |             81.3 |
+
+  3/10: Oil/gas companies, 1 tech company (IBM), 2 bank/insurance, 2
+  car manufacturer
+  #+end_quote  
+
+- What do you think how Tesla is ranked in this list?
+  #+begin_quote
+  Tesla is at position 50.
+
+  This is the structure of the top 50:
+  | Industry Sector              | # in Top 50 |
+  |------------------------------+-------------|
+  | Healthcare/Pharmaceutical    |          10 |
+  | Oil and Gas                  |           7 |
+  | Banking/Insurance            |           6 |
+  | Technology                   |           5 |
+  | Automotive (GMC/Ford/Tesla)  |           3 |
+  | Telecom/media (Comcast/AT&T) |           2 |
+  | Chemicals (Dow)              |           1 |
+
+  #+end_quote
+
+- Power BI desktop: Does it run anywhere? Windows? Linux? Mac?
+  #+attr_html: :width 700px:
+  [[../img/powerbidownload.png]]
+
+  #+begin_quote
+  This software product locks you in the Microsoft world. As of 2024,
+  Microsoft does not provide "native" versions for these operating
+  systems (which means that you have to hack one if you want one, or
+  use a Windows VM). However, you can use it in the cloud, too (though
+  the sign-in and sign-up process is typical Microsoft torture).
+  #+end_quote
+
+- How does the cloud interface (app.powerbi.com) look like?
+  #+attr_html: :width 600px:
+  [[../img/powerbicloud.png]]
+
+- Challenge: Build a dashboard that shows the facts shown so far about
+  Fortune 500 companies, alongside a revenue barplot.
+
+- Which formats does PowerBI support for data file upload? And what
+  are the consequences?
+  #+begin_quote
+  CSV (Comma Separated Values) and Excel only (or paste/enter data by
+  hand). As a result, the data entry size is no more than around 10GB,
+  so PowerBI is not a Big Data tool per se. For premium license < 400
+  GB. With a specialized connection: can stream data in real-time from
+  external databases (Power BI desktop has an SQL Server connection).
+  #+end_quote
+
+
+*** Power BI practice
+
+For some practice, register with app.powerbi.com using your Lyon
+email. Let me know if you have any trouble (it worked for me).
+
+- Table relationships
+- Adding report columns
+- Build visuals
 
 ** Week 15: Final presentations [Dec 2]
 #+attr_html: :width 600px
