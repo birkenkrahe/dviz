@@ -4186,17 +4186,17 @@ Question of the decade: *How much of this can be outsourced to AI?*
   everything but SMART[ER] factors (+ Evaluate & Revise).
   #+end_quote
 
-** Week 14: Power BI [Nov 25]
-#+attr_html: :width 400px: 
+** Week 14: Power BI [Nov 18]
+#+attr_html: :width 700px: 
 [[../img/powerbicancer.png]]
 
 /Imxdage: PowerBI Cancer Analytics Dashboard. (2017)/
 
-- [ ] You will get feedback on your GDrive submissions
-- [ ] I will specify presentation requirements
-- [ ] The last quiz (10) is live
-- [ ] The last 2 DataCamp lessons are due Nov 22/Dec 6
-- [ ] In 2022, I covered 4 more topics! Why?
+- [X] You will get feedback on your GDrive submissions
+- [X] I will specify presentation requirements
+- [X] The last quiz (10) is live
+- [X] The last 2 DataCamp lessons are due Nov 22/Dec 6
+- [X] In 2022, I covered 4 more topics! Why?
 
 *** Review questions with domain knowledge examples:
 
@@ -4216,7 +4216,8 @@ Question of the decade: *How much of this can be outsourced to AI?*
 2. How does a dashboard differ from a report?
    #+begin_quote
    A dashboard offers dynamic, single-page, interactive views, while a
-   report provides a static, multi-page snapshot.
+   report provides a static, multi-page snapshot. Dashboard generate
+   reports.
    #+end_quote
 
    Example: *Marketing*
@@ -4272,7 +4273,8 @@ Question of the decade: *How much of this can be outsourced to AI?*
    #+begin_quote
    Example: A KPI for a manufacturing dashboard could track "units
    produced per hour" to assess factory efficiency and detect any
-   slowdown.
+   slowdown. Hours of non operation because of defects. People on the
+   factory floor at any given time.
    #+end_quote
 
 7. What’s the difference between 'leading' and 'lagging' indicators in
@@ -4424,7 +4426,7 @@ Question of the decade: *How much of this can be outsourced to AI?*
 
 - Challenge: Build a dashboard that shows the facts shown so far about
   Fortune 500 companies, alongside a revenue barplot.
-
+  
 - Which formats does PowerBI support for data file upload? And what
   are the consequences?
   #+begin_quote
