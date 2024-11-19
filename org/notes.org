@@ -4197,7 +4197,8 @@ Question of the decade: *How much of this can be outsourced to AI?*
 - [X] The last quiz (10) is live
 - [X] The last 2 DataCamp lessons are due Nov 22/Dec 6
 - [X] In 2022, I covered 4 more topics! Why?
-
+- [ ] Exit quiz for this course in last week of term
+  
 *** Review questions with domain knowledge examples:
 
 1. What is the main purpose of a dashboard? Give an example for:
