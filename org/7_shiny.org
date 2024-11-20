@@ -1,0 +1,86 @@
+#+TITLE: Get started with R Shiny
+#+AUTHOR: Marcus Birkenkrahe
+#+Subtitle: Introduction to Data Visualization
+#+STARTUP: hideblocks overview indent inlineimages
+#+PROPERTY: header-args:R :exports both :results output :session *R*
+* Create a 'hello world!' app
+
+Do this on the console.
+
+1) Load the Shiny package
+2) Create the user interface ~ui~ as ~fluidPage("Hello, world!")~
+3) Create the ~server~ as ~function(input, output, session){}~
+4) To run, call ~shinyApp~ on ~ui~ and ~server~
+5) To stop the app, enter ~C-g~ here and ~C-c C-c~ in ~*R*~ (check)
+
+#+begin_src R :results silent
+  library(shiny)
+  ui <- fluidPage("Hello, world!")
+  server <- function(input, output, session) {
+    }
+  shinyApp(ui,server)
+#+end_src
+
+Make sure you understand what exactly happened here:
+- A server and a client object were created
+- Shiny starts an internal web server (part of the package)
+- The local server listens to a random port
+- The Shiny app is rendered in the default browser
+
+* Break the app
+
+1) After starting the app, open the R console: you can see that the
+   server is listening.
+2) Close the browser window that belongs to this process.
+3) If you now try to stop the process in the Org-file with ~C-g~, the
+   process will not abort: the server is still listening.
+4) Change to the R console and shut it down there with ~C-c C-c~
+
+* Save the app and run it on the shell
+
+1) Move the cursor to the hello world code block and enter ~C-c '~
+2) In the new buffer, enter ~C-x h M-x write-region~ to write the code
+   to a file ~hello.R~ (or copy the code to that file).
+3) Return to the code block with ~C-c C-k~
+4) Open a terminal (CMD line shell)
+5) Navigate to the directory where ~hello.R~ resides
+6) Run ~hello.R~ with the command ~Rscript hello.R~
+7) Open the URL after ~Listening on~ in a browser
+8) In the shell, stop the process with ~C-c C-c~
+
+* Run the app from an R script in Emacs
+
+1) In Emacs, open ~hello.R~ using ~Dired~ (~C-x C-f~)
+2) Run it straight from there with ~C-c C-c~
+3) Close the process in the R console ~*R*~ with ~C-c C-c~
+
+* TODO Create an input/output app
+
+1) Load the Shiny package
+2) Create the ~ui <- ~fluidPage(~textInput(), ~textOutput())~
+3) ~textInput~ should accept your ~'name'~ and ask ~"Enter a name:"~
+4) Format ~textOutput~ should return ~'hello'~
+5) Create the ~server~ with ~input~ and ~output~ arguments
+6) Inside the ~server~, assign ~renderText()~ to ~output$hello~
+7) Inside ~renderText~, enter ~{paste()}~
+8) Inside ~paste()~, enter ~"Hello,"~ and ~input$name~
+9) Run the app with ~shinyApp~
+10) To stop the app, enter ~C-g~ here and ~C-c C-c~ in ~*R*~
+
+* TODO Build an app with a histogram
+
+1) Set up the UI and the server
+2) Inside ~fluidPage()~, create a ~mainPanel()~
+3) Inside ~mainPanel()~, create a ~sliderInput()~ and ~plotOutput~
+4) For ~sliderInput()~, define:
+   - the ~input~ variable ~'binwidth'~
+   - the text ~"Histogram binwidth"~
+   - the parameters ~min=1, max=100, value=10~
+5) Inside ~plotOutput~, define the ~output~ variable ~'nile'~
+6) In the body of the ~server~ function, assign ~renderPlot({p})~ to
+   ~output$nile~
+7) As plot ~p~, use ~hist(Nile, breaks=input$binwidth)~
+8) Customize the inside of ~hist()~ as you like
+9) Call ~shinyApp~ for ~ui~ and ~server~ to open app in browser
+10) Close process with ~C-g~ in the Org-file, and ~C-c C-c~ in ~*R*~
+

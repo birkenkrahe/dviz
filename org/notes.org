@@ -4439,7 +4439,11 @@ Question of the decade: *How much of this can be outsourced to AI?*
   #+end_quote
 
 
-*** Power BI practice
+*** Building dashboards with R Shiny (lecture & codealong)
+
+See 7_shiny.org in GitHub.
+
+*** NEXT Power BI practice
 
 For some practice, register with app.powerbi.com using your Lyon
 email. Let me know if you have any trouble (it worked for me).
