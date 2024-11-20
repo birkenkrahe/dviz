@@ -4450,7 +4450,7 @@ email. Let me know if you have any trouble (it worked for me).
 
 ** Week 15: Final presentations [Dec 2]
 #+attr_html: :width 600px
-[[../img/checklist.png]]
+[[../img/final_presentation.png]]
 
 ** Week 16: Final exam (optional) [Dec 9]
 
