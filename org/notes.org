@@ -4458,7 +4458,6 @@ Q&A:
 
 See =7_shiny.org= in GitHub.
 
-
 *** NEXT Power BI practice
 
 For some practice, register with =app.powerbi.com= using your Lyon

@@ -5,23 +5,25 @@
 #+PROPERTY: header-args:R :exports both :results output :session *R*
 * Create a 'hello world!' app
 
-Do this on the console.
+   1) Load the Shiny package
+   2) Create the user interface ~ui~ as ~fluidPage("Hello, world!")~
+   3) Create the ~server~ as ~function(input, output, session){}~
+   4) To run, call ~shinyApp~ on ~ui~ and ~server~
+   5) To stop the app, enter ~C-g~ here and ~C-c C-c~ in ~*R*~ (check)
 
-1) Load the Shiny package
-2) Create the user interface ~ui~ as ~fluidPage("Hello, world!")~
-3) Create the ~server~ as ~function(input, output, session){}~
-4) To run, call ~shinyApp~ on ~ui~ and ~server~
-5) To stop the app, enter ~C-g~ here and ~C-c C-c~ in ~*R*~ (check)
+      #+begin_src R :results silent
+        library(shiny)
+        ui <- fluidPage("Hello, world!")
+        server <- function(input, output, session) {
+          ## open a server connection and pass string to server
+        }
+      #+end_src
 
-#+begin_src R :results silent
-
-#+end_src
-
-Make sure you understand what exactly happened here:
-- A server and a client object were created
-- Shiny starts an internal web server (part of the package)
-- The local server listens to a random port
-- The Shiny app is rendered in the default browser
+   Make sure you understand what exactly happened here:
+   - A server and a client object were created
+   - Shiny starts an internal web server (part of the package)
+   - The local server listens to a random port
+   - The Shiny app is rendered in the default browser
 
 * Break the app
 
@@ -64,8 +66,15 @@ Make sure you understand what exactly happened here:
 10) To stop the app, enter ~C-g~ here and ~C-c C-c~ in ~*R*~
 
 #+begin_src R :results silent
-
-#+end_src    
+  library(shiny)
+  ui <- fluidPage(
+    textInput('name', "Enter a name:"),
+    textOutput('hello'))  # `name` and `hello` are variables
+  server <- function(input, output) {
+    output$hello <- renderText({
+      paste("Hello, ", input$name)})}
+  shinyApp(ui, server)
+#+end_src
 
 * Build an app with a histogram
 
@@ -86,4 +95,4 @@ Make sure you understand what exactly happened here:
 
 #+begin_src R :results silent
 
-#+end_src    
+#+end_src
