@@ -4439,18 +4439,35 @@ Question of the decade: *How much of this can be outsourced to AI?*
   #+end_quote
 
 
-*** Building dashboards with R Shiny (lecture & codealong)
+*** TODO Project: Final presentation
 
-See 7_shiny.org in GitHub.
+See this checklist for your team before the presentation:
+[[../img/checklist.png]]
+
+See also the FAQ entry [[https://github.com/birkenkrahe/org/blob/master/FAQ.org#how-should-we-prepare-for-the-final-presentation]["What should we do in the 4th sprint?"]] in
+GitHub.
+
+Q&A:
+1) What: You present your results
+2) Who: All team members must be present
+3) When: FIFO (2 presentations per session)
+4) How: Any way you like
+5) Why: Practice presenting data science results
+
+*** TODO Building dashboards with R Shiny (lecture & codealong)
+
+See =7_shiny.org= in GitHub.
+
 
 *** NEXT Power BI practice
 
-For some practice, register with app.powerbi.com using your Lyon
+For some practice, register with =app.powerbi.com= using your Lyon
 email. Let me know if you have any trouble (it worked for me).
 
 - Table relationships
 - Adding report columns
 - Build visuals
+
 
 ** Week 15: Final presentations [Dec 2]
 #+attr_html: :width 600px

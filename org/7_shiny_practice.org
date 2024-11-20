@@ -3,6 +3,60 @@
 #+Subtitle: Introduction to Data Visualization
 #+STARTUP: hideblocks overview indent inlineimages
 #+PROPERTY: header-args:R :exports both :results output :session *R*
+* Introduction to R Shiny
+
+- What is the client/server software model?
+  #+attr_html: :width 400px
+  [[../img/clientserver.png]]
+
+- Why should you learn R Shiny? What's the scenario?
+  #+attr_html: :width 300px
+  [[../img/shiny2.png]]
+
+  Check it out: [[https://tinyurl.com/k-means-shiny-demo][tinyurl.com/k-means-shiny-demo]]
+
+- What exactly do you need to create and run a Shiny app?
+  #+begin_notes
+  - R
+  - Shiny R package
+  - Web browser (including client/server)
+  #+end_notes
+
+- What is the order of functions to create a Shiny app?
+  [[../img/shiny5.png]]
+  #+begin_notes
+  1) Load package
+  2) Define user interface ~ui~
+  3) Define server function ~server~
+  4) Call ~shinyApp(ui,server)~
+  #+end_notes
+
+- What happens exactly when you call ~shinyApp~?
+  #+begin_notes
+  1) R executes the ~shinyApp~ function
+  2) The ~server~ builds a web page with ~ui <- fluidPage~
+  3) The ~server~ waits for input and generates output
+  4) I/O is received from/sent to the URL ~host:port~
+  #+attr_html: :width 400px
+  [[../img/shiny6.png]]
+  #+end_notes
+
+- Where exactly do you see the app when you do this on your PC?
+  #+begin_notes
+  On your localhost ~127.0.0.1~ port ~5383~ (random port)
+  #+attr_html: :width 400px
+  [[../img/shiny4.png]]
+
+  [[https://www.r-bloggers.com/2021/04/run-shiny-apps-locally/][Here is a tutorial on how to run Shiny locally]] (Solymos, 2021).
+  #+end_notes
+
+- What else do you need to build an app for the Internet?
+  #+begin_notes
+  - A web server application (e.g. Apache - e.g. with [[https://www.apachefriends.org/][XAMPP]])
+  - A port that's open to the Internet
+  - A router that assigns an address to your server
+  #+end_notes
+
 * Create a 'hello world!' app
 
 Do this on the console.
