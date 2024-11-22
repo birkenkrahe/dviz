@@ -4198,7 +4198,8 @@ Question of the decade: *How much of this can be outsourced to AI?*
 - [X] The last 2 DataCamp lessons are due Nov 22/Dec 6
 - [X] In 2022, I covered 4 more topics! Why?
 - [ ] Exit quiz for this course in last week of term
-  
+- [ ] BONUS: Last 2 PowerBi DataCamp lessons
+
 *** Review questions with domain knowledge examples:
 
 1. What is the main purpose of a dashboard? Give an example for:
@@ -4331,7 +4332,7 @@ Question of the decade: *How much of this can be outsourced to AI?*
     #+end_quote
 
 
-*** DataCamp Review: Introduction to Power BI
+*** DONE DataCamp Review: Introduction to Power BI
 
 - What does a "spreadsheet" have that a barplot does not?
   #+begin_quote
@@ -4439,7 +4440,7 @@ Question of the decade: *How much of this can be outsourced to AI?*
   #+end_quote
 
 
-*** TODO Project: Final presentation
+*** DONE Project: Final presentation
 
 See this checklist for your team before the presentation:
 [[../img/checklist.png]]
@@ -4454,9 +4455,6 @@ Q&A:
 4) How: Any way you like
 5) Why: Practice presenting data science results
 
-*** TODO Building dashboards with R Shiny (lecture & codealong)
-
-See =7_shiny.org= in GitHub.
 
 *** NEXT Power BI practice
 
@@ -4467,6 +4465,16 @@ email. Let me know if you have any trouble (it worked for me).
 - Adding report columns
 - Build visuals
 
+*Update*: Not happening. It's just too difficult to manage/access Power
+BI in the cloud (app.powerbi.com). 
+
+*What's your view of the lessons?*
+- What kind of workflow favors PowerBi?
+- What kind of workflow is favored by PowerBi?
+
+*** IN PROGRESS Building dashboards with R Shiny (lecture & codealong)
+
+See =7_shiny.org= in GitHub.
 
 ** Week 15: Final presentations [Dec 2]
 #+attr_html: :width 600px
