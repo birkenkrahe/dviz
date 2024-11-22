@@ -4331,7 +4331,6 @@ Question of the decade: *How much of this can be outsourced to AI?*
     metrics (measurable, numeric quantities) to guide daily tasks.
     #+end_quote
 
-
 *** DONE DataCamp Review: Introduction to Power BI
 
 - What does a "spreadsheet" have that a barplot does not?
@@ -4439,7 +4438,6 @@ Question of the decade: *How much of this can be outsourced to AI?*
   external databases (Power BI desktop has an SQL Server connection).
   #+end_quote
 
-
 *** DONE Project: Final presentation
 
 See this checklist for your team before the presentation:
@@ -4455,8 +4453,7 @@ Q&A:
 4) How: Any way you like
 5) Why: Practice presenting data science results
 
-
-*** NEXT Power BI practice (NO)
+*** DONE Power BI practice (NO)
 
 For some practice, register with =app.powerbi.com= using your Lyon
 email. Let me know if you have any trouble (it worked for me).
@@ -4471,14 +4468,18 @@ BI in the cloud (app.powerbi.com).
 *What's your view of the lessons?*
 - What kind of workflow favors PowerBi?
 - What kind of workflow is favored by PowerBi?
+- Good at drag-and-drop
+- Relies on clean data
+- Limited plot type possibilities
 
-*** IN PROGRESS Building dashboards with R Shiny (lecture & codealong)
+*** Building dashboards with R Shiny (lecture & codealong)
 
 Download and code along: [[https://tinyurl.com/shiny-demo-org][tinyurl.com/shiny-demo-org]]
 
 See =7_shiny.org= in GitHub.
 
 Let's create a few dashboards.
+
 
 ** Week 15: Final presentations [Dec 2]
 #+attr_html: :width 600px

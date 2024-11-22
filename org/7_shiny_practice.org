@@ -67,9 +67,15 @@ Do this on the console.
 4) To run, call ~shinyApp~ on ~ui~ and ~server~
 5) To stop the app, enter ~C-g~ here and ~C-c C-c~ in ~*R*~ (check)
 
-#+begin_src R :results silent
-
+#+begin_src R :results output
+  library(shiny)
+  ui <- fluidPage("Hello, world!")
+  server <- function(input, output, session) {
+    ## open a server connection and pass string to server
+  }
 #+end_src
+
+#+RESULTS:
 
 Make sure you understand what exactly happened here:
 - A server and a client object were created
@@ -117,8 +123,15 @@ Make sure you understand what exactly happened here:
 9) Run the app with ~shinyApp~
 10) To stop the app, enter ~C-g~ here and ~C-c C-c~ in ~*R*~
 
-#+begin_src R :results silent
-
+#+begin_src R :results silent :tangle hello.R
+  library(shiny)
+  ui <- fluidPage(
+    textInput('name', "Enter a name:"),
+    textOutput('hello'))  # `name` and `hello` are variables
+  server <- function(input, output) {
+    output$hello <- renderText({
+      paste("Hello, ", input$name)})}
+  shinyApp(ui, server)
 #+end_src    
 
 * Build an app with a histogram
@@ -139,5 +152,23 @@ Make sure you understand what exactly happened here:
 10) Close process with ~C-g~ in the Org-file, and ~C-c C-c~ in ~*R*~
 
 #+begin_src R :results silent
-
+  library(shiny)
+  ## user interface
+  ui <-fluidPage(
+    mainPanel(
+      sliderInput('binwidth', # input variable
+                  "Histogram binwidth",
+                  min=1, max=100,value=10),
+      plotOutput('nile'))) # output variable
+  ## server part
+  server <- function(input,output) {
+    output$nile <- renderPlot({
+      hist(Nile,
+           breaks=input$binwidth,
+           main="Histogram of Nile",
+           col="steelblue",
+           xlab="Water volume [mio cubic m]")
+      })
+    }
+  shinyApp(ui = ui, server = server)
 #+end_src    

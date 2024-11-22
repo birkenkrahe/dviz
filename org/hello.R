@@ -1,5 +1,8 @@
 library(shiny)
-ui <- fluidPage("Hello, world!")
-server <- function(input, output, session) {
-  }
-shinyApp(ui,server)
+ui <- fluidPage(
+  textInput('name', "Enter a name:"),
+  textOutput('hello'))  # `name` and `hello` are variables
+server <- function(input, output) {
+  output$hello <- renderText({
+    paste("Hello, ", input$name)})}
+shinyApp(ui, server)
