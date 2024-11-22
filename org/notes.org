@@ -4200,7 +4200,7 @@ Question of the decade: *How much of this can be outsourced to AI?*
 - [ ] Exit quiz for this course in last week of term
 - [ ] BONUS: Last 2 PowerBi DataCamp lessons
 
-*** Review questions with domain knowledge examples:
+*** DONE Review questions with domain knowledge examples:
 
 1. What is the main purpose of a dashboard? Give an example for:
    #+begin_quote
@@ -4456,7 +4456,7 @@ Q&A:
 5) Why: Practice presenting data science results
 
 
-*** NEXT Power BI practice
+*** NEXT Power BI practice (NO)
 
 For some practice, register with =app.powerbi.com= using your Lyon
 email. Let me know if you have any trouble (it worked for me).
@@ -4474,7 +4474,11 @@ BI in the cloud (app.powerbi.com).
 
 *** IN PROGRESS Building dashboards with R Shiny (lecture & codealong)
 
+Download and code along: [[https://tinyurl.com/shiny-demo-org][tinyurl.com/shiny-demo-org]]
+
 See =7_shiny.org= in GitHub.
+
+Let's create a few dashboards.
 
 ** Week 15: Final presentations [Dec 2]
 #+attr_html: :width 600px
