@@ -4503,6 +4503,9 @@ Let's create a few dashboards.
           main = "Correlation Heatmap")
 #+end_src
 
+#+RESULTS:
+[[file:cor.png]]
+
 ** Week 15: Final presentations [Dec 2]
 #+attr_html: :width 600px
 [[../img/final_presentation.png]]
